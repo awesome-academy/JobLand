@@ -1,0 +1,2 @@
+class CvSkill < ApplicationRecord
+end
