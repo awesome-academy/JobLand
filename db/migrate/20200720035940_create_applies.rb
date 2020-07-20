@@ -1,0 +1,11 @@
+class CreateApplies < ActiveRecord::Migration[6.0]
+  def change
+    create_table :applies do |t|
+      t.integer :job_id
+      t.integer :user_id
+      t.string :status
+
+      t.timestamps
+    end
+  end
+end

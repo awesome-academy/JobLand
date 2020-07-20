@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_id: 1
+  department_id: 1
+  sex: 
+  time_work: MyText
+  degree: MyText
+  exp: 1
+  salary: 1
+  number: 1
+  area: MyText
+  info: MyText
+  status: MyText
+
+two:
+  company_id: 1
+  department_id: 1
+  sex: 
+  time_work: MyText
+  degree: MyText
+  exp: 1
+  salary: 1
+  number: 1
+  area: MyText
+  info: MyText
+  status: MyText

@@ -1,0 +1,2 @@
+class CvLanguage < ApplicationRecord
+end
