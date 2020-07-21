@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get '/home', to: 'static_pages#home'
   get '/contact', to: 'static_pages#contact'
   get '/all', to: 'static_pages#products'
+  namespace :admin do
+    root "admin#index"
   end
-
-
+end
 
