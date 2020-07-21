@@ -1,3 +1,4 @@
+<% provide(:title, 'Profile-Company') %>
 <!DOCTYPE html>
 <!-- saved from url=(0047)https://timviec.com.vn/nha-tuyen-dung/dashboard -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -44,27 +45,17 @@
 
 <style></style></head>
 <body>
-
-
-                    <li class="nav-item item-account has-sub-menu avatar-profile">
-                        <a href="javascript:void(0)" class="nav-link text-center">
-                            <span class="avatar">
-                                                                    <img src="./Timviec.com.vn_files/no-image.png">
-                                                                <span class="user-online"></span>
-                            </span>
-                                                           <i class="fas fa-caret-down pl-5"></i>
-                                                    </a>
+                            <div class="container">
+                            <span class="mb-0">Đình Sơn</span><i class="fas fa-caret-down pl-5"></i>
+                                               </a>
                         <ul class="hs-sub-menu list-unstyled">
                             <li class="dropdown-item">
-                                                                    <span>Xin chào <b>Đình Sơn</b>!</span>
+                                          <span>Xin chào <b>Đình Sơn</b>!</span>
                                     <div class="text-left">
                                          <span class="color-999 mb-0 mr-20 fs-13">Công ty: <strong class="text-danger">SUN</strong></span><br>
 
-
-
-
                                     </div>
-                                                            </li>
+                                 </li>
                             <li class="dropdown-item">
                                 <a href="https://timviec.com.vn/nha-tuyen-dung/doi-mat-khau"><i class="fas fa-cog"></i> Cài đặt mật khẩu</a>
                             </li>
@@ -73,99 +64,97 @@
                             </li>
                         </ul>
                     </li>
-                                    </ul>
+              </ul>
             </div>
             <!-- End Navigation -->
         </div>
     </nav>
 </header>
         <!--  content -->
-
             <div id="main-wrapper">
             <!--  content -->
             <div class="container">
-
-
-
-
-
-                                    <div class="tv-content-left">
+                  <div class="tv-content-left">
     <div class="tv-profile-left">
         <div class="tv-published-recruitment bg-fc205c color-white text-center ph-20 pv-8">
             <a href="https://timviec.com.vn/nha-tuyen-dung/dang-tin" class="color-white" style="color: white !important;">
-                <p class="mb-5 fw-500"><img class="icon-flat" src="./Timviec.com.vn_files/upload-1.png"> Đăng tin tuyển dụng</p>
+                <p class="mb-5 fw-500"><%= image_tag ("upload-1.png")  ,class: "icon-flat"  %>  Đăng tin tuyển dụng</p>
                 <p class="mb-0 fs-13 font-italic">Cách nhanh nhất để tìm ứng viên</p>
             </a>
         </div>
         <div class="tv-profile-main text-center">
-            <img class="tv-profile-img" src="./Timviec.com.vn_files/logo_company_150x150.png">
+            <%= image_tag (  "53084621_2139928302709654_2474839033029591040_n.png")  ,class: "tv-profile-img"  %>
             <h2 class="tv-profile-name fs-16 mt-10">SUN</h2>
             <div class="text-center">
                 <span class="color-999 mb-0 mr-20">Điểm: <strong class="text-danger"> 0</strong></span>
                 <span class="color-999 mb-0">Điểm tặng: <strong class="text-danger">0</strong></span>
             </div>
         </div>
-        <div class="tv-pro-nav-side-menu">
+        <div class="tv-pro-nav-side-menu" style="">
             <div class="menu-list">
                 <ul class="tv-pro-nav-menu list-unstyled text-left">
-                    <li class="active">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/dashboard"><img class="icon-flat" src="./Timviec.com.vn_files/setting.png"> Quản lý chung </a>
+                    <li class="">
+
+                        <a href="job-post.html">  <%= image_tag ("setting.png")  ,class: "icon-flat"  %> Quản lý chung </a>
                     </li>
                     <li class="">
+
                         <a href="https://timviec.com.vn/nha-tuyen-dung/tim-ung-vien-phu-hop" class="pr-0">
-                            <img class="icon-flat" src="./Timviec.com.vn_files/search.png"> Tìm ứng viên phù hợp
+                           <%= image_tag (  "search.png")  ,class: "icon-flat"  %> Tìm ứng viên phù hợp
                             <span class="badge badge-danger position-relative" style="top: -8px; left: 0px;">HOT</span>
                         </a>
                     </li>
 
 
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/dang-tin"><img class="icon-flat" src="./Timviec.com.vn_files/upload.png"> Đăng tin tuyển dụng</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/dang-tin">
+                            <%= image_tag ("upload.png")  ,class: "icon-flat"  %>
+                             Đăng tin tuyển dụng</a>
                     </li>
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/tat-ca-tin-tuyen-dung"><img class="icon-flat" src="./Timviec.com.vn_files/forms.png"> Tất cả tuyển dụng</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/tat-ca-tin-tuyen-dung"> <%= image_tag ("forms.png")  ,class: "icon-flat"  %> Tất cả tuyển dụng</a>
                     </li>
                      <li class="">
                         <a href="https://timviec.com.vn/nha-tuyen-dung/hr-ung-vien-tham-gia-phong-van" style="padding-left: 12px;"><i class="fal fa-users" style="margin-right: 6px;font-size: 18px;color: #666;"></i>Ứng viên</a>
                     </li>
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/hr-vi-tri-phong-van"><img class="icon-flat" src="./Timviec.com.vn_files/work.png"> Vị trí phỏng vấn</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/hr-vi-tri-phong-van"><%= image_tag ("work.png")  ,class: "icon-flat"  %>  Vị trí phỏng vấn</a>
                     </li>
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/hr-lich-bieu-phong-van"><img class="icon-flat" src="./Timviec.com.vn_files/forms.png"> Biểu lịch phỏng vấn</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/hr-lich-bieu-phong-van"><%= image_tag ("forms.png")  ,class: "icon-flat"  %>  Biểu lịch phỏng vấn</a>
                     </li>
 
 
 
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/ho-so-da-luu"><img class="icon-flat" src="./Timviec.com.vn_files/start.png"> Hồ sơ đã lưu</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/ho-so-da-luu"><%= image_tag ("start.png")  ,class: "icon-flat"  %>  Hồ sơ đã lưu</a>
                     </li>
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/ho-so-da-ung-tuyen"><img class="icon-flat" src="./Timviec.com.vn_files/resume.png"> Hồ sơ đã ứng tuyển</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/ho-so-da-ung-tuyen"><%= image_tag ("resume.png")  ,class: "icon-flat"  %>  Hồ sơ đã ứng tuyển</a>
                     </li>
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/ho-so-da-xem"><img class="icon-flat" src="./Timviec.com.vn_files/check.png"> Hồ sơ đã xem thông tin</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/ho-so-da-xem"><%= image_tag ("check.png")  ,class: "icon-flat"  %>  Hồ sơ đã xem thông tin</a>
                     </li>
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/quan-ly-dich-vu-va-dang-tin"><img class="icon-flat" src="./Timviec.com.vn_files/system.png"> Quản lý dịch vụ</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/quan-ly-dich-vu-va-dang-tin"><%= image_tag ("system.png")  ,class: "icon-flat"  %>  Quản lý dịch vụ</a>
                     </li>
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/thong-bao-ho-so-phu-hop"><img class="icon-flat" src="./Timviec.com.vn_files/notification.png"> Thông báo hồ sơ phù hợp</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/thong-bao-ho-so-phu-hop"><%= image_tag ("notification.png")  ,class: "icon-flat"  %>  Thông báo hồ sơ phù hợp</a>
                     </li>
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/tin-nhan"><img class="icon-flat" src="./Timviec.com.vn_files/email.png"> Tin nhắn</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/tin-nhan"><%= image_tag ("email.png")  ,class: "icon-flat"  %>  Tin nhắn</a>
+                    </li>
+                    <li class="active">
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/cap-nhat-thong-tin-cong-ty"><<%= image_tag ("work.png")  ,class: "icon-flat"  %>  Thông tin công ty</a>
                     </li>
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/cap-nhat-thong-tin-cong-ty"><img class="icon-flat" src="./Timviec.com.vn_files/work.png"> Thông tin công ty</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/danh-sach-chien-dich"><%= image_tag ("resume.png")  ,class: "icon-flat"  %>  Danh sách chiến dịch</a>
                     </li>
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/danh-sach-chien-dich"><img class="icon-flat" src="./Timviec.com.vn_files/resume.png"> Danh sách chiến dịch</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/quan-ly-email"><%= image_tag ("email.png")  ,class: "icon-flat"  %>  Mẫu Email phỏng vấn</a>
                     </li>
                     <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/quan-ly-email"><img class="icon-flat" src="./Timviec.com.vn_files/email.png"> Mẫu Email phỏng vấn</a>
-                    </li>
-                    <li class="">
-                        <a href="https://timviec.com.vn/nha-tuyen-dung/email-da-gui"><img class="icon-flat" src="./Timviec.com.vn_files/email.png"> Email đã gửi</a>
+                        <a href="https://timviec.com.vn/nha-tuyen-dung/email-da-gui"><%= image_tag ("email.png")  ,class: "icon-flat"  %>  Email đã gửi</a>
                     </li>
                 </ul>
             </div>
@@ -247,7 +236,7 @@
                 <div class="bg-white box_shadow" style="height: 235px;">
                     <div class="text-center pd-20">
                                                     <div class="mb-10 text-center">
-                                <img src="./Timviec.com.vn_files/icon_not_service.png" width="200px" alt="images">
+
                             </div>
                             Quý khách chưa đăng ký gói dịch vụ nào.<br>
                             <a href="https://timviec.com.vn/bang-gia-goi-loc-ho-so" target="_blank" style="color: blue">Click vào đây</a> để biết thêm chi tiết hoặc vui lòng liên hệ chuyên viên hỗ trợ, tư vấn.
