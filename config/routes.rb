@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   namespace :admin do
     root "admin#index"
   end
+  devise_for :users
+  as :user do
+    get "signin" => "devise/sessions#new"
+    post "signin" => "devise/sessions#create"
+    delete "signout" => "devise/sessions#destroy"
+  end
 end
 
