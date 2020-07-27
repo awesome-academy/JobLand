@@ -13,3 +13,5 @@
  *= require styles_admin
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
