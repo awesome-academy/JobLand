@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   root to: 'static_pages#home'
   resource :jobs, only: [:show]
   get 'users/new'
@@ -17,9 +18,9 @@ Rails.application.routes.draw do
               path_names: {sign_in: 'login' ,sign_out: 'logout' ,edit: 'profile',sign_up: 'resgistration'},
               controllers: {omniauth_callbacks: 'omniauth_callbacks' }
   as :user do
-    get 'signin', to: 'devise/sessions#new'
-    post 'signin', to: 'devise/sessions#create'
-    delete 'signout', to: 'devise/sessions#destroy'
+    get "signin" => "devise/sessions#new"
+    post "signin" => "devise/sessions#create"
+    delete "signout" => "devise/sessions#destroy"
   end
+  resources :cvs
 end
-

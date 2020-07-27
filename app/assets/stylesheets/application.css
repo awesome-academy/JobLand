@@ -14,6 +14,7 @@
  *= require styles_admin
  *= require_self
  *= require jobs
+ *= require cvs
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
