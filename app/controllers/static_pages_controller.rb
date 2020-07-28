@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
-  before_action :correct_user
+
   def index
+  end
+
+  def home
   end
 
   def show
@@ -13,10 +16,6 @@ class StaticPagesController < ApplicationController
   def products
   end
 
-  private
-  def correct_user
-    @user = 1
-  end
 end
 
 

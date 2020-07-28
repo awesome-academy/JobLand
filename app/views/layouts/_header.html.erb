@@ -34,7 +34,7 @@
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <% if user_signed_in? %>
-                      <%= link_to "Profile", user_path(@user), class: "dropdown-item" %>
+                      <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
                       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                     <% else %>
                       <%= link_to "Log in", signin_path, class: "dropdown-item" %>
