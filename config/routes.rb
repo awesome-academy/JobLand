@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'static_pages#home'
+  resource :jobs, only: [:show]
   get 'users/new'
   get '/job-post', to: 'employer#job-post'
   get '/new-post', to: 'employer#new-post'
@@ -20,3 +21,4 @@ Rails.application.routes.draw do
     delete 'signout', to: 'devise/sessions#destroy'
   end
 end
+
