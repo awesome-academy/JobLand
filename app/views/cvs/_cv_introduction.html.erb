@@ -1,8 +1,10 @@
 <div>
     <h1 class="text-center">Introduction</h1>
+    <% if can? :update, @cv %>
     <div class="edit-cv">
         <button class="btn btn-primary" onclick="openForm()"> ✚ Add</button>
     </div>
+    <% end %>
     <div>
         <%= @cv.introduction.html_safe %>
     </div>
