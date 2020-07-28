@@ -1,0 +1,56 @@
+<div>
+    <h1 class="text-center">Introduction</h1>
+    <div class="edit-cv">
+        <button class="btn btn-primary" onclick="openForm()"> ✚ Add</button>
+    </div>
+    <div>
+        <%= @cv.introduction.html_safe %>
+    </div>
+    <div class="form-popup" id="myForm">
+        <br>
+        <div class="form_cv">
+            <%= form_for @cv, method: :patch do |f| %>
+            <div>
+                <%= f.cktext_area :introduction, class: "ckeditor" %>
+            </div>
+            <div id="cv">
+                <%= f.submit   %>
+            </div>
+            <% end %>
+            <br>
+            <br>
+            <button class="btn btn-danger" type="button" onclick="closeForm()"> Cancel </button>
+        </div>
+        <br>
+    </div>
+    </h5>
+</div>
+<script>
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+</script>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.form_cv form').on('submit', function(event) {
+        event.preventDefault();
+        CKEDITOR.instances['cv_introduction'].updateElement();
+        var formHTML = event.target;
+        $.ajax({
+            url: formHTML.action,
+            method: 'PATCH',
+            data: $(this).serialize(),
+            success: function(data) {
+                $('#introduction').html(data);
+                ck_refresh();
+            }
+        });
+        return false;
+    });
+});
+</script>
