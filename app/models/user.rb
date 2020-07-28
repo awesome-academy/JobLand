@@ -8,7 +8,7 @@ class User < ApplicationRecord
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
-  
+
   def self.from_omniauth(auth)
     result = User.where(email: auth.info.email).first
     if result
@@ -27,5 +27,6 @@ class User < ApplicationRecord
       end
     end
   end
+  enum sex: { Male: 1, Female: 0 }
 end
 

@@ -1,0 +1,233 @@
+<div class="main-inner">
+  <div class="blurred-image-overlay"></div>
+  <div class="profile-header-wrapper">
+    <div class="profile-header-cover-inner"></div>
+    <div class="profile-header">
+      <a class="ui-show-modal profile-photo-wrapper">
+        <div class="profile-photo">
+          profile-photo
+        </div>
+        <div class="edit-photo">
+          <div class="icon-camera"></div>
+          <font>
+            Change photo
+          </font>
+        </div>
+        </a>
+        <header class="user-name-tags">
+          <div class="profile-name-top">
+            <div class="name-and-tagline">
+              <h3>
+                <%= @user.fullname %>
+              </h3>
+            </div>
+          </div>
+        </header>
+      </div>
+    </div>
+  <div class="two-column col-md-12">
+    <div class="row">
+      <div class="column-main col-md-8" >
+        <section class="user-introduction-section col-md-12">
+          <div class="row">
+            <h4 class="col-md-2">
+              <font>Introduction</font>
+            </h4>
+            <div class="setting-and-edit">
+              <font>
+                <%= "To edit" %>
+              </font>
+            </div>
+          </div>
+        </section>
+        <section class="user-skills-section col-md-12">
+          <div class="row">
+            <h4 class="col-md-2">
+              <font>Skills</font>
+            </h4>
+            <div class="setting-and-edit">
+              <font>
+                <%= "To edit" %>
+              </font>
+            </div>
+          </div>
+        </section>
+        <section class="user-language-section col-md-12">
+          <div class="row">
+            <h4 class="col-md-2">
+              <font>Language</font>
+            </h4>
+            <div class="setting-and-edit">
+              <font>
+                <%= "To edit" %>
+              </font>
+            </div>
+          </div>
+        </section>
+        <section class="user-experience-section col-md-12">
+          <div class="row">
+            <h4 class="col-md-2">
+              <font>Experience</font>
+            </h4>
+            <div class="setting-and-edit">
+              <font>
+                <%= "To edit" %>
+              </font>
+            </div>
+          </div>
+        </section>
+        <section class="user-education-section col-md-12">
+          <div class="row">
+            <h4 class="col-md-2">
+              <font>Education</font>
+            </h4>
+            <div class="setting-and-edit">
+              <font>
+                <%= "To edit" %>
+              </font>
+            </div>
+          </div>
+        </section>
+        <section class="user-portfolio-section col-md-12">
+          <div class="row">
+            <h4 class="col-md-2">
+              <font>Portfolio</font>
+            </h4>
+            <div class="setting-and-edit" >
+              <font>
+                <%= "To edit" %>
+              </font>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="column-side col-md-4">
+        <div class="user-profile">
+          <section class="user-profile-aside-section contact-section">
+            <div class="popup-edit-user-contact">
+              <button class="open-button-edit-user-contact" onclick="openForm()">
+                <%= "To edit" %>
+              </button>
+              <div class="form-popup" id="myForm" style="display:none;">
+                <div class="form-edit-user-contact">
+                  <form>
+                    <label class="content-edit" for="phone"><b>Phone</b></label>
+                    <input type="text" placeholder="Enter Phone" name="phone" required>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" placeholder="Enter Email" name="email" required>
+
+                    <label for="address"><b>Address</b></label>
+                    <input type="text" placeholder="Enter Address" name="address" required><br>
+
+                    <label for="sex"><b>Sex: </b></label>
+                    <input type="radio" name="sex" required>Male
+                    <input type="radio" name="sex" required>Female
+
+                    <br>
+                    <label for="birthday"><b>Birthday</b></label><br>
+                    <input type="date" placeholder="Enter Birthday" name="birthday" required><br>
+
+                    <button type="submit" class="btn">Update</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <h5>
+              <font class="contact-to-colection">
+                Contact to publish to the connection:
+              </font>
+            </h5>
+            <div class="editable-attribute">
+              <div class="contact-line col-md-12">
+                <div class="row">
+                  <div class="icon-phone contact-icon col-md-2">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                  </div>
+                  <div class="contact-value col-md-8">
+                    <%= @user.phone %>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-line col-md-12">
+                <div class="row">
+                  <div class="icon-email contact-icon col-md-2">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                  </div>
+                  <div class="contact-value col-md-8">
+                    <%= @user.email %>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-line col-md-12">
+                <div class="row">
+                  <div class="icon-email contact-icon col-md-2">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                  </div>
+                  <div class="contact-value col-md-8">
+                    <%= @user.address %>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-line col-md-12">
+                <div class="row">
+                  <div class="icon-sex contact-icon col-md-2">
+                    <i class="fa fa-venus-mars" aria-hidden="true"></i>
+                  </div>
+                  <div class="contact-value col-md-8">
+                    <%= @user.sex %>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-line col-md-12">
+                <div class="row">
+                  <div class="icon-dob contact-icon col-md-2">
+                    <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                  </div>
+                  <div class="contact-value col-md-8">
+                    <%= @user.dob %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="jobs-aready-applied">
+          <section class="user-jobs-aready-applied">
+            <div class="icon-jobs-applied">
+              <i class="fa fa-briefcase fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="applied">
+              <h5>Applied</h5>
+            </div>
+          </section>
+        </div>
+        <div class="user-saved-jobs">
+          <section class="user-all-saved-jobs">
+            <div class="icon-jobs-bookmark">
+              <i class="fa fa-bookmark fa-4x" aria-hidden="true"></i>
+            </div>
+            <div class="jobs-saved">
+              <h5>Saved Job</h5>
+          </section>
+        </div>
+        <div class="saved-jobs">
+          <section class="user-all-saved-jobs">
+            <%= "link to show all: user's saved jobs" %>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>

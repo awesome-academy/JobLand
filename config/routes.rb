@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/home', to: 'static_pages#home'
   get '/contact', to: 'static_pages#contact'
   get '/all', to: 'static_pages#products'
+  resources :users
   namespace :admin do
     root "admin#index"
   end

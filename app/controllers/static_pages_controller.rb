@@ -1,9 +1,10 @@
 class StaticPagesController < ApplicationController
-  def home
-end
+  before_action :correct_user
+  def index
+  end
 
-def help
-   end
+  def show
+  end
 
 
   def about
@@ -12,6 +13,10 @@ def help
   def products
   end
 
+  private
+  def correct_user
+    @user = 1
+  end
 end
 
 

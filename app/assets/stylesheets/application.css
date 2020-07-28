@@ -10,11 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-<<<<<<< 11ca360f8add4e1c88a130b4ca04a01f63c9f5b5
+ *= require users
  *= require styles_admin
-=======
- 
->>>>>>> showjob
  *= require_self
  *= require jobs
  */
