@@ -9,6 +9,7 @@ class Ckeditor::Picture < Ckeditor::Asset
   validates_attachment_presence :data
   validates_attachment_size :data, less_than: 2.megabytes
   validates_attachment_content_type :data, content_type: /\Aimage/
+  mount_uploader :data, CkeditorPictureUploader, mount_on: :data_file_name
 
   def url_content
     url(:content)

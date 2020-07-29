@@ -27,4 +27,8 @@ Rails.application.routes.draw do
   resources :users
   resource :experiences
   resources :cv_languages
+  namespace :employers do
+    resources :jobs
+  end
 end
+

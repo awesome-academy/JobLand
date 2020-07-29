@@ -20,3 +20,6 @@
         Language.create(name:"Vietnamese")
          Language.create(name:"Bengali")
           Language.create(name:"Korean")
+
+ Company.create(full_name: "sun",address: "Hà Nội" , phone: "09898989", email: "Sun@gmail.com", descr: "Công ty hàng đầu về Ruby" )
+

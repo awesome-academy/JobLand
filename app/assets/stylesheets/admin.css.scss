@@ -9,15 +9,6 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
-
  *
- *= require users
- *= require_self
- *= require cv_languages
- *= require jobs
- *= require cvs
- *= require bootstrap-3.3.6.min
- *= require paper-bootstrap-wizard
- *= require front-end
+ *= require styles_admin
  */
-

@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_07_28_133842) do
 
   create_table "applies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -93,11 +92,11 @@ ActiveRecord::Schema.define(version: 2020_07_28_133842) do
   end
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
     t.integer "company_id"
-    t.integer "department_id"
     t.integer "sex"
-    t.text "time_work"
-    t.text "degree"
+    t.integer "time_work"
+    t.text "grade"
     t.integer "exp"
     t.integer "salary"
     t.integer "number"
