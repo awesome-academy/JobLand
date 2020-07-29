@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_07_28_133842) do
 
   create_table "applies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -43,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_133842) do
 
   create_table "cv_languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "cv_id"
-    t.text "language_id"
+    t.integer "language_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -77,6 +78,12 @@ ActiveRecord::Schema.define(version: 2020_07_28_133842) do
     t.integer "cv_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "work_status"
+    t.string "title"
+    t.string "description"
+    t.integer "work_status2"
+    t.date "work_date"
+    t.date "work_date2"
   end
 
   create_table "job_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

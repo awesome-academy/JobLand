@@ -9,12 +9,16 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
+
  *
  *= require users
  *= require styles_admin
  *= require_self
+ *= require cv_languages
+ *= require styles_admin
  *= require jobs
  *= require cvs
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+

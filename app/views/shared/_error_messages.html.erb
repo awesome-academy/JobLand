@@ -1,0 +1,12 @@
+<% if @cv_language.errors.any? %>
+<div id="error_explanation">
+<div class="alert alert-danger">
+The form contains <%= pluralize(@cv_language.errors.count, "error") %>.
+</div>
+<ul>
+<% @cv_language.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
