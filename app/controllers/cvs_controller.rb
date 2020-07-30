@@ -8,6 +8,7 @@ class CvsController < ApplicationController
   def update
     @cv = Cv.find params[:id]
     if @cv.update cv_params
+      byebug
       respond_to do |format|
         format.html{render(partial:"cv_introduction")}
         format.json

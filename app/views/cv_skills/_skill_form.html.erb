@@ -1,0 +1,32 @@
+<div class="form-skill">
+  <%= form_for [ @cv_skill ]  do |f| %>
+    <div class="select-Skill">
+      <%= f.select :skill_id, options_from_collection_for_select(Skill.all, "id", "name") %>
+    </div>
+    <div class="submit-skill">
+       <input class="btn btn-outline-secondary skill-cancel" type="button" value="<%= t('global.cancel') %>">
+      <%= f.submit t("global.up"), class: "hello btn btn-up"%>
+    </div>
+  <%end%>
+</div>
+
+<script type="text/javascript">
+  $(".form-skill form .skill-cancel").on('click',function(event) {
+    $('.form-skill').remove();
+  });
+
+  $(document).ready(function() {
+    $(".form-skill form").on('submit',function(event) {
+      event.preventDefault();
+      var formHTML = event.target;
+      $.ajax({
+        url: formHTML.action,
+        method: 'POST',
+        data: $(this).serialize(),
+        success: function(data){
+          $('#cv_skill').html(data);
+        }
+      });
+    });
+  });
+</script>

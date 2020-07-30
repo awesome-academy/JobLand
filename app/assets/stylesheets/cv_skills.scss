@@ -2,15 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-#CvSkillForm{
-  display: none;
-}
 .CvSkillForm{
+  display: none;
   border-radius: 8px;
   background: #dedede7d;
   margin-top: 20px;
   padding: 50px 50px 0px 50px;
-
 }
 .select-Skill select{
   margin-top: -60px;
@@ -21,6 +18,7 @@
 .submit-skill{
   text-align: right;
   margin-top: 50px;
+  padding-bottom: 20px;
 }
 .listUserSkill{
   margin-top: 20px;
@@ -34,4 +32,24 @@
 }
 #submitter-skill{
   font-size: 18px;
+}
+.add-skill{
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #45494B;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 20px;
+  margin-left: 450px;
 }

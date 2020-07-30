@@ -1,0 +1,12 @@
+<ul id="skills">
+  <% current_user.cv.cv_skills.each do |cv_skill| %>
+    <div class="deleteButton">
+      <li><span class='form-control' id="submitter-skill"><%= cv_skill.skill.name %></span>
+        <div class="skillDelete">
+          <%= link_to t("global..delete"), cv_skill, remote: true, method: :delete,
+          data: { confirm: t("global..yousure") },class: 'btn btn-outline-secondary destroy' %>
+        </div>
+      </li>
+    </div>
+  <% end %>
+</ul>

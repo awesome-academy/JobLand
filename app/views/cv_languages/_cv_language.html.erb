@@ -1,19 +1,23 @@
-<button class="setting-and-edit" onclick="openForm3()">
-  <%="To edit"%>
-</button>
-<div class="CvLanguageForm" id="CvLanguageForm">
-  <div class="form_language">
-    <%= form_for(CvLanguage.new)  do |f| %>
-      <div class="select-language">
-        <%= f.select :language_id, options_from_collection_for_select(Language.all, "id", "name") %>
-      </div>
-      <div class="submit-language">
-        <button class="btn btn-outline-secondary" type="button" onclick="closeForm3()">
-          <%=  t("global.cancel") %>
-        </button>
-        <%= f.submit t("global.up"), class: "hello btn btn-up"%>
-      </div>
-    <%end%><br>
+ <div id="toggle_button-language">
+  <button class="setting-and-edit">
+    <%="To edit"%>
+  </button>
+</div>
+<div id="toggle_div-language">
+  <div class="CvLanguageForm" id="CvLanguageForm">
+    <div class="form_language">
+      <%= form_for(CvLanguage.new)  do |f| %>
+        <div class="select-language">
+          <%= f.select :language_id, options_from_collection_for_select(Language.all, "id", "name") %>
+        </div>
+        <div class="submit-language">
+          <button class="btn btn-danger" id="toggle-close-language" type="button">
+            <%=  t("global.cancel") %>
+          </button>
+          <%= f.submit t("global.up"), class: "hello btn btn-up"%>
+        </div>
+      <%end%>
+    </div>
   </div>
 </div>
 <div class="listUserLanguage">
@@ -22,7 +26,8 @@
       <div class="deleteButton">
         <li><span class='form-control' id="submitter-language" ><%= cv_language.language.name %></span>
           <div class="language-Delete">
-            <%= link_to t("global.delete"), cv_language, remote: true, method: :delete, data: { confirm: t("global.yousure") },class: 'btn btn-outline-secondary destroy' %>
+            <%= link_to t("global.delete"), cv_language, remote: true,
+             method: :delete, data: { confirm: t("global.yousure") },class: 'btn btn-outline-secondary destroy' %>
           </div>
         </li>
       </div>
@@ -31,13 +36,12 @@
 </div>
 
 <script>
-function openForm3() {
-  document.getElementById("CvLanguageForm").style.display = "block";
-}
-
-function closeForm3() {
-  document.getElementById("CvLanguageForm").style.display = "none";
-}
+$(document).on('click','#toggle_button-language',function(){
+    $('#toggle_div-language').toggle();
+  });
+  $(document).on('click','#toggle-close-language',function(){
+    $('#toggle_div-language').hide();
+  });
 </script>
 
 <script type="text/javascript">
@@ -47,10 +51,11 @@ function closeForm3() {
       var formHTML = event.target;
       $.ajax({
         url: formHTML.action,
-        method: 'PATCH',
+        method: 'POST',
         data: $(this).serialize(),
         success: function(data){
           $('#cv_language').html(data);
+          $('#toggle_div').hide();
         }
       });
     });

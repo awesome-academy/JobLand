@@ -13,6 +13,7 @@
  *
  *= require users
  *= require_self
+ *= require introductions
  *= require experience
  *= require cv_skills
  *= require cv_languages
