@@ -8,7 +8,8 @@ class User < ApplicationRecord
     Cv.create(user_id: self.id)
   end
 	devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable,
+         :recoverable, :rememberable, :validatable, 
+         # :confirmable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   def self.from_omniauth(auth)
@@ -25,7 +26,7 @@ class User < ApplicationRecord
         user.provider = auth.provider
 
         #  If you are using confirmable and the provider(s) you use validate emails
-        user.skip_confirmation!
+        # user.skip_confirmation!
       end
     end
   end

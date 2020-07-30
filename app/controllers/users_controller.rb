@@ -12,3 +12,4 @@ class UsersController < ApplicationController
     params.require(:cv_language).permit :language_id
   end
 end
+ 
