@@ -3,13 +3,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("jquery")
-require("packs/customer")
-require("packs/bootstrap.min")
-require("packs/demo")
-require("packs/jquery-2.2.4.min")
-require("packs/jquery.bootstrap.wizard")
-require("packs/jquery.validate.min")
-require("packs/paper-bootstrap-wizard")
+
 
 (function($) {
     "use strict";

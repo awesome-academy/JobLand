@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_one :cv
   has_many :cv_languages
-
+  has_many :experiemces
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   after_create do

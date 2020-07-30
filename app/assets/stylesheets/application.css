@@ -13,6 +13,7 @@
  *
  *= require users
  *= require_self
+ *= require experience
  *= require cv_languages
  *= require jobs
  *= require cvs
@@ -21,3 +22,5 @@
  *= require front-end
  */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
