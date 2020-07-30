@@ -1,6 +1,6 @@
 
 <div class="top-header">
-  
+
 </div>
 <nav class="navbar navbar-default header-front-end">
   <div class="container-fluid">
@@ -39,7 +39,7 @@
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
                 <% if user_signed_in? %>
-                  <li><%= link_to "Profile", "#", class: "dropdown-item" %></li>
+                  <li><%= link_to "Profile", user_path(current_user), class: "dropdown-item" %></li>
                   <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
                 <% else %>
                   <li><%= link_to "Log in", signin_path, class: "dropdown-item" %></li>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'skills/new'
+  get 'skills/update'
+  get 'skills/edit'
+  get 'skills/destoy'
   mount Ckeditor::Engine => '/ckeditor'
   root to: 'static_pages#home'
   resource :jobs, only: [:show]

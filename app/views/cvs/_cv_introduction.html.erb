@@ -1,9 +1,8 @@
 <div>
-    <h1 class="text-center">Introduction</h1>
     <% if can? :update, @cv %>
-    <div class="edit-cv">
-        <button class="btn btn-primary" onclick="openForm()"> ✚ Add</button>
-    </div>
+<button class="setting-and-edit" onclick="openForm1()">
+  <%= "To edit" %>
+</button>
     <% end %>
     <div>
         <%= @cv.introduction.html_safe %>
@@ -21,18 +20,18 @@
             <% end %>
             <br>
             <br>
-            <button class="btn btn-danger" type="button" onclick="closeForm()"> Cancel </button>
+            <button class="btn btn-danger" type="button" onclick="closeForm1()"> Cancel </button>
         </div>
         <br>
     </div>
     </h5>
 </div>
 <script>
-function openForm() {
+function openForm1() {
     document.getElementById("myForm").style.display = "block";
 }
 
-function closeForm() {
+function closeForm1() {
     document.getElementById("myForm").style.display = "none";
 }
 </script>
