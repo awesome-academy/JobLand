@@ -6,7 +6,7 @@ class CvLanguagesController < ApplicationController
   def create
     @cv_language = current_user.cv.cv_languages.build language_params
     @cv_language.save
-    flash[:success] = 'Success'
+    flash[:success] = t("global.experience.success")
     respond_to do |format|
       format.html {render(partial: "cv_language")}
       format.js
@@ -17,9 +17,9 @@ class CvLanguagesController < ApplicationController
   def destroy
     @cv_language = CvLanguage.find params[:id]
     @cv_language.destroy
-    flash[:success] = 'Remove'
+    flash[:success] = t("global.experience.remove")
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html
       format.js
     end
   end

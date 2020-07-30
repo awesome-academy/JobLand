@@ -1,8 +1,7 @@
 <div class = "partial" >
-     <h1>Language</h1>
-        <%= render 'shared/error_messages' %>
+     <h4><%= t("global.language.title") %></h4>
   <div class="edit-language">
-    <button class="btn btn-outline-secondary" onclick="openForm()"> ✚ Add</button>
+    <button class="btn btn-outline-secondary" onclick="openForm()"> ✚ </button>
   </div>
   <div class="form-popup" id="myForm">
     <br>
@@ -11,8 +10,8 @@
       <%= form_for(CvLanguage.new)  do |f| %>
         <%= f.select :language_id, options_from_collection_for_select(Language.all, "id", "name") %>
         <div class="submit-language">
-          <%= f.submit "Up", class: "hello btn btn-primary"%>
-          <button class="btn btn-outline-secondary" type="button" onclick="closeForm()"> Cancel </button>
+          <%= f.submit t("global.language.up"), class: "hello btn btn-up"%>
+          <button class="btn btn-outline-secondary" type="button" onclick="closeForm()">  <%=  t("global.language.cancel") %> </button>
         </div>
       <%end%>
       <br>
@@ -22,7 +21,7 @@
    <ul id="submitter1">
       <% current_user.cv.cv_languages.each do |cv_language| %>
     <li><span class='form-control' id="submitter" ><%= cv_language.language.name %></span>
- <%= link_to "Delete", cv_language, remote: true, method: :delete, data: { confirm: "You sure?" },class: 'btn btn-outline-secondary destroy' %>
+ <%= link_to t("global.language.delete"), cv_language, remote: true, method: :delete, data: { confirm: t("global.language.yousure") },class: 'btn btn-outline-secondary destroy' %>
   </li>
       <% end %>
     </ul>

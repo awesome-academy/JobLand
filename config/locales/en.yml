@@ -30,4 +30,28 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  global:
+    language:
+       view: "View - Canpaigns"
+       create2: "Add - Products"
+       delete: "Delete"
+       edit: "Edit"
+       update: "Update"
+       allusers: "All Users"
+       delete: "Delete"
+       up: "Update"
+       yousure: "You Sure ?"
+       title: "Languages"
+       cancel: "Cancel"
+    experience:
+       title: "Experiences"
+       company: "Company"
+       title1: "Title"
+       des: "Description"
+       from: "From"
+       to: "To"
+       inter: "Intership"
+       work: "I currently work here"
+       remove: "Remove"
+       success: "Success"
+
