@@ -3,4 +3,5 @@ class Cv < ApplicationRecord
   has_many :cv_languages
   has_many :experiences
   has_many :portfolios, dependent: :destroy
+  has_many :cv_skills
 end
