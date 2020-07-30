@@ -3,4 +3,6 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
     @cv = Cv.find params[:id]
   end
+  def update
+  end
 end

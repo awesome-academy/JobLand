@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'skills/new'
-  get 'skills/update'
-  get 'skills/edit'
-  get 'skills/destoy'
   mount Ckeditor::Engine => '/ckeditor'
   root to: 'static_pages#home'
   resource :jobs, only: [:show]
@@ -13,7 +9,6 @@ Rails.application.routes.draw do
   get '/home', to: 'static_pages#home'
   get '/contact', to: 'static_pages#contact'
   get '/all', to: 'static_pages#products'
-  resources :users
   namespace :admin do
     root "admin#index"
   end
