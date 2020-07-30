@@ -54,32 +54,32 @@
   cursor: pointer;
   text-align: center;
   white-space: nowrap;
+  margin-top: 20px;
   margin-left: 450px;
 }
-
-.user-introduction-section{
+.user-introduction-div{
   margin-top: 50px;
-  height:100px;
+  padding: 10px;
 }
-.user-skills-section{
+.user-skills-div{
   margin-top: 50px;
-  height:100px;
+  padding: 10px;
 }
-.user-language-section{
+.user-language-div{
   margin-top: 50px;
-  height:100px;
+  padding: 10px;
 }
-.user-experience-section{
+.user-experience-div{
   margin-top: 50px;
-  height:100px;
+  padding: 10px;
 }
-.user-education-section{
+.user-education-div{
   margin-top: 50px;
-  height:100px;
+  padding: 10px;
 }
-.user-portfolio-section{
+.user-portfolio-div{
   margin-top: 50px;
-  height:100px;
+  padding: 10px;
 }
 .selection{
   border-style: groove;
@@ -102,7 +102,7 @@
 }
 .name-and-tagline{
   margin-left: 130px;
-  margin-top: -40px;
+  margin-top: -66px;
 }
 .user-profile-aside-section{
   padding: 20px 20px 15px 20px;
@@ -145,12 +145,16 @@
   border-style: groove;
   text-align: center;
 }
-.form-popup{
+#profileForm-popup{
   background: #dde0e2;
+  display:none; width: 100%;
 }
 .form-edit-user-contact{
   text-align: center;
 }
 .fa{
   text-align: left;
+}
+.input-address{
+  text-align: center;
 }
