@@ -39,6 +39,7 @@ gem 'bootstrap-sass', '3.4.1'
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
 gem 'rails-i18n'
+gem 'rails_admin'
 
 
 group :development, :test do

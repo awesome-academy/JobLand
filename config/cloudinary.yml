@@ -1,6 +1,7 @@
 development:
-  cloud_name: <%= ENV["cloudinary_cloud_name"]%>
-  api_key: <%= ENV["cloudinary_api_key"]%>
-  api_secret: <%= ENV["cloudinary_api_secret"]%>
+  cloud_name: "ruby-fashions"
+  api_key: "338794581558764"
+  api_secret: "6-EqMbG0XW8lXZtmod2JYAwnmJw"
   enhance_image_tag: true
   static_file_support: false
+
