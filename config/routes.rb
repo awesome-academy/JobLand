@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  get 'jobs/show'
+  get 'companies/show'
   mount Ckeditor::Engine => '/ckeditor'
   root to: 'static_pages#home'
   resource :jobs, only: [:show]
@@ -26,9 +28,11 @@ Rails.application.routes.draw do
   resources :cvs
   resources :users
   resources :experiences
+
   resources :cv_languages
   namespace :employers do
-    resources :jobs
+    resources :jobs, only: [:show]
+    resources :companies, only: [:show]
   end
   resources :portfolios
 end

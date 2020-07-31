@@ -20,7 +20,9 @@
  *= require bootstrap-3.3.6.min
  *= require paper-bootstrap-wizard
  *= require front-end
+ *= require static_pages
+ *= require font-awesome
  */
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
+

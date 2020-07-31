@@ -14,6 +14,11 @@ class Employers::JobsController < ApplicationController
 			redirect_to root_url
 		end
 	end
+
+	def show
+		@job = Job.first
+		@user = User.first
+	end
 	
 	private
   def job_params
