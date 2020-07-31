@@ -68,6 +68,10 @@ ActiveRecord::Schema.define(version: 2020_07_28_133842) do
   create_table "educations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "cv_id"
+    t.date "yearschool"
+    t.text "degree"
+    t.text "school"
+    t.text "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

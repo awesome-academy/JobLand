@@ -1,0 +1,71 @@
+<div>
+    <div class="edit-cv">
+        <button class="btn btn-primary" onclick="openForm()"> ✚ Add</button>
+    </div>
+    <div class="form-popup" id="myForm">
+        <div class="education ">
+            <%= form_for @education  do |f| %>
+            <div class = "form-group">
+                <%= f.label "School" %>
+                <%= f.text_field :school ,placeholder: "",class: "form-control" %>
+            </div>
+            <div class = "form-group">
+                 <%= f.label "Degree" %>
+                <%= f.text_field :degree ,placeholder: "",class: "form-control"  %>
+            </div>
+           <div class = "form-group">
+            <%= f.label "Graduation" %>
+                <%= f.date_field :yearschool ,placeholder: ""  %>
+                 </div>
+            <div class = "form-group">
+                <%= f.label "Descr" %>
+                <%= f.text_field :status  ,placeholder: "",class: "form-control" %>
+               </div>
+            <div class = "submit-education">
+            <div class="submit">
+
+                <button type="button" class='btn btn-outline-secondary destroy' onclick="closeForm()">Cancel</button>
+                <%= f.submit class:"btn btn-primary con"%>
+            </div>
+            <% end %>
+        </div>
+        </div>
+    </div>
+    <script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+</div>
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.education form').on('submit', function(event) {
+        event.preventDefault();
+        CKEDITOR.instances['new_education'].updateElement();
+        var formHTML = event.target;
+        $.ajax({
+            url: formHTML.action,
+            method: 'GET',
+            data: $(this).serialize(),
+            success: function(data) {
+                $('#education').html(data);
+                ck_refresh();
+            }
+        });
+        return false;
+    });
+});
+</script>
+
+
+
+
+

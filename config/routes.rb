@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     delete "signout" => "devise/sessions#destroy"
   end
   resources :cvs
+  resources :educations
   resources :users
   resources :experiences
   resources :cv_languages
