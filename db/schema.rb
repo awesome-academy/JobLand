@@ -71,10 +71,8 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
   end
 
   create_table "cv_skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "Cv_id"
-    t.integer "shill_id"
-    t.integer "year_exp"
-    t.text "level"
+    t.integer "cv_id"
+    t.integer "skill_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

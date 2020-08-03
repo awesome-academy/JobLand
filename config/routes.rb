@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   resources :cvs
   resources :users
   resources :experiences
-
+  resources :cv_skills
   resources :cv_languages
   namespace :employers do
     resources :jobs, only: [:show]

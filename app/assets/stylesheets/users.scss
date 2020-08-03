@@ -25,13 +25,13 @@
 }
 .column-main{
   margin-top: 50px;
-  height: 1000px;
+  height: auto;
   border-right: 1px solid #EBEDEF;
   border-top: 1px solid #EBEDEF;
 }
 .column-side{
   margin-top: 50px;
-  height: 1000px;
+  height: auto;
   border-top: 1px solid #EBEDEF;
 }
 .user-profile{
@@ -149,12 +149,14 @@
   background: #dde0e2;
   display:none; width: 100%;
 }
-.form-edit-user-contact{
-  text-align: center;
-}
-.fa{
+.form-edit-user-profile-left{
+  margin-top: 15px;
   text-align: left;
 }
-.input-address{
+.form-edit-user-profile-center{
   text-align: center;
+  margin-top: 15px;
+}
+.fa{
+
 }

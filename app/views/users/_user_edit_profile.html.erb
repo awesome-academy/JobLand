@@ -5,22 +5,22 @@
   <div class="form-popup" id="profileForm-popup" style="display:none;">
     <div class="form-edit-user-contact">
       <%= form_for [ @user ]  do |f| %>
-        <div class="form-user-profile">
+        <div class="form-edit-user-profile-left">
           <%= f.label "Phone" %>
           <%= f.text_field :phone, placeholder: 'Enter phone', class: 'form-control' %>
         </div>
-        <div class="form-user-profile">
+        <div class="form-edit-user-profile-left">
           <%= f.label "Address" %>
           <%= f.text_field :address, placeholder: "", class: 'form-control' %>
         </div>
-        <div class="form-user-profile">
+        <div class="form-edit-user-profile-center">
           <%= f.label :sex %><br />
           <%= f.label :sex, "Male", :value => "1"  %>
           <%= f.radio_button :sex, 1 %>
           <%= f.label :sex, "Female", :value => "0" %>
           <%= f.radio_button :sex, 0 %>
         </div>
-        <div class="form-user-profile">
+        <div class="form-edit-user-profile-center">
           <%= f.label "Birthday" %><br>
           <%= f.date_select :dob, order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 150 %>
         </div>
@@ -28,7 +28,6 @@
     </div><br>
     <div class = "submit-user-profile" >
       <button class="btn btn-outline-secondary" type="button"  onclick="closeForm()"> Cancel </button>
-
     </div>
   </div>
 </div>
