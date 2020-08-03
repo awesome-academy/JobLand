@@ -19,9 +19,9 @@ Rails.application.routes.draw do
               path_names: {sign_in: 'login' ,sign_out: 'logout' ,edit: 'profile',sign_up: 'resgistration'},
               controllers: {omniauth_callbacks: 'omniauth_callbacks' }
   as :user do
-    get "signin" => "devise/sessions#new"
-    post "signin" => "devise/sessions#create"
-    delete "signout" => "devise/sessions#destroy"
+    get "signin", to: "devise/sessions#new"
+    post "signin", to: "devise/sessions#create"
+    delete "signout", to: "devise/sessions#destroy"
   end
   resources :cvs
   resources :users
@@ -30,5 +30,6 @@ Rails.application.routes.draw do
   namespace :employers do
     resources :jobs
   end
+  resources :portfolios
 end
 

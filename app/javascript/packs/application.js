@@ -10,6 +10,7 @@ require("packs/jquery.bootstrap.wizard")
 require("packs/jquery.validate.min")
 require("packs/paper-bootstrap-wizard")
 require("packs/jquery-2.2.4.min")
+//= require activestorage
 
 import 'bootstrap'
 
