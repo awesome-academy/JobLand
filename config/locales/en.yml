@@ -93,4 +93,20 @@ en:
     work: "I currently work here"
     remove: "Remove"
     success: "Success"
+  employers:
+    jobs:
+      index:
+        welcome: "Welcome:"
+        jobPost: "Job posts"
+        jobEmpty: "Let's create the first job"
+        title: "Headline"
+        status: "Status"
+        edit: "Edit"
+        delete: "Delete"
+        action: "Action"
+        addJob: "+ Add job"
+        Search: "Search"
+
+
+
 

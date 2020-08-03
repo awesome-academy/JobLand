@@ -1,35 +1,3 @@
-/*! =========================================================
- *
- Paper Bootstrap Wizard - V1.0.1
-*
-* =========================================================
-*
-* Copyright 2016 Creative Tim (http://www.creative-tim.com/product/paper-bootstrap-wizard)
- *
- *                       _oo0oo_
- *                      o8888888o
- *                      88" . "88
- *                      (| -_- |)
- *                      0\  =  /0
- *                    ___/`---'\___
- *                  .' \|     |// '.
- *                 / \|||  :  |||// \
- *                / _||||| -:- |||||- \
- *               |   | \  -  /// |   |
- *               | \_|  ''\---/''  |_/ |
- *               \  .-\__  '-'  ___/-. /
- *             ___'. .'  /--.--\  `. .'___
- *          ."" '<  `.___\_<|>_/___.' >' "".
- *         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
- *         \  \ `_.   \_ __\ /__ _/   .-` /  /
- *     =====`-.____`.___ \_____/___.-`___.-'=====
- *                       `=---='
- *
- *     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *
- *               Buddha Bless:  "No Bugs"
- *
- * ========================================================= */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, a, .td-name, td {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -106,7 +74,7 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
 
 .form-control {
   background-color: #F3F2EE;
-  border: 1px solid #e8e7e3;
+  border: 1px solid #cfcfca;
   border-radius: 4px;
   color: #66615b;
   font-size: 14px;

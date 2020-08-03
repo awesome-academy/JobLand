@@ -9,9 +9,8 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><%= link_to "Page1", jobs_path%></li>
-      <li class="nav-item cta mr-md-1"><a href="new-post.html" class="nav-link">Post a Job</a></li>
+      <li> <%= link_to "English", locale:"en" %></li>
+      <li class="nav-item cta mr-md-1"><%= link_to "Vietnamese", locale:"vi" %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <form class="navbar-form navbar-left" action="/action_page.php">
@@ -36,7 +35,7 @@
             <li class="nav-item mr-4">
               <a href="#"><i class="fa fa-bell-o fa-lg" aria-hidden="true"></i></a>
             </li>
-            <li class="nav-item mr-3 dropdown">
+            <li class="dropdown nav-item mr-3">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
                 <% if user_signed_in? %>

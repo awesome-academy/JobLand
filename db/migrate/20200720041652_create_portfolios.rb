@@ -8,6 +8,7 @@ class CreatePortfolios < ActiveRecord::Migration[6.0]
       t.string :month
       t.string :year
       t.references :cv, null: false, foreign_key: true
+      t.text :descr
 
       t.timestamps
     end

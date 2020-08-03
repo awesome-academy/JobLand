@@ -17,3 +17,16 @@ vi:
     work: "I currently work here"
     remove: "Remove"
     success: "Success"
+  employers:
+    jobs:
+      index:
+        welcome: "Chào Mừng:"
+        jobPost: "Bài tuyển dụng"
+        jobEmpty: "Hãy tạo công việc đầu tiên"
+        title: "Tiêu đề"
+        status: "Trạng thái"
+        edit: "Sửa"
+        delete: "Xóa"
+        action: "Hành động"
+        addJob: "+ Tạo việc làm"
+        Search: "Tìm kiếm"
