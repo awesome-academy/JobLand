@@ -64,9 +64,10 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
 
   create_table "cv_languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "cv_id"
-    t.integer "language_id"
+    t.bigint "language_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["language_id"], name: "index_cv_languages_on_language_id"
   end
 
   create_table "cv_skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -88,14 +89,15 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
 
   create_table "educations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.integer "cv_id"
+    t.bigint "cv_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cv_id"], name: "index_educations_on_cv_id"
   end
 
   create_table "experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.integer "cv_id"
+    t.bigint "cv_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "work_status"
@@ -104,6 +106,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
     t.integer "work_status2"
     t.date "work_date"
     t.date "work_date2"
+    t.index ["cv_id"], name: "index_experiences_on_cv_id"
   end
 
   create_table "job_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -114,7 +117,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
-    t.integer "company_id"
+    t.bigint "company_id"
     t.integer "sex"
     t.integer "time_work"
     t.text "grade"
@@ -126,6 +129,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
     t.text "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 
   create_table "languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -179,5 +183,9 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cv_languages", "languages"
+  add_foreign_key "educations", "cvs"
+  add_foreign_key "experiences", "cvs"
+  add_foreign_key "jobs", "companies"
   add_foreign_key "portfolios", "cvs"
 end
