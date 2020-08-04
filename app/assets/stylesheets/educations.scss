@@ -17,8 +17,11 @@
     border-color: #007bff;
 }
 
+#form-control-id{
+    padding-right: 40px;
+}
 
-.form-control {
+.form-show-education {
     display: block;
     width: min-content;
     height: calc(1.5em + 0.75rem + 2px);

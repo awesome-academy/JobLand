@@ -1,0 +1,26 @@
+<li id="education-<%= education.id %>">
+    <p><%= education.school %></p>
+    <span>
+        <%= education.degree %></span><br>
+    <span>
+        <%= education.yearschool %></span><br>
+    <%= link_to "Delete", education_path(education), class: "delete-education","data-id": education.id %>
+    <%= link_to "Edit", edit_education_path(education),class: "edit-education","data-id": education.id %>
+</li>
+<script type="text/javascript">
+$("#education-<%= education.id %> .delete-education").on('click', function(event) {
+    event.preventDefault();
+    var id = $(this).data('id');
+    $.ajax({
+        url: $(this).attr('href'),
+        method: 'DELETE',
+        dataType: 'JSON',
+        data: $(this).serialize(),
+        success: function(data) {
+            if (data.result == 'OK') {
+                $('#education-' + id).remove();
+            }
+        }
+    });
+});
+</script>

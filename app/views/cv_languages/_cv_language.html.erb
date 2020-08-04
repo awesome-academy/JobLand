@@ -1,38 +1,41 @@
-<div class = "partial" >
-     <h4><%= t("global.language.title") %></h4>
-  <div class="edit-language">
-    <button class="btn btn-outline-secondary" onclick="openForm()"> ✚ </button>
-  </div>
-  <div class="form-popup" id="myForm">
-    <br>
-    <h5 style="text-indent:100px">
-    <div class="form_language">
-      <%= form_for(CvLanguage.new)  do |f| %>
-        <%= f.select :language_id, options_from_collection_for_select(Language.all, "id", "name") %>
-        <div class="submit-language">
-          <%= f.submit t("global.language.up"), class: "hello btn btn-up"%>
-          <button class="btn btn-outline-secondary" type="button" onclick="closeForm()">  <%=  t("global.language.cancel") %> </button>
-        </div>
-      <%end%>
-      <br>
+<div class="partial">
+    <h4>
+        <%= t("global.language.title") %>
+    </h4>
+    <div class="edit-language">
+        <button class="btn btn-outline-secondary" onclick="openForm()"> ✚ </button>
     </div>
-    </h5>
-   </div>
-   <ul id="submitter1">
-      <% current_user.cv.cv_languages.each do |cv_language| %>
-    <li><span class='form-control' id="submitter" ><%= cv_language.language.name %></span>
- <%= link_to t("global.language.delete"), cv_language, remote: true, method: :delete, data: { confirm: t("global.language.yousure") },class: 'btn btn-outline-secondary destroy' %>
-  </li>
-      <% end %>
+    <div class="form-popup" id="myForm">
+        <br>
+        <h5 style="text-indent:100px">
+            <div class="form_language">
+                <%= form_for(CvLanguage.new)  do |f| %>
+                <%= f.select :language_id, options_from_collection_for_select(Language.all, "id", "name") %>
+                <div class="submit-language">
+                    <%= f.submit t("global.language.up"), class: "hello btn btn-up"%>
+                    <button class="btn btn-outline-secondary" type="button" onclick="closeForm()">
+                        <%=  t("global.language.cancel") %> </button>
+                </div>
+                <%end%>
+                <br>
+            </div>
+        </h5>
+    </div>
+    <ul id="submitter1">
+        <% current_user.cv.cv_languages.each do |cv_language| %>
+        <li><span class='form-control' id="submitter">
+                <%= cv_language.language.name %></span>
+            <%= link_to t("global.language.delete"), cv_language, remote: true, method: :delete, data: { confirm: t("global.language.yousure") },class: 'btn btn-outline-secondary destroy' %>
+        </li>
+        <% end %>
     </ul>
 </div>
-
 <script>
-  function openForm() {
+function openForm() {
     document.getElementById("myForm").style.display = "block";
-  }
+}
 
-  function closeForm() {
+function closeForm() {
     document.getElementById("myForm").style.display = "none";
-  }
+}
 </script>
