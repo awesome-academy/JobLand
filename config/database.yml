@@ -9,7 +9,8 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  socket: /var/run/mysqld/mysqld.sock
+  password: <%= ENV["mysql_user_password"]%>
+  #socket: /var/run/mysqld/mysqld.sock
 development:
   <<: *default
   database: JobLand

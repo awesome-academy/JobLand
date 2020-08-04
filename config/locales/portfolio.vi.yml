@@ -1,0 +1,10 @@
+vi:
+  pf:
+    edit: Chỉnh sửa
+    delete: Xoá
+    title: Tiêu đề
+    link: Đường dẫn
+    description: Mô tả
+    made in: Thời gian
+    cancel: Huỷ
+    submit: Đăng
