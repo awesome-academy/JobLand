@@ -31,6 +31,7 @@
 
 en:
   global:
+<<<<<<< HEAD
     language:
        view: "View - Canpaigns"
        create2: "Add - Products"
@@ -106,7 +107,3 @@ en:
         action: "Action"
         addJob: "+ Add job"
         Search: "Search"
-
-
-
-

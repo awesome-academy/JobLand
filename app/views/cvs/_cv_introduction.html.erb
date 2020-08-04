@@ -1,44 +1,35 @@
-<div>
-    <% if can? :update, @cv %>
-<button class="setting-and-edit" onclick="openForm1()">
-  <%= "To edit" %>
-</button>
-    <% end %>
-    <div>
-        <%= @cv.introduction.html_safe %>
-    </div>
-    <div class="form-popup" id="myForm">
-        <br>
-        <div class="form_cv">
-            <%= form_for @cv, method: :patch do |f| %>
-            <div>
-                <%= f.cktext_area :introduction, class: "ckeditor" %>
-            </div>
-            <div id="cv">
-                <%= f.submit   %>
-            </div>
-            <% end %>
-            <br>
-            <br>
-            <button class="btn btn-danger" type="button" onclick="closeForm1()"> Cancel </button>
+<% if can? :update, @cv %>
+  <button class="setting-and-edit" onclick="openForm1()">
+    <%= "To edit" %>
+  </button>
+<% end %>
+  <div class="CvIntroductionForm" id="CvIntroductionForm" style="display :none">
+    <div class="form-introduction">
+      <%= form_for @cv, method: :patch do |f| %>
+        <div class="cke-form">
+          <%= f.cktext_area :introduction, class: "ckeditor" %>
         </div>
-        <br>
+        <div class="submit-introduction">
+          <button class="btn btn-danger" type="button" onclick="closeForm1()"> Cancel </button>
+          <%= f.submit t("global.up"), class: "hello btn btn-up"%>
+        </div>
+      <% end %>
+      </div>
     </div>
-    </h5>
+<div>
+  <%= @cv.introduction %>
 </div>
 <script>
 function openForm1() {
-    document.getElementById("myForm").style.display = "block";
+    $("#CvIntroductionForm").show();
 }
-
 function closeForm1() {
-    document.getElementById("myForm").style.display = "none";
+    $("#CvIntroductionForm").hide();
 }
 </script>
-</div>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('.form_cv form').on('submit', function(event) {
+    $('.form-introduction').on('submit', function(event) {
         event.preventDefault();
         CKEDITOR.instances['cv_introduction'].updateElement();
         var formHTML = event.target;

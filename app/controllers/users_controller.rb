@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
   def new
     @cv_language  =  CvLanguage.new
-    @skill = Skill.new
+    @cv_skill = CvSkill.new
   end
 
   def show
+    @cv_skill = CvSkill.new
     @user = User.find params[:id]
     @cv = Cv.find params[:id]
-    @skill = Skill.all
   end
 
   def update
@@ -24,4 +24,3 @@ class UsersController < ApplicationController
     params.require(:cv_language).permit :language_id
   end
 end
- 
