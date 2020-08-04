@@ -1,63 +1,12 @@
- <div id="toggle_button-language">
-  <button class="setting-and-edit">
-    <%="To edit"%>
-  </button>
-</div>
-<div id="toggle_div-language">
-  <div class="CvLanguageForm" id="CvLanguageForm">
-    <div class="form_language">
-      <%= form_for(CvLanguage.new)  do |f| %>
-        <div class="select-language">
-          <%= f.select :language_id, options_from_collection_for_select(Language.all, "id", "name") %>
+<ul id="edit_language">
+  <% current_user.cv.cv_languages.each do |cv_language| %>
+    <div class="deleteButton">
+      <li><span class='form-control' id="submitter-skill"><%= cv_language.language.name %></span>
+        <div class="skillDelete">
+          <%= link_to t("global.delete"), cv_language, remote: true, method: :delete,
+          data: { confirm: t("global.yousure") },class: 'btn btn-outline-secondary destroy' %>
         </div>
-        <div class="submit-language">
-          <button class="btn btn-danger" id="toggle-close-language" type="button">
-            <%=  t("global.cancel") %>
-          </button>
-          <%= f.submit t("global.up"), class: "hello btn btn-up"%>
-        </div>
-      <%end%>
+      </li>
     </div>
-  </div>
-</div>
-<div class="listUserLanguage">
-  <ul id="submitter1">
-    <% current_user.cv.cv_languages.each do |cv_language| %>
-      <div class="deleteButton">
-        <li><span class='form-control' id="submitter-language" ><%= cv_language.language.name %></span>
-          <div class="language-Delete">
-            <%= link_to t("global.delete"), cv_language, remote: true,
-             method: :delete, data: { confirm: t("global.yousure") },class: 'btn btn-outline-secondary destroy' %>
-          </div>
-        </li>
-      </div>
-    <% end %>
-  </ul>
-</div>
-
-<script>
-$(document).on('click','#toggle_button-language',function(){
-    $('#toggle_div-language').toggle();
-  });
-  $(document).on('click','#toggle-close-language',function(){
-    $('#toggle_div-language').hide();
-  });
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    $(".form_language form").on('submit',function(event) {
-      event.preventDefault();
-      var formHTML = event.target;
-      $.ajax({
-        url: formHTML.action,
-        method: 'POST',
-        data: $(this).serialize(),
-        success: function(data){
-          $('#cv_language').html(data);
-          $('#toggle_div').hide();
-        }
-      });
-    });
-  });
-</script>
+  <% end %>
+</ul>
