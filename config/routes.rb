@@ -26,16 +26,6 @@ Rails.application.routes.draw do
     namespace :admin do
       root "admin#index"
     end
-
-    devise_for :users,
-                path: '',
-                path_names: {sign_in: 'login' ,sign_out: 'logout' ,edit: 'profile',sign_up: 'resgistration'},
-                controllers: {omniauth_callbacks: 'omniauth_callbacks' }
-    as :user do
-      get "signin", to: "devise/sessions#new"
-      post "signin", to: "devise/sessions#create"
-      delete "signout", to: "devise/sessions#destroy"
-    end
     resources :cvs
     resources :users
     resources :experiences

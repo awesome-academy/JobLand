@@ -1,13 +1,9 @@
 class User < ApplicationRecord
   has_one :cv
   has_many :cv_languages
-<<<<<<< HEAD
-  has_many :experiences
   has_many :cv_skill
-=======
   has_many :experiemces
   belongs_to :company, optional: true
->>>>>>> index-job
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   after_create do
