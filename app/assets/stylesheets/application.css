@@ -23,6 +23,8 @@
  *= require front-end
  *= require static_pages
  *= require font-awesome
+ *= require index-job
+
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";

@@ -29,8 +29,6 @@ import 'bootstrap'
   });
 })
 
-console.log(1)
-
 
 $('#myCarousel').carousel({
   interval: 4000
@@ -52,6 +50,4 @@ $('.carousel .item').each(function(){
     next.children(':first-child').clone().appendTo($(this));
   }
 });
-
-
 

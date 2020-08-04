@@ -34,11 +34,13 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
   end
 
   create_table "applies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "job_id"
-    t.integer "user_id"
+    t.bigint "job_id"
+    t.bigint "user_id"
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["job_id"], name: "index_applies_on_job_id"
+    t.index ["user_id"], name: "index_applies_on_user_id"
   end
 
   create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -63,26 +65,30 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
   end
 
   create_table "cv_languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "cv_id"
+    t.bigint "cv_id"
     t.bigint "language_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cv_id"], name: "index_cv_languages_on_cv_id"
     t.index ["language_id"], name: "index_cv_languages_on_language_id"
   end
 
   create_table "cv_skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "cv_id"
-    t.integer "skill_id"
+    t.bigint "cv_id"
+    t.bigint "skill_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cv_id"], name: "index_cv_skills_on_cv_id"
+    t.index ["skill_id"], name: "index_cv_skills_on_skill_id"
   end
 
   create_table "cvs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.text "descr"
     t.text "introduction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cvs_on_user_id"
   end
 
   create_table "educations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -143,6 +149,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
     t.string "month"
     t.string "year"
     t.bigint "cv_id", null: false
+    t.text "descr"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cv_id"], name: "index_portfolios_on_cv_id"
@@ -159,6 +166,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
     t.date "dob"
     t.string "phone"
     t.string "address"
+    t.integer "company_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
@@ -181,7 +189,13 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "applies", "jobs"
+  add_foreign_key "applies", "users"
+  add_foreign_key "cv_languages", "cvs"
   add_foreign_key "cv_languages", "languages"
+  add_foreign_key "cv_skills", "cvs"
+  add_foreign_key "cv_skills", "skills"
+  add_foreign_key "cvs", "users"
   add_foreign_key "educations", "cvs"
   add_foreign_key "experiences", "cvs"
   add_foreign_key "jobs", "companies"
