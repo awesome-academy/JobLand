@@ -10,23 +10,18 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
 
- *
+ *= require educations
  *= require users
  *= require_self
  *= require introductions
  *= require experience
- *= require cv_skills
  *= require cv_languages
  *= require jobs
  *= require cvs
  *= require bootstrap-3.3.6.min
  *= require paper-bootstrap-wizard
  *= require front-end
- *= require static_pages
- *= require font-awesome
- *= require index-job
-
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-

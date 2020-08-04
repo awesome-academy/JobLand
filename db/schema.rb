@@ -93,10 +93,13 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
 
   create_table "educations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.bigint "cv_id"
+    t.integer "cv_id"
+    t.date "yearschool"
+    t.text "degree"
+    t.text "school"
+    t.text "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cv_id"], name: "index_educations_on_cv_id"
   end
 
   create_table "experiences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -196,7 +199,6 @@ ActiveRecord::Schema.define(version: 2020_07_31_020917) do
   add_foreign_key "cv_skills", "cvs"
   add_foreign_key "cv_skills", "skills"
   add_foreign_key "cvs", "users"
-  add_foreign_key "educations", "cvs"
   add_foreign_key "experiences", "cvs"
   add_foreign_key "jobs", "companies"
   add_foreign_key "portfolios", "cvs"

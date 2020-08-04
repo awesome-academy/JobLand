@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       root "admin#index"
     end
     resources :cvs
+    resources :educations
     resources :users
     resources :experiences
     resources :cv_skills
