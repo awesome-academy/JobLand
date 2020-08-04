@@ -1,0 +1,64 @@
+<div class=" form_experience">
+  <div class="form-group">
+  <%= form_for [ @experience ]  do |f| %>
+    <div class="form-group">
+      <%= f.label t("global.experience.company") %>
+      <%= f.text_field :name, placeholder: '', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label t("global.experience.title1") %>
+      <%= f.text_field :title, placeholder: "", class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.check_box :work_status, {placeholder: "",class: "form-check-input"}, "open", "closed"  %>
+      <%= f.label t("global.experience.work") %>
+    </div>
+
+    <div class="form-group">
+      <%= f.check_box :work_status2, {placeholder: "", class: "form-check-input"}, "open", "closed"  %>
+      <%= f.label t("global.experience.inter") %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label t("global.experience.des") %>
+      <%= f.text_area :description, placeholder: "", rows: "5" ,cols: "90", class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label t("global.experience.from") %>
+      <%= f.date_field :work_date, placeholder: 'dd/mm/yyyy' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label t("global.experience.to") %>
+      <%= f.date_field :work_date2, placeholder: 'dd/mm/yyyy' %>
+    </div>
+    <br>
+    <div class = "submit-language" >
+      <input class="btn btn-outline-secondary cancel" type="button" value="<%= t('global.language.cancel') %>">
+      <%= f.submit  t("global.language.up"), class: "hello btn btn-genos" %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(".form_experience form .cancel").on('click',function(event) {
+    $('.form_experience').remove();
+    $('[id^="experience"]').show();
+  });
+
+  $(".form_experience form").on('submit',function(event) {
+    event.preventDefault();
+    var formHTML = event.target;
+    $.ajax({
+      url: formHTML.action,
+      method: 'POST',
+      data: $(this).serialize(),
+      success: function(data){
+        $('#experience_section').html(data);
+      }
+    });
+  });
+</script>

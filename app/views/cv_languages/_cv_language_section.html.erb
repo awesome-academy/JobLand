@@ -1,0 +1,26 @@
+<div class="setting-and-edit" id="language">
+  <input type="button" class="btn btn-outline-secondary add-language" value=" ✚ ">
+</div>
+<div class="languageForm" id="languageForm">
+  <%= render "cv_languages/cv_language_form" %>
+</div>
+<div class="listLanguag">
+  <%= render "cv_languages/cv_language" %>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.form_language').hide();
+    $("#language .add-language").on('click',function(event) {
+      event.preventDefault();
+      $('.form_language').remove();
+      $.ajax({
+        url: '<%= new_cv_language_path %>',
+        method: 'GET',
+        success: function(data){
+          $('#language').append(data);
+        }
+      });
+    });
+  });
+</script>

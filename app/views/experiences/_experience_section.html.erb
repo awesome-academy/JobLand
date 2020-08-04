@@ -1,0 +1,41 @@
+<div id="experience">
+  <input type="button" class="btn btn-outline-secondary add" value=" ✚ ">
+</div>
+<ul id="experiences">
+  <%= render @experiences %>
+</ul>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.form_experience').hide();
+    $("#experience .add").on('click',function(event) {
+      event.preventDefault();
+      $('#experiences').hide();
+      $('.form_experience').remove();
+
+      $.ajax({
+        url: '<%= new_experience_path %>',
+        method: 'GET',
+        success: function(data){
+          $('#experience').append(data);
+        }
+      });
+    });
+    $("#experiences .edit-experience").on('click',function(event) {
+      var id  = $(this).data('id');
+      event.preventDefault();
+      $('[id^="experience"]').show();
+      $("#experience-" + id).hide();
+      $('.form_experience').remove();
+
+      $.ajax({
+        url: $(this).attr('href'),
+        method: 'GET',
+        success: function(data){
+          $('#experience-' + id).before(data);
+        }
+      });
+    });
+  });
+
+</script>

@@ -54,6 +54,7 @@ en:
        work: "I currently work here"
        remove: "Remove"
        success: "Success"
+
     job:
       local: "Local"
       appli: "Want to Visit"
@@ -106,3 +107,4 @@ en:
         action: "Action"
         addJob: "+ Add job"
         Search: "Search"
+       time: "Time"
