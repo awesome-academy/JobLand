@@ -1,0 +1,10 @@
+vi:
+  ed:
+    edit: Chỉnh sửa
+    delete: Xóa
+    school: Trường học
+    degree: Trình độ
+    graduation: Trình độ
+    descr: Mô tả
+    submit: Đăng
+    cancel: Hủy

@@ -2,7 +2,11 @@ class CreateEducations < ActiveRecord::Migration[6.0]
   def change
     create_table :educations do |t|
       t.string :name
-      t.references :cv, foreign_key: true
+      t.integer :cv_id
+      t.date :yearschool
+      t.text :degree
+      t.text :school
+      t.text :status
 
       t.timestamps
     end

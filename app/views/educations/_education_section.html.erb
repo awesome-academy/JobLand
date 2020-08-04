@@ -1,0 +1,35 @@
+<div id="education">
+  <input type="button" class="btn btn-outline-secondary add" value=" + ">
+</div>
+<ul id="educations">
+  <%= render @educations %>
+</ul>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.form_educatin').hide();
+    $('#education .add').on('click', function(event) {
+      event.preventDefault();
+      $('.form_educatin').remove();
+      $.ajax({
+        url: '<%= new_education_path %>',
+        method: 'GET',
+        success: function(data) {
+          $('#education').append(data);
+        }
+      });
+    });
+    $('#educations .edit-education').on('click', function(event) {
+      var id = $(this).data('id');
+      $('#education-' + id).hide();
+         event.preventDefault();
+      $('.form_education').remove();
+      $.ajax({
+        url: $(this).attr('href'),
+        method: 'GET',
+        success: function(data) {
+        $('#education-' + id).before(data);
+        }
+      });
+    });
+  });
+</script>
