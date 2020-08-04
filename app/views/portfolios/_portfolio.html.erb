@@ -1,90 +1,10 @@
-<div>
-<% if @portfolio.errors.any? %>
-  <ul>
-    <%= @portfolio.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-<button class="open-button" onclick="openForm6()">+ Add</button>
-<div class="form-popup" id='portfolio-form' style='display:none'>
-  <div class="form_portfolio">
-    <%= form_for @portfolio do |f| %>
-      <span class="image">
-        <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png", direct_upload: true %>
-      </span>
-      <div class='form-group'>
-  	    <%= f.label 'Title' %>
-  	    <%= f.text_field :title, placeholder: '', class: 'form-control' %>
-      </div>
-      <div class='form-group'>
-  	    <%= f.label 'Link' %>
-  	    <%= f.text_field :link, placeholder: '', class: 'form-control' %>
-      </div>
-      <div class='form-group'>
-  	    <%= f.label 'Description' %>
-  	    <%= f.text_area :description, placeholder: '', class: 'form-control' %>
-      </div>
-      <div class='form-group'>
-  	    <%= f.label 'Made in' %>
-  	    <%= f.select :year, (Time.zone.now.year - 30)..(Time.zone.now.year + 1) %>
-        <%= f.select :month, 1..12 %>
-      </div>
-  <div class='submit-portfolio'>
-  	<button type="button" class="btn cancel" onclick="closeForm6()">Close</button>
-    <%= f.submit 'Update', class: "btn btn-primary" %>
-  </div>
-  <% end %>
-  </div>
-</div>
-<ul>
-  <% current_user.cv.portfolios.each do |portfolio| %>
-  <li>
+<li id="portfolio-<%= portfolio.id %>">
   <%= image_tag portfolio.image if portfolio.image.attached? %>
-    <span><%= portfolio.title %></span><br>
-    <span><%= portfolio.link %></span><br>
-    <span><%= portfolio.month %>-<%= portfolio.year %></span><br>
-    <span><%= portfolio.description %></span><br>
-      <%= link_to "delete", portfolio, method: :delete,
-      data: { confirm: "You sure?" }, remote: true, class: "delete-portfolio" %><br>
-  <% end %>
-  </li>
-</ul>
-
-</div>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    $(".form_portfolio form").on('submit',function(event) {
-      event.preventDefault();
-      var formHTML = event.target;
-      $.ajax({
-        url: formHTML.action,
-        method: 'POST',
-        data: $(this).serialize(),
-        success: function(data){
-          $('#portfolio').html(data);
-        }
-      });
-    });
-  });
-</script>
-
-<script>
-function openForm6() {
-  document.getElementById("portfolio-form").style.display = "block";
-}
-
-function closeForm6() {
-  document.getElementById("portfolio-form").style.display = "none";
-}
-</script>
-
-<script type="text/javascript">
-  $("#micropost_image").bind("change", function() {
-  var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert("Maximum file size is 5MB. Please choose a smaller file.");
-}
-});
-</script>
+  <span><%= portfolio.title %></span><br>
+  <span><%= portfolio.link %></span><br>
+  <span><%= portfolio.month %>-<%= portfolio.year %></span><br>
+  <span><%= portfolio.description %></span><br>
+    <%= link_to t("pf.edit"), edit_portfolio_path(portfolio), class: "edit-portfolio", "data-id": portfolio.id %>
+    <%= link_to t("pf.delete"), portfolio, method: :delete,
+    data: { confirm: "You sure?" }, remote: true, class: "delete-portfolio" %><br>
+</li>
