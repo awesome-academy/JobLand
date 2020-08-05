@@ -16,11 +16,13 @@
  *= require introductions
  *= require experience
  *= require cv_languages
+ *= require cv_skills
  *= require jobs
  *= require cvs
  *= require bootstrap-3.3.6.min
  *= require paper-bootstrap-wizard
  *= require front-end
+ *= require font-awesome
  */
 
 @import "bootstrap-sprockets";
