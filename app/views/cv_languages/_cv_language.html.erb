@@ -1,8 +1,8 @@
 <ul id="edit_language">
   <% current_user.cv.cv_languages.each do |cv_language| %>
     <div class="deleteButton">
-      <li><span class='form-control' id="submitter-skill"><%= cv_language.language.name %></span>
-        <div class="skillDelete">
+      <li><span class='form-control' id="submitted-skill"><%= cv_language.language.name %></span>
+        <div class="languageDelete">
           <%= link_to t("global.delete"), cv_language, remote: true, method: :delete,
           data: { confirm: t("global.yousure") },class: 'btn btn-outline-secondary destroy' %>
         </div>
