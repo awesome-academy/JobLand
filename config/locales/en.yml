@@ -57,7 +57,7 @@ en:
 
     job:
       local: "Local"
-      appli: "Want to Visit"
+      apply: "Apply"
       members: "People members"
       what: "What we do"
       why: "Why we do"

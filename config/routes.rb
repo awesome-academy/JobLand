@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     get 'companies/show'
     mount Ckeditor::Engine => '/ckeditor'
     root to: 'static_pages#home'
-    resource :jobs, only: [:show]
+    resources :jobs
     get 'users/new'
     get '/job-post', to: 'employer#job-post'
     get '/new-post', to: 'employer#new-post'
@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     get '/all', to: 'static_pages#products'
     namespace :admin do
       root "admin#index"
+    end
+    resources :jobs do
+      resources :applyjobs, only: [:create, :destroy]
     end
     resources :cvs
     resources :educations

@@ -23,6 +23,8 @@
  *= require paper-bootstrap-wizard
  *= require front-end
  *= require font-awesome
+ *= require index-job
+ *= require applyjobs
  */
 
 @import "bootstrap-sprockets";
