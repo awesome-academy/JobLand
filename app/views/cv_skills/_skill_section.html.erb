@@ -1,11 +1,11 @@
 <div class="add-skill" id="add-skill">
-  <input type="button" class="btn add-skill-button" value=" ✚ ">
-</div>
-<div class="CvSkillForm" id="CvSkillForm">
-  <%= render "cv_skills/skill_form" %>
+  <input type="button" class="btn add-skill-button" id="add-skill-button" value=" ✚ ">
 </div>
 <div class="listUserSkill">
   <%= render "cv_skills/skill" %>
+</div>
+<div class="CvSkillForm" id="CvSkillForm">
+  <%= render "cv_skills/skill_form" %>
 </div>
 
 <script type="text/javascript">
@@ -19,7 +19,7 @@
         url: '<%= new_cv_skill_path %>',
         method: 'GET',
         success: function(data){
-          $('#add-skill').append(data);
+          $('#CvSkillForm').append(data);
         }
       });
     });
