@@ -1,14 +1,11 @@
-#toggle_div-language{
-display: none;
-}
-.CvLanguageForm{
+#languageForm{
   border-radius: 8px;
   background: #dedede7d;
   margin-top: 20px;
-  padding: 50px 50px 0px 50px;
+  padding: 0px 50px;
 }
 .select-language select{
-  margin-top: -60px;
+  margin-top: 30px;
   margin-left: -10px;
   border-radius: 6px;
   padding: 8px;
@@ -18,17 +15,25 @@ display: none;
   margin-top: 50px;
   padding-bottom: 20px;
 }
-.listUserLanguage{
+.listLanguage{
   margin-top: 20px;
 }
-.language-Delete{
+.languageDelete{
   text-align: right;
   margin-top: -38px;
 }
 .deleteButton{
   margin-top: 20px;
 }
-#submitter-language{
+#submitted-skill{
   font-size: 18px;
+  background-color: #e4e5e6;
+}
+#language{
+  margin-top: 20px;
+  text-align: right;
+}
+.add-language{
+  padding: 8px 33px !important;
 }
 

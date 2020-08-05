@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @cv_skill = CvSkill.new
+    @cv_language = CvLanguage.new
     @user = User.find params[:id]
     @cv = Cv.find params[:id]
   end

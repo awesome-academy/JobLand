@@ -1,11 +1,11 @@
-<div class="setting-and-edit" id="language">
-  <input type="button" class="btn btn-outline-secondary add-language" value=" ✚ ">
+<div class="languade" id="language">
+  <input type="button" class="btn add-language" id="add-language-button" value=" ✚ ">
+</div>
+<div class="listLanguage">
+  <%= render "cv_languages/cv_language" %>
 </div>
 <div class="languageForm" id="languageForm">
   <%= render "cv_languages/cv_language_form" %>
-</div>
-<div class="listLanguag">
-  <%= render "cv_languages/cv_language" %>
 </div>
 
 <script type="text/javascript">
@@ -18,7 +18,7 @@
         url: '<%= new_cv_language_path %>',
         method: 'GET',
         success: function(data){
-          $('#language').append(data);
+          $('#languageForm').append(data);
         }
       });
     });
