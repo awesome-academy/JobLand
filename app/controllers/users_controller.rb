@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @cv_language = CvLanguage.new
     @user = User.find params[:id]
     @cv = Cv.find params[:id]
+    @applyjobs = Applyjob.all
   end
 
   def update

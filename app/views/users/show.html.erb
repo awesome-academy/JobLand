@@ -157,17 +157,19 @@
           </section>
         </div>
         <div class="clearfix"></div>
-        <%= link_to user_applyjobs_path(current_user), :action => 'go' do %>
-        <div class="jobs-aready-applied" >
-          <section class="user-jobs-aready-applied">
-            <div class="icon-jobs-applied">
-                <i class="fa fa-briefcase fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="applied">
-              <h5>Applied</h5>
-            </div>
-          </section>
-        </div>
+        <% if @user == current_user %>
+          <%= link_to user_applyjobs_path(current_user), :action => 'go' do %>
+          <div class="jobs-aready-applied" >
+            <section class="user-jobs-aready-applied">
+              <div class="icon-jobs-applied">
+                  <i class="fa fa-briefcase fa-4x" aria-hidden="true"></i>
+              </div>
+              <div class="applied">
+                <h5>Applied</h5>
+              </div>
+            </section>
+          </div>
+          <% end %>
         <% end %>
         <div class="user-saved-jobs">
           <section class="user-all-saved-jobs">
