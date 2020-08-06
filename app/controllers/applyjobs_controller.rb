@@ -3,13 +3,15 @@ class ApplyjobsController < ApplicationController
 
   def index
     @user = current_user
-  	@applyjobs = @user.applyjobs
+  	@applyjobs = @user.applyjobs.paginate(
+      page: params[:page], per_page: Settings.paginate)
   end
 
   def create
   	@applyjob = current_user.applyjobs.build applyjob_params
   	@applyjob.save
     redirect_to job_path(@applyjob.job.id)
+    flash[:success] = t("aj.profile updated")
   	# respond_to do |format|
    #    format.html {  render partial: 'applyjobs/appliedjob_form' }
    #    format.js
@@ -17,6 +19,10 @@ class ApplyjobsController < ApplicationController
   end
 
   def destroy
+    @applyjob = Applyjob.find params[:id]
+    @applyjob.destroy
+    flash[:success] = t("aj.profile updated")
+    redirect_to user_applyjobs_path
   end
 
   private
