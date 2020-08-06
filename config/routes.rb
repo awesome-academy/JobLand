@@ -17,9 +17,6 @@ Rails.application.routes.draw do
     root to: 'static_pages#home'
     resource :jobs, only: [:show]
     get 'users/new'
-    get '/job-post', to: 'employer#job-post'
-    get '/new-post', to: 'employer#new-post'
-    get '/create-cv', to: 'employer#create-cv'
     get '/home', to: 'static_pages#home'
     get '/contact', to: 'static_pages#contact'
     get '/all', to: 'static_pages#products'
@@ -33,8 +30,8 @@ Rails.application.routes.draw do
     resources :cv_skills
     resources :cv_languages
     namespace :employers do
-      resources :jobs, only: [:show]
-      resources :companies, only: [:show]
+      resources :jobs
+      resources :companies
     end
     resources :portfolios
   end

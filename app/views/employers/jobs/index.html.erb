@@ -44,7 +44,9 @@
 		<% @jobs.each_with_index do |job,index| %>
 		<tr>
 			<td><%= index+1 %></td>
-			<td><%= job.title %></td>
+			<td>
+				<%= link_to job.title, employers_job_path(job.id) %>
+			</td>
 			<td><%= job.status %></td>
 			<td class="text-center">
 				<%= link_to edit_employers_job_path(job),  class: "btn btn-success btn-sm btn-job" do %>
