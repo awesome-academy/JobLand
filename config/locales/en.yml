@@ -108,3 +108,11 @@ en:
         addJob: "+ Add job"
         Search: "Search"
         time: "Time"
+    companies:
+      index:
+        listJobs: "Index Jobs"
+        newJob: "New Job"
+        company: "My Company"
+        manager: "Manager"
+        applicants: "Applicants"
+        jobs: "Jobs"

@@ -1,0 +1,47 @@
+<main>
+	<div class= "row">
+		<div class="col-md-4 bg-info">
+			<h5>
+				 <ul class="nav">
+            <li class="nav-item active">
+                <%= link_to  t("employers.companies.index.listJobs"), employers_jobs_path, class: "nav-link"%>
+            </li>
+            <li>
+              <%= link_to t("employers.companies.index.newJob"), new_employers_job_path,"data-turbolinks": false, class: "nav-link"%>
+            </li>
+
+            <li class="nav-item active active-pro">
+                <%= link_to t("employers.companies.index.company"), employers_company_path(current_user.company),"data-turbolinks": false, class: "nav-link"%>
+            </li>
+        </ul>
+			</h5>
+		</div>
+		<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h1><%= t("employers.companies.index.manager") %></h1>		
+				</div>
+				<div class="col-md-6 text-center">
+					<a href="#">
+						<div class="circles">
+							<div class="content2">
+								<h2><%= t("employers.companies.index.applicants")%></h2>
+								<h1>17000</h1>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6 text-center">
+					<%= link_to employers_jobs_path, class: "hover-jobs" do %>
+				  <div class="circles">
+							<div class="content2">
+								<h2><%= t("employers.companies.index.jobs")%></h2>
+								<h1><%= @jobs %></h1>
+							</div>
+						</div>
+				<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
