@@ -54,4 +54,5 @@ vi:
        remove: "Remove"
        success: "Success"
        time: "Time"
+       companyname: "Tên công ty"
 

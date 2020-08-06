@@ -1,9 +1,11 @@
 <div id="experience">
-  <input type="button" class="btn btn-outline-secondary add" value=" ✚ ">
+  <input type="button" class="btn btn-outline-secondary add" id="exp_add_button" value=" ✚ ">
 </div>
-<ul id="experiences">
+<div class="CvExperienceForm">
+</div>
+<div id="experiences">
   <%= render @experiences %>
-</ul>
+</div>
 
 <script type="text/javascript">
   $(document).ready(function() {

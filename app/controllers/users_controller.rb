@@ -5,9 +5,13 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find params[:id]
+    @experience  =  Experience.new
+    @experiences = @user.cv.experiences
+    @portfolio = Portfolio.new
+    @portfolios = current_user.cv.portfolios
     @cv_skill = CvSkill.new
     @cv_language = CvLanguage.new
-    @user = User.find params[:id]
     @cv = Cv.find params[:id]
   end
 

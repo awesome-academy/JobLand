@@ -1,47 +1,49 @@
-
-.edit-experience {
-  text-align:right;
-  margin-right : 1px;
+.form_experience{
+  text-align: left;
+  border-radius: 8px;
+  background: #dedede7d;
+  margin-top: 20px;
+  padding: 0px 50px;
 }
-
+#exp_add_button{
+  padding: 8px 33px;
+}
+#experience{
+  margin-top: 20px;
+  text-align: right;
+}
+#experiences{
+  padding-left: 15px;
+}
+.new_experience{
+  padding: 30px 0px;
+}
+.form_type_work_2{
+  margin-left: 50px;
+}
 .submit-experience{
-  margin-left: 70%;
-  width: 90%;
-
+  text-align: right;
+  margin-top: 100px;
+  padding-bottom: 20px;
 }
-.btn-genos {
-    color: #fff;
-    background-color: #00A4BB;;
-    border-color: #1e7785;
-    text-align:right;
-    margin-right : 100px;
+#exp_company_name{
+  margin-top: 30px;
 }
-
-.form-control {
-    display: block;
-    width: 30%;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+#time_work_exp{
+  text-align: right;
+  margin-top: -46px;
 }
-
-.table {
-    padding: 8px;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
+#exp_description{
+  margin-top: 35px;
 }
-
-#ex {
-    text-align: 30px;
+.exp_edit_button{
+  text-align: right;
+  margin-top: 20px;
 }
-
-
+.exp_list_form{
+  border-bottom: 1px solid #bfbfbf;
+  padding: 30px 0px;
+}
+.edit-experience{
+  padding: 7px 25px !important;
+}
