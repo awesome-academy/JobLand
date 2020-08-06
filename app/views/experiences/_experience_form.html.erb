@@ -1,4 +1,4 @@
-<div class=" form_experience">
+<div class="form_experience">
   <div class="form-group">
   <%= form_for [ @experience ]  do |f| %>
     <div class="form-group">
@@ -11,32 +11,36 @@
     </div>
 
     <div class="form-group">
-      <%= f.check_box :work_status, {placeholder: "",class: "form-check-input"}, "open", "closed"  %>
+      <%= f.check_box :work_status, {placeholder: "",class: "form-check-input"},
+       "open", "closed"  %>
       <%= f.label t("global.experience.work") %>
     </div>
-
     <div class="form-group">
-      <%= f.check_box :work_status2, {placeholder: "", class: "form-check-input"}, "open", "closed"  %>
+      <%= f.check_box :work_status2, {placeholder: "", class: "form-check-input"},
+       "open", "closed"  %>
       <%= f.label t("global.experience.inter") %>
     </div>
 
     <div class="form-group">
       <%= f.label t("global.experience.des") %>
-      <%= f.text_area :description, placeholder: "", rows: "5" ,cols: "90", class: 'form-control' %>
+      <%= f.text_area :description, placeholder: "", rows: "5" ,cols: "90",
+       class: 'form-control' %>
     </div>
 
-    <div class="form-group">
-      <%= f.label t("global.experience.from") %>
-      <%= f.date_field :work_date, placeholder: 'dd/mm/yyyy' %>
+    <div  class="exp_time_work col-md-12">
+      <div class="work_start col-md-5">
+        <%= f.label t("global.experience.from") %>
+        <%= f.date_field :work_date, placeholder: 'dd/mm/yyyy' %>
+      </div>
+
+      <div class="work_end col-md-5">
+        <%= f.label t("global.experience.to") %>
+        <%= f.date_field :work_date2, placeholder: 'dd/mm/yyyy' %>
+      </div>
     </div>
 
-    <div class="form-group">
-      <%= f.label t("global.experience.to") %>
-      <%= f.date_field :work_date2, placeholder: 'dd/mm/yyyy' %>
-    </div>
-    <br>
-    <div class = "submit-language" >
-      <input class="btn btn-outline-secondary cancel" type="button" value="<%= t('global.language.cancel') %>">
+    <div class = "submit-experience" >
+      <input class="btn btn-danger cancel" type="button" value="<%= t('global.language.cancel') %>">
       <%= f.submit  t("global.language.up"), class: "hello btn btn-genos" %>
     </div>
   <% end %>

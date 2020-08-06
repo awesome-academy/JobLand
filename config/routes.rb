@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       resources :applyjobs, only: [:create, :destroy]
     end
     resources :cvs
+    resources :experiences
     resources :educations
     resources :users do
       resources :applyjobs
