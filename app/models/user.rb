@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :cv_languages
   has_many :cv_skill
   has_many :experiemces
+  has_many :applyjobs, dependent: :destroy
   belongs_to :company, optional: true
 
   # Include default devise modules. Others available are:
