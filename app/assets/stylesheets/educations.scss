@@ -1,38 +1,38 @@
-
-
-.edit-cv {
-  text-align:right;
-  margin-right : 100px;
+.form_education{
+  text-align: left;
+  border-radius: 8px;
+  background: #dedede7d;
+  margin-top: 20px;
+  padding: 0px 50px;
 }
-
+#edu_add_button{
+  padding: 8px 33px;
+}
+#education{
+  margin-top: 20px;
+  text-align: right;
+}
 .submit-education{
-  margin-left: 60%;
-  width: 60%;
-
+  text-align: right;
+  margin-top: 100px;
+  padding-bottom: 20px;
 }
-
-.btn-primary {
-    color: #fff;
-    background-color: #00A4BB;
-    border-color: #007bff;
+.new_education{
+  padding: 30px 0px;
 }
-
-#form-control-id{
-    padding-right: 40px;
+#education_yearschool{
+  background: #dddddd;
 }
-
-.form-show-education {
-    display: block;
-    width: min-content;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+#educations{
+  padding-left: 15px;
+  padding-top: 25px;
+}
+.edit-education{
+  padding: 7px 25px !important;
+}
+#edu_descr{
+  margin-top: 35px;
+}
+#edu_school{
+  padding-top: 25px;
 }

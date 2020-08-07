@@ -14,6 +14,7 @@
 }
 #experiences{
   padding-left: 15px;
+  margin-top: 50px;
 }
 .new_experience{
   padding: 30px 0px;
@@ -27,19 +28,17 @@
   padding-bottom: 20px;
 }
 #exp_company_name{
-  margin-top: 30px;
+  margin-top: 50px;
 }
 #exp_description{
   margin-top: 35px;
 }
-.exp_edit_button{
-  text-align: right;
-  margin-top: 20px;
-}
-.exp_list_form{
-  border-bottom: 1px solid #bfbfbf;
-  padding: 30px 0px;
-}
 .edit-experience{
   padding: 7px 25px !important;
+}
+#experience_work_date{
+  background: #dddddd;
+}
+#experience_work_date2{
+  background: #dddddd;
 }

@@ -1,50 +1,45 @@
-<div class="form-popup form_education" style="display: block;">
-    <div class="form-education ">
-        <%= form_for @education  do |f| %>
-        <div class="form-group">
-            <%= f.label t("ed.school") %>
-            <%= f.text_field :school ,placeholder: "",class: "form-control" %>
-        </div>
-        <div class="form-group">
-            <%= f.label t("ed.degree") %>
-            <%= f.text_field :degree ,placeholder: "",class: "form-control"  %>
-        </div>
-        <div class="form-group">
-            <%= f.label t("ed.graduation") %>
-            <%= f.date_field :yearschool ,placeholder: ""  %>
-        </div>
-        <div class="form-group">
-            <%= f.label t("ed.descr") %>
-            <%= f.text_field :status  ,placeholder: "",class: "form-control" %>
-        </div>
-        <div class="submit-education">
-            <div class="submit">
-                <input class="btn btn-outline-secondary cancel" type="button" value='<%= t("ed.cancel") %>'>
-                <%= f.submit t("ed.submit"), class: "btn btn-primary"%>
-            </div>
-        </div>
-        <% end %>
+<div class="form_education">
+  <div class="form-education ">
+    <%= form_for @education  do |f| %>
+    <div class="form-group">
+      <%= f.label t("ed.school") %>
+      <%= f.text_field :school ,placeholder: "",class: "form-control" %>
     </div>
+    <div class="form-group">
+      <%= f.label t("ed.degree") %>
+      <%= f.text_field :degree ,placeholder: "",class: "form-control"  %>
+    </div>
+    <div class="form-group">
+      <%= f.label t("ed.graduation") %>
+      <%= f.date_field :yearschool ,placeholder: ""  %>
+    </div>
+    <div class="form-group">
+      <%= f.label t("ed.descr") %>
+      <%= f.text_field :status  ,placeholder: "",class: "form-control" %>
+    </div>
+    <div class="submit-education">
+      <input class="btn btn-danger cancel" type="button" value='<%= t("ed.cancel") %>'>
+      <%= f.submit t("ed.update"), class: "btn btn-genos"%>
+    </div>
+    <% end %>
+  </div>
 </div>
 <script type="text/javascript">
-$(".form_education form .cancel").on('click', function() {
+  $(".form_education form .cancel").on('click', function() {
     $(".form_education").remove();
     $('[id^="education"]').show();
-});
-</script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $(".form-education form").on('submit', function(event) {
-      event.preventDefault();
-      var formHTML = event.target;
-      $.ajax({
-        url: formHTML.action,
-        method: 'POST',
-        data: $(this).serialize(),
-        success: function(data) {
-            $('#education_section').html(data);
+  });
+
+  $(".form-education form").on('submit', function(event) {
+    event.preventDefault();
+    var formHTML = event.target;
+    $.ajax({
+      url: formHTML.action,
+      method: 'POST',
+      data: $(this).serialize(),
+      success: function(data) {
+        $('#education_section').html(data);
         }
     });
   });
-});
 </script>
