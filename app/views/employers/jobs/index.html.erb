@@ -38,6 +38,7 @@
 				<th>STT</th>
 				<th><%= t("employers.jobs.index.title") %></th>
 				<th><%= t("employers.jobs.index.status") %></th>
+				<th>Cv Applied</th>
 				<th class="text-center"><%= t("employers.jobs.index.action") %></th>
 			</tr>
 		</thead>
@@ -48,6 +49,7 @@
 				<%= link_to job.title, employers_job_path(job.id) %>
 			</td>
 			<td><%= job.status %></td>
+			<td><%= link_to job.applyjobs.count, employers_job_applyjobs_path(job.id) %></td>
 			<td class="text-center">
 				<%= link_to edit_employers_job_path(job),  class: "btn btn-success btn-sm btn-job" do %>
 				  <i class="fa fa-pencil" aria-hidden="true"></i> <%= t("employers.jobs.index.edit") %> 

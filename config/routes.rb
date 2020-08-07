@@ -36,7 +36,9 @@ Rails.application.routes.draw do
     resources :cv_skills
     resources :cv_languages
     namespace :employers do
-      resources :jobs
+      resources :jobs do
+        resources :applyjobs
+      end
       resources :companies
     end
     resources :portfolios
