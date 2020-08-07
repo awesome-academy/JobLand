@@ -1,7 +1,7 @@
 <div class="exp_list_form" id="experience-<%= experience.id %>">
   <div class="exp_company_name">
     <b><%=t("exp.companyname")%>:</b> <%= experience.name %>
-  </di`v>
+  </div>
   <div class="time_work_exp">
     <%= experience.work_date %>──<%= experience.work_date2 %>
   </div>
@@ -11,7 +11,7 @@
   <div id="exp_description">
     <b><%=t("exp.exp_descr")%>:</b> <%= experience.description %>
   </div>
-  <div class="exp_edit_button">
+  <div class="edit_delete_button">
     <%= link_to "Edit", edit_experience_path(experience) ,
     class: "btn btn-primary edit-experience" ,"data-id": experience.id %>
     <%= link_to t("global.language.delete"), experience, remote: true, method: :delete, data: { confirm: t("global.language.yousure") },class: 'btn btn-outline-secondary destroy' %>

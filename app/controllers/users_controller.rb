@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    @education = Education.new
+    @educations = @user.cv.educations
     @experience  =  Experience.new
     @experiences = @user.cv.experiences
     @portfolio = Portfolio.new

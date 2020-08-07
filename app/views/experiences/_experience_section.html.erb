@@ -1,20 +1,16 @@
 <div id="experience">
   <input type="button" class="btn btn-outline-secondary add" id="exp_add_button" value=" ✚ ">
 </div>
-<div class="CvExperienceForm">
-</div>
 <div id="experiences">
   <%= render @experiences %>
 </div>
-
 <script type="text/javascript">
   $(document).ready(function() {
     $('.form_experience').hide();
     $("#experience .add").on('click',function(event) {
       event.preventDefault();
-      $('#experiences').hide();
-      $('.form_experience').remove();
 
+      $('.form_experience').remove();
       $.ajax({
         url: '<%= new_experience_path %>',
         method: 'GET',
@@ -39,5 +35,4 @@
       });
     });
   });
-
 </script>

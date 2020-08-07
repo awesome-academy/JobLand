@@ -1,26 +1,37 @@
-<li id="education-<%= education.id %>">
-    <p><%= education.school %></p>
-    <span>
-        <%= education.degree %></span><br>
-    <span>
-        <%= education.yearschool %></span><br>
-    <%= link_to t("ed.delete"), education_path(education), class: "delete-education","data-id": education.id %>
-    <%= link_to t("ed.edit"), edit_education_path(education),class: "edit-education","data-id": education.id %>
-</li>
+<div class="edu_list_form" id="education-<%= education.id %>">
+  <div id="edu_school">
+    <b><%=t("ed.school")%>:</b><%= education.school %>
+  </div>
+  <div id="edu_degree" >
+    <b><%=t("ed.degree")%>:</b><%= education.degree %>
+  </div>
+  <div id="edu_yearschool">
+    <b><%=t("ed.graduation")%>:</b><%= education.yearschool %>
+  </div>
+  <div id="edu_descr">
+    <b><%=t("ed.descr")%>:</b><%= education.status %>
+  </div>
+  <div class="edit_delete_button">
+    <%= link_to t("ed.edit"), edit_education_path(education),
+      class: "btn btn-primary edit-education","data-id": education.id %>
+    <%= link_to t("ed.delete"), education_path(education),
+      class: "btn btn-outline-secondary destroy","data-id": education.id %>
+  </div>
+</div>
 <script type="text/javascript">
-$("#education-<%= education.id %> .delete-education").on('click', function(event) {
+  $("#education-<%= education.id %> .delete-education").on('click', function(event) {
     event.preventDefault();
     var id = $(this).data('id');
     $.ajax({
-        url: $(this).attr('href'),
-        method: 'DELETE',
-        dataType: 'JSON',
-        data: $(this).serialize(),
-        success: function(data) {
-            if (data.result == 'OK') {
-                $('#education-' + id).remove();
-            }
+      url: $(this).attr('href'),
+      method: 'DELETE',
+      dataType: 'JSON',
+      data: $(this).serialize(),
+      success: function(data) {
+        if (data.result == 'OK') {
+          $('#education-' + id).remove();
         }
+      }
     });
-});
+  });
 </script>

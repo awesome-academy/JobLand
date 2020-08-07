@@ -1,15 +1,15 @@
 <div id="education">
-  <input type="button" class="btn btn-outline-secondary add" value=" + ">
+  <input type="button" class="btn btn-outline-secondary add" id="edu_add_button" value=" ✚ ">
 </div>
-<ul id="educations">
+<div id="educations">
   <%= render @educations %>
-</ul>
+</div>
 <script type="text/javascript">
   $(document).ready(function() {
     $('.form_educatin').hide();
     $('#education .add').on('click', function(event) {
       event.preventDefault();
-      $('.form_educatin').remove();
+      $('.form_education').remove();
       $.ajax({
         url: '<%= new_education_path %>',
         method: 'GET',
@@ -20,14 +20,15 @@
     });
     $('#educations .edit-education').on('click', function(event) {
       var id = $(this).data('id');
+      event.preventDefault();
+      $('[id^="education"]').show();
       $('#education-' + id).hide();
-         event.preventDefault();
       $('.form_education').remove();
       $.ajax({
         url: $(this).attr('href'),
         method: 'GET',
         success: function(data) {
-        $('#education-' + id).before(data);
+          $('#education-' + id).before(data);
         }
       });
     });
