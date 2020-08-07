@@ -1,0 +1,13 @@
+<div class="row">
+  <section class="job_info">
+	<h1><%= link_to @job.title, employers_job_path(@job.id) %> - <%= @job.applyjobs.count %> Cv Applied</h1>
+  </section>
+    <% if @users.any? %>
+      <ul class="users applied">
+        <% @users.each do |user| %>
+         <li><h4><%= link_to user.fullname, user_path(user) %><h4></li>
+        <% end %>
+      </ul>
+    <% end %>
+</div>
+<%= will_paginate %>
