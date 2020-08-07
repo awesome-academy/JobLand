@@ -15,6 +15,7 @@
  *= require_self
  *= require introductions
  *= require experience
+ *= require portfolios
  *= require cv_languages
  *= require cv_skills
  *= require jobs

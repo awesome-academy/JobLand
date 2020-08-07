@@ -33,7 +33,9 @@
             <h4 class="col-md-2">
               <font>Introduction</font>
             </h4>
-            <%= render "cvs/cv_introduction" %>
+            <div id='introduction'>
+              <%= render "cvs/cv_introduction" %>
+            </div>
           </div>
         </div>
         <div class="user-experience-div col-md-12">
@@ -81,7 +83,9 @@
             <h4 class="col-md-2">
               <font>Portfolio</font>
             </h4>
-            <%= render "portfolios/portfolio_section" %>
+            <div id="portfolio_section">
+              <%= render "portfolios/portfolio_section" %>
+            </div>
           </div>
         </div>
       </div>
@@ -94,7 +98,7 @@
                 Contact to publish to the connection:
               </font>
             </h5>
-            <div class="editable-attribute col-md-12">
+            <div class="editable-attribute col-md-12 row">
               <div class="contact-line col-md-12">
                 <div class="row">
                   <div class="icon-phone contact-icon col-md-2">
@@ -112,16 +116,6 @@
                   </div>
                   <div class="contact-value col-md-8">
                     <%= @user.email %>
-                  </div>
-                </div>
-              </div>
-              <div class="contact-line col-md-12">
-                <div class="row">
-                  <div class="icon-email contact-icon col-md-2">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                  </div>
-                  <div class="contact-value col-md-8">
-                    <%= @user.address %>
                   </div>
                 </div>
               </div>
@@ -145,6 +139,16 @@
                   </div>
                 </div>
               </div>
+              <div class="contact-line col-md-12">
+                <div class="row">
+                  <div class="icon-email contact-icon col-md-2">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                  </div>
+                  <div class="contact-value col-md-10">
+                    <%= @user.address %>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>
@@ -158,6 +162,9 @@
               </div>
               <div class="applied">
                 <h5>Applied</h5>
+              </div>
+              <div id = "apply_count">
+                <%= @user.applyjobs.count %>
               </div>
             </section>
           </div>

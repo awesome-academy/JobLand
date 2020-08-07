@@ -3,7 +3,7 @@ class Portfolio < ApplicationRecord
 	has_one_attached :image
 	validates :cv_id, presence: true
 	validates :link, url: { allow_blank: true }
-	validates :description, presence: true, length: { maximum: 560 }
+	validates :description, presence: true, length: { maximum: 500 }
 	validates :title, presence: true, length: { maximum: 140 }
 	validates :image, content_type: { in: %w[image/jpeg image/gif image/png],
                message: "must be a valid image format" },

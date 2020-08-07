@@ -13,6 +13,12 @@ class EducationsController < ApplicationController
       format.html{render(partial:"education_form")}
     end
 
+  def show
+    @user = User.find params[:id]
+    @education = Education.new
+    @educations = @user.cv.educations
+  end
+
   end
 
   def create

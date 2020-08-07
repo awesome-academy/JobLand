@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_070243) do
     t.text "area"
     t.text "info"
     t.text "status"
+    t.boolean "approved", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_jobs_on_user_id"
@@ -165,7 +166,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_070243) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "sex"
+    t.integer "sex", default: 0
     t.date "dob"
     t.string "phone"
     t.string "address"

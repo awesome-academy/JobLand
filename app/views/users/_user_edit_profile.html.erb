@@ -11,33 +11,33 @@
         </div>
         <div class="form-edit-user-profile-left">
           <%= f.label "Address" %>
-          <%= f.text_field :address, placeholder: "", class: 'form-control' %>
+          <%= f.text_field :address, placeholder: " Enter address", class: 'form-control' %>
         </div>
         <div class="form-edit-user-profile-center">
           <%= f.label :sex %><br />
           <%= f.label :sex, "Male", :value => "1"  %>
-          <%= f.radio_button :sex, 1 %>
-          <%= f.label :sex, "Female", :value => "0" %>
-          <%= f.radio_button :sex, 0 %>
+          <%= f.radio_button :sex, "Male" %>
+          <%= f.label :sex, "Female", :value => "2" %>
+          <%= f.radio_button :sex, "Female" %>
         </div>
         <div class="form-edit-user-profile-center">
           <%= f.label "Birthday" %><br>
           <%= f.date_select :dob, order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 150 %>
         </div>
+        <div class = "submit-user-profile" >
+          <button class="btn btn-danger cancel" type="button" onclick="closeForm()"><%= t("pf.cancel") %></button>
+          <%= f.submit t('pf.update'), class: "btn btn-outline-secondary" %>
+        </div>
       <% end %>
     </div><br>
-    <div class = "submit-user-profile" >
-      <button class="btn btn-outline-secondary" type="button"  onclick="closeForm()"> Cancel </button>
-    </div>
   </div>
 </div>
 
 <script>
 function openForm() {
-  document.getElementById("profileForm-popup").style.display = "block";
+    $("#profileForm-popup").show();
 }
-
 function closeForm() {
-  document.getElementById("profileForm-popup").style.display = "none";
+    $("#profileForm-popup").hide();
 }
 </script>
