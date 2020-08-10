@@ -25,6 +25,7 @@
  *= require font-awesome
  *= require index-job
  *= require applyjobs
+ *= require formlogin
  */
 
 @import "bootstrap-sprockets";
