@@ -140,3 +140,17 @@ main{
   margin-left: auto;
   margin-right: auto;
 }
+
+#ui-id-1{
+  background: #ffffff;
+  border: 1px solid #333;
+  width: 18%;
+  padding-inline-start : 15px;
+}
+#ui-id-1 .ui-menu-item{
+  list-style: none;
+}
+#ui-id-1 .ui-menu-item:hover{
+  background: #f3f2ee;
+}
+

@@ -13,6 +13,10 @@ vi:
     nojob: "chưa có việc làm"
     new: "Mới"
     hot: "Nổi bật"
+    title&area: "Tên và Địa Điểm"
+    salary: "Mức Lương"
+    search: "Tìm Kiếm"
+    clear: "Xóa"
   global:
     delete: "Delete"
     edit: "Edit"

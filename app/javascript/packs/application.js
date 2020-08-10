@@ -11,6 +11,8 @@ require("packs/jquery.validate.min")
 require("packs/paper-bootstrap-wizard")
 require("packs/jquery-2.2.4.min")
 require("packs/slick.min")
+
+//require("turbolinks").start()
 //= require activestorage
 
 // import 'bootstrap'
@@ -29,6 +31,3 @@ require("packs/slick.min")
       $("body").toggleClass("sb-sidenav-toggled");
   });
 })
-
-
-
