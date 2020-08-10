@@ -2,9 +2,10 @@ class User < ApplicationRecord
   has_one :cv
   has_many :cv_languages
   has_many :cv_skill
+  has_many :jobs
   has_many :experiemces
   has_many :applyjobs, dependent: :destroy
-  has_many :jobs, through: :applyjobs
+  has_many :applied, through: :applyjobs, source: :job
   belongs_to :company, optional: true
 
   # Include default devise modules. Others available are:

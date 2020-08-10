@@ -1,4 +1,18 @@
 vi:
+  home:
+    filterSesrch: "--Lọc tìm kiếm--"
+    one: "Một"
+    fullTime: "Toàn thời gian"
+    partTime: "Bán thời gian"
+    Male: "Nam"
+    Female: "Nữ"
+    Filter: "Lọc"
+    sort: "Sắp xếp:"
+    Newest: "Mới nhất"
+    Recommended: "Đề xuất"
+    nojob: "chưa có việc làm"
+    new: "Mới"
+    hot: "Nổi bật"
   global:
     delete: "Delete"
     edit: "Edit"

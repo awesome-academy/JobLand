@@ -123,19 +123,20 @@ ActiveRecord::Schema.define(version: 2020_08_05_070243) do
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
-    t.bigint "company_id"
+    t.bigint "user_id"
     t.integer "sex"
     t.integer "time_work"
     t.text "grade"
     t.integer "exp"
     t.integer "salary"
     t.integer "number"
+    t.boolean "slide"
     t.text "area"
     t.text "info"
     t.text "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["company_id"], name: "index_jobs_on_company_id"
+    t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
   create_table "languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -199,6 +200,6 @@ ActiveRecord::Schema.define(version: 2020_08_05_070243) do
   add_foreign_key "cv_skills", "skills"
   add_foreign_key "cvs", "users"
   add_foreign_key "experiences", "cvs"
-  add_foreign_key "jobs", "companies"
+  add_foreign_key "jobs", "users"
   add_foreign_key "portfolios", "cvs"
 end

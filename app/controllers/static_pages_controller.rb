@@ -1,20 +1,9 @@
 class StaticPagesController < ApplicationController
 
-  def index
-  end
-
   def home
+    @job_news = Job.all.job_new.paginate page: params[:page], per_page: 10
+    @job_slides = Job.job_slide.job_new
   end
 
-  def show
-  end
-
-  def help
-  end
-
-  def about
-  end
-
-  def products
-  end
+ 
 end
