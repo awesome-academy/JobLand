@@ -1,13 +1,43 @@
 <div class="row">
   <section class="job_info">
-	<h1><%= link_to @job.title, employers_job_path(@job.id) %> - <%= @job.applyjobs.count %> Cv Applied</h1>
+	  <h1><%= link_to @job.title, employers_job_path(@job.id) %> - <%= @job.applyjobs.count %> Cv Applied</h1>
   </section>
-    <% if @users.any? %>
-      <ul class="users applied">
-        <% @users.each do |user| %>
-         <li><h4><%= link_to user.fullname, user_path(user) %><h4></li>
-        <% end %>
-      </ul>
-    <% end %>
+
+  <div class="container" >
+    <div class="col-md-12 mx-auto">
+      <div class="card border-0 shadow">
+        <div class="card-body p-5">
+          <div class="table-responsive">
+            <table class="table m-0 center">
+              <thead>
+                <tr>
+                  <th class="col-md-1 center"><%= t("aj.STT") %></th>
+                  <th class="col-md-3 center"><%= t("aj.name") %></th>
+                  <th class="col-md-2 center"><%= t("aj.sex") %></th>
+                  <th class="col-md-2 center"><%= t("aj.dob") %></th>
+                  <th class="col-md-2 center"><%= t("aj.phone") %></th>
+                  <th class="col-md-2 center"><%= t("aj.connect") %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if @users.any? %>
+                  <% @users.each_with_index do |user, index| %>
+                    <tr>
+                      <td><%= index+1 %></td>
+                      <td><%= link_to user.fullname, user_path(user) %></td>
+                      <td><%= user.sex %></td>
+                      <td><%= user.dob %></td>
+                      <td><%= user.phone %></td>
+                      <td></td>
+                    </tr>
+                  <% end %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= will_paginate %>
 </div>
-<%= will_paginate %>

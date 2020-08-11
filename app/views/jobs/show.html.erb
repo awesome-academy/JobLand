@@ -11,7 +11,7 @@
         </div>
         <div class="ml-5 col-md-7">
           <h4><strong><%= @job.title %></strong></h4>
-           <h5 class="text-secondary company"><%= @job.company.full_name %></h5>
+           <h5 class="text-secondary company"><%= @job.user.company.full_name %></h5>
         </div>
         <div class="inline-block">
         </div>
@@ -54,7 +54,7 @@
       <p class="card-text">
         <h3>
              <%= image_tag('2.jpg',class: "rounded-circle", style: "width: 40px; height: 40px")%>
-            <small class="text-muted"><%= @job.company.full_name %></small>
+            <small class="text-muted"><%= @job.user.company.full_name %></small>
         </h3>
           </p>
     </div>
@@ -114,7 +114,7 @@
               <div class="d-inline ">
               <%= image_tag('2.jpg', class: "rounded-circle", style: "width: 130px; height: 130px")%><br>
                   <h4><% @user.fullname %></h4>
-                  <span class="text-secondary"><% @job.company %></span>
+                  <span class="text-secondary"><% @job.user.company %></span>
               </div>
             </div>
               <hr>
@@ -205,7 +205,7 @@
                     <h5><strong><%= t("global.job.company") %></strong></h5>
                     <div class="mt-2 d-inline">
                       <i class="fa fa-link" aria-hidden="true"></i>
-                      <a href="https://sun-asterisk.vn/"><% @job.company.full_name %></a>
+                      <a href="https://sun-asterisk.vn/"><% @job.user.company.full_name %></a>
                     </div><br>
                     <div class="mt-2 d-inline">
                       <i class="fa fa-flag" aria-hidden="true"></i>
@@ -222,7 +222,7 @@
                     <div class="mt-2 d-inline">
                       <i class="fa fa-map-marker" aria-hidden="true"></i>
                       <span class="text-secondary">
-                        <%= @job.company.address %>
+                        <%= @job.user.company.address %>
                       </span>
                     </div>
                     <div class="w_280">

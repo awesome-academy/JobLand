@@ -3,6 +3,7 @@ class Employers::JobsController < ApplicationController
 
 	def index
 		@jobs = current_user.jobs.paginate page: params[:page]
+		@company = current_user.company
 	end
 	def new
 		@jobs = Job.new
