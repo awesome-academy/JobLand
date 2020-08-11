@@ -4,4 +4,5 @@ class Job < ApplicationRecord
 	belongs_to :user
 	scope :job_new, -> {order created_at: :desc}
 	scope :job_slide, -> {where(slide:true).limit(5)}
+  scope :all_approved_false, -> { where approved: false }
 end

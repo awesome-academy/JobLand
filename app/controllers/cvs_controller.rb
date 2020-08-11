@@ -5,6 +5,10 @@ class CvsController < ApplicationController
     @cv = Cv.new
   end
 
+  def edit
+    @cv = Cv.find params[:id]
+  end
+
   def update
     @cv = Cv.find params[:id]
     if @cv.update cv_params
@@ -13,10 +17,6 @@ class CvsController < ApplicationController
         format.json
       end
     end
-  end
-
-  def edit
-    @cv = Cv.find params[:id]
   end
 
   private

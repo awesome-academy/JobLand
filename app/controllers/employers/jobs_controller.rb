@@ -8,9 +8,9 @@ class Employers::JobsController < ApplicationController
 		@jobs = Job.new
 	end
 
-	def create 
+	def create
 		@job = current_user.jobs.build job_params
-		if @job.save 
+		if @job.save
 			flash[:success] = "Job created!"
       redirect_to root_url
 		else
@@ -20,10 +20,10 @@ class Employers::JobsController < ApplicationController
 	end
 
 	def show
-		@job = Job.first
-		@user = User.first
+		@job = Job.find params[:id]
+		@user = User.find params[:id]
 	end
-	
+
 	private
   def job_params
     params.require(:job).permit :title, :sex ,

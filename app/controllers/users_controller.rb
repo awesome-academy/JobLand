@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
     @cv_language  =  CvLanguage.new
     @cv_skill = CvSkill.new
@@ -20,15 +21,21 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find params[:id]
-    if @user.update
-      respond_to do |format|
-        format.html{render(partial:"user_edit_profile")}
-        format.json
-      end
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+      # respond_to do |format|
+      #   format.html{render "user_path(@user)"}
+      #   format.json
+      # end
     end
   end
 
+  private
   def language_params
     params.require(:cv_language).permit :language_id
+  end
+
+  def user_params
+    params.require(:user).permit :address, :dob, :sex, :phone
   end
 end

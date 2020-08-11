@@ -13,7 +13,7 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.text :area
       t.text :info
       t.text :status
-
+      t.boolean :approved, default: false
       t.timestamps
     end
   end

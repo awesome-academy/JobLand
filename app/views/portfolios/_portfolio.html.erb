@@ -1,10 +1,21 @@
-<li id="portfolio-<%= portfolio.id %>">
-  <%= image_tag portfolio.image if portfolio.image.attached? %>
-  <span><%= portfolio.title %></span><br>
-  <span><%= portfolio.link %></span><br>
-  <span><%= portfolio.month %>-<%= portfolio.year %></span><br>
-  <span><%= portfolio.description %></span><br>
-    <%= link_to t("pf.edit"), edit_portfolio_path(portfolio), class: "edit-portfolio", "data-id": portfolio.id %>
-    <%= link_to t("pf.delete"), portfolio, method: :delete,
-    data: { confirm: "You sure?" }, remote: true, class: "delete-portfolio" %><br>
-</li>
+<div id="portfolio-<%= portfolio.id %>">
+  <div class="portfolio_2_colum col-md-12">
+    <div class="row">
+    <div class="portfolio_image col-md-6">
+      <%= image_tag('2.jpg', style: "width: 100%; height:200px")%>
+      <%= image_tag portfolio.image if portfolio.image.attached? %>
+    </div>
+    <div class="portfolio_main col-md-6">
+      <span><%= portfolio.title %></span><br>
+      <span><%= link_to portfolio.link%></span><br>
+      <span><%= portfolio.month %>-<%= portfolio.year %></span><br>
+      <span><%= portfolio.description.first(80) %>...</span><br>
+      <div class="edit_delete_button">
+        <%= link_to t("pf.edit"), edit_portfolio_path(portfolio), class: "btn btn-primary edit-portfolio", "data-id": portfolio.id %>
+        <%= link_to t("pf.delete"), portfolio, method: :delete,
+        data: { confirm: "You sure?" }, remote: true, class: "btn btn-outline-secondary delete-portfolio" %>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

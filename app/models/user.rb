@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :cv_languages
   has_many :cv_skill
   has_many :jobs
-  has_many :experiemces
+  has_many :experiences
   has_many :applyjobs, dependent: :destroy
   has_many :applied, through: :applyjobs, source: :job
   belongs_to :company, optional: true
@@ -36,6 +36,6 @@ class User < ApplicationRecord
       end
     end
   end
-  enum sex: { Male: 1, Female: 0 }
+  enum sex: { Unknow: 0, Male: 1, Female: 2 }
 end
 

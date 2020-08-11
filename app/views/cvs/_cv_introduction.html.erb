@@ -1,10 +1,10 @@
 <% if can? :update, @cv %>
-  <button class="setting-and-edit" onclick="openForm1()">
-    <%= "To edit" %>
-  </button>
+  <div class="intro_section">
+    <input type="button" class="btn btn-outline-secondary add" id="intro_add_button" value=" ✚ " onclick="openForm1()">
+  </div>
 <% end %>
   <div class="CvIntroductionForm" id="CvIntroductionForm" style="display :none">
-    <div class="form-introduction">
+    <div class="form_introduction">
       <%= form_for @cv, method: :patch do |f| %>
         <div class="cke-form">
           <%= f.cktext_area :introduction, class: "ckeditor" %>
@@ -16,20 +16,24 @@
       <% end %>
       </div>
     </div>
-<div>
-  <%= @cv.introduction %>
+<div class="introduction_main">
+  <% if @cv.introduction.nil? %>
+    <%= @cv.introduction %>
+  <% else %>
+    <%= @cv.introduction.html_safe %>
+  <% end %>
 </div>
-<script>
+
+<script type="text/javascript">
 function openForm1() {
     $("#CvIntroductionForm").show();
 }
 function closeForm1() {
     $("#CvIntroductionForm").hide();
 }
-</script>
-<script type="text/javascript">
+
 $(document).ready(function() {
-    $('.form-introduction').on('submit', function(event) {
+    $('.form_introduction form').on('submit', function(event) {
         event.preventDefault();
         CKEDITOR.instances['cv_introduction'].updateElement();
         var formHTML = event.target;
@@ -39,7 +43,7 @@ $(document).ready(function() {
             data: $(this).serialize(),
             success: function(data) {
                 $('#introduction').html(data);
-                ck_refresh();
+                // ck_refresh();
             }
         });
         return false;
