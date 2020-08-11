@@ -2,7 +2,7 @@ class Employers::JobsController < ApplicationController
 	  before_action :authenticate_user!
 
 	def index
-		@jobs = current_user.jobs.paginate page: params[:page]
+		@jobs = current_user.jobs.page params[:page]
 		@company = current_user.company
 	end
 	def new
