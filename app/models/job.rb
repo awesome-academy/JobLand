@@ -1,5 +1,7 @@
 class Job < ApplicationRecord
-	belongs_to :company
 	has_many :applyjobs, dependent: :destroy
-	has_many :users, through: :applyjobs
+	has_many :applying, through: :applyjobs, source: :user
+	belongs_to :user
+	scope :job_new, -> {order created_at: :desc}
+	scope :job_slide, -> {where(slide:true).limit(5)}
 end

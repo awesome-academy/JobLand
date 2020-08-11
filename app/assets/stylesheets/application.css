@@ -26,6 +26,10 @@
  *= require index-job
  *= require applyjobs
  *= require formlogin
+ *= require slick
+ *= require slick-theme
+ *= require static_pages
+
  */
 
 @import "bootstrap-sprockets";

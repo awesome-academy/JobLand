@@ -1,130 +1,162 @@
-
-<div class="container1">
-  <div class="slider center">
-    <div class="card mb-3">
-     <%= image_tag('2.jpg', style: "width: 100%; height:500px")%>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-
-    <div class="card mb-3">
-      <%= image_tag('2.jpg', style: "width: 100%; height:500px")%>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-
-    <div class="card mb-3">
-     <%= image_tag('2.jpg', style: "width: 100%; height:500px")%>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-
-    <div class="card mb-3">
-      <%= image_tag('2.jpg', style: "width: 100%; height:500px")%>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-
-  </div>
-</div>  
-
-<div class="container-fluid">
-
-<div class="container-fluid w-75 mt-5">
+<div class="slider-123">
   <div class="row">
-    <div class="col-md-3 border-right">
-      <h3>Filter</h3>
-
-      <input class="form-control mr-sm-2 mb-4" type="search" placeholder="Search" aria-label="Search">
-      <div class="form-group">
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>Engineering</option>
-            <option>Art/Design</option>
-            <option>Project/Product Management</option>
-            <option>Editing</option>
-            <option>Others</option>
-          </select>
-       </div>
-
-       <div class="form-group">
-          <h5>Catelories</h5>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-       </div>
-
-       <div class="form-group">
-          <h5>Areas</h5 >
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-       </div>
+    <div class="slider center slider-user">
+      <% if !@job_slide.nil? %>
+        <% @job_slides.each do |job_slide|%>
+          <div class="card mb-3">
+           <%= link_to image_tag('2.webp'),"#"%>
+            <div class="card-body col-md-4 text-user">
+              <h5 class="card-title"><%= link_to job_slide.title,"#" %></h5>
+              <p class="card-text"><%= link_to job_slide.company.name,"#" %></p>
+              <p class="card-text"><small class="text-muted"><%= time_ago_in_words(job_slide.created_at) %> ago.</small></p>
+            </div>
+          </div>
+          <% end %>
+        <% else %>
+          <div class="card mb-3">
+          <%= link_to image_tag('3.webp'), "#"%>
+          <div class="card-body col-md-4 text-user">
+            <h5 class="card-title"><%= link_to "name Job","#" %></h5>
+            <p class="card-text"><%= link_to "name company","#" %></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <%= link_to image_tag('2.webp'), "#"%>
+          <div class="card-body col-md-4 text-user">
+            <h5 class="card-title"><%= link_to "name Job","#" %></h5>
+            <p class="card-text"><%= link_to "name company","#" %></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      <% end %>
     </div>
-    <div class="col-md-9">
-      <div class="container-fluid w-75" >
-        <div class="card mb-3">
-
-          <div class="card-body">
-            <h5 class="card-title border border-danger">Title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+</div>
+<main>
+  <div class="container">
+    <div class="container-75">
+      <div class="main-left col-md-4">
+        <div class="row">
+          <div class="h3-filter">
+            <h3><%= t("home.Filter") %></h3>
+          </div>
+          <div class="search-job">
+            <input type="text" class=" search-query form-control" placeholder="<%= t("employers.jobs.index.Search") %>" />
+            <span class="input-group-btn">
+            <button class="btn btn-danger button-icon" type="button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+          <div class="select-job select-top">
+            <select class="custom-select custom-select-sm">
+              <option selected><%= t("home.filterSesrch") %></option>
+              <option value="1"><%= t("home.one") %></option>
+            </select>
+          </div>
+          <div class="select-job">
+            <select class="browser-default custom-select">
+              <option selected><%= t("home.filterSesrch") %></option>
+              <option value="1"><%= t("home.one") %></option>
+            </select>
+          </div>
+          <div class="checkbox-job">
+            <ul>
+              <li><label><%= t("home.fullTime") %><input type="checkbox" value=""></label></li>
+              <li><label><%= t("home.partTime") %><input type="checkbox" value=""></label></li>
+              <li><label><%= t("home.Male") %><input type="checkbox" value=""></label></li>
+              <li><label><%= t("home.Female") %><input type="checkbox" value=""></label></li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="container-fluid w-75" >
-        <div class="card mb-3">
-          <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-          <div class="card-body">
-            <h5 class="card-title border border-danger">Title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid  w-75" >
-        <div class="card mb-3">
-          <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-          <div class="card-body">
-            <h5 class="card-title border border-danger">Title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <div class="main-right col-md-8">
+        <div class="row">
+          <div class="job-right">
+            <div class="top col-md-12">
+              <div class="row">
+                <div class="col-md-3">
+                  <p class="projects-count">
+                    <span class="current">3</span>
+                    <span class="per"> / </span>
+                    <span class="total">5</span>
+                  </p>
+                </div>
+                <div class="col-md-9">
+                  <ul>
+                    <li><a href="#"><%= t("home.Newest") %></a></li>
+                    <li><a href="#"><%= t("home.Recommended") %></a></li>
+                  </ul>
+                  <h4><%= t("home.sort") %></h4>
+                </div>
+              </div>
+            </div>
+            <% if !@job_news.nil? %>
+              <% @job_news.each do |job_new| %>
+                <div class="count-job col-md-12">
+                  <div class="row">
+                    <div class="img-job col-md-12">
+                      <%= image_tag('3.webp')%>
+                    </div>
+                    <div class="hagtag-job col-md-12">
+                      <ul>
+                        <li><a href="#"><%= t("home.new") %></a></li>
+                        <li><a href="#"><%= t("home.hot") %></a></li>
+                      </ul>
+                    </div>
+                    <div class="title-job col-md-12">
+                      <%= link_to job_new.title,"#" %></h5>
+                    </div>
+                    <div class="about-job col-md-12">
+                      <p><%= job_new.info.first(80) %>...</p>
+                      </div>
+                    <div class="name-company-job col-md-12">
+                      <%= link_to job_new.user.company.full_name,"#" %></h5>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <% else %>
+                <h2><%= t("home.nojob") %></h2>
+              <% end %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
 
-
+</main>
 <script type="text/javascript">
- $('.center').slick({
+  $('.slider').slick({
   centerMode: true,
-  infinite: true,
-  centerPadding: '160px',
+  centerPadding: '110px',
+  adaptiveHeight:true,
   slidesToShow: 1,
-  speed: 500,
-  variableWidth: false,
+  arrows:true,
+  autoplay: true,
+  autoplaySpeed :3000,
+  responsive: [
+    {
+     breakpoint : 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
 });
-
 </script>

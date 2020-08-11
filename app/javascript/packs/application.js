@@ -10,6 +10,7 @@ require("packs/jquery.bootstrap.wizard")
 require("packs/jquery.validate.min")
 require("packs/paper-bootstrap-wizard")
 require("packs/jquery-2.2.4.min")
+require("packs/slick.min")
 //= require activestorage
 
 // import 'bootstrap'
@@ -29,24 +30,5 @@ require("packs/jquery-2.2.4.min")
   });
 })
 
-$('#myCarousel').carousel({
-  interval: 4000
-});
 
-$('.carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-
-  for (var i=0;i<2;i++) {
-    next=next.next();
-    if (!next.length) {
-      next = $(this).siblings(':first');
-    }
-
-    next.children(':first-child').clone().appendTo($(this));
-  }
-});
 

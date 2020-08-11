@@ -30,6 +30,20 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  home:
+    filterSesrch: "--filter search--"
+    one: "One"
+    fullTime: "Full Time"
+    partTime: "Part Time"
+    Male: "Male"
+    Female: "Female"
+    Filter: "Filter"
+    sort: "sort:"
+    Newest: "Newest"
+    Recommended: "Recommended"
+    nojob: "no Job"
+    new: "new"
+    hot: "hot"
   global:
     language:
        view: "View - Canpaigns"
