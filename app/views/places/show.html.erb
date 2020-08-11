@@ -1,28 +1,24 @@
-<p><strong>
-        <%=  t("cp.full_name") %> :</strong>
-    <%= link_to @company.full_name %>
-</p>
-<p><strong>
-        <%=  t("cp.link") %> :</strong>
-    <%= link_to @company.link %>
-</p>
-<p><strong>
-        <%= t("cp.address") %> :</strong>
-    <%= @company.address %>
-</p>
-<p><strong>
-        <%= t("cp.phone") %> :</strong>
-    <%= @company.phone %>
-</p>
 <div>
     <p id="notice">
         <%= notice %>
     </p>
     <p>
+        <strong>Name:</strong>
+        <%= @place.name %>
+    </p>
+    <p>
+        <strong>Latitude:</strong>
+        <%= @place.latitude %>
+    </p>
+    <p>
+        <strong>Longitude:</strong>
+        <%= @place.longitude %>
+    </p>
+    <p>
         <!-- "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=51.501564,51.499581&key=AIzaSyDinQxQD60u_BK8RWy7p_b4aP3V_txVmcw", alt: "Map" -->
     </p>
-    <%= link_to 'Edit', edit_employers_company_path(@company) %> |
-    <%= link_to 'Back', '#' %>
+    <%= link_to 'Edit', edit_place_path(@place) %> |
+    <%= link_to 'Back', places_path %>
 </div>
 <div id="map" style="display: block;width: 800px; height: 400px;"></div>
 <script>
@@ -45,4 +41,5 @@ function initMap(lat, lng) {
         animation: google.maps.Animation.DROP,
     });
 };
+
 </script>

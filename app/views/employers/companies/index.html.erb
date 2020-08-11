@@ -10,8 +10,9 @@
               <%= link_to t("employers.companies.index.newJob"), new_employers_job_path,"data-turbolinks": false, class: "nav-link"%>
             </li>
 
-            <li class="nav-item active active-pro">
-                <%= link_to t("employers.companies.index.company"), employers_company_path(current_user.company),"data-turbolinks": false, class: "nav-link"%>
+<!--  -->
+            <li>
+              <%= link_to "New Company", new_employers_company_path,"data-turbolinks": false, class: "nav-link"%>
             </li>
         </ul>
 			</h5>
@@ -19,7 +20,7 @@
 		<div class="col-md-8">
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<h1><%= t("employers.companies.index.manager") %></h1>		
+					<h1><%= t("employers.companies.index.manager") %></h1>
 				</div>
 				<div class="col-md-6 text-center">
 					<a href="#">

@@ -1,0 +1,10 @@
+vi:
+  cp:
+    link: Đường dẫn
+    phone: Số điện thoại
+    address: Địa chỉ
+    total: Tổng
+    submit: Đăng
+    latitude: Vĩ độ
+    longitude: Kinh độ
+    full_name: Tên công ty
