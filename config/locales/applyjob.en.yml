@@ -5,3 +5,8 @@ en:
     information: "Information"
     delete: "Delete"
     you sure?: "You sure?"
+    name: "Name"
+    connect: "Connect"
+    sex: "Sex"
+    dob: "Dob"
+    phone: "Phone"

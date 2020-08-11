@@ -1,33 +1,7 @@
 <main>
   <div class="container">
     <!-- position -->
-    <div class="postision2">
-    <div class=" postision row">
-      <div class="postision1">
-        <div class="col-md-1">
-          <a href="#">
-            <%= image_tag('2.jpg',class: "rounded-circle", style: "width: 70px; height: 70px")%>
-          </a>
-        </div>
-        <div class="ml-5 col-md-7">
-          <h4><strong><%= @job.title %></strong></h4>
-           <h5 class="text-secondary company"><%= @job.user.company.full_name %></h5>
-        </div>
-        <div class="inline-block">
-        </div>
-          <div class="text-center rounded col-md-2">
-            <a href="#">
-              <div class="border p-3">
-                <i class="fa fa-bookmark-o fa-lg" aria-hidden="true"><%= t("global.job.bookmark") %></i>
-            </div>
-            </a>
-          </div>
-        <div class="ml-5 col-md-2">
-          <a class="btn btn-primary btn-lg" href="#" role="button"><%= t("global.job.appli") %></a>
-        </div>
-      </div>
-    </div>
-    </div>
+    
     <!-- end -->
 
     <div class="header1">
@@ -76,9 +50,6 @@
           <div >
             <i class="fa fa-usd fa-lg" aria-hidden="true"><%= @job.salary %></i>
           </div>
-        </div>
-        <div class="mr_500">
-          <a class="btn btn-primary btn-lg pr-5 pl-5" href="#" role="button"><%= t("global.job.appli") %></a>
         </div>
       </div>
     </div>

@@ -62,7 +62,8 @@ Job.create(title: "developer Ruby on Rails888", user_id: 1, sex: 0, time_work: 0
 10000000, number: 6, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", info: "Use Ruby on Rails Html, CSS, master Mysql,
 Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp tốt. Khả năng quản lý thời gian. Kỹ năng giải quyết vấn đề. Có tinh thần đồng đội.
 Tự tin. Khả năng chấp nhận và học hỏi từ những lời phê bình",slide:true)
-
+Job.create(title: "developer Ruby on Rails", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
+10000000, number: 6, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", info: "Use Ruby on Rails Html, CSS, master Mysql",slide:true)
 
 
 Skill.create(name:"JavaScript")

@@ -4,6 +4,6 @@ class Employers::CompaniesController < ApplicationController
 	end
 
 	def index
-		@jobs = current_user.company.jobs.count
+		@jobs = current_user.jobs.count
 	end
 end

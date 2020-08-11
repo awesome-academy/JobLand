@@ -5,3 +5,8 @@ vi:
     information: "Thông tin tuyển dụng"
     delete: "Xoá"
     you sure?: "Bạn có chắc?"
+    name: "Họ tên"
+    connect: "Kết nối"
+    sex: "Giới tính"
+    Dob: "Năm sinh"
+    phone: "Số điện thoại"
