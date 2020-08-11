@@ -3,3 +3,6 @@ en:
     companyname: "Company name"
     position: "Position"
     exp_descr: "Description"
+    filter: "Filter"
+    search: "Search"
+    clear: "Clear"

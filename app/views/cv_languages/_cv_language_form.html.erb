@@ -2,6 +2,17 @@
   <%= form_for @cv_language  do |f| %>
     <div class="select-language">
       <%= f.select :language_id, options_from_collection_for_select(Language.all, "id", "name") %>
+ <div class="form_language">
+  <%= render 'shared/error_messages' %>
+      <%= form_for @cv_language  do |f| %>
+      <div class="select-language">
+        <%= f.select :language_id, options_from_collection_for_select(Language.all, "id", "name") %>
+      </div>
+        <div class="submit-language">
+          <%= f.submit t("global.language.up"), class: "hello btn btn-up"%>
+           <input class="btn btn-outline-secondary language-cancel" type="button" value="<%= t('global.language.cancel') %>">
+        </div>
+      <%end%>
     </div>
     <div class="submit-language">
       <input class="btn btn-danger language-cancel" type="button" value="<%= t('global.language.cancel') %>">

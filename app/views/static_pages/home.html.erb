@@ -33,6 +33,7 @@
     </div>
   </div>
 </div>
+
 <main>
   <div class="container">
     <div class="container-75">
@@ -41,34 +42,19 @@
           <div class="h3-filter">
             <h3><%= t("home.Filter") %></h3>
           </div>
-          <div class="search-job">
-            <input type="text" class=" search-query form-control" placeholder="<%= t("employers.jobs.index.Search") %>" />
-            <span class="input-group-btn">
-            <button class="btn btn-danger button-icon" type="button">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-          <div class="select-job select-top">
-            <select class="custom-select custom-select-sm">
-              <option selected><%= t("home.filterSesrch") %></option>
-              <option value="1"><%= t("home.one") %></option>
-            </select>
-          </div>
-          <div class="select-job">
-            <select class="browser-default custom-select">
-              <option selected><%= t("home.filterSesrch") %></option>
-              <option value="1"><%= t("home.one") %></option>
-            </select>
-          </div>
-          <div class="checkbox-job">
-            <ul>
-              <li><label><%= t("home.fullTime") %><input type="checkbox" value=""></label></li>
-              <li><label><%= t("home.partTime") %><input type="checkbox" value=""></label></li>
-              <li><label><%= t("home.Female") %><input type="checkbox" value=""></label></li>
-              <li><label><%= t("home.Male") %><input type="checkbox" value=""></label></li>
+           <%= search_form_for  @q ,url: root_path  do |f| %>
+        <div class="form-group"><%= f.label t("home.title&area") %>
+        <%= f.text_field :title_or_area_cont, class: 'form-control' , id: 'myJobs' %>
+        </div>
 
-            </ul>
-          </div>
+        <div class="form-group"><%= f.label t("home.salary") %>
+        <%= f.text_field :salary_gteq, class: 'form-control' %>
+        </div>
+
+        <%= f.submit t("home.search"), class: 'btn btn-primary' %>
+        <% end %>
+        <br>
+        <%= link_to t("home.clear"), request.path, class: "btn btn-default" %>
         </div>
       </div>
       <div class="main-right col-md-8">
@@ -92,8 +78,8 @@
                 </div>
               </div>
             </div>
-            <% if !@job_news.nil? %>
-              <% @job_news.each do |job_new| %>
+            <% if !@jobs.nil? %>
+              <% @jobs.each do |job_new| %>
                 <div class="count-job col-md-12">
                   <div class="row">
                     <div class="img-job col-md-12">
@@ -106,13 +92,16 @@
                       </ul>
                     </div>
                     <div class="title-job col-md-12">
-                      <%= link_to job_new.title,"#" %></h5>
+                      <%= link_to job_new.title,job_path(job_new.id) %></h5>
                     </div>
                     <div class="about-job col-md-12">
                       <p><%= job_new.info.first(80) %>...</p>
                       </div>
                     <div class="name-company-job col-md-12">
-                      <%= link_to job_new.user.company.full_name,"#" %></h5>
+                         <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
+                    </div>
+                      <div class="name-company-job col-md-12">
+                         <td> <%= link_to job_new.salary, job_path(job_new.id) %> $ </td>
                     </div>
                   </div>
                 </div>
@@ -130,6 +119,9 @@
 </div>
 
 </main>
+<div>
+
+</div>
 <script type="text/javascript">
   $('.slider').slick({
   centerMode: true,
@@ -161,3 +153,24 @@
   ]
 });
 </script>
+
+    <script type="text/javascript">
+      $('#myJobs').autocomplete({
+        source: function (request, response) {
+          $.ajax({
+            url: "/home",
+            data: { search: request.term },
+            dataType: 'json',
+            success: function (data) {
+              response($.map(data, function (dataItem) {
+                return {data: dataItem.id, value: dataItem.title };
+              }));
+            },
+          });
+        },
+        select: function(event, ui) {
+          window.location.assign('http://localhost:3000/jobs/' + ui.item.data);
+        },
+      });
+    </script>
+
