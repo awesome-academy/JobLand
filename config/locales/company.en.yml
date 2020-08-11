@@ -1,0 +1,10 @@
+en:
+  cp:
+    link: Link
+    phone: Phone
+    address: Address
+    total: Total
+    submit: Submit
+    latitude: Latitude
+    longitude: Longitude
+    full_name: Name

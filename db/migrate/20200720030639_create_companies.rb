@@ -6,6 +6,10 @@ class CreateCompanies < ActiveRecord::Migration[6.0]
       t.string :phone
       t.string :email
       t.text :descr
+      t.text :link
+      t.integer :total
+      t.decimal :latitude
+      t.decimal :longitude
 
       t.timestamps
     end

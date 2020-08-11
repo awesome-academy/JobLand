@@ -1,21 +1,17 @@
 class User < ApplicationRecord
   has_one :cv
+  belongs_to :company, optional: true
   has_many :cv_languages
   has_many :cv_skill
   has_many :jobs
   has_many :experiences
   has_many :applyjobs, dependent: :destroy
   has_many :applied, through: :applyjobs, source: :job
-  belongs_to :company, optional: true
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   after_create do
     Cv.create(user_id: self.id)
   end
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         # :confirmable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   def self.from_omniauth(auth)
@@ -30,9 +26,6 @@ class User < ApplicationRecord
         user.image = auth.info.image
         user.uid = auth.uid
         user.provider = auth.provider
-
-        #  If you are using confirmable and the provider(s) you use validate emails
-        # user.skip_confirmation!
       end
     end
   end

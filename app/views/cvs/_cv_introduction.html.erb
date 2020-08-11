@@ -10,8 +10,8 @@
           <%= f.cktext_area :introduction, class: "ckeditor" %>
         </div>
         <div class="submit-introduction">
-          <button class="btn btn-danger" type="button" onclick="closeForm1()"> Cancel </button>
-          <%= f.submit t("global.up"), class: "hello btn btn-up"%>
+          <button class="btn btn-danger" type="button" onclick="closeForm1()"> <%= t("cv.cancel") %> </button>
+          <%= f.submit t("cv.submit"), class: "hello btn btn-up"%>
         </div>
       <% end %>
       </div>
@@ -22,7 +22,6 @@
   <% else %>
     <%= @cv.introduction.html_safe %>
   <% end %>
-</div>
 
 <script type="text/javascript">
 function openForm1() {
@@ -33,7 +32,7 @@ function closeForm1() {
 }
 
 $(document).ready(function() {
-    $('.form_introduction form').on('submit', function(event) {
+    $('.form-introduction form').on('submit', function(event) {
         event.preventDefault();
         CKEDITOR.instances['cv_introduction'].updateElement();
         var formHTML = event.target;

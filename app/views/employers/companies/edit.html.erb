@@ -1,0 +1,27 @@
+<%= form_for [:employers , @company ] do |f| %>
+<div class="form-group">
+    <li class="fa fa-user-circle" aria-hidden="true"> <%= t("cp.full_name") %> :</li>
+    <%= f.text_field :full_name ,placeholder: "", class: 'form-control' %>
+</div>
+<div class="form-group">
+    <li class="fa fa-link" aria-hidden="true"> <%= t("cp.link") %> :</li>
+    <%= f.text_field :link ,placeholder: "", class: 'form-control' %>
+</div>
+<div class="form-group">
+    <li class="fa fa-phone" aria-hidden="true"> <%= t("cp.phone") %> :</li>
+    <%= f.number_field :phone ,placeholder: "" , class: 'form-control' %>
+</div>
+<div class="form-group">
+    <li class="fa fa-plus-circle" aria-hidden="true"> <%= t("cp.total") %> :</li>
+    <%= f.number_field :total ,placeholder: "", class: 'form-control'  %>
+</div>
+<div class="form-group">
+    <li class="fa fa-map-marker" aria-hidden="true"> <%= t("cp.address") %> :</li>
+    <%= f.text_field :address  ,placeholder: "", class: 'form-control' %>
+</div>
+<div class="submit-education">
+    <div class="submit">
+        <%= f.submit t("cp.submit"), class: "btn btn-primary"%>
+    </div>
+</div>
+<% end %>
