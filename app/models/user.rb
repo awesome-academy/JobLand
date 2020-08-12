@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_one :cv
-  belongs_to :company, optional: true
+  has_one :company
   has_many :cv_languages
   has_many :cv_skill
   has_many :jobs

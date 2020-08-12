@@ -15,8 +15,9 @@ class Employers::CompaniesController < ApplicationController
 
   def create
     @company = Company.new company_params
+    @company.user = current_user
     if @company.save
-      redirect_to employers_company_path(:id)
+      redirect_to employers_company_path(@company)
     end
   end
 
