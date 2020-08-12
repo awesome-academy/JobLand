@@ -30,6 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  skill:
+    add_skill: "Update"
   home:
     filterSesrch: "--filter search--"
     one: "One"

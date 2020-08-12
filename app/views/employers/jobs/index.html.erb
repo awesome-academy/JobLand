@@ -1,7 +1,9 @@
 <div class="container">
 	<div class="col-md-12">
 		<div class="row text-center">
+			<% unless @company.nil? %>
 			<h1> <%= t("employers.jobs.index.welcome") %> <%= @company.full_name %></h1>
+			<%end%>
 		</div>
 	</div>
 	<div class="col-md-12 jop-top">
@@ -52,7 +54,7 @@
 			<td><%= link_to job.applyjobs.count, employers_job_applyjobs_path(job.id) %></td>
 			<td class="text-center">
 				<%= link_to edit_employers_job_path(job),  class: "btn btn-success btn-sm btn-job" do %>
-				  <i class="fa fa-pencil" aria-hidden="true"></i> <%= t("employers.jobs.index.edit") %> 
+				  <i class="fa fa-pencil" aria-hidden="true"></i> <%= t("employers.jobs.index.edit") %>
 				<% end %>
 				<%= link_to employers_job_path(job),  class: "btn btn-danger btn-sm btn-job" do %>
 				  <i class="fa fa-trash" aria-hidden="true"></i> <%= t("employers.jobs.index.delete") %></a>
@@ -61,6 +63,5 @@
 		</tr>
 		<% end %>
 	</table>
-	<%= paginate @job %>
 	<% end %>
 </div>

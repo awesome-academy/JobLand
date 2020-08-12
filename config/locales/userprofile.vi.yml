@@ -1,0 +1,12 @@
+vi:
+  userp:
+    contact: "Thông tin cá nhân:"
+    applied: "Đã ứng tuyển"
+    saveJob: "Việc đã lưu"
+    introduction: "Thông tin"
+    experience:  "Kinh nghiệm"
+    skills: "Kỹ năng"
+    education: "Học vấn"
+    language:  "Ngôn ngữ"
+    portfolio: "Portfolio"
+    edit: "Chỉnh sửa"

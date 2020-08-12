@@ -3,7 +3,7 @@
     <div class="deleteButton">
       <li><span class='form-control' id="submitted-skill"><%= cv_language.language.name %></span>
         <div class="languageDelete">
-          <%= link_to t("global.delete"), cv_language, remote: true, method: :delete,
+          <%= link_to t("exp.delete"), cv_language, remote: true, method: :delete,
           data: { confirm: t("global.yousure") },class: 'btn btn-outline-secondary destroy' %>
         </div>
       </li>

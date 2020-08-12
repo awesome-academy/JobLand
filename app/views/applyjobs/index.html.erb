@@ -67,17 +67,16 @@
       </div>
       <%= will_paginate %>
 
-
       <div class="column-side col-md-4">
         <div class="user-profile col-md-12 ">
           <section class="user-profile-aside-section contact-section row">
             <%= render "users/user_edit_profile" %>
             <h5>
               <font class="contact-to-colection">
-                Contact to publish to the connection:
+                <%= t("userp.contact") %>
               </font>
             </h5>
-            <div class="editable-attribute col-md-12">
+            <div class="editable-attribute col-md-12 row">
               <div class="contact-line col-md-12">
                 <div class="row">
                   <div class="icon-phone contact-icon col-md-2">
@@ -95,16 +94,6 @@
                   </div>
                   <div class="contact-value col-md-8">
                     <%= @user.email %>
-                  </div>
-                </div>
-              </div>
-              <div class="contact-line col-md-12">
-                <div class="row">
-                  <div class="icon-email contact-icon col-md-2">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                  </div>
-                  <div class="contact-value col-md-8">
-                    <%= @user.address %>
                   </div>
                 </div>
               </div>
@@ -128,10 +117,21 @@
                   </div>
                 </div>
               </div>
+              <div class="contact-line col-md-12">
+                <div class="row">
+                  <div class="icon-email contact-icon col-md-2">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                  </div>
+                  <div class="contact-value col-md-10">
+                    <%= @user.address %>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>
         <div class="clearfix"></div>
+        <% if @user == current_user %>
           <%= link_to user_applyjobs_path(current_user), :action => 'go' do %>
           <div class="jobs-aready-applied" >
             <section class="user-jobs-aready-applied">
@@ -139,18 +139,22 @@
                   <i class="fa fa-briefcase fa-4x" aria-hidden="true"></i>
               </div>
               <div class="applied">
-                <h5>Applied</h5>
+                <%= t("userp.applied") %>
+              </div>
+              <div id = "apply_count">
+                <%= @user.applyjobs.count %>
               </div>
             </section>
           </div>
           <% end %>
+        <% end %>
         <div class="user-saved-jobs">
           <section class="user-all-saved-jobs">
             <div class="icon-jobs-bookmark">
               <i class="fa fa-bookmark fa-4x" aria-hidden="true"></i>
             </div>
             <div class="jobs-saved">
-              <h5>Saved Job</h5>
+              <%= t("userp.saveJob") %>
           </section>
         </div>
         <div class="saved-jobs">
