@@ -8,3 +8,5 @@ en:
     latitude: Latitude
     longitude: Longitude
     full_name: Name
+    descr: Descr
+    member: Members

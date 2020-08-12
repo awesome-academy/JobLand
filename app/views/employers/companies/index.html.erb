@@ -9,10 +9,12 @@
             <li>
               <%= link_to t("employers.companies.index.newJob"), new_employers_job_path,"data-turbolinks": false, class: "nav-link"%>
             </li>
-
-<!--  -->
             <li>
-              <%= link_to "New Company", new_employers_company_path,"data-turbolinks": false, class: "nav-link"%>
+            	<% if current_user.company.nil? %>
+              		<%= link_to "New Company", new_employers_company_path,"data-turbolinks": false, class: "nav-link"%>
+              	<% else %>
+              		<%= link_to " My Company", employers_company_path(current_user.company.id) %>
+              	<% end %>
             </li>
         </ul>
 			</h5>
