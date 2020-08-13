@@ -50,6 +50,7 @@ gem 'rails-i18n'
 gem 'rails_admin'
 gem "ransack"
 gem 'simple_form'
+gem "mechanize"
 # gem 'will_filter'
 # gem 'kaminari'
 group :development, :test do

@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :applied, through: :applyjobs, source: :job
   has_many :member, dependent: :destroy
   has_many :menbered, through: :member, source: :company
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmarked, through: :bookmarks, source: :job
   after_create do
     Cv.create(user_id: self.id)
   end

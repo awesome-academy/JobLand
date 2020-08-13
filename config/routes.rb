@@ -29,6 +29,9 @@ Rails.application.routes.draw do
     resources :jobs do
       resources :applyjobs, only: [:create, :destroy]
     end
+    resources :jobs do
+      resources :bookmarks, only: [:create, :destroy]
+    end
 
     resources :jobs
     resources :cvs
@@ -37,12 +40,18 @@ Rails.application.routes.draw do
     resources :users do
       resources :applyjobs
     end
+    resources :users do
+      resources :bookmarks
+    end
     resources :experiences
     resources :cv_skills
     resources :cv_languages
     namespace :employers do
       resources :jobs do
         resources :applyjobs
+      end
+      resources :jobs do
+        resources :bookmarks
       end
       resources :companies
       resources :members

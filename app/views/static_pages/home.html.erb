@@ -78,6 +78,40 @@
                 </div>
               </div>
             </div>
+                <div class="searchHome" >
+                  <% if params[:q] %>
+                 <% if !@jobs.nil? %>
+              <% @jobs.each do |job_new| %>
+                <div class="count-job col-md-12">
+                  <div class="row">
+                    <div class="img-job col-md-12">
+                      <%= image_tag('3.webp')%>
+                    </div>
+                    <div class="hagtag-job col-md-12">
+                      <ul>
+                        <li><a href="#"><%= t("home.new") %></a></li>
+                        <li><a href="#"><%= t("home.hot") %></a></li>
+                      </ul>
+                    </div>
+                    <div class="title-job col-md-12">
+                      <%= link_to job_new.title,job_path(job_new.id) %></h5>
+                    </div>
+                    <div class="about-job col-md-12">
+                      <p><%= job_new.info.first(80) %>...</p>
+                      </div>
+                    <div class="name-company-job col-md-12">
+                         <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
+                    </div>
+                      <div class="name-company-job col-md-12">
+                         <td> <%= link_to job_new.salary, job_path(job_new.id) %> $ </td>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <% else %>
+                <h2><%= t("home.nojob") %></h2>
+              <% end %>
+              <% else %>
             <% if !@approvedJobs.nil? %>
               <% @approvedJobs.each do |job_new| %>
                 <div class="count-job col-md-12">
@@ -109,6 +143,8 @@
               <% else %>
                 <h2><%= t("home.nojob") %></h2>
               <% end %>
+              <% end %>
+            </div>
               </div>
             </div>
           </div>
@@ -154,23 +190,23 @@
 });
 </script>
 
-    <script type="text/javascript">
-      $('#myJobs').autocomplete({
-        source: function (request, response) {
-          $.ajax({
-            url: "/home",
-            data: { search: request.term },
-            dataType: 'json',
-            success: function (data) {
-              response($.map(data, function (dataItem) {
-                return {data: dataItem.id, value: dataItem.title };
-              }));
-            },
-          });
-        },
-        select: function(event, ui) {
-          window.location.assign('http://localhost:3000/jobs/' + ui.item.data);
+<script type="text/javascript">
+  $('#myJobs').autocomplete({
+    source: function (request, response) {
+      $.ajax({
+        url: "/home",
+        data: { q: request.term },
+        dataType: 'json',
+        success: function (data) {
+          response($.map(data, function (dataItem) {
+            return {data: dataItem.id, value: dataItem.title };
+          }));
         },
       });
-    </script>
+    },
+    select: function(event, ui) {
+      window.location.assign('http://localhost:3000/jobs/' + ui.item.data);
+    },
+  });
+</script>
 

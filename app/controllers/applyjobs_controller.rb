@@ -10,8 +10,7 @@ class ApplyjobsController < ApplicationController
   def create
   	@applyjob = current_user.applyjobs.build applyjob_params
   	@applyjob.save
-    redirect_to job_path(@applyjob.job.id)
-    flash[:success] = t("aj.profile updated")
+    redirect_to user_applyjobs_path
   	# respond_to do |format|
    #    format.html {  render partial: 'applyjobs/appliedjob_form' }
    #    format.js

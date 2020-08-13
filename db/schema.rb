@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_024453) do
+ActiveRecord::Schema.define(version: 2020_08_13_043402) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2020_08_13_024453) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["job_id"], name: "index_applyjobs_on_job_id"
     t.index ["user_id"], name: "index_applyjobs_on_user_id"
+  end
+
+  create_table "bookmarks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "job_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["job_id"], name: "index_bookmarks_on_job_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -219,6 +228,8 @@ ActiveRecord::Schema.define(version: 2020_08_13_024453) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "applyjobs", "jobs"
   add_foreign_key "applyjobs", "users"
+  add_foreign_key "bookmarks", "jobs"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "companies", "users"
   add_foreign_key "cv_languages", "cvs"
   add_foreign_key "cv_languages", "languages"

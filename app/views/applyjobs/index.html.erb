@@ -32,7 +32,7 @@
       <div class="column-main col-md-8" >
           <div class="card border-0 applied_jobs">
             <div class="card-body p-5">
-              <div class="table-responsive">
+              <div class="table-responsive-apply">
                 <table class="table m-0">
                   <thead>
                     <tr>
@@ -148,6 +148,9 @@
           </div>
           <% end %>
         <% end %>
+        <div class="clearfix"></div>
+        <% if @user == current_user %>
+          <%= link_to user_bookmarks_path(current_user), :action => 'go' do %>
         <div class="user-saved-jobs">
           <section class="user-all-saved-jobs">
             <div class="icon-jobs-bookmark">
@@ -155,12 +158,16 @@
             </div>
             <div class="jobs-saved">
               <%= t("userp.saveJob") %>
+               <%= @user.bookmarks.count %>
           </section>
         </div>
         <div class="saved-jobs">
           <section class="user-all-saved-jobs">
-            <%= "link to show all: user's saved jobs" %>
+
           </section>
+        </div>
+      <% end %>
+    <% end %>
         </div>
       </div>
     </div>
