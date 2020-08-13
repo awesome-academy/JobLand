@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_07_081013) do
+ActiveRecord::Schema.define(version: 2020_08_13_024453) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -63,10 +63,8 @@ ActiveRecord::Schema.define(version: 2020_08_07_081013) do
     t.integer "total"
     t.decimal "latitude", precision: 10
     t.decimal "longitude", precision: 10
-    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
   create_table "cv_languages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -152,6 +150,16 @@ ActiveRecord::Schema.define(version: 2020_08_07_081013) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "menbers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "company_id"
+    t.boolean "status", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_menbers_on_company_id"
+    t.index ["user_id"], name: "index_menbers_on_user_id"
+  end
+
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.decimal "latitude", precision: 10
@@ -208,7 +216,6 @@ ActiveRecord::Schema.define(version: 2020_08_07_081013) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "applyjobs", "jobs"
   add_foreign_key "applyjobs", "users"
-  add_foreign_key "companies", "users"
   add_foreign_key "cv_languages", "cvs"
   add_foreign_key "cv_languages", "languages"
   add_foreign_key "cv_skills", "cvs"
@@ -216,5 +223,7 @@ ActiveRecord::Schema.define(version: 2020_08_07_081013) do
   add_foreign_key "cvs", "users"
   add_foreign_key "experiences", "cvs"
   add_foreign_key "jobs", "users"
+  add_foreign_key "menbers", "companies"
+  add_foreign_key "menbers", "users"
   add_foreign_key "portfolios", "cvs"
 end
