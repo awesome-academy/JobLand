@@ -6,7 +6,7 @@ class Employers::CompaniesController < ApplicationController
   end
 
   def index
-    @jobs = current_user.jobs.count
+    @jobs = current_user.jobs.limit(Settings.jobs)
   end
 
   def show
