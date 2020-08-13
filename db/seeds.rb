@@ -12,14 +12,14 @@
 # Job.create(Company_id: 1, department_id: 1,  )
 
 
-# Language.create(name:"French")
-# Language.create(name:"Russian")
-# Language.create(name:"Indonesian")
-# Language.create(name:"Portuguese")
-# Language.create(name:"Japanese")
-# Language.create(name:"Vietnamese")
-# Language.create(name:"Bengali")
-# Language.create(name:"Korean")
+Language.create(name:"French")
+Language.create(name:"Russian")
+Language.create(name:"Indonesian")
+Language.create(name:"Portuguese")
+Language.create(name:"Japanese")
+Language.create(name:"Vietnamese")
+Language.create(name:"Bengali")
+Language.create(name:"Korean")
 
 Skill.create(name:"JavaScript")
 Skill.create(name:"Java")

@@ -38,7 +38,7 @@
                     <tr>
                       <th class="col-md-2" ><%= t("aj.STT") %></th>
                       <th class="col-md-5"><%= t("aj.information") %></th>
-                      <th class="col-md-3"></th>
+                      <th class="col-md-3"> Status</th>
                       <th class="col-md-2"><%= t("aj.delete") %></th>
                     </tr>
                   </thead>
@@ -48,7 +48,7 @@
                     <tr>
                       <td><%= index+1 %></td>
                       <td><%= link_to applyjob.job.title, job_path(applyjob.job.id) %></td>
-                      <td></td>
+                      <td> <%= applyjob.apply_status %> </td>
                       <td><%= link_to user_applyjob_path(applyjob.user.id, applyjob.id), method: :delete,
                         data: { confirm: t("aj.you sure?") },
                         class: "btn btn-danger btn-sm rounded-0",

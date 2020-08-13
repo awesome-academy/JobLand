@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_024453) do
   end
 
   create_table "applyjobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "apply_status", default: 0
     t.bigint "user_id", null: false
     t.bigint "job_id", null: false
     t.datetime "created_at", precision: 6, null: false

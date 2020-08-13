@@ -35,7 +35,6 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'figaro', '~> 1.2'
 gem 'config', '~> 2.2', '>= 2.2.1'
 gem 'cloudinary', '~> 1.16', '>= 1.16.1'
-gem 'active_storage_validations'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem "chartkick"
