@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :experiences
   has_many :applyjobs, dependent: :destroy
   has_many :applied, through: :applyjobs, source: :job
+  has_many :member, dependent: :destroy
+  has_many :menbered, through: :member, source: :company
   after_create do
     Cv.create(user_id: self.id)
   end

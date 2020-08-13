@@ -16,6 +16,7 @@ class Employers::CompaniesController < ApplicationController
   def create
     @company = Company.new company_params
     @company.user = current_user
+    @company.image.attach(params[:company][:image])
     if @company.save
       redirect_to employers_company_path(@company)
     end
@@ -35,6 +36,6 @@ class Employers::CompaniesController < ApplicationController
   private
 
   def company_params
-     params.require(:company).permit(:full_name, :address, :phone, :link, :total, :email, :descr)
+     params.require(:company).permit(:full_name, :address, :phone, :link, :total, :email, :descr, :image)
   end
 end
