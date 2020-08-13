@@ -1,0 +1,31 @@
+<div class="col-md-2">
+  <ul>
+    <li class="nav-item active">
+      <%= link_to employers_companies_path do%>
+        <i class="fa fa-tachometer fa-2x" aria-hidden="true"></i>
+        <span><%= t("companies.dashboard") %></span>
+      <% end %>
+    </li>
+    <li class="nav-item active menu_icon">
+        <%= link_to employers_jobs_path do %>
+            <i class="fa fa-list-alt fa-2x" aria-hidden="true"></i>
+            <span><%= t("companies.listjob") %></span>
+        <% end %>
+    </li>
+    <% if current_user.company.nil? %>
+      <li class="nav-item active menu_icon">
+        <%= link_to new_employers_company_path do%>
+          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+          <span><%= t("companies.newcompany") %></span>
+        <% end %>
+      </li>
+    <% else %>
+      <li class="nav-item active menu_icon">
+        <%= link_to employers_company_path(current_user.company) do%>
+          <i class="fa fa-university fa-2x" aria-hidden="true"></i>
+          <span><%= t("companies.mycompany") %></span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

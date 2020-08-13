@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-ruby '2.6.3'
+ruby '2.7.1'
 gem 'enumerations'
 gem 'devise'
 gem 'omniauth'
@@ -38,7 +38,8 @@ gem 'cloudinary', '~> 1.16', '>= 1.16.1'
 gem 'active_storage_validations'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem "chartkick"
+gem 'groupdate'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'will_paginate','3.1.8'
 gem 'bootstrap-will_paginate', '1.0.0'

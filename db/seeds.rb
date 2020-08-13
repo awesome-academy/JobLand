@@ -12,14 +12,14 @@
 # Job.create(Company_id: 1, department_id: 1,  )
 
 
-Language.create(name:"French")
-Language.create(name:"Russian")
-Language.create(name:"Indonesian")
-Language.create(name:"Portuguese")
-Language.create(name:"Japanese")
-Language.create(name:"Vietnamese")
-Language.create(name:"Bengali")
-Language.create(name:"Korean")
+# Language.create(name:"French")
+# Language.create(name:"Russian")
+# Language.create(name:"Indonesian")
+# Language.create(name:"Portuguese")
+# Language.create(name:"Japanese")
+# Language.create(name:"Vietnamese")
+# Language.create(name:"Bengali")
+# Language.create(name:"Korean")
 
 Skill.create(name:"JavaScript")
 Skill.create(name:"Java")
@@ -83,8 +83,6 @@ Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp t�
 Tự tin. Khả năng chấp nhận và học hỏi từ những lời phê bình",slide:true)
 Job.create(title: "developer Ruby on Rails", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
 10000000, number: 6, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", info: "Use Ruby on Rails Html, CSS, master Mysql",slide:true)
-
-
 
 # Place.create!([
 # { "name": "Buckingham Palace", "latitude": "51.501564","longitude": "51.502564"},

@@ -1,0 +1,16 @@
+vi:
+  companies:
+    newjob: Tạo Công Việc
+    view: Xem chi tiết
+    applicants: Người nộp đơn
+    members: Nhân viên
+    payment: Thanh toán
+    chart: Biểu đồ công việc
+    table: bảng công việc
+    more: Thêm
+    dashboard: Bảng điều khiển
+    listjob: Danh sách công việc
+    newcompany: Tạo mới Công Ty
+    mycompany: Công ty của Tôi
+  job:
+    chart: Biểu đồ

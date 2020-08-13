@@ -1,0 +1,16 @@
+en:
+  companies:
+    newjob: New Job
+    view: View Details
+    applicants: Applicants
+    members: Members
+    payment: Payment
+    chart: Chart Jobs
+    table: Table Jobs
+    more: More
+    dashboard: Dashboard
+    listjob: List Job
+    newcompany: New Company
+    mycompany: My Company
+  job:
+    chart: Chart 

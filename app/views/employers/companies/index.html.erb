@@ -1,50 +1,120 @@
-<main>
-	<div class= "row">
-		<div class="col-md-4 bg-info">
-			<h5>
-				 <ul class="nav">
-            <li class="nav-item active">
-                <%= link_to  t("employers.companies.index.listJobs"), employers_jobs_path, class: "nav-link"%>
-            </li>
-            <li>
-              <%= link_to t("employers.companies.index.newJob"), new_employers_job_path,"data-turbolinks": false, class: "nav-link"%>
-            </li>
-            <li>
-            	<% if current_user.company.nil? %>
-              		<%= link_to "New Company", new_employers_company_path,"data-turbolinks": false, class: "nav-link"%>
-              	<% else %>
-              		<%= link_to " My Company", employers_company_path(current_user.company) %>
-              	<% end %>
-            </li>
-        </ul>
-			</h5>
-		</div>
-		<div class="col-md-8">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<h1><%= t("employers.companies.index.manager") %></h1>
-				</div>
-				<div class="col-md-6 text-center">
-					<a href="#">
-						<div class="circles">
-							<div class="content2">
-								<h2><%= t("employers.companies.index.applicants")%></h2>
-								<h1>17000</h1>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-6 text-center">
-					<%= link_to employers_jobs_path, class: "hover-jobs" do %>
-				  <div class="circles">
-							<div class="content2">
-								<h2><%= t("employers.companies.index.jobs")%></h2>
-								<h1><%= @jobs %></h1>
-							</div>
-						</div>
-				<% end %>
-				</div>
-			</div>
-		</div>
-	</div>
-</main>
+<%= render 'employers/companies/navbar'%>
+  <div class="col-md-10">
+    <div class="row">
+            <div class="col_xl_3 col-sm-6 mb-3">
+              <div class="card text-center">
+                <div class="card-body ">
+                  <div class="card-body-icon">
+                    <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>  
+                  </div>
+                  <div class="mr-5"><%= t("companies.newjob")%></div>
+                </div>
+                <%= link_to new_employers_job_path, "data-turbolinks": false do %>
+                  <span class="float-left"><%= t("companies.view")%></span>
+                  <span class="float-right">
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                  </span>
+                <% end %>
+              </div>
+            </div>
+            <div class="col_xl_3 col-sm-6 mb-3">
+              <div class="card text-center">
+                <div class="card-body ">
+                  <div class="card-body-icon ">
+                    <i class="fa fa-files-o" aria-hidden="true"></i>
+                  </div>
+                  <div class="mr-5"><%= t("companies.applicants") %></div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                  <span class="float-left"><%= t("companies.view") %></span>
+                  <span class="float-right">
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="col_xl_3 col-sm-6 mb-3">
+              <div class="card text-center">
+                <div class="card-body ">
+                  <div class="card-body-icon">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                  </div>
+                  <div class="mr-5"><%= t("companies.members") %></div>
+                </div>
+                <%= link_to employers_members_path do %>
+                  <span class="float-left"><%= t("companies.view") %></span>
+                  <span class="float-right">
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                  </span>
+                <% end %>
+              </div>
+            </div>
+            <div class="col_xl_3 col-sm-6 mb-3">
+              <div class="card text-center">
+                <div class="card-body ">
+                  <div class="card-body-icon">
+                   <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+                  </div>
+                  <div class="mr-5"><%= t("companies.payment") %></div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                  <span class="float-left"><%= t("companies.view") %></span>
+                  <span class="float-right">
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="card_header">
+              <i class="fas fa-chart-area"></i>
+              <%= t("companies.chart") %>
+            </div>
+            <div class="card-body">
+              <%= area_chart @jobs.group(:created_at).count %>
+            </div>
+            <div class="card_footer">Updated yesterday at 11:59 PM</div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="card_header">
+              <i class="fa fa-table" aria-hidden="true"></i>
+              <%= t("companies.table") %></div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-striped custab">
+                    <thead>
+                      <tr>
+                        <th>STT</th>
+                        <th><%= t("employers.jobs.index.title") %></th>
+                        <th><%= t("employers.jobs.index.status") %></th>
+                        <th>Cv Applied</th>
+                        <th class="text-center"><%= t("employers.jobs.index.action") %></th>
+                      </tr>
+                    </thead>
+                    <% @jobs.each_with_index do |job,index| %>
+                    <tr>
+                      <td><%= index+1 %></td>
+                      <td>
+                        <%= link_to job.title, employers_job_path(job.id) %>
+                      </td>
+                      <td><%= job.status %></td>
+                      <td><%= link_to job.applyjobs.count, employers_job_applyjobs_path(job.id) %></td>
+                      <td class="text-center">
+                        <%= link_to edit_employers_job_path(job),  class: "btn btn-success btn-sm btn-job" do %>
+                          <i class="fa fa-pencil" aria-hidden="true"></i> <%= t("employers.jobs.index.edit") %> 
+                        <% end %>
+                        <%= link_to employers_job_path(job),  class: "btn btn-danger btn-sm btn-job" do %>
+                          <i class="fa fa-trash" aria-hidden="true"></i> <%= t("employers.jobs.index.delete") %></a>
+                        <% end %>
+                      </td>
+                    </tr>
+                    <% end %>
+                  </table>
+              </div>
+            </div>
+            <%= link_to  t("companies.more"), employers_jobs_path, class: "card_footer small text-muted text-center"%>
+          </div>
+  </div>

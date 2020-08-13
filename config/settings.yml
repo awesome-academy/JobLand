@@ -1,4 +1,4 @@
 #gem figaro, config, cloudinary
 doan_test: "doan"
 paginate: 10
-
+jobs: 5
