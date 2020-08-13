@@ -1,6 +1,10 @@
+<div class="modal">
+  <div class="modal_overlay"></div>
+  <div class="modal_body">
+    <div class="modal_inner">
 <div class="popup-edit-user-contact">
-  <button class=" btn open-button-edit-user-contact" onclick="openForm()">
-    <%= t("userp.edit") %>
+  <button class="open-button-edit-user-contact" onclick="openForm()">
+    <%= "To edit" %>
   </button>
   <div class="form-popup" id="profileForm-popup" style="display:none;">
     <div class="form-edit-user-contact">
@@ -41,3 +45,7 @@ function closeForm() {
     $("#profileForm-popup").hide();
 }
 </script>
+
+    </div>
+  </div>
+</div>

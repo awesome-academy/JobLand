@@ -4,8 +4,8 @@
       <%= f.select :skill_id, options_from_collection_for_select(Skill.all, "id", "name") %>
     </div>
     <div class="submit-skill">
-       <input class="btn btn-danger skill-cancel" type="button" value="<%= t('global.cancel') %>">
-      <%= f.submit t("global.up"), class: "hello btn btn-up"%>
+       <input class="btn btn-danger skill-cancel" type="button" value="<%= t('skill.cancel') %>">
+      <%= f.submit t("skill.addSkill"), class: "hello btn btn-up"%>
     </div>
   <%end%>
 </div>

@@ -1,0 +1,6 @@
+vi:
+  skill:
+    delete: "Xóa"
+    edit: "Chỉnh sửa"
+    cancel: "Hủy"
+    addSkill: "Thêm"

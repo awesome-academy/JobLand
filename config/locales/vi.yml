@@ -1,4 +1,6 @@
 vi:
+  skill:
+    add_skill: :"Thêm"
   home:
     filterSesrch: "--Lọc tìm kiếm--"
     one: "Một"

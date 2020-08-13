@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-ruby '2.7.1'
+ruby '2.6.3'
 gem 'enumerations'
 gem 'devise'
 gem 'omniauth'
@@ -48,7 +48,6 @@ gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'rails_admin'
 gem "ransack"
-gem "jquery-ui-rails"
 gem 'simple_form'
 # gem 'will_filter'
 # gem 'kaminari'

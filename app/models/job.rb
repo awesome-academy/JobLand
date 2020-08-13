@@ -5,6 +5,7 @@ class Job < ApplicationRecord
 	scope :job_new, -> {order created_at: :desc}
 	scope :job_slide, -> {where(slide:true).limit(5)}
   scope :all_approved_false, -> { where approved: false }
+  scope :all_approved_true, -> { where approved: true }
   ransack :title, type: :string do
   arel_table[:title].lower
   end

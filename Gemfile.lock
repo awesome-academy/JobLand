@@ -70,9 +70,9 @@ GEM
     bcrypt (3.1.15)
     bcrypt (3.1.15-java)
     bindex (0.8.1)
-    bootsnap (1.4.7)
+    bootsnap (1.4.8)
       msgpack (~> 1.0)
-    bootsnap (1.4.7-java)
+    bootsnap (1.4.8-java)
       msgpack (~> 1.0)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
@@ -96,7 +96,7 @@ GEM
     cloudinary (1.16.1)
       aws_cf_signer
       rest-client
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.7)
     config (2.2.1)
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
@@ -255,8 +255,8 @@ GEM
       jwt (>= 2.0)
       omniauth (>= 1.1.1)
       omniauth-oauth2 (>= 1.6)
-    omniauth-oauth2 (1.6.0)
-      oauth2 (~> 1.1)
+    omniauth-oauth2 (1.7.0)
+      oauth2 (~> 1.4)
       omniauth (~> 1.9)
     orm_adapter (0.5.0)
     polyamorous (2.3.2)
@@ -482,7 +482,7 @@ DEPENDENCIES
   will_paginate (= 3.1.8)
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 2.6.3p62
 
 BUNDLED WITH
    2.1.4
