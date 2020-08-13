@@ -45,6 +45,8 @@ Rails.application.routes.draw do
         resources :applyjobs
       end
       resources :companies
+      resources :members
+
     end
     resources :portfolios
   end

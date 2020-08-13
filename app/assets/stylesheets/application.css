@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
 
  *= require educations
+ *= require companies
  *= require users
  *= require_self
  *= require introductions

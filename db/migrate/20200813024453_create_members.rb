@@ -1,8 +1,8 @@
-class CreateMenbers < ActiveRecord::Migration[6.0]
+class CreateMembers < ActiveRecord::Migration[6.0]
   def change
-    create_table :menbers do |t|
+    create_table :members do |t|
       t.references :user, foreign_key: true
-      t.references :company,foreign_key: true
+      t.references :company, foreign_key: true
       t.boolean :status, default: false
 
       t.timestamps

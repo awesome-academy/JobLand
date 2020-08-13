@@ -13,7 +13,7 @@
             	<% if current_user.company.nil? %>
               		<%= link_to "New Company", new_employers_company_path,"data-turbolinks": false, class: "nav-link"%>
               	<% else %>
-              		<%= link_to " My Company", employers_company_path(current_user.company.id) %>
+              		<%= link_to " My Company", employers_company_path(current_user.company) %>
               	<% end %>
             </li>
         </ul>
