@@ -138,3 +138,26 @@
 .menu_icon{
 	margin-top: 1.5em;
 }
+#details .form-group label{
+	position: relative;
+}
+#details .form-group #exampleInputTitle-error,#job_area-error,#job_grade-error{
+	position: absolute;
+}
+.icon-circle i{
+	margin-top: 10px;
+}
+.sex p{
+	position: relative;
+}
+.sex label.error{
+	position: absolute;
+    top: 62px;
+}
+.time-job{
+	position: relative;
+}
+#job_time_work_0 label.error{
+	position: absolute;
+    top: 62px;
+}
