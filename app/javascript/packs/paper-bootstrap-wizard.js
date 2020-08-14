@@ -1,37 +1,3 @@
-/*! =========================================================
- *
- Paper Bootstrap Wizard - V1.0.1
-*
-* =========================================================
-*
-* Copyright 2016 Creative Tim (http://www.creative-tim.com/product/paper-bootstrap-wizard)
- *
- *                       _oo0oo_
- *                      o8888888o
- *                      88" . "88
- *                      (| -_- |)
- *                      0\  =  /0
- *                    ___/`---'\___
- *                  .' \|     |// '.
- *                 / \|||  :  |||// \
- *                / _||||| -:- |||||- \
- *               |   | \\  -  /// |   |
- *               | \_|  ''\---/''  |_/ |
- *               \  .-\__  '-'  ___/-. /
- *             ___'. .'  /--.--\  `. .'___
- *          ."" '<  `.___\_<|>_/___.' >' "".
- *         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
- *         \  \ `_.   \_ __\ /__ _/   .-` /  /
- *     =====`-.____`.___ \_____/___.-`___.-'=====
- *                       `=---='
- *
- *     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *
- *               Buddha Bless:  "No Bugs"
- *
- * ========================================================= */
-
-// Paper Bootstrap Wizard Functions
 
 searchVisible = 0;
 transparent = true;
@@ -43,20 +9,39 @@ transparent = true;
 
             // Code for the Validator
             var $validator = $('.wizard-card form').validate({
-        		  rules: {
-        		    firstname: {
-        		      required: true,
-        		      minlength: 3
-        		    },
-        		    lastname: {
-        		      required: true,
-        		      minlength: 3
-        		    },
-        		    email: {
-        		      required: true
-        		    }
+                  rules: {
+                    "job[title]": {
+                      required: true,
+                      minlength: 3,
+                      maxlength:150
+                    },
+                    "job[area]": {
+                      required: true,
+                      minlength: 3,
+                      maxlength:150
+                    },
+                    "job[grade]": {
+                      required: true,
+                      minlength: 3,
+                      maxlength:150
+                    },
+                    "job[exp]": {
+                      required: true,
+                      digits: true
+                    },
+                    "job[salary]": {
+                      required: true,
+                      digits: true
+                    },
+                    "job[number]": {
+                      required: true,
+                      digits: true
+                    },
+                    "job[sex]": {
+                      required: true
+                    }
                 },
-        	});
+            });
 
             // Wizard Initialization
           	$('.wizard-card').bootstrapWizard({

@@ -6,7 +6,7 @@
         <div class="col-sm-8 col-sm-offset-2">
           <div class="wizard-container">
             <div class="card wizard-card" data-color="azure" id="wizard">
-              <%= form_for [:employers, @jobs] , method: :post do |f|  %>
+              <%= form_for [:employers, @job] , method: :patch do |f|  %>
                 <div class="wizard-header">
                   <h3 class="wizard-title"><%= t("job.jobNewH3")%></h3>
                   <p class="category"><%= t("job.jobNewP")%></p>
@@ -19,7 +19,7 @@
                     <li>
                       <a href="#details" data-toggle="tab">
                         <div class="icon-circle">
-                          <i class="fa fa-address-card-o fa-2x" aria-hidden="true"></i>
+                          <i class="ti-list"></i>
                         </div>
                         <%= t("job.jobNewDetails")%>
                       </a>
@@ -27,7 +27,7 @@
                     <li>
                       <a href="#captain" data-toggle="tab">
                         <div class="icon-circle">
-                          <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>
+                          <i class="ti-briefcase"></i>
                         </div>
                         <%= t("job.jobNewTimetable")%>
                       </a>
@@ -35,7 +35,7 @@
                     <li>
                       <a href="#description" data-toggle="tab">
                         <div class="icon-circle">
-                          <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+                          <i class="ti-pencil"></i>
                         </div>
                          <%= t("job.jobNewDescription")%>
                       </a>

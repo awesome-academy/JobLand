@@ -5,6 +5,12 @@ class Employers::JobsController < ApplicationController
 		@jobs = current_user.jobs.page params[:page]
 		@company = current_user.company
 	end
+
+	def show
+		@job = Job.find params[:id]
+		@users = @job.applyjobs
+	end
+
 	def new
 		@jobs = Job.new
 	end
@@ -12,19 +18,36 @@ class Employers::JobsController < ApplicationController
 	def create
 		@job = current_user.jobs.build job_params
 		if @job.save
-			flash[:success] = "Job created!"
+			flash[:success] = t("job.jobCreate")
       redirect_to root_url
 		else
-			flash[:success] = "Job error!"
+			flash[:success] = t("job.JobError")
 			redirect_to root_url
 		end
 	end
 
-	def show
+	def edit
 		@job = Job.find params[:id]
-		@users = @job.applyjobs
-
 	end
+
+	def update
+		@job = Job.find params[:id]
+		if @job.update job_params
+			flash[:success] = t("job.JobUpdate")
+			redirect_to employers_jobs_path
+		else
+			flash[:success] = t("job.JobError")
+		end
+	end
+	def destroy
+    @job = Job.find params[:id]
+    @job.destroy
+    respond_to do |format|
+      format.html { redirect_to :back, notice: t("job.JobDelete")}
+      format.json { head :no_content }
+      format.js   { render layout: false }
+    end
+  end
 
 	private
   def job_params
