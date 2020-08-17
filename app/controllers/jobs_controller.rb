@@ -1,6 +1,11 @@
 class JobsController < ApplicationController
 	before_action :authenticate_user!
 
+  def index
+    @company = Company.find params[:company_id]
+    @jobs = @company.user.jobs.all_approved_true
+  end
+
   def show
   	@job = Job.find params[:id]
   	@user = User.first

@@ -78,7 +78,7 @@ en:
     job:
       local: "Local"
       apply: "Apply"
-      members: "People members"
+      members: "members"
       what: "What we do"
       why: "Why we do"
       how: "How we do"

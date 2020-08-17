@@ -1,4 +1,4 @@
-class Employers::CompaniesController < ApplicationController
+class Employer::CompaniesController < ApplicationController
   before_action :authenticate_user!
 
   def new
@@ -15,10 +15,17 @@ class Employers::CompaniesController < ApplicationController
 
   def create
     @company = Company.new company_params
-    @company.user = current_user
+    @company.user_id = current_user.id 
     @company.image.attach(params[:company][:image])
+    Stripe::Charge.create(
+     :amount => 500,
+     :currency => "usd",
+     :source => params[:stripeToken],
+     :description => "Charge for jenny.rosen@example.com"
+    )
     if @company.save
-      redirect_to employers_company_path(@company)
+      
+      redirect_to employer_company_path(@company)
     end
   end
 
@@ -29,7 +36,7 @@ class Employers::CompaniesController < ApplicationController
   def update
     @company = Company.find params[:id]
     if @company.update company_params
-      redirect_to employers_company_path
+      redirect_to employer_company_path
     end
   end
 

@@ -1,4 +1,4 @@
-class Employers::JobsController < ApplicationController
+class Employer::JobsController < ApplicationController
 	  before_action :authenticate_user!
 
 	def index

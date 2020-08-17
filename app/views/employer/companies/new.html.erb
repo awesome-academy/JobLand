@@ -1,10 +1,19 @@
-<div class="companies_index">
+<div class="container">
     <div class="company_Info ">
-        <%= render 'employers/companies/navbar'%>
+        <div class="col-md-2">
+          <ul>
+            <li class="nav-item active">
+                <%= link_to root_path do %>
+                    <i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i>
+                <% end %>
+            </li>
+          </ul>
+        </div>
+    </div>
     </div>
     <div class="company_form_info col-md-7">
-        <h3>Edit company</h3><br>
-        <%= form_for [:employers , @company ] do |f| %>
+        <h3>New company</h3><br>
+        <%= form_for [:employer , @company ] do |f| %>
         <div class="form-group">
             <li class="fa fa-user-circle" aria-hidden="true">
                 <%= t("cp.full_name") %> :</li>
@@ -42,10 +51,29 @@
         <span class="image">
             <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
         </span>
+        
         <div class="submit-education">
-            <div class="submit">
-                <%= f.submit t("cp.submit"), class: "btn btn-primary"%>
-            </div>
+            <%= form_tag employer_companies_path do %>
+             <article>
+               <% if flash[:error].present? %>
+                 <div id="error_explanation">
+                   <p><%= flash[:error] %></p>
+                 </div>
+               <% end %>
+               <label class="amount">
+                 <span>Amount: $5.00</span>
+               </label>
+             </article>
+
+             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                     data-description="A month's subscription"
+                     data-amount="500"
+                     data-name="Doan"
+                     data-image=""
+                     data-locale="auto">
+             </script>
+            <% end %>
         </div>
         <% end %>
     </div>

@@ -1,5 +1,5 @@
 <div class="container">
-<%= render 'employers/companies/navbar'%>
+<%= render 'employer/companies/navbar'%>
   <div class="col-md-10">
     <div class="row">
             <div class="col_xl_3 col-sm-6 mb-3">
@@ -10,7 +10,7 @@
                   </div>
                   <div class="mr-5"><%= t("companies.newjob")%></div>
                 </div>
-                <%= link_to new_employers_job_path, "data-turbolinks": false do %>
+                <%= link_to new_employer_job_path, "data-turbolinks": false do %>
                   <span class="float-left"><%= t("companies.view")%></span>
                   <span class="float-right">
                     <i class="fa fa-caret-right" aria-hidden="true"></i>
@@ -42,7 +42,7 @@
                   </div>
                   <div class="mr-5"><%= t("companies.members") %></div>
                 </div>
-                <%= link_to employers_members_path do %>
+                <%= link_to employer_members_path do %>
                   <span class="float-left"><%= t("companies.view") %></span>
                   <span class="float-right">
                     <i class="fa fa-caret-right" aria-hidden="true"></i>
@@ -74,9 +74,8 @@
               <%= t("companies.chart") %>
             </div>
             <div class="card-body">
-              <%= area_chart @jobs.group(:created_at).count %>
+              <%= area_chart @jobs.group_by_hour_of_day(:created_at, format: "%-l %P").count %>
             </div>
-            <div class="card_footer">Updated yesterday at 11:59 PM</div>
           </div>
 
           <div class="card mb-3">
@@ -100,16 +99,16 @@
                     <tr>
                       <td><%= index+1 %></td>
                       <td>
-                        <%= link_to job.title, employers_job_path(job.id) %>
+                        <%= link_to job.title, employer_job_path(job.id) %>
                       </td>
                       <td><%= job.from_date %></td>
                         <td><%= job.to_date %></td>
-                      <td><%= link_to job.applyjobs.count, employers_job_applyjobs_path(job.id) %></td>
+                      <td><%= link_to job.applyjobs.count, employer_job_applyjobs_path(job.id) %></td>
                       <td class="text-center">
-                        <%= link_to edit_employers_job_path(job),"data-turbolinks": false,  class: "btn btn-success btn-sm btn-job" do %>
+                        <%= link_to edit_employer_job_path(job),"data-turbolinks": false,  class: "btn btn-success btn-sm btn-job" do %>
                           <i class="fa fa-pencil" aria-hidden="true"></i> <%= t("employers.jobs.index.edit") %>
                         <% end %>
-                        <%= link_to employers_job_path(job),method: :delete, data: { confirm:"index.You sure?"},remote: true,  class: "btn btn-danger btn-sm btn-job destroy" do %>
+                        <%= link_to employer_job_path(job),method: :delete, data: { confirm:"index.You sure?"},remote: true,  class: "btn btn-danger btn-sm btn-job destroy" do %>
                          <i class="fa fa-ban" aria-hidden="true"></i> <%= t("employers.jobs.index.close") %></a>
                         <% end %>
                       </td>
@@ -118,7 +117,7 @@
                   </table>
               </div>
             </div>
-            <%= link_to  t("companies.more"), employers_jobs_path, class: "card_footer small text-muted text-center"%>
+            <%= link_to  t("companies.more"), employer_jobs_path, class: "card_footer small text-muted text-center"%>
           </div>
   </div>
 </div>

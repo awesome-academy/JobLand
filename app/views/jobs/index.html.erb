@@ -1,0 +1,41 @@
+<div>
+  <div class="menuCompanyJobs"> 
+    <%= image_tag @company.image, :style => "width: 50px; height: 50px; border-radius: 50%;" if @company.image.attached? %>
+    <div class="nameCompanyjobs"><%= @company.full_name %></div>
+    <div class="navCompanyJobs">
+      <%= link_to "Home", company_path(@company) %>
+      <a href="">Members</a>
+      <%= link_to "Jobs", company_jobs_path(@company) %>
+    </div>
+  </div>
+</div>
+<div class="col-md-2"></div>
+<div class="col-md-6">
+	<% @jobs.each do |job_new| %>
+		<div class="count-job col-md-12">
+		  <div class="row">
+			    <div class="img-job col-md-12">
+			      <%= image_tag('3.webp')%>
+			    </div>
+			    <div class="hagtag-job col-md-12">
+			      <ul>
+			        <li><a href="#"><%= t("home.new") %></a></li>
+			        <li><a href="#"><%= t("home.hot") %></a></li>
+			      </ul>
+			    </div>
+			    <div class="title-job col-md-12">
+		  			<%= link_to job_new.title, job_path(job_new) %>
+			    </div>
+		    <div class="about-job col-md-12">
+		      <p><%= job_new.what.first(80) %>...</p>
+		      </div>
+		    <div class="name-company-job col-md-12">
+		         <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
+		    </div>
+		      <div class="name-company-job col-md-12">
+		         <td> <%= link_to job_new.salary, job_path(job_new.id) %> $ </td>
+		    </div>
+		  </div>
+		</div>
+	<% end %>
+</div>

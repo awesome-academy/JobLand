@@ -36,7 +36,11 @@ Rails.application.routes.draw do
 
     resources :jobs
     resources :cvs
+    resources :companies, only: [:show]
     resources :experiences
+    resources :companies do 
+      resources :jobs, only: [:index]
+    end
     resources :educations
     resources :users do
       resources :applyjobs
@@ -47,7 +51,7 @@ Rails.application.routes.draw do
     resources :experiences
     resources :cv_skills
     resources :cv_languages
-    namespace :employers do
+    namespace :employer do
       resources :jobs do
         resources :applyjobs
       end

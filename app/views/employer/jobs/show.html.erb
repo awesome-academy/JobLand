@@ -1,5 +1,5 @@
 <div class="container">
-  <%= render 'employers/companies/navbar'%>
+  <%= render 'employer/companies/navbar'%>
   <div class="employer_job_show col-md-10">
       <h2><strong><%= @job.title %></strong></h2>
       <div class="company_img_name">
@@ -36,22 +36,18 @@
         </div>
       </div>
       <div class="job_infomation col-md-12">
-        <%= @job.info %>
+        <%= @job.what %>
+      </div>
+      <div class="job_infomation col-md-12">
+        <%= @job.why %>
+      </div>
+      <div class="job_infomation col-md-12">
+        <%= @job.how %>
       </div>
 
       <div class="applied_users col-md-12">
          <h3 id="applied_users_list">Danh sách người ứng tuyển</h3>
         <%= render 'employers/applyjobs/indexs'%>
       </div>
-
-      <!-- <div class="card mb-3 col-md-10">
-        <div class="card-header">
-          <i class="fas fa-chart-bar"></i>
-          <%= t("job.chart") %></div>
-        <div class="card-body">
-
-        </div>
-        <div class="card-footer small text-muted"></div>
-      </div> -->
   </div>
 </div>
