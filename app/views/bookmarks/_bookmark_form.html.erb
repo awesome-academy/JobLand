@@ -1,14 +1,14 @@
-<div id="form_apply">
-<%= form_for [@job, @applyjob] do |f| %>
+<div id="form_book">
+<%= form_for [@job, @bookmark] do |f| %>
   <%= f.hidden_field :job_id, value: @job.id %>
-  <%= f.submit t("aj.apply"), id: "applyjob_button", class: "btn btn-primary btn-lg" %>
+<%= f.submit t("global.job.bookmark"), id: "bookmark_button", class: "btn btn-primary btn-lg bookmark" %>
 <% end %>
 </div>
 
-
-<!-- <script>
+<script>
 $(document).ready(function(){
-  $("#form_apply form").on('submit',function(event){
+
+  $("#form_book form").on('submit',function(event){
     event.preventDefault();
     var formHTML = event.target;
 
@@ -17,10 +17,13 @@ $(document).ready(function(){
       method: 'POST',
       data: $(this).serialize(),
       success: function(data){
-        $('#form_apply').html(data);
+        $('#form_book').html(data);
       }
     });
   });
 });
-</script> -->
+</script>
+
+
+
 

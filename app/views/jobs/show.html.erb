@@ -16,11 +16,19 @@
         <div class="inline-block">
         </div>
           <div class="text-center rounded col-md-2">
-            <a href="#">
-              <div class="border p-3">
-                <i class="fa fa-bookmark-o fa-lg" aria-hidden="true"><%= t("global.job.bookmark") %></i>
+
+                 <div class="ml-5 col-md-2">
+              <% if @bookmarked.nil? %>
+            <div>
+              <%= render "bookmarks/bookmark_form" %>
             </div>
-            </a>
+          <% else %>
+            <div>
+              <%= render "bookmarks/bookmarked_form" %>
+            </div>
+          <% end %>
+            </div>
+
           </div>
         <div class="ml-5 col-md-2">
           <% if @appliedjob.nil? %>
@@ -84,6 +92,7 @@
           <div >
             <i class="fa fa-usd fa-lg" aria-hidden="true"><%= @job.salary %></i>
           </div>
+
           <div>
             <% if @appliedjob.nil? %>
             <div>
@@ -174,20 +183,9 @@
             </div>
             </div>
           </div>
-          <!--  -->
-          <div class="col-md-4">
-            <div>
-              <h5><strong><%= t("global.job.requested") %></strong></h5>
-              <span class="text-secondary">
-                Other users cannot see whether or not you're interested.
-              </span>
-                <a href="#" class="">
-                  <div class="text-center mt-5 mb-5 border p-2 rounded">
-                      <i class="fa fa-bookmark-o fa-lg" aria-hidden="true"><%= t("global.job.bookmark") %></i>
-                  </div><hr>
-                </a>
-            </div>
+          <!-- bmk -->
 
+          </div>
             <div>
               <h5><strong><%= t("global.job.recommendations") %></strong></h5>
                 <a href="#" class="">

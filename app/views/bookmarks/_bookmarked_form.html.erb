@@ -1,0 +1,21 @@
+<div class="btn bookmarked">
+ <p><i class="fa fa-bookmark" aria-hidden="true"> <%= t("global.job.bookmarked") %> </i></p>
+</div>
+
+<script>
+$(document).ready(function(){
+  $(".btn bookmarked").bind('submit',function(event){
+    event.preventDefault();
+    var formHTML = event.target;
+
+    $.ajax({
+      url: formHTML.action,
+      method: 'POST',
+      data: $(this).serialize(),
+      success: function(data){
+        $('.btn bookmarked').html(data);
+      }
+    });
+  });
+});
+</script>

@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @cv_language = CvLanguage.new
     @cv = Cv.find params[:id]
     @applyjobs = Applyjob.all
+    @bookmarks = Bookmark.all
   end
 
   def update

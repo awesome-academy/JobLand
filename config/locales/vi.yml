@@ -37,6 +37,11 @@ vi:
     work: "I currently work here"
     remove: "Remove"
     success: "Success"
+    job:
+     bookmark: "Đánh Dấu"
+     bookmarked: "Đã Đánh Dấu"
+     bookmarkJobs: "Việc Làm Đã Đánh Dấu"
+     un: "Bỏ Lưu"
   employers:
     jobs:
       index:
