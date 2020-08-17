@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 #appliedq {
 	font-size: 18px;
-    border-radius: 50px;
-    padding: 11px 30px;
-    font-weight: 400;
+  border-radius: 50px;
+  padding: 11px 30px;
+  font-weight: 400;
 }
 .applied_jobs{
   margin-top: 13px;
@@ -22,4 +22,10 @@
 
 .center {
   text-align: center;
+}
+.user_name_apply{
+  text-align: left;
+}
+.stt{
+  padding: -50px;
 }

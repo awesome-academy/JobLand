@@ -38,7 +38,7 @@
 	margin-right: 30px;
 }
 .mr_500 {
-	margin-left: 220px; 
+	margin-left: 220px;
 }
 .mt_8 {
 	margin-top: 30px;
@@ -99,7 +99,7 @@
 /*@media (min-width: 1200px)*/
 .col_xl_3 {
 	flex: 0 0 25%;
-	max-width: 25%;	 
+	max-width: 25%;
 }
 .border_primary {
 	border: 1px solid #007bff;
@@ -118,14 +118,14 @@
 }
 .card {
 	position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
 }
 .card-body {
 	flex: 1 1 auto;

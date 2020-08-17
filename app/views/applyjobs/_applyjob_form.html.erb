@@ -1,17 +1,17 @@
 <div id="form_apply">
 <%= form_for [@job, @applyjob] do |f| %>
   <%= f.hidden_field :job_id, value: @job.id %>
-  <%= f.submit t("global.job.apply"), id: "applyjob_button", class: "btn btn-primary btn-lg" %>
+  <%= f.submit t("aj.apply"), id: "applyjob_button", class: "btn btn-primary btn-lg" %>
 <% end %>
 </div>
 
 
 <!-- <script>
-$(document).ready(function(){  
+$(document).ready(function(){
   $("#form_apply form").on('submit',function(event){
     event.preventDefault();
     var formHTML = event.target;
-    
+
     $.ajax({
       url: formHTML.action,
       method: 'POST',

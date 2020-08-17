@@ -8,11 +8,24 @@
       </div>
 
       <div class="form-group">
-        <%= f.label t("exp.companyname") %>
+        <%= f.label t("exp.position") %>
         <%= f.text_field :title, placeholder: "", class: 'form-control' %>
       </div>
 
-      <div class="form-group">
+      <div  class="exp_time_work col-md-12">
+        <div class="work_start col-md-5">
+          <%= f.label t("exp.from") %>
+          <%= f.date_field :work_date, placeholder: 'mm/dd/yyyy' %>
+        </div>
+
+        <div class="work_end col-md-5">
+          <%= f.label t("exp.to") %>
+          <%= f.date_field :work_date2, placeholder: 'mm/dd/yyyy' %>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group" id="work_status">
         <%= f.check_box :work_status, {placeholder: "",class: "form-check-input"},
          "open", "closed"  %>
         <%= f.label t("exp.works") %>
@@ -30,17 +43,6 @@
          class: 'form-control' %>
       </div>
 
-      <div  class="exp_time_work col-md-12">
-        <div class="work_start col-md-5">
-          <%= f.label t("exp.from") %>
-          <%= f.date_field :work_date, placeholder: 'mm/dd/yyyy' %>
-        </div>
-
-        <div class="work_end col-md-5">
-          <%= f.label t("exp.to") %>
-          <%= f.date_field :work_date2, placeholder: 'mm/dd/yyyy' %>
-        </div>
-      </div>
 
       <div class = "submit-experience" >
         <input class="btn btn-danger cancel" type="button" value="<%= t('exp.cancel') %>">

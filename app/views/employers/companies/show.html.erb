@@ -1,61 +1,62 @@
-<div class="container">
-    <%= image_tag @company.display_image if @company.image.attached? %>
-    <div class="row">
-      <div class="col-lg-8">
-        <h1 class="mt-4"><%= @company.full_name %> <%= link_to t("cp.edit"), edit_employers_company_path(@company), class: "btn btn-primary edit-company" %></h1>
-        <p class="lead">
-          <%= time_ago_in_words(@company.created_at) %>
-          <%= t("cp.ago") %>
-        </p>
-        <hr>
-        <p class="lead">
-            <% if @company.descr %>
-                <%= @company.descr %>
-            <% end %>
-        </p>
-        <hr>
-      </div>
-      <div class="col-md-4" style="margin-top: 30px">
-        <div class="card my-4 margin-xl">
-          <h3 class="card-header"><i class="fa fa-building fa-lg" aria-hidden="true"></i><%= t("cp.company") %></h3>
-                <div class="margin-xl">
-                <ul class="margin-xl">
+<div class="companies_index col-md-12">
+  <div class="company_Info ">
+    <%= render 'employers/companies/navbar'%>
+  </div>
+  <div>
+    <div class="col-md-6">
+        <%= image_tag @company.display_image if @company.image.attached? %>
+      <h1 class="mt-4"><%= @company.full_name %> <%= link_to t("cp.edit"), edit_employers_company_path(@company), class: "btn btn-primary edit-company" %></h1>
+      <p class="lead">
+        <%= time_ago_in_words(@company.created_at) %>
+        <%= t("cp.ago") %>
+      </p>
+      <hr>
+      <p class="lead">
+        <% if @company.descr %>
+          <%= @company.descr %>
+        <% end %>
+      </p>
+      <hr>
+    </div>
+    <div class="company_contacts col-md-4">
+      <div class="card my-4 margin-xl" id="company_contact">
+        <h3 class="card-header"><i class="fa fa-building fa-lg" aria-hidden="true"></i><%= t("cp.company") %></h3>
+          <div class="margin-xl">
+            <ul class="margin-xl">
+              <li class="link_to_web">
+                <i class="fa fa-link fa-lg" aria-hidden="true"></i>
+                  <%= link_to @company.link %><%="..."%>
+              </li>
 
-                  <li class="link_to_web">
-                    <i class="fa fa-link fa-lg" aria-hidden="true"></i>
-                      <%= link_to @company.link %><%="..."%>
-                  </li>
+              <li>
+                <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+                <%= @company.address%>
+              </li>
 
-                  <li>
-                    <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
-                    <%= @company.address%>
-                  </li>
+              <li>
+                <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
+                <% if @company.email %>
+                    <%= @company.email %>
+                <% end %>
+              </li>
 
-                  <li>
-                    <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
-                    <% if @company.email %>
-                        <%= @company.email %>
-                    <% end %>
-                  </li>
+              <li>
+                <i class="fa fa-phone-square fa-lg" aria-hidden="true"></i>
+                <%= @company.phone %>
+              </li>
 
-                  <li>
-                    <i class="fa fa-phone-square fa-lg" aria-hidden="true"></i>
-                    <%= @company.phone %>
-                  </li>
-
-                  <li>
-                    <i class="fa fa-users fa-lg" aria-hidden="true"> </i>
-                    <%= @company.total   %> <%= t("cp.member") %>
-                  </li>
+              <li>
+                <i class="fa fa-users fa-lg" aria-hidden="true"> </i>
+                <%= @company.total   %> <%= t("cp.member") %>
+              </li>
                 </ul>
             </div>
-
-        </div>
-        <div id="map" style="display: block;width: 360px; height: 300px;"></div>
+          </div>
+        <div id="map"></div>
       </div>
     </div>
   </div>
-
+</div>
 
 <script>
 $(document).ready(function() {
