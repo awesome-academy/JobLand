@@ -73,19 +73,24 @@
   margin-top: -69px;
 }
 .profile-photo{
+  margin-top: -92px;
   display: block;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border: 1px solid #e3e3e3;
   margin-left: 1px;
   background-color: #a0a0a0;
   text-align: left;
 }
+.profile-photo-size img{
+  width: 140px;
+  height: 140px;
+}
 .edit-photo{
   margin-top: -20px;
 }
 .name-and-tagline{
-  margin-left: 130px;
+  margin-left: 150px;
   margin-top: -66px;
 }
 .user-profile-aside-section{
@@ -100,6 +105,7 @@
   margin-top: 10px;
   padding: 20px 20px 15px 20px;
   background-color: #f3edf0;
+  color: #66605b;
 }
 .user-saved-jobs{
   border-top: 1px solid #a0a0a0;
@@ -109,6 +115,7 @@
   margin-top: 10px;
   padding: 20px 20px 15px 20px;
   background-color: #f1f0e4;
+  color: #66605b;
 }
 .popup-edit-user-contact{
 
@@ -170,4 +177,11 @@
   background-color: var(--white-color);
   margin: auto;
   border-radius: 5px;
+}
+
+/*Apply*/
+#a_b_count{
+  text-align: center;
+  font-size: 60px;
+  margin-top: -90px;
 }

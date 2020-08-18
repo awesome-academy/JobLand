@@ -3,7 +3,7 @@ vi:
     profile updated: "Cập nhật hồ sơ!"
     STT: "STT"
     information: "Thông tin tuyển dụng"
-    delete: "Xoá"
+    cancel: "Hủy"
     you sure?: "Bạn có chắc?"
     name: "Họ tên"
     status: "Trạng thái"
@@ -12,3 +12,4 @@ vi:
     phone: "Số điện thoại"
     apply: "Nộp hồ sơ"
     inter_reject: "Xét hồ sơ"
+    status_apply: "Trạng thái"

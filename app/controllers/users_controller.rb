@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     @cv_skill = CvSkill.new
   end
 
+  def create
+    @user = current_user
+    @user.image.attach(params[:image])
+  end
+
   def show
     @user = User.find params[:id]
     @education = Education.new
@@ -37,6 +42,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit :address, :dob, :sex, :phone
+    params.require(:user).permit :address, :dob, :sex, :phone, :image
   end
 end

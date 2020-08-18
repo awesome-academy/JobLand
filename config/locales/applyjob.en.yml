@@ -1,9 +1,9 @@
 en:
   aj:
     profile updated: "Profile Updated!"
-    STT: "STT"
+    STT: "Ordinal"
     information: "Information"
-    delete: "Delete"
+    cancel: "Cancel"
     you sure?: "You sure?"
     name: "Name"
     connect: "Status"
@@ -12,3 +12,4 @@ en:
     phone: "Phone"
     apply: "Apply"
     inter_reject: "Interview  Rejiect"
+    status_apply: "Status"

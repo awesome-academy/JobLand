@@ -124,11 +124,6 @@ Job.create(title: "developer Ruby on Rails", user_id: 1, sex: 0, time_work: 0, g
 # Tự tin. Khả năng chấp nhận và học hỏi từ những lời phê bình",slide:true)
 # Job.create(title: "developer Ruby on Rails", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
 # 10000000, number: 6, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", info: "Use Ruby on Rails Html, CSS, master Mysql",slide:true)
-
-
-
-
->>>>>>> Bug
 # Place.create!([
 # { "name": "Buckingham Palace", "latitude": "51.501564","longitude": "51.502564"},
 # { "name": "Westminster Abbey", "latitude": "51.499581", "longitude": "-0.127309"},

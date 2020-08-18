@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :menbered, through: :member, source: :company
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked, through: :bookmarks, source: :job
+  has_one_attached :image
   after_create do
     Cv.create(user_id: self.id)
   end

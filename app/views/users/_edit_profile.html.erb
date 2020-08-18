@@ -28,6 +28,10 @@
           <%= f.label "Birthday" %><br>
           <%= f.date_select :dob, order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 150 %>
         </div>
+        <div class="image">
+          <%= f.label t('pf.pf_image') %><br>
+          <%= f.file_field :image %>
+        </div>
         <div class = "submit-user-profile" >
           <button class="btn btn-danger cancel" type="button" onclick="closeForm()"><%= t("pf.cancel") %></button>
           <%= f.submit t('pf.update'), class: "btn btn-outline-secondary" %>
