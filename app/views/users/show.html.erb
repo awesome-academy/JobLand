@@ -5,7 +5,9 @@
     <div class="profile-header">
       <a class="ui-show-modal profile-photo-wrapper">
         <div class="profile-photo">
-          profile-photo
+          <font class="profile-photo-size">
+            <%= image_tag @user.image if @user.image.attached? %>
+          </font>
         </div>
         <div class="edit-photo">
           <div class="icon-camera"></div>
@@ -165,7 +167,7 @@
               <div class="applied">
                 <%= t("userp.applied") %>
               </div>
-              <div id = "apply_count">
+              <div id = "a_b_count">
                 <%= @user.applyjobs.count %>
               </div>
             </section>
@@ -182,11 +184,14 @@
             </div>
             <div class="jobs-saved">
               <%= t("userp.saveJob") %>
-              <%= @user.bookmarks.count %>
+            </div>
+            <div id = "a_b_count">
+               <%= @user.bookmarks.count %>
+            </div>
           </section>
         </div>
-        <div class="saved-jobs">
-          <section class="user-all-saved-jobs">
+        <div class="more-action">
+          <section class="more-action">
 
           </section>
         </div>
