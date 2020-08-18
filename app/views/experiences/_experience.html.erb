@@ -1,4 +1,4 @@
-<div class="exp_list_form" id="experience-<%= experience.id %>">
+<li  class="exp_list_form" id="experience-<%= experience.id %>">
   <div class="exp_company_name">
     <b><%=t("exp.companyname")%>:</b> <%= experience.name %>
   </div>
@@ -15,5 +15,7 @@
     <%= link_to t("exp.edit"), edit_experience_path(experience) ,
     class: "btn btn-primary edit-experience" ,"data-id": experience.id %>
     <%= link_to t("exp.delete"), experience, remote: true, method: :delete, data: { confirm: t("global.language.yousure") },class: 'btn btn-outline-secondary destroy' %>
+
   </div>
-</div>
+</li >
+
