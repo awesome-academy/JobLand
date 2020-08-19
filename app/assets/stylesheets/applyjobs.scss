@@ -1,27 +1,62 @@
+
+.applied_users{
+  margin-top: 50px;
+  border-top: 1px solid #e3e3e3;
+}
+
+#applied_users_list{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.list_applied_users{
+  margin-top: 50px;
+}
+
+.table_inner_coler{
+  background-color: #ebfaff;
+}
+
 #appliedq {
 	font-size: 18px;
   border-radius: 50px;
   padding: 11px 30px;
   font-weight: 400;
 }
+
 .applied_jobs{
   margin-top: 13px;
   width: 100%;
   height: 530px;
   background: #f3edf0;
 }
+
 .table-responsive-apply{
   background: #f3edf0;
 }
+
+.user-jobs-aready-applied{
+  color: #66605b;
+}
+
 .job_info {
   text-align: center;
 }
 .center {
   text-align: center;
 }
+
 .user_name_apply{
   text-align: left;
 }
+
 .stt{
   padding: -50px;
+}
+
+.apply_tottal{
+}
+
+.interview_tottal{
+  margin-left: 77%;
 }

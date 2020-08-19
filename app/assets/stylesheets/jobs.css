@@ -161,3 +161,7 @@
 	position: absolute;
     top: 62px;
 }
+
+.employer_job_show{
+	border-left: 1px solid #e3e3e3;
+}

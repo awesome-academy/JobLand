@@ -13,3 +13,6 @@ en:
     apply: "Apply"
     inter_reject: "Interview  Rejiect"
     status_apply: "Status"
+    total: "Total"
+    applied_total: "User applied"
+    interview_total: "Interview"
