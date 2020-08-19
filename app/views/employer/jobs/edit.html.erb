@@ -2,9 +2,9 @@
   <%= render 'employers/companies/navbar'%>
   <div class="col-md-10">
     <div class="row employer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2">
+      <!-- <div class="container"> -->
+        <!-- <div class="row"> -->
+          <div class="col-md-12">
             <div class="wizard-container">
               <div class="card wizard-card" data-color="azure" id="wizard">
                 <%= form_for [:employers, @job] , method: :patch do |f|  %>
@@ -164,8 +164,8 @@
               </div>
             </div> <!-- wizard container -->
           </div>
-        </div> <!-- row -->
-      </div> <!--  big container -->
+        <!-- </div> row -->
+      <!-- </div>  big container -->
     </div>
   </div>
 </div>

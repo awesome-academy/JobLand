@@ -31,7 +31,6 @@
     <% end %>
   </div>
 </div>
-
 <main>
   <div class="container">
     <div class="container-75">
@@ -70,47 +69,55 @@
                 </div>
                 <div class="col-md-9">
                   <ul>
-                    <li><a href="#"><%= t("home.Newest") %></a></li>
-                    <li><a href="#"><%= t("home.Recommended") %></a></li>
+                    <% if !@approvedJobs.nil? %>
+                      <li><%= link_to t("home.Newest"),home_path(type: "newest") ,class: "newest blue-a"%></li>
+                    <% else %>
+                      <li><%= link_to t("home.Newest"),home_path(type: "newest") ,class: "newest"%></li>
+                    <% end %>
+                    <% if !@job_Recommended.nil? %> 
+                    <li><%=link_to t("home.Recommended"),home_path(type: "recommended") ,class: "newest blue-a"%></li>
+                    <% else %>
+                    <li><%=link_to t("home.Recommended"),home_path(type: "recommended") ,class: "newest"%></li>
+                    <% end %>
                   </ul>
                   <h4><%= t("home.sort") %></h4>
                 </div>
               </div>
             </div>
-                <div class="searchHome" >
-                  <% if params[:q] %>
-                 <% if !@jobs.nil? %>
-              <% @jobs.each do |job_new| %>
-                <div class="count-job col-md-12">
-                  <div class="row">
-                    <div class="img-job col-md-12">
-                      <%= image_tag('3.webp')%>
-                    </div>
-                    <div class="hagtag-job col-md-12">
-                      <ul>
-                        <li><a href="#"><%= t("home.new") %></a></li>
-                        <li><a href="#"><%= t("home.hot") %></a></li>
-                      </ul>
-                    </div>
-                    <div class="title-job col-md-12">
-                      <%= link_to job_new.title,job_path(job_new.id) %></h5>
-                    </div>
-                 <small class="text-muted">
-                         <td> <%= link_to job_new.salary, job_path(job_new.id) %><%= t("home.currency") %></td>
-                   </small>
-                 <div class="name-company-job col-md-12"><%= link_to job_new.user.company.full_name,job_path(job_new.id) %>
-                    <div class="about-job col-md-12">
-                      <p><%= job_new.what.first(80) %>...</p>
+            <% if params[:q] %>
+              <div class="searchHome" >
+                <% if !@jobs.nil? %>
+                  <% @jobs.each do |job_new| %>
+                    <div class="count-job col-md-12">
+                      <div class="row">
+                        <div class="img-job col-md-12">
+                          <%= image_tag('3.webp')%>
+                        </div>
+                        <div class="title-job col-md-12">
+                          <%= link_to job_new.title,job_path(job_new.id) %></h5>
+                        </div>
+                        <div class="about-job col-md-12">
+                          <p><%= job_new.info.first(80) %>...</p>
+                        </div>
+                        <div class="name-company-job col-md-12">
+                          <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
+                        </div>
+                        <div class="company-job col-md-12">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <%= link_to job_new.user.company.full_name, job_path(job_new.user.company.id) %>
+                        </div>
+                      </div>
+                      <div class="col-md-6 ">
+                        <div class="row text-right">
+                          <%= link_to job_new.salary, job_path(job_new.id) %> $
+                        </div>
                       </div>
                     </div>
-                    <br>
-                     <small class="text-muted">
-                         <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
-                   </small>
-                  </div>
-                </div>
-              <% end %>
-              <% else %>
+                      </div>
+                    </div>
+                  <% end %>
+                <% else %>
                 <h2><%= t("home.nojob") %></h2>
               <% end %>
               <% else %>
@@ -121,30 +128,63 @@
                     <div class="img-job col-md-12">
                       <%= image_tag('3.webp')%>
                     </div>
-                    <div class="hagtag-job col-md-12">
-                      <ul>
-                        <li><a href="#"><%= t("home.new") %></a></li>
-                        <li><a href="#"><%= t("home.hot") %></a></li>
-                      </ul>
-                    </div>
                     <div class="title-job col-md-12">
                       <%= link_to job_new.title,job_path(job_new.id) %></h5>
                     </div>
                     <div class="about-job col-md-12">
-                      <p><%= job_new.what.first(80) %>...</p>
+                      <p><%= job_new.info.first(80) %>...</p>
                       </div>
-                       <small class="text-muted">
-                         <td> <%= link_to job_new.salary, job_path(job_new.id) %><%= t("home.currency") %></td>
-                   </small>
-                 <div class="name-company-job col-md-12"><%= link_to job_new.user.company.full_name,job_path(job_new.id) %>
-                    </div>
-                    <br>
-                     <small class="text-muted">
+                    <div class="name-company-job col-md-12">
                          <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
-                   </small>
+                    </div>
+                     <div class="company-job col-md-12">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <%= link_to job_new.user.company.full_name, job_path(job_new.user.company.id) %>
+                        </div>
+                      </div>
+                      <div class="col-md-6 ">
+                        <div class="row text-right">
+                          <%= link_to job_new.salary, job_path(job_new.id) %> $
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               <% end %>
+              <%= paginate @approvedJobs, theme: 'twitter-bootstrap-3' %>
+              <% elsif !@job_Recommended.nil? %>
+              <% @job_Recommended.each do |recommended| %>
+                <div class="count-job col-md-12">
+                  <div class="row">
+                    <div class="img-job col-md-12">
+                      <%= image_tag('3.webp')%>
+                    </div>
+                    <div class="title-job col-md-12">
+                      <%= link_to recommended.title,job_path(recommended.id) %></h5>
+                    </div>
+                    <div class="about-job col-md-12">
+                      <p><%= recommended.info.first(80) %>...</p>
+                      </div>
+                    <div class="name-company-job col-md-12">
+                         <td> <%= link_to recommended.area, job_path(recommended.id) %> </td>
+                    </div>
+                    <div class="company-job col-md-12">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <%= link_to job_new.user.company.full_name, job_path(job_new.user.company.id) %>
+                        </div>
+                      </div>
+                      <div class="col-md-6 ">
+                        <div class="row text-right">
+                          <%= link_to job_new.salary, job_path(job_new.id) %> $
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <%= paginate @job_Recommended, theme: 'twitter-bootstrap-3' %>
               <% else %>
                 <h2><%= t("home.nojob") %></h2>
               <% end %>

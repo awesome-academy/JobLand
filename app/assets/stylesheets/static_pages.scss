@@ -162,7 +162,14 @@ main{
 
 }
 }
-
 #back_home{
   margin-left: 150px;
 }
+ul.tabs li.current{
+  background: #ededed;
+  color: #00A4BB;;
+}
+a.blue-a{
+  color: #00A4BB !important;
+}
+
