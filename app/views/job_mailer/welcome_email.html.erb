@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style type="text/css">
+      ul{
+        padding:0px;
+        margin-bottom:6px;
+        margin-top:0px;
+        display:table;width:100%;
+      }
+      li{
+        display:table-cell;
+        padding-right:5px;
+        margin-left:0px;width:32%;
+        list-style:none;font-size:14px;
+        text-align:left
+      }
+      a{
+        padding: 10px 12px;
+        background-color: #46a741;
+        color: #fff;
+        border: none;
+        text-decoration: none;
+        display: table-cell;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 2px;
+      }
+      .a-mail{
+        margin-bottom: 20px;
+      }
+      .job-mail{
+        border-bottom: solid 1px;
+      }
+      .top-mail{
+        border-bottom: 3px solid #4aa741;
+      }
+      .bottom-mail{
+        margin-bottom: 10px;
+      }
+      body{
+        width: 75%;
+      }
+    </style>
+  </head>
+  <body>
+  	<div class="top-mail">
+  		<h1>Hello, welcome to my site</h1>
+	    <h3>Xin chao: <%= @user.fullname%></h3>
+	    <p>Hệ thống giới thiệu việc làm tương tự với tiêu chí tìm kiếm mở rộng dành cho bạn trong ngày hôm nay.</p>
+  	</div>
+  	<% @jobs.each do |job| %>
+    <div class="job-mail">
+	    <h3> <%= job.title %> </h3>	
+	    <p><%= job.user.company.full_name %></p>
+	    <ul >
+	    	<li > <%= job.salary %> </li>
+	    	<li > <%= job.area %> </li>
+	    </ul>
+    	<div class="bottom-mail">
+    		<%= link_to "Nop Ho So", job_url(id: job.id) %>
+    	</div>
+    </div>
+    <% end %>
+  </body>
+</html>

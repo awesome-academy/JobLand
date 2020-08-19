@@ -47,6 +47,8 @@ gem 'groupdate'
 gem 'will_paginate','3.1.8'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'whenever', :require => false
+gem "sidekiq", '5.2.7'
 gem 'bootstrap-sass', '3.4.1'
 gem 'jquery-ui-rails'
 gem 'jquery-rails'

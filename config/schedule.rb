@@ -21,3 +21,15 @@
 every 1.day, :at => '11:30 pm' do # chạy hàng ngày vào lúc 11h30 tối
   command "rails import:import_country"
 end
+
+set :environment, "development"
+# every 1.day, :at => "8:00am" do
+#     rails "UserMailer.mail_month(course).deliver_now"
+# end
+# #để kiểm soát lỗi gửi mail hệ thống
+# set :output, ".../log.log" #đường dẫn tuyệt đối
+
+every 1.day, :at => "10:41am" do
+   rake 'job:mailmonth'
+end
+
