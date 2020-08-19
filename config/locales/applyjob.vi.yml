@@ -13,3 +13,6 @@ vi:
     apply: "Nộp hồ sơ"
     inter_reject: "Xét hồ sơ"
     status_apply: "Trạng thái"
+    total: "Tổng số"
+    applied_total: "Ứng viên"
+    interview_total: "Hồ sơ được nhận"

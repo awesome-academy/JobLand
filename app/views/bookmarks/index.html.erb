@@ -1,176 +1,178 @@
-<div class="main-inner">
-  <div class="blurred-image-overlay"></div>
-  <div class="profile-header-wrapper">
-    <div class="profile-header-cover-inner"></div>
-    <div class="profile-header">
-      <a class="ui-show-modal profile-photo-wrapper">
-        <div class="profile-photo">
-          <font class="profile-photo-size">
-            <%= image_tag @user.image if @user.image.attached? %>
-          </font>
-        </div>
-        <div class="edit-photo">
-          <div class="icon-camera"></div>
-          <font>
-            Change photo
-          </font>
-        </div>
-        </a>
-        <header class="user-name-tags">
-          <div class="profile-name-top">
-            <div class="name-and-tagline">
-              <h3>
-                <%= @user.fullname %>
-              </h3>
-            </div>
+<div class="container">
+  <div class="main-inner">
+    <div class="blurred-image-overlay"></div>
+    <div class="profile-header-wrapper">
+      <div class="profile-header-cover-inner"></div>
+      <div class="profile-header">
+        <a class="ui-show-modal profile-photo-wrapper">
+          <div class="profile-photo">
+            <font class="profile-photo-size">
+              <%= image_tag @user.image if @user.image.attached? %>
+            </font>
           </div>
-        </header>
-      </div>
-    </div>
-  <div class="two-column col-md-12">
-    <div class="row">
-      <div class="column-main col-md-8" >
-          <div class="card border-0 bookmark_jobs">
-            <div class="card-body p-5">
-              <div class="table-responsive-bookmark">
-                <table class="table m-0">
-                  <thead>
-                    <tr>
-                      <th class="col-md-2" ><%= t("aj.STT") %></th>
-                      <th class="col-md-5"><%= t("global.job.bookmarkJobs")%></th>
-                      <th class="col-md-3"></th>
-                      <th class="col-md-2"><%= t("global.job.un") %></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <% @bookmarks.each_with_index do |bookmark, index| %>
-                    <div id =bookmark-<%= bookmark.id %>>
-                    <tr>
-                      <td><%= index+1 %></td>
-                      <td><%= link_to bookmark.job.title, job_path(bookmark.job.id) %></td>
-                      <td></td>
-                      <td><%= link_to user_bookmark_path(bookmark.user.id, bookmark.id), method: :delete,
-                        data: { confirm: t("aj.you sure?") },
-                        class: "btn btn-danger btn-sm rounded-0",
-                        type: "button" do %>
-                         <i class="fa fa-undo" aria-hidden="true"></i>
-                        <% end %>
-                      </td>
-                    </tr>
-                    </div>
-                  <% end %>
-                  </tbody>
-                </table>
+          <div class="edit-photo">
+            <div class="icon-camera"></div>
+            <font>
+              Change photo
+            </font>
+          </div>
+          </a>
+          <header class="user-name-tags">
+            <div class="profile-name-top">
+              <div class="name-and-tagline">
+                <h3>
+                  <%= @user.fullname %>
+                </h3>
               </div>
             </div>
-          </div>
+          </header>
+        </div>
       </div>
-      <%= will_paginate %>
+    <div class="two-column col-md-12">
+      <div class="row">
+        <div class="column-main col-md-8" >
+            <div class="card border-0 bookmark_jobs">
+              <div class="card-body p-5">
+                <div class="table-responsive-bookmark">
+                  <table class="table m-0">
+                    <thead>
+                      <tr>
+                        <th class="col-md-2" ><%= t("aj.STT") %></th>
+                        <th class="col-md-5"><%= t("global.job.bookmarkJobs")%></th>
+                        <th class="col-md-3"></th>
+                        <th class="col-md-2"><%= t("global.job.un") %></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <% @bookmarks.each_with_index do |bookmark, index| %>
+                      <div id =bookmark-<%= bookmark.id %>>
+                      <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= link_to bookmark.job.title, job_path(bookmark.job.id) %></td>
+                        <td></td>
+                        <td><%= link_to user_bookmark_path(bookmark.user.id, bookmark.id), method: :delete,
+                          data: { confirm: t("aj.you sure?") },
+                          class: "btn btn-danger btn-sm rounded-0",
+                          type: "button" do %>
+                           <i class="fa fa-undo" aria-hidden="true"></i>
+                          <% end %>
+                        </td>
+                      </tr>
+                      </div>
+                    <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+        </div>
+        <%= will_paginate %>
 
-      <div class="column-side col-md-4">
-        <div class="user-profile col-md-12 ">
-          <section class="user-profile-aside-section contact-section row">
-            <%= render "users/user_edit_profile" %>
-            <h5>
-              <font class="contact-to-colection">
-                <%= t("userp.contact") %>
-              </font>
-            </h5>
-            <div class="editable-attribute col-md-12 row">
-              <div class="contact-line col-md-12">
-                <div class="row">
-                  <div class="icon-phone contact-icon col-md-2">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                  </div>
-                  <div class="contact-value col-md-8">
-                    <%= @user.phone %>
-                  </div>
-                </div>
-              </div>
-              <div class="contact-line col-md-12">
-                <div class="row">
-                  <div class="icon-email contact-icon col-md-2">
-                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                  </div>
-                  <div class="contact-value col-md-8">
-                    <%= @user.email %>
+        <div class="column-side col-md-4">
+          <div class="user-profile col-md-12 ">
+            <section class="user-profile-aside-section contact-section row">
+              <%= render "users/user_edit_profile" %>
+              <h5>
+                <font class="contact-to-colection">
+                  <%= t("userp.contact") %>
+                </font>
+              </h5>
+              <div class="editable-attribute col-md-12 row">
+                <div class="contact-line col-md-12">
+                  <div class="row">
+                    <div class="icon-phone contact-icon col-md-2">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-value col-md-8">
+                      <%= @user.phone %>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="contact-line col-md-12">
-                <div class="row">
-                  <div class="icon-sex contact-icon col-md-2">
-                    <i class="fa fa-venus-mars" aria-hidden="true"></i>
-                  </div>
-                  <div class="contact-value col-md-8">
-                    <%= @user.sex %>
-                  </div>
-                </div>
-              </div>
-              <div class="contact-line col-md-12">
-                <div class="row">
-                  <div class="icon-dob contact-icon col-md-2">
-                    <i class="fa fa-birthday-cake" aria-hidden="true"></i>
-                  </div>
-                  <div class="contact-value col-md-8">
-                    <%= @user.dob %>
+                <div class="contact-line col-md-12">
+                  <div class="row">
+                    <div class="icon-email contact-icon col-md-2">
+                      <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-value col-md-8">
+                      <%= @user.email %>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="contact-line col-md-12">
-                <div class="row">
-                  <div class="icon-email contact-icon col-md-2">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                  </div>
-                  <div class="contact-value col-md-10">
-                    <%= @user.address %>
+                <div class="contact-line col-md-12">
+                  <div class="row">
+                    <div class="icon-sex contact-icon col-md-2">
+                      <i class="fa fa-venus-mars" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-value col-md-8">
+                      <%= @user.sex %>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="clearfix"></div>
-        <% if @user == current_user %>
-          <%= link_to user_applyjobs_path(current_user), :action => 'go' do %>
-          <div class="jobs-aready-applied" >
-            <section class="user-jobs-aready-applied">
-              <div class="icon-jobs-applied">
-                  <i class="fa fa-briefcase fa-4x" aria-hidden="true"></i>
-              </div>
-              <div class="applied">
-                <%= t("userp.applied") %>
-              </div>
-              <div id = "a_b_count">
-                <%= @user.applyjobs.count %>
+                <div class="contact-line col-md-12">
+                  <div class="row">
+                    <div class="icon-dob contact-icon col-md-2">
+                      <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-value col-md-8">
+                      <%= @user.dob %>
+                    </div>
+                  </div>
+                </div>
+                <div class="contact-line col-md-12">
+                  <div class="row">
+                    <div class="icon-email contact-icon col-md-2">
+                      <i class="fa fa-home" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-value col-md-10">
+                      <%= @user.address %>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
           </div>
+          <div class="clearfix"></div>
+          <% if @user == current_user %>
+            <%= link_to user_applyjobs_path(current_user), :action => 'go' do %>
+            <div class="jobs-aready-applied" >
+              <section class="user-jobs-aready-applied">
+                <div class="icon-jobs-applied">
+                    <i class="fa fa-briefcase fa-4x" aria-hidden="true"></i>
+                </div>
+                <div class="applied">
+                  <%= t("userp.applied") %>
+                </div>
+                <div id = "a_b_count">
+                  <%= @user.applyjobs.count %>
+                </div>
+              </section>
+            </div>
+            <% end %>
           <% end %>
-        <% end %>
-        <div class="clearfix"></div>
-        <% if @user == current_user %>
-          <%= link_to user_bookmarks_path(current_user), :action => 'go' do %>
-        <div class="user-saved-jobs">
-          <section class="user-all-saved-jobs">
-            <div class="icon-jobs-bookmark">
-              <i class="fa fa-bookmark fa-4x" aria-hidden="true"></i>
-            </div>
-            <div class="jobs-saved">
-              <%= t("userp.saveJob") %>
-            </div>
-            <div id = "a_b_count">
-               <%= @user.bookmarks.count %>
-            </div>
-          </section>
-        </div>
-        <div class="more-action">
-          <section class="more-action">
+          <div class="clearfix"></div>
+          <% if @user == current_user %>
+            <%= link_to user_bookmarks_path(current_user), :action => 'go' do %>
+          <div class="user-saved-jobs">
+            <section class="user-all-saved-jobs">
+              <div class="icon-jobs-bookmark">
+                <i class="fa fa-bookmark fa-4x" aria-hidden="true"></i>
+              </div>
+              <div class="jobs-saved">
+                <%= t("userp.saveJob") %>
+              </div>
+              <div id = "a_b_count">
+                 <%= @user.bookmarks.count %>
+              </div>
+            </section>
+          </div>
+          <div class="more-action">
+            <section class="more-action">
 
-          </section>
-        </div>
+            </section>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+        </div>
       </div>
     </div>
   </div>

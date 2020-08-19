@@ -5,6 +5,7 @@ class Employers::ApplyjobsController < ApplicationController
   end
 
   def edit
+    @job = Job.find params[:job_id]
     @applyjob = Applyjob.find params[:id]
     if @applyjob.apply_status == "Waiting" && params[:check1]
       @applyjob.update_attributes apply_status: 2
@@ -14,8 +15,7 @@ class Employers::ApplyjobsController < ApplicationController
       @applyjob.update_attributes apply_status: 1
 
     end
-      flash[:success] = t("index.Request is accepted")
-      redirect_to employers_job_applyjobs_path(@applyjob.job.id)
+      redirect_to employers_job_path(@job.id)
   end
 
   def destroy
@@ -25,9 +25,3 @@ class Employers::ApplyjobsController < ApplicationController
     redirect_to employers_job_applyjobs_path
   end
 end
-
-
-# 0 -> 1
-# 0,true ->2
-# 1->2
-# 2->1

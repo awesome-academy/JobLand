@@ -1,4 +1,4 @@
-<div class="companies_index">
+<div class="container">
 <%= render 'employers/companies/navbar'%>
   <div class="col-md-10">
 	<div class="col-md-12 jop-top">
@@ -46,7 +46,7 @@
 				<%= link_to job.title, employers_job_path(job.id) %>
 			</td>
 			<td><%= job.status %></td>
-			<td><%= link_to job.applyjobs.count, employers_job_applyjobs_path(job.id) %></td>
+			<td><%= link_to job.applyjobs.count, employers_job_path(job.id) %></td>
 			<td class="text-center">
 				<%= link_to edit_employers_job_path(job),"data-turbolinks": false,  class: "btn btn-success btn-sm btn-job" do %>
 				  <i class="fa fa-pencil" aria-hidden="true"></i> <%= t("employers.jobs.index.edit") %>

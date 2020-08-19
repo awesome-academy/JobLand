@@ -26,3 +26,7 @@ en:
     jobNewGender: "Gender:"
     jobNewAll: "All"
     jobNewH53: "Let us know about your work."
+    job_position: "Job position"
+    job_exp: "Experience"
+    job_salary: "Salary"
+    job_year: "Year(s)"

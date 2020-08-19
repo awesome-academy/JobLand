@@ -9,6 +9,7 @@ class Employers::JobsController < ApplicationController
 	def show
 		@job = Job.find params[:id]
 		@users = @job.applyjobs
+    @applyjobs = @job.applyjobs.page params[:page]
 	end
 
 	def new
