@@ -74,7 +74,7 @@
                     <% else %>
                       <li><%= link_to t("home.Newest"),home_path(type: "newest") ,class: "newest"%></li>
                     <% end %>
-                    <% if !@job_Recommended.nil? %> 
+                    <% if !@job_Recommended.nil? %>
                     <li><%=link_to t("home.Recommended"),home_path(type: "recommended") ,class: "newest blue-a"%></li>
                     <% else %>
                     <li><%=link_to t("home.Recommended"),home_path(type: "recommended") ,class: "newest"%></li>
@@ -97,7 +97,7 @@
                           <%= link_to job_new.title,job_path(job_new.id) %></h5>
                         </div>
                         <div class="about-job col-md-12">
-                          <p><%= job_new.info.first(80) %>...</p>
+                          <p><%= job_new.what.first(80) %>...</p>
                         </div>
                         <div class="name-company-job col-md-12">
                           <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
@@ -132,7 +132,7 @@
                       <%= link_to job_new.title,job_path(job_new.id) %></h5>
                     </div>
                     <div class="about-job col-md-12">
-                      <p><%= job_new.info.first(80) %>...</p>
+                      <p><%= job_new.what.first(80) %>...</p>
                       </div>
                     <div class="name-company-job col-md-12">
                          <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
@@ -164,7 +164,7 @@
                       <%= link_to recommended.title,job_path(recommended.id) %></h5>
                     </div>
                     <div class="about-job col-md-12">
-                      <p><%= recommended.info.first(80) %>...</p>
+                      <p><%= recommended.what.first(80) %>...</p>
                       </div>
                     <div class="name-company-job col-md-12">
                          <td> <%= link_to recommended.area, job_path(recommended.id) %> </td>

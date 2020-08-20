@@ -38,8 +38,9 @@ Rails.application.routes.draw do
     resources :jobs
     resources :cvs
     resources :companies, only: [:show]
+    resources :profiles
     resources :experiences
-    resources :companies do 
+    resources :companies do
       resources :jobs, only: [:index]
     end
     resources :educations

@@ -1,10 +1,6 @@
-<div class="modal">
-  <div class="modal_overlay"></div>
-  <div class="modal_body">
-    <div class="modal_inner">
 <div class="popup-edit-user-contact">
-  <button class="open-button-edit-user-contact" onclick="openForm()">
-    <%= "To edit" %>
+  <button class=" btn open-button-edit-user-contact" onclick="openForm()">
+    <%= t("userp.edit") %>
   </button>
   <div class="form-popup" id="profileForm-popup" style="display:none;">
     <div class="form-edit-user-contact">
@@ -28,13 +24,9 @@
           <%= f.label "Birthday" %><br>
           <%= f.date_select :dob, order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year, end_year: Date.today.year - 150 %>
         </div>
-        <div class="image">
-          <%= f.label t('pf.pf_image') %><br>
-          <%= f.file_field :image %>
-        </div>
         <div class = "submit-user-profile" >
-          <button class="btn btn-danger cancel" type="button" onclick="closeForm()"><%= t("pf.cancel") %></button>
-          <%= f.submit t('pf.update'), class: "btn btn-outline-secondary" %>
+          <button class="btn btn-danger cancel" type="button" onclick="closeForm()"><%= t("userp.cancel") %></button>
+          <%= f.submit t('userp.update'), class: "btn btn-outline-secondary" %>
         </div>
       <% end %>
     </div><br>
@@ -49,7 +41,3 @@ function closeForm() {
     $("#profileForm-popup").hide();
 }
 </script>
-
-    </div>
-  </div>
-</div>

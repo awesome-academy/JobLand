@@ -13,3 +13,6 @@ en:
     update: "Update"
     cancel: "Cancel"
     user_image: "Choose your profile image:"
+    change_user_photo: "Change avatar"
+    profile_cover_photo: "Choose your cover photo:"
+    change_cover_photo: "Change cover photo"

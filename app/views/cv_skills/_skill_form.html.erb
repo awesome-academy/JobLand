@@ -5,7 +5,7 @@
     </div>
     <div class="submit-skill">
        <input class="btn btn-danger skill-cancel" type="button" value="<%= t('skill.cancel') %>">
-      <%= f.submit t("skill.addSkill"), class: "hello btn btn-up"%>
+      <%= f.submit t("skill.addSkill"),id:"btn-update-skill", class: "hello btn btn-up"%>
     </div>
   <%end%>
 </div>
@@ -16,6 +16,16 @@
   });
 
   $(document).ready(function() {
+    var a = true;
+    $("#btn-update-skill").on('click',function(event) {
+      $('ul[id="skills"] div[class="deleteButton"] li span[id="submitted-skill"]').each(function(){
+        if($(this).text() == $('select[id="cv_skill_skill_id"] option:selected').text())
+        {
+          a=false;
+        }
+      });
+      });
+
     $(".form-skill form").on('submit',function(event) {
       event.preventDefault();
       var formHTML = event.target;
@@ -24,7 +34,13 @@
         method: 'POST',
         data: $(this).serialize(),
         success: function(data){
+          if(a){
           $('#cv_skill_section').html(data);
+          }
+          else{
+            alert("Skill already exist!\n\Kỹ năng đã được tạo!");
+            $('.form-skill').remove();
+          }
         }
       });
     });

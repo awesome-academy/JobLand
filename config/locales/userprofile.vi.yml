@@ -13,3 +13,6 @@ vi:
     update: "Cập nhật"
     cancel: "Hủy"
     user_image: "Chọn ảnh đại diện của bạn:"
+    change_user_photo: "Đổi ảnh đại diện"
+    profile_cover_photo: "Chọn ảnh trang cá nhân của bạn:"
+    change_cover_photo: "Đổi ảnh trang cá nhân"

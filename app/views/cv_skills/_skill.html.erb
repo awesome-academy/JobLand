@@ -4,7 +4,7 @@
       <li><span class='form-control' id="submitted-skill"><%= cv_skill.skill.name %></span>
         <div class="skillDelete">
           <%= link_to t("skill.delete"), cv_skill, remote: true, method: :delete,
-          data: { confirm: t("global.yousure") },class: 'btn btn-outline-secondary destroy' %>
+          data: { confirm: t("skill.you_sure") },class: 'btn btn-outline-secondary destroy' %>
         </div>
       </li>
     </div>
