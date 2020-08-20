@@ -6,5 +6,6 @@ class CreateCvLanguages < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_index :cv_languages, [:language_id, :cv_id], unique: true
   end
 end

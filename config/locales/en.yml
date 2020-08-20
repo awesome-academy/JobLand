@@ -33,13 +33,14 @@ en:
   skill:
     add_skill: "Update"
   home:
+    currency: "$"
     filterSesrch: "--filter search--"
     one: "One"
     fullTime: "Full Time"
     partTime: "Part Time"
     Male: "Male"
     Female: "Female"
-    Filter: "Filter"
+    Filter: "Filter by"
     sort: "sort:"
     Newest: "Newest"
     Recommended: "Recommended"
@@ -49,7 +50,7 @@ en:
     title&area: "Title & Area"
     salary: "Salary"
     search: "Search"
-    clear: "Clear"
+    companyHome: "Company"
   global:
     language:
        view: "View - Canpaigns"

@@ -1,6 +1,21 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'mechanize'
+
+# url = "http://google.com"
+
+# agent = Mechanize.new
+
+# page = agent.get(url)
+
+# page.links.each do |link|
+#     puts
+#     puts link.text
+#     puts link.href
+# end
+
+# puts "Total Number of Links : #{page.links.count}"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

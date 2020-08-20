@@ -9,8 +9,8 @@ en:
     table: Table Jobs
     more: More
     dashboard: Dashboard
-    listjob: List Job
+    listjob: Posts Job
     newcompany: New Company
     mycompany: My Company
   job:
-    chart: Chart 
+    chart: Chart
