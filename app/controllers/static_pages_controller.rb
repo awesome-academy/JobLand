@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  before_action :authenticate_user!
   def home
     @bookmark = Bookmark.new
     @approvedJobs = Job.all.job_new.all_approved_true.paginate page: params[:page], per_page: 10
@@ -11,6 +12,6 @@ class StaticPagesController < ApplicationController
     end
   end
 
-   def index
+  def index
   end
 end
