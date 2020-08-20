@@ -12,3 +12,5 @@ namespace :import do
      end
   end
 end
+
+ # rails import:import_country

@@ -53,7 +53,7 @@ class Employers::JobsController < ApplicationController
 	private
   def job_params
     params.require(:job).permit :title, :sex ,
-     :time_work, :grade, :exp, :salary, :number, :area, :info
+     :time_work, :grade, :exp, :salary, :number,:from_date,:to_date, :area, :info
   end
 
 end

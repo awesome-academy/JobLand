@@ -121,7 +121,18 @@
                               <div class="row">
                                 <%= f.radio_button :time_work ,  "1" %> <label><%= t("job.jobNewAll")%></label>
                               </div>
-                            </div>
+                            </div><br>
+                             <div  class="exp_time_work col-md-12">
+                        <div class="work_start col-md-5">
+                          <%= f.label t("exp.from") %>
+                          <%= f.date_field :from_date, placeholder: 'mm/dd/yyyy' %>
+                        </div>
+
+                        <div class="work_end col-md-5">
+                          <%= f.label t("exp.to") %>
+                          <%= f.date_field :to_date, placeholder: 'mm/dd/yyyy' %>
+                        </div>
+                      </div>
                         </div>
                       </div>
                     </div>
