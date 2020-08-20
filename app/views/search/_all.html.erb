@@ -1,0 +1,36 @@
+<% if !@cvs.nil? && !@companies.nil? %>
+  <div class="count-job col-md-12">
+    <h4 class="count__total">
+      <%= @companies.count + @cvs.count %> <%= t("search.results for") %> <%= params["all"] %>
+  	</h4>
+  </div>
+<% end %>
+<% if !@companies.nil? %>
+  <div class="count-job search__count col-md-12">
+    <%= @companies.count %> <%= t("search.Companies") %> <% t("search.show recommends") %>
+  </div>
+  <% @companies.take(5).each do |company| %>
+    <div class="count-job col-md-12">
+      <div class="row">
+        <div class="title-job search__company col-md-12">
+          <h5><%= company.full_name %></h5>
+        </div>
+        <div class="name-company-job col-md-12">
+          <td> <%= company.address %> $ </td>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+<% if !@cvs.nil? %>
+  <div class="count-job search__count col-md-12">
+    <%= @cvs.count %> <%= t("search.Profiles") %> <% t("search.show recommends") %>
+  </div>
+  <% @cvs.take(5).each do |cv| %>
+    <div class="count-job col-md-12">
+    	<h5>
+        <%= link_to User.find(cv.user_id).fullname, user_path(cv.user_id)%>
+    	</h5>
+    </div>
+  <% end %>
+<% end %>

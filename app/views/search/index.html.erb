@@ -1,0 +1,27 @@
+<div class="search__container">
+  <div class="grid">
+    <div class="grid__row">
+      <div class="grid__column-3">
+        <nav class="search">
+          <h4 class="search__heading"><%= t("search.Search") %></h4>
+          <ul class="search-list">
+            <li class="search-item search-item--active">
+              <%= link_to t("search.All"), search_path(all: params['all']), class: "search-item__link" %>
+            </li>
+            <li class="search-item">
+              <%= link_to t("search.Companies"), search_path(type: "company", all: params['all']), class: "search-item__link" %>
+            </li>
+            <li class="search-item">
+              <%= link_to t("search.Profiles"), search_path(type: "profile", all: params['all']), class: "search-item__link" %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="grid__column-9 search__all">
+        <%= render 'all' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
