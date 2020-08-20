@@ -481,6 +481,7 @@ DEPENDENCIES
   mechanize
   mini_magick
   mysql2
+  nokogiri
   omniauth
   omniauth-facebook
   omniauth-google-oauth2

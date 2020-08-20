@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<h1>News</h1>
+<br>
+
+<table class="table">
+  <thead>
+    <p>The second image uses the style attribute to set the width to 128 pixels, this will not be overridden by the style in the head section:</p>
+    <tr>
+      <th scope="col"><i class="fa fa-home" aria-hidden="true"></i></th>
+      <th scope="col"><i class="fa fa-circle" aria-hidden="true"></i></th>
+    </tr>
+  </thead>
+  <%= link_to 'Post News', new_news_path %>
+  <tbody>
+       <% @news.each do |news| %>
+       <tr>
+        <td><%= link_to news.content, news.link%></td>
+        <td><%= link_to '✎', edit_news_path(news) %></td>
+   <% end %>
+  </tbody>
+</table>

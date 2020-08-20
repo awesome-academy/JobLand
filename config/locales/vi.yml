@@ -2,13 +2,14 @@ vi:
   skill:
     add_skill: :"Thêm"
   home:
+    currency: "vnđ"
     filterSesrch: "--Lọc tìm kiếm--"
     one: "Một"
     fullTime: "Toàn thời gian"
     partTime: "Bán thời gian"
     Male: "Nam"
     Female: "Nữ"
-    Filter: "Lọc"
+    Filter: "Lọc & Tìm kiếm"
     sort: "Sắp xếp:"
     Newest: "Mới nhất"
     Recommended: "Đề xuất"
@@ -19,6 +20,7 @@ vi:
     salary: "Mức Lương"
     search: "Tìm Kiếm"
     clear: "Xóa"
+    companyHome: "Công ty"
   global:
     delete: "Delete"
     edit: "Edit"

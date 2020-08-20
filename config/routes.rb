@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :news
   resources :places
   devise_for :users,
                 path: '',

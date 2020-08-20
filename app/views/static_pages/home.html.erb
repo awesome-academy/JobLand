@@ -40,21 +40,22 @@
       <div class="main-left col-md-4">
         <div class="row">
           <div class="h3-filter">
-            <h3><%= t("home.Filter") %></h3>
+            <h3><%= t("home.Filter") %> <%= link_to request.path, type: "button" do %>
+           <i class="fa fa-times-circle" id="back_home" aria-hidden="true"></i>
+             <% end %></h3>
           </div>
            <%= search_form_for  @q ,url: root_path  do |f| %>
         <div class="form-group"><%= f.label t("home.title&area") %>
         <%= f.text_field :title_or_area_cont, class: 'form-control' , id: 'myJobs' %>
         </div>
 
-        <div class="form-group"><%= f.label t("home.salary") %>
-        <%= f.text_field :salary_gteq, class: 'form-control' %>
+        <div class="form-group"><%= f.label t("home.companyHome") %>
+        <%= f.text_field :company_full_name_start, class: 'form-control',id: 'myCompany' %>
         </div>
 
         <%= f.submit t("home.search"), class: 'btn btn-primary' %>
         <% end %>
         <br>
-        <%= link_to t("home.clear"), request.path, class: "btn btn-default" %>
         </div>
       </div>
       <div class="main-right col-md-8">
@@ -96,15 +97,15 @@
                     <div class="title-job col-md-12">
                       <%= link_to job_new.title,job_path(job_new.id) %></h5>
                     </div>
-                    <div class="about-job col-md-12">
-                      <p><%= job_new.info.first(80) %>...</p>
-                      </div>
-                    <div class="name-company-job col-md-12">
+                 <small class="text-muted">
+                         <td> <%= link_to job_new.salary, job_path(job_new.id) %><%= t("home.currency") %></td>
+                   </small>
+                 <div class="name-company-job col-md-12"><%= link_to job_new.user.company.full_name,job_path(job_new.id) %>
+                    </div>
+                    <br>
+                     <small class="text-muted">
                          <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
-                    </div>
-                      <div class="name-company-job col-md-12">
-                         <td> <%= link_to job_new.salary, job_path(job_new.id) %> $ </td>
-                    </div>
+                   </small>
                   </div>
                 </div>
               <% end %>
@@ -131,12 +132,15 @@
                     <div class="about-job col-md-12">
                       <p><%= job_new.info.first(80) %>...</p>
                       </div>
-                    <div class="name-company-job col-md-12">
+                       <small class="text-muted">
+                         <td> <%= link_to job_new.salary, job_path(job_new.id) %><%= t("home.currency") %></td>
+                   </small>
+                 <div class="name-company-job col-md-12"><%= link_to job_new.user.company.full_name,job_path(job_new.id) %>
+                    </div>
+                    <br>
+                     <small class="text-muted">
                          <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
-                    </div>
-                      <div class="name-company-job col-md-12">
-                         <td> <%= link_to job_new.salary, job_path(job_new.id) %> $ </td>
-                    </div>
+                   </small>
                   </div>
                 </div>
               <% end %>
@@ -195,7 +199,7 @@
     source: function (request, response) {
       $.ajax({
         url: "/home",
-        data: { q: request.term },
+        data: { q:{title_or_area_cont: request.term }},
         dataType: 'json',
         success: function (data) {
           response($.map(data, function (dataItem) {
@@ -210,3 +214,22 @@
   });
 </script>
 
+<script type="text/javascript">
+  $('#myCompany').autocomplete({
+    source: function (request, response) {
+      $.ajax({
+        url: "/home",
+        data: { q:{company_full_name_start: request.term }},
+        dataType: 'json',
+        success: function (data) {
+          response($.map(data, function (dataItem) {
+            return {data: dataItem.id, value: dataItem.company };
+          }));
+        },
+      });
+    },
+    select: function(event, ui) {
+      window.location.assign('http://localhost:3000/jobs/' + ui.item.data);
+    },
+  });
+</script>

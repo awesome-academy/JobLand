@@ -51,6 +51,7 @@ gem 'rails_admin'
 gem "ransack"
 gem 'simple_form'
 gem "mechanize"
+gem "nokogiri"
 # gem 'will_filter'
 # gem 'kaminari'
 group :development, :test do

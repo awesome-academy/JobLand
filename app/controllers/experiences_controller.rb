@@ -15,7 +15,7 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = current_user.cv.experiences.build experience_params
-    @experience.save
+   if  @experience.save
     @experiences = current_user.cv.experiences
     @experience  =  Experience.new
     flash[:success] = t("global.experience.success")
@@ -23,6 +23,7 @@ class ExperiencesController < ApplicationController
       format.html {render(partial: "experience_section")}
       format.js
       format.json
+     end
     end
   end
 

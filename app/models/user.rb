@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   has_one :cv
   has_one :company
-  has_many :cv_languages
   has_many :cv_skill
   has_many :jobs
   has_many :experiences

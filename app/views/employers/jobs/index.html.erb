@@ -34,7 +34,8 @@
 			<tr>
 				<th>STT</th>
 				<th><%= t("employers.jobs.index.title") %></th>
-				<th><%= t("employers.jobs.index.status") %></th>
+				<th><%= t("exp.from") %></th>
+					<th><%= t("exp.to") %></th>
 				<th>Cv Applied</th>
 				<th class="text-center"><%= t("employers.jobs.index.action") %></th>
 			</tr>
@@ -45,14 +46,15 @@
 			<td>
 				<%= link_to job.title, employers_job_path(job.id) %>
 			</td>
-			<td><%= job.status %></td>
-			<td><%= link_to job.applyjobs.count, employers_job_path(job.id) %></td>
+			<td><%= job.from_date %></td>
+			<td><%= job.to_date %></td>
+			<td><%= link_to job.applyjobs.count, employers_job_applyjobs_path(job.id) %></td>
 			<td class="text-center">
 				<%= link_to edit_employers_job_path(job),"data-turbolinks": false,  class: "btn btn-success btn-sm btn-job" do %>
 				  <i class="fa fa-pencil" aria-hidden="true"></i> <%= t("employers.jobs.index.edit") %>
 				<% end %>
 				<%= link_to employers_job_path(job),method: :delete, data: { confirm:"index.You sure?"},remote: true,  class: "btn btn-danger btn-sm btn-job destroy" do %>
-				  <i class="fa fa-trash" aria-hidden="true"></i> <%= t("employers.jobs.index.delete") %></a>
+				     <i class="fa fa-ban" aria-hidden="true"></i> <%= t("employers.jobs.index.close") %></a>
 				<% end %>
 			</td>
 		</tr>
