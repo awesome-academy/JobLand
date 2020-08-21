@@ -150,9 +150,12 @@ ActiveRecord::Schema.define(version: 2020_08_17_101303) do
     t.integer "number"
     t.boolean "slide"
     t.text "area"
-    t.text "info"
     t.date "from_date"
     t.date "to_date"
+    t.text "what"
+    t.text "why"
+    t.text "how"
+    t.text "status"
     t.boolean "approved", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

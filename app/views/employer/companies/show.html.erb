@@ -1,13 +1,13 @@
 <div class="container">
   <div class="company_Info">
-    <%= render 'employers/companies/navbar'%>
+    <%= render 'employer/companies/navbar'%>
   </div>
   <div>
     <div class="col-md-6">
       <div class="company_image">
-         <%= image_tag @company.image if @company.image.attached? %>
+         <%= image_tag @company.image, :style => "height: 300px" if @company.image.attached?%>
        </div>
-      <h1 class="mt-4"><%= @company.full_name %> <%= link_to t("cp.edit"), edit_employers_company_path(@company), class: "btn btn-primary edit-company" %></h1>
+      <h1 class="mt-4"><%= @company.full_name %> <%= link_to t("cp.edit"), edit_employer_company_path(@company), class: "btn btn-primary edit-company" %></h1>
       <p class="lead">
         <%= time_ago_in_words(@company.created_at) %>
         <%= t("cp.ago") %>

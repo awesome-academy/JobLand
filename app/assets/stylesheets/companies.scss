@@ -21,6 +21,7 @@
   width: 100%;
   height: 300px;
 }
+
 .company_image img{
   width: 100%;
 }
@@ -28,3 +29,58 @@
 .employer_action ul{
   padding-inline-start: 0px;
 }
+
+.dis{
+	display: flex;
+	margin: 1em 0 1em 10em ;
+}
+.name_company{
+	font-size: 1em;
+	margin: 1.5em 0 0 2em;
+}
+.descr_company{
+	font-size: 1.5em
+}
+.ml_2{
+	margin: 0 5em 0 10em;
+}
+.members_company {
+	display: flex;
+}
+.members_company div	{
+	margin: 3em;
+	width: 185px;
+	text-align: center;
+}
+.jobs_company{
+	margin: 4em 2em 0 0 ;
+}
+.info_company {
+	margin: 1em 0 5em 0;
+}
+.info_company div {
+	margin: 2em 0 2em 0;
+}
+.nav_company {
+	display: flex;
+	margin-left: 35em;
+	margin-top: 5em;
+}
+.nav_company div{
+	padding: 0 1em
+}
+.nameCompanyjobs {
+
+}
+.navCompanyJobs{
+	display: flex;
+	margin-left: 33em;
+}
+.navCompanyJobs a {
+	margin: 0.5em 1em;
+
+}
+.menuCompanyJobs {
+	text-align: center;
+}
+

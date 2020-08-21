@@ -13,9 +13,12 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.integer :number
       t.boolean :slide
       t.text :area
-      t.text :info
       t.date :from_date
       t.date :to_date
+      t.text :what
+      t.text :why
+      t.text :how
+      t.text :status
       t.boolean :approved, default: false
       t.timestamps
     end

@@ -1,4 +1,4 @@
-class Employers::ApplyjobsController < ApplicationController
+class Employer::ApplyjobsController < ApplicationController
   def index
     @job = Job.find params[:job_id]
     @applyjobs = @job.applyjobs.page params[:page]

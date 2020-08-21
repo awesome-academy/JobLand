@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-ruby '2.6.3'
+ruby '2.7.1 '
 gem 'enumerations'
 gem 'devise'
 gem 'omniauth'
@@ -52,6 +52,7 @@ gem "ransack"
 gem 'simple_form'
 gem "mechanize"
 gem "nokogiri"
+gem 'stripe', '~> 5.23', '>= 5.23.1'
 # gem 'will_filter'
 # gem 'kaminari'
 group :development, :test do
