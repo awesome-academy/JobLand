@@ -32,6 +32,7 @@
  *= require slick
  *= require slick-theme
  *= require static_pages
+ *= require search
  */
 
 @import "bootstrap-sprockets";

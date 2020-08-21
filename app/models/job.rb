@@ -11,6 +11,6 @@ class Job < ApplicationRecord
   scope :all_approved_false, -> { where approved: false }
   scope :all_approved_true, -> { where approved: true }
   ransack :title, type: :string do
-  arel_table[:title].lower
+    arel_table[:title].lower
   end
 end

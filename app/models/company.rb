@@ -1,4 +1,7 @@
+require 'elasticsearch/model'
 class Company < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
   has_many :jobs
   belongs_to :user, optional: true
   has_many :member, dependent: :destroy
@@ -11,4 +14,12 @@ class Company < ApplicationRecord
     image.variant(resize_to_limit: [1140, 500])
   end
 
+  def as_indexed_json(options = {})
+    self.as_json(
+      only: [:full_name, :address, :link]
+    )
+  end  
 end
+Company.__elasticsearch__.create_index! force: true
+Company.__elasticsearch__.refresh_index!
+Company.import

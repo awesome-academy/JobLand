@@ -153,6 +153,19 @@ GEM
       dry-equalizer (~> 0.2)
       dry-initializer (~> 3.0)
       dry-schema (~> 1.5)
+    elasticsearch (7.9.0)
+      elasticsearch-api (= 7.9.0)
+      elasticsearch-transport (= 7.9.0)
+    elasticsearch-api (7.9.0)
+      multi_json
+    elasticsearch-model (7.1.1)
+      activesupport (> 3)
+      elasticsearch (> 1)
+      hashie
+    elasticsearch-rails (7.1.1)
+    elasticsearch-transport (7.9.0)
+      faraday (~> 1)
+      multi_json
     enumerations (2.4.0)
       activerecord
       activesupport
@@ -473,6 +486,8 @@ DEPENDENCIES
   cloudinary (~> 1.16, >= 1.16.1)
   config (~> 2.2, >= 2.2.1)
   devise
+  elasticsearch-model
+  elasticsearch-rails
   enumerations
   figaro (~> 1.2)
   font-awesome-rails (~> 4.7, >= 4.7.0.5)
@@ -486,6 +501,7 @@ DEPENDENCIES
   mechanize
   mini_magick
   mysql2
+  nokogiri
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
@@ -509,7 +525,7 @@ DEPENDENCIES
   will_paginate (= 3.1.8)
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 2.6.3p62
 
 BUNDLED WITH
    2.1.4
