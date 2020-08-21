@@ -13,34 +13,38 @@
 				<div class="row">
 					<h3><%= t("employers.jobs.index.jobPost") %></h3>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="row">
-					<div id="custom-search-input">
-						<div class="input-group col-md-12">
-	            <input type="text" class="  search-query form-control" placeholder="<%= t("employers.jobs.index.Search") %>" />
-	            <span class="input-group-btn">
-	              <button class="btn btn-danger" type="button">
-	                <i class="fa fa-search"></i>
-	              </button>
-	            </span>
-	          </div>
+				<div class="col-md-4">
+					<div class="row">
+						<div id="custom-search-input">
+							<div class="input-group col-md-12">
+		            <input type="text" class="  search-query form-control" placeholder="<%= t("employers.jobs.index.Search") %>" />
+		            <span class="input-group-btn">
+		              <button class="btn btn-danger" type="button">
+		                <i class="fa fa-search"></i>
+		              </button>
+		            </span>
+		          </div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-			<%= link_to "#{t("employers.jobs.index.addJob")}", new_employer_job_url, "data-turbolinks": false, class: "btn btn-primary btn-xs pull-left btn-job" %>
-			<tr>
-				<th>STT</th>
-				<th><%= t("employers.jobs.index.title") %></th>
-				<th><%= t("exp.from") %></th>
-					<th><%= t("exp.to") %></th>
-				<th>Cv Applied</th>
-				<th class="text-center"><%= t("employers.jobs.index.action") %></th>
-			</tr>
-		</thead>
-		<% @jobs.each_with_index do |job,index| %>
+		<% if @jobs.empty? %>
+			<h3><%= t("employers.jobs.index.jobEmpty") %></h3>
+			<%= link_to  "#{t("employers.jobs.index.addJob")}", new_employers_job_url, "data-turbolinks": false, class: "btn btn-primary btn-xs pull-left btn-job" %>
+		<% else %>
+		<table class="table table-striped custab">
+			<thead>
+				<%= link_to "#{t("employers.jobs.index.addJob")}", new_employers_job_url, "data-turbolinks": false, class: "btn btn-primary btn-xs pull-left btn-job" %>
+				<tr>
+					<th>STT</th>
+					<th><%= t("employers.jobs.index.title") %></th>
+					<th><%= t("employers.jobs.index.status") %></th>
+					<th>Cv Applied</th>
+					<th class="text-center"><%= t("employers.jobs.index.action") %></th>
+				</tr>
+			</thead>
+			<% @jobs.each_with_index do |job,index| %>
 		<tr>
 			<td><%= index+1 %></td>
 			<td>
@@ -59,7 +63,7 @@
 			</td>
 		</tr>
 		<% end %>
-	</table>
-	<% end %>
-</div>
+		</table>
+		<% end %>
+	</div>
 </div>
