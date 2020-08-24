@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
     end
     @job_slides = Job.job_slide.job_new
     @q = Job.ransack params[:q]
-    @jobs = @q.result.includes(:company)
+    @jobs = @q.result
     respond_to do |format|
       format.html
       format.json { render json: @jobs }
