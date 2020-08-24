@@ -74,7 +74,7 @@
               <%= t("companies.chart") %>
             </div>
             <div class="card-body">
-              <%= area_chart @jobs.group_by_hour_of_day(:created_at, format: "%-l %P").count %>
+              <%= area_chart @jobs.group(:created_at).count %>
             </div>
           </div>
 

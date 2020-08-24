@@ -14,7 +14,7 @@ class Cv < ApplicationRecord
   def as_indexed_json(options = {})
     self.as_json(
       include: {
-        user: {only: :full_name},
+        user: {only: :fullname},
         userlanguages: { only: :name },
         userskills: { only: :name },
         educations: { only: [:school, :degree] },

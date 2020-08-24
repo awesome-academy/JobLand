@@ -7,30 +7,48 @@
 <% end %>
 <% if !@companies.nil? %>
   <div class="count-job search__count col-md-12">
-    <%= @companies.count %> <%= t("search.Companies") %> <% t("search.show recommends") %>
+    <%= @companies.count %> <%= t("search.Companies") %> <%= t("search.show") %>
   </div>
   <% @companies.take(5).each do |company| %>
-    <div class="count-job col-md-12">
-      <div class="row">
-        <div class="title-job search__company col-md-12">
-          <h5><%= company.full_name %></h5>
+    <%= link_to company_path(company.id), :action => 'go' do %>
+      <div class="count-job search__company col-md-12">
+        <div class="left-part col-md-1">
+          <div class="row">
+            <%= image_tag Company.find(company.id).image, :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" if Company.find(company.id).image.attached? %>
+          </div>
         </div>
-        <div class="name-company-job col-md-12">
-          <td> <%= company.address %> $ </td>
+        <div class="right-part col-md-11">
+          <div class="row">
+            <h4 class="search_com_name">
+              <%= company.full_name %>
+            </h4>
+            <p class="search_com_add"><%= company.address %></p>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 <% end %>
 <% if !@cvs.nil? %>
   <div class="count-job search__count col-md-12">
-    <%= @cvs.count %> <%= t("search.Profiles") %> <% t("search.show recommends") %>
+    <%= @cvs.count %> <%= t("search.Profiles") %> <%= t("search.show") %>
   </div>
   <% @cvs.take(5).each do |cv| %>
-    <div class="count-job col-md-12">
-    	<h5>
-        <%= link_to User.find(cv.user_id).fullname, user_path(cv.user_id)%>
-    	</h5>
-    </div>
+    <%= link_to user_path(cv.user_id), :action => 'go' do %>
+      <div class="count-job search__company col-md-12">
+        <div class="left-part col-md-1">
+          <div class="row">
+            <%= image_tag User.find(cv.user_id).image, :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;" if User.find(cv.user_id).image.attached? %>
+          </div>
+        </div>
+        <div class="right-part col-md-11">
+          <div class="row">
+            <h4 class="search_cv_name">
+              <%= cv.user.fullname %>
+            </h4>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 <% end %>
