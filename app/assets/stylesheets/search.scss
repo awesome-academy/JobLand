@@ -48,9 +48,31 @@
 }
 
 .search__count{
-  font-weight: 600;
+  background-color: #EBEDEF;
 }
+
 .count__total{
   margin: 15px 0;
   text-align: center;
+}
+
+.search_com_name{
+  margin-top: 5px;
+  color: rgb(69, 73, 75);
+}
+
+.search_cv_name{
+  margin-bottom: 30px;
+  color: rgb(69, 73, 75);
+}
+
+.search_com_add{
+  color: rgb(157, 160, 164);
+}
+
+.search__company:hover{
+  background: #f5f5f5;
+  h4{
+    color: #00A4BB !important;
+  }
 }

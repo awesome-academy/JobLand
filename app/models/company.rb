@@ -14,11 +14,11 @@ class Company < ApplicationRecord
     image.variant(resize_to_limit: [1140, 500])
   end
 
-  def as_indexed_json(options = {})
-    self.as_json(
-      only: [:full_name, :address, :link]
-    )
-  end  
+  # def as_indexed_json(options = {})
+  #   self.as_json(
+  #     only: [:full_name, :address, :link, :image]
+  #   )
+  # end  
 end
 Company.__elasticsearch__.create_index! force: true
 Company.__elasticsearch__.refresh_index!
