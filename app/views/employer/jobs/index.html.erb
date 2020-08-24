@@ -1,41 +1,22 @@
 <div class="container">
 <%= render 'employer/companies/navbar'%>
   <div class="col-md-10">
-	<% if @jobs.empty? %>
-		<h3><%= t("employers.jobs.index.jobEmpty") %></h3>
-		<%= link_to  "#{t("employers.jobs.index.addJob")}", new_employer_job_url, "data-turbolinks": false, class: "btn btn-primary btn-xs pull-left btn-job" %>
-	<% else %>
-	<table class="table table-striped custab">
-		<thead>
-			<div class="col-md-12 jop-top">
+	<div class="col-md-12 jop-top">
 		<div class="row">
 			<div class="col-md-8">
 				<div class="row">
-					<h3><%= t("employers.jobs.index.jobPost") %></h3>
-				</div>
-				<div class="col-md-4">
-					<div class="row">
-						<div id="custom-search-input">
-							<div class="input-group col-md-12">
-		            <input type="text" class="  search-query form-control" placeholder="<%= t("employers.jobs.index.Search") %>" />
-		            <span class="input-group-btn">
-		              <button class="btn btn-danger" type="button">
-		                <i class="fa fa-search"></i>
-		              </button>
-		            </span>
-		          </div>
-						</div>
-					</div>
+					<h2><%= t("employers.jobs.index.jobPost") %></h2>
 				</div>
 			</div>
 		</div>
+	</div>
 		<% if @jobs.empty? %>
 			<h3><%= t("employers.jobs.index.jobEmpty") %></h3>
-			<%= link_to  "#{t("employers.jobs.index.addJob")}", new_employers_job_url, "data-turbolinks": false, class: "btn btn-primary btn-xs pull-left btn-job" %>
+			<%= link_to  "#{t("employers.jobs.index.addJob")}", new_employer_job_url, "data-turbolinks": false, class: "btn btn-primary btn-xs pull-left btn-job" %>
 		<% else %>
 		<table class="table table-striped custab">
 			<thead>
-				<%= link_to "#{t("employers.jobs.index.addJob")}", new_employers_job_url, "data-turbolinks": false, class: "btn btn-primary btn-xs pull-left btn-job" %>
+				<%= link_to "#{t("employers.jobs.index.addJob")}", new_employer_job_url, "data-turbolinks": false, class: "btn btn-primary btn-xs pull-left btn-job" %>
 				<tr>
 					<th>STT</th>
 					<th><%= t("employers.jobs.index.title") %></th>

@@ -1,0 +1,71 @@
+<div class="list_applied_users">
+  <div class="card border-0 shadow">
+    <div class="card-body p-5 table_inner_coler">
+      <div class="table-responsive">
+        <table class="table m-0 center">
+          <thead>
+            <tr>
+              <th class="col-md-1 center"><%= t("aj.STT") %></th>
+              <th class="col-md-2 center"><%= t("aj.name") %></th>
+              <th class="col-md-1 center"><%= t("aj.sex") %></th>
+              <th class="col-md-1 center"><%= t("aj.dob") %></th>
+              <th class="col-md-1 center"><%= t("aj.phone") %></th>
+              <th class="col-md-1 center"><%= t("aj.status") %></th>
+              <th class="col-md-1 center"><%= t("aj.inter_reject") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @applyjobs.any? %>
+              <% @applyjobs.each_with_index do |applyjob, index| %>
+                <tr>
+                  <td><%= index+1 %></td>
+                  <td class="user_name_apply"><%= link_to applyjob.user.fullname, user_path(applyjob.user) %></td>
+                  <td><%= applyjob.user.sex %></td>
+                  <td><%= applyjob.user.dob %></td>
+                  <td><%= applyjob.user.phone %></td>
+                  <td><%= applyjob.apply_status %></td>
+                  <td>
+                    <% if applyjob.apply_status == "Waiting" %>
+                      <%= link_to edit_employers_job_applyjob_path(applyjob.job.id, applyjob.id),
+                        class: "btn btn-success btn-sm rounded-0", type: "button" do %>
+                          <i class="fa fa-check"></i>
+                        <% end %>
+                        <%= link_to edit_employers_job_applyjob_path(applyjob.job.id, applyjob.id,check1: true),
+                        class: "btn btn-danger btn-sm rounded-0", type: "button" do %>
+                          <i class="fa fa-times"></i>
+                        <% end %>
+                    <% elsif applyjob.apply_status == "Reject" %>
+                      <%= link_to edit_employers_job_applyjob_path(applyjob.job.id, applyjob.id),
+                        class: "btn btn-success btn-sm rounded-0", type: "button" do %>
+                          <i class="fa fa-check"></i>
+                        <% end %>
+                    <% else applyjob.apply_status == "Interview" %>
+                       <%= link_to edit_employers_job_applyjob_path(applyjob.job.id, applyjob.id),
+                        class: "btn btn-danger btn-sm rounded-0", type: "button" do %>
+                          <i class="fa fa-times"></i>
+                        <% end %>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table><hr>
+        <div class="total_apply_interview col-md-12">
+          <div class="apply_tottal col-md-4">
+            <%= t("aj.total") %>:
+            <%= @job.applyjobs.count %> <%= t("aj.applied_total") %>
+          </div>
+          <div class="interview_tottal">
+            <%= t("aj.total") %>:
+            <%= @job.applyjobs.interview.count %> <%= t("aj.interview_total") %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= paginate @applyjobs %>
+  </div>
+</div>
+
+
+

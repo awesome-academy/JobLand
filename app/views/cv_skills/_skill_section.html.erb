@@ -11,10 +11,10 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $('.form-skill').hide();
+
     $("#add-skill .add-skill-button").on('click',function(event) {
       event.preventDefault();
       $('.form-skill').remove();
-
       $.ajax({
         url: '<%= new_cv_skill_path %>',
         method: 'GET',

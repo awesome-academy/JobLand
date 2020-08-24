@@ -1,0 +1,29 @@
+<div class="modal" id="myModal">
+  <%= form_for @user do |f| %>
+    <div class="modal-dialog">
+      <%= f.hidden_field :fullname %>
+      <div class="modal-content">
+        <div class="modal-header-user">
+          <%= image_tag @user.image if @user.image.attached? %>
+        </div>
+        <div class="modal-body">
+          <div class="choose_user_image">
+            <%= f.label t('userp.user_image') %><br>
+            <%= f.file_field :image %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit t("cv.submit"), class: "hello btn btn-up"%>
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><%= "Cancel" %></button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="change_photo">
+  <a href="#" class="" data-toggle="modal" data-target="#myModal">
+    <i class="fa fa-camera" aria-hidden="true"></i>
+    <%= t("userp.change_user_photo") %></a>
+</div>
+
+

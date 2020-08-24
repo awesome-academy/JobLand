@@ -5,7 +5,7 @@
     </div>
     <div class="submit-language">
       <input class="btn btn-danger language-cancel" type="button" value="<%= t('exp.cancel') %>">
-      <%= f.submit t("exp.up"), class: "hello btn btn-up"%>
+      <%= f.submit t("exp.up"), id:"btn-update-language", class: "hello btn btn-up"%>
     </div>
   <%end%>
 </div>
@@ -16,6 +16,15 @@
   });
 
   $(document).ready(function() {
+    var a = true;
+    $("#btn-update-language").on('click',function(event) {
+      $('ul[id="edit_language"] div[class="deleteButton"] li span[id="submitted-skill"]').each(function(){
+        if($(this).text() == $('select[id="cv_language_language_id"] option:selected').text())
+        {
+          a=false;
+        }
+      });
+      });
     $(".form_language form").on('submit',function(event) {
       event.preventDefault();
       var formHTML = event.target;
@@ -24,11 +33,16 @@
         method: 'POST',
         data: $(this).serialize(),
         success: function(data){
-          $('#cv_language_section').html(data);
+          if(a){
+            $('#cv_language_section').html(data);
+            }
+          else{
+            alert("Language already exist!\n\Ngôn ngữ đã được tạo!");
+            $('.form_language').remove();
+          }
         }
       });
     });
   });
 </script>
-
 

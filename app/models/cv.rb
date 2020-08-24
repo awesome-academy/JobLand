@@ -21,7 +21,9 @@ class Cv < ApplicationRecord
         experiences: { only: [:title, :name] }
       }
     )
-  end  
+  end
+
+  has_one_attached :image
 end
 Cv.__elasticsearch__.create_index! force: true
 Cv.__elasticsearch__.refresh_index!

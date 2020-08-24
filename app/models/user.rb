@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one :cv
+  has_one :profile
   has_one :company
   has_many :cv_skill
   has_many :jobs
@@ -13,6 +14,7 @@ class User < ApplicationRecord
   has_one_attached :image
   after_create do
     Cv.create(user_id: self.id)
+    Profile.create(user_id: self.id)
   end
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,

@@ -1,4 +1,3 @@
-
 <div class="employer_action col-md-2">
   <div class="row">
   <ul>
@@ -21,15 +20,14 @@
           <span><%= t("companies.newcompany") %></span>
         <% end %>
       </li>
+    <% else %>
       <li class="nav-item active menu_icon">
-          <%= link_to employers_jobs_path do %>
-              <i class="fa fa-list-alt fa-2x" aria-hidden="true"></i>
-              <span><%= t("companies.listjob") %></span>
-          <% end %>
+        <%= link_to employer_company_path(current_user.company) do%>
+          <i class="fa fa-university fa-2x" aria-hidden="true"></i>
+          <span><%= t("companies.mycompany") %></span>
+        <% end %>
       </li>
     <% end %>
   </ul>
   </div>
 </div>
-
-

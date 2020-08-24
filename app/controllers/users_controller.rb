@@ -21,11 +21,13 @@ class UsersController < ApplicationController
     @cv_skill = CvSkill.new
     @cv_language = CvLanguage.new
     @cv = Cv.find params[:id]
+    @profile = Profile.find params[:id]
     @applyjobs = Applyjob.all
     @bookmarks = Bookmark.all
   end
 
   def update
+
     @user = User.find params[:id]
     if @user.update(user_params)
       redirect_to user_path(@user)

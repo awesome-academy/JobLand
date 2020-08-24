@@ -10,7 +10,11 @@ class CvsController < ApplicationController
   end
 
   def update
+    @user = current_user
     @cv = Cv.find params[:id]
+    # if @cv.update cv_params
+    # redirect_to user_path @user
+    # end
     if @cv.update cv_params
       respond_to do |format|
         format.html{render(partial:"cv_introduction")}
@@ -22,7 +26,7 @@ class CvsController < ApplicationController
   private
 
   def cv_params
-    params.require(:cv).permit(:introduction)
+    params.require(:cv).permit(:introduction, :image)
   end
 end
 
