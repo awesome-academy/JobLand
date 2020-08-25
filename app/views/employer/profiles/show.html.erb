@@ -1,0 +1,71 @@
+<div class="container">
+  <%= render "users/profile_profileheader" %>
+  <div class="two-column col-md-12">
+    <div class="row">
+      <div class="column-main col-md-8" >
+        <div class="user-introduction-div col-md-12">
+          <div class="row">
+            <h4 class="col-md-4">
+              <%= t("userp.introduction") %>
+            </h4>
+            <div id='show__profile'>
+              <%= render "cvs/profile_cv_introduction" %>
+            </div>
+          </div>
+        </div>
+        <div class="user-experience-div col-md-12">
+          <div class="row">
+            <h4 class="col-md-4">
+              <%= t("userp.experience")%>
+            </h4>
+            <div id="show__profile" class="show__profile">
+              <%= render "experiences/profile_experience" %>
+            </div>
+          </div>
+        </div>
+        <div class="user-skills-div col-md-12">
+          <div class="row">
+            <h4 class="col-md-4">
+              <%= t("userp.skills")%>
+            </h4>
+            <div id="show__profile">
+              <%= render "cv_skills/profile_skill" %>
+            </div>
+          </div>
+        </div>
+        <div class="user-education-div col-md-12">
+          <div class="row">
+            <h4 class="col-md-4">
+              <%= t("userp.education")%>
+            </h4>
+            <div id="show__profile" class="show__profile">
+              <%= render "educations/profile_education" %>
+            </div>
+          </div>
+        </div>
+        <div class="user-language-div col-md-12">
+          <div class="row">
+            <h4 class="col-md-4">
+              <%= t("userp.language")%>
+            </h4>
+            <div id="show__profile">
+              <%= render "cv_languages/profile_cv_language" %>
+            </div>
+          </div>
+        </div>
+        <div class="user-portfolio-div col-md-12">
+          <div class="row">
+            <h4 class="col-md-2">
+              <%= t("userp.portfolio")%>
+            </h4>
+            <div id="portfolio_section">
+              <%= render "portfolios/profile_portfolio" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="column-side col-md-4">
+      <%= render "users/profile_colum_right_side" %>
+    </div>
+  </div>
+</div>

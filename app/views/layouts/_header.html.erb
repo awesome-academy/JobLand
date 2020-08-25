@@ -2,9 +2,8 @@
 </div>
 <nav class="navbar navbar-default header-front-end">
   <div class="container-fluid">
-    <ul class="nav navbar-nav">
      <li><%=link_to image_tag('logohome.png', id:"logo-nav",class: "navbar-brand"),root_url%> </li>
-      <% if current_user && current_user.employer  %>
+      <% if can? :manage, Company %>
         <li class="nav-item cta mr-md-1">
            <%= link_to t("home.about5"), employer_companies_path %>
         </li>
@@ -44,9 +43,9 @@
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
                 <% if user_signed_in? %>
-                  <li><%= link_to "Profile", user_path(current_user), class: "dropdown-item" %></li>
-                   <li> <%= link_to  t("userp.applied"),user_applyjobs_path(current_user),class: "dropdown-item"   %></li>
-                  <li> <%= link_to  t("userp.saveJob"),user_bookmarks_path(current_user),class: "dropdown-item"   %></li>
+                  <li><%= link_to "My CV", user_path(current_user), class: "dropdown-item" %></li>
+                  <li><%= link_to t("userp.applied"),user_applyjobs_path(current_user),class: "dropdown-item"   %></li>
+                  <li><%= link_to t("userp.saveJob"),user_bookmarks_path(current_user),class: "dropdown-item"   %></li>
                   <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
                 <% else %>
                   <li><%= link_to "Log in", signin_path, class: "dropdown-item" %></li>

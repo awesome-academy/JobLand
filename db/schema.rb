@@ -242,7 +242,6 @@ ActiveRecord::Schema.define(version: 2020_08_25_152155) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "fullname", default: "", null: false
-    t.boolean "employer", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -253,7 +252,9 @@ ActiveRecord::Schema.define(version: 2020_08_25_152155) do
     t.string "provider"
     t.string "uid"
     t.string "image"
-    t.boolean "admin", default: false
+    t.boolean "admin_role", default: false
+    t.boolean "employer_role", default: false
+    t.boolean "user_role", default: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

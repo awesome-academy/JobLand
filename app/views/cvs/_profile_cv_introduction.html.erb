@@ -1,0 +1,7 @@
+<div class="introduction_main">
+  <% if @cv.introduction.nil? %>
+    <%= @cv.introduction %>
+  <% else %>
+    <%= @cv.introduction.html_safe %>
+  <% end %>
+</div>

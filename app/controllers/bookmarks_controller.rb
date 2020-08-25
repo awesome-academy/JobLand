@@ -1,6 +1,4 @@
 class BookmarksController < ApplicationController
-  before_action :authenticate_user!
-
   def index
     @user = current_user
     @profile = current_user.profile

@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
   protect_from_forgery with: :exception
+  before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   redirect_to root_path, alert: exception.message
+  # end
+  
   private
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -13,7 +18,7 @@ class ApplicationController < ActionController::Base
   
   protected
   def configure_permitted_parameters
-    added_attrs = [:fullname, :email, :password, :password_confirmation, :remember_me, :employer, company_attributes: [:full_name, :email, :address, :phone, :descr, :link, :total]]
+    added_attrs = [:fullname, :email, :password, :password_confirmation, :remember_me, :employer_role, company_attributes: [:full_name, :email, :address, :phone, :descr, :link, :total]]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end

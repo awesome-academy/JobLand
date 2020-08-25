@@ -1,6 +1,4 @@
 class EducationsController < ApplicationController
-  before_action :authenticate_user!
-
   def index
     @education = Education.new
     @educations = current_user.cv.educations

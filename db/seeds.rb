@@ -45,7 +45,7 @@ Skill.create(name:"Swift")
 Skill.create(name:"TypeScript")
 
 
-User.create( email: "123456@gmail.com", fullname: "Thái", password: "123456", password_confirmation: "123456", employer: true)
+User.create( email: "123456@gmail.com", fullname: "Thái", password: "123456", password_confirmation: "123456", employer_role: true)
 User.create( email: "aaa@gmail.com", fullname: "Sơn", password: "123456", password_confirmation: "123456")
 User.create( email: "bbb@gmail.com", fullname: "ĐOàn", password: "123456", password_confirmation: "123456")
 User.create( email: "ccc@gmail.com", fullname: "Tùng", password: "123456", password_confirmation: "123456")
