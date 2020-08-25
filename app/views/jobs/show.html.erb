@@ -94,7 +94,7 @@
           <i class="fa fa-map-marker fa-lg" aria-hidden="true"><%= @job.area %></i>
         </div>
     </div>
-  
+
     <div class="mt_8">
       <div class="row">
           <div class="col-md-8">
@@ -102,12 +102,12 @@
               <div class="addressCareer">
                 <h3 class="mr_3"><%= @job.user.company.full_name %> <%= t("global.job.members") %></h3>
                 <div class="members">
-                                
+
                     <a href="#" class="badge badge-secondary" data-toggle="modal" data-target="#myModal"><%= t("global.job.viewmore") %></a>
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" role="dialog">
                       <div class="modal-dialog">
-                      
+
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
@@ -121,10 +121,10 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                           </div>
                         </div>
-                        
+
                       </div>
-                    </div> 
-                  
+                    </div>
+
                 </div>
               </div>
               <div class="d-inline ">
@@ -144,14 +144,14 @@
 
                <div>
                 <h3><%= t("global.job.why") %></h3>
-                
+
                 <p class="font_size">
                   <%= @job.why %>
                 </p>
               </div>
               <div>
                 <h3><%= t("global.job.how") %></h3>
-                
+
                 <p class="font_size">
                   <%= @job.how %>
                 </p>
@@ -170,7 +170,7 @@
              <div class="col-md-4">
                 <h5><strong><%= t("global.job.company") %></strong></h5>
                  <div class="mt-2 d-inline">
-                  <i class="fa fa-building" aria-hidden="true"></i> 
+                  <i class="fa fa-building" aria-hidden="true"></i>
                     <%= link_to @job.user.company.full_name, company_path(@job.user.company)  %>
                 </div><br>
                 <div class="mt-2 d-inline">
@@ -194,8 +194,8 @@
 
           </div>
           <!-- bmk -->
-        
-           
+
+
 
       </div>
   </div>
