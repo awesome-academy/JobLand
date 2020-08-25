@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_20_072220) do
+ActiveRecord::Schema.define(version: 2020_08_25_152155) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -186,6 +186,17 @@ ActiveRecord::Schema.define(version: 2020_08_20_072220) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "stripe_customer_id"
+    t.string "session_token"
+    t.string "subscription_status"
+    t.string "plan"
+    t.bigint "company_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_payments_on_company_id"
+  end
+
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.decimal "latitude", precision: 10
@@ -231,6 +242,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_072220) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "fullname", default: "", null: false
+    t.boolean "employer", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -263,6 +275,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_072220) do
   add_foreign_key "jobs", "users"
   add_foreign_key "members", "companies"
   add_foreign_key "members", "users"
+  add_foreign_key "payments", "companies"
   add_foreign_key "portfolios", "cvs"
   add_foreign_key "profiles", "users"
 end

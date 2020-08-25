@@ -10,6 +10,13 @@
 # JobType.create(name: "Ruby on rails")
 # Company.create(full_name: "Sun Academy", address: "Hanoi", phone: "012345678", email: "123Sun@gmail.com", descr: "Description Company")
 # Job.create(Company_id: 1, department_id: 1,  )
+# a = Stripe::Product.create(name: "Sarter")
+# b = Stripe::Product.create(name: "Pro")
+# c = Stripe::Product.create(name: "Enterprise")
+# Stripe::Price.create(product: a.id, unit_amount: 500, currency: "usd", recurring: {interval: "month"}, lookup_key: "starter") 
+# Stripe::Price.create(product: b.id, unit_amount: 1000, currency: "usd", recurring: {interval: "month"}, lookup_key: "Pro") 
+# Stripe::Price.create(product: c.id, unit_amount: 1500, currency: "usd", recurring: {interval: "month"}, lookup_key: "Enterprise") 
+
 
 
 Language.create(name:"French")
@@ -38,7 +45,7 @@ Skill.create(name:"Swift")
 Skill.create(name:"TypeScript")
 
 
-User.create( email: "123456@gmail.com", fullname: "Thái", password: "123456", password_confirmation: "123456")
+User.create( email: "123456@gmail.com", fullname: "Thái", password: "123456", password_confirmation: "123456", employer: true)
 User.create( email: "aaa@gmail.com", fullname: "Sơn", password: "123456", password_confirmation: "123456")
 User.create( email: "bbb@gmail.com", fullname: "ĐOàn", password: "123456", password_confirmation: "123456")
 User.create( email: "ccc@gmail.com", fullname: "Tùng", password: "123456", password_confirmation: "123456")

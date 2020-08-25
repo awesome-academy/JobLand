@@ -10,6 +10,10 @@ class Employer::CompaniesController < ApplicationController
   def index
     @member = Member.all
     @jobs = current_user.jobs.limit(Settings.jobs)
+    @prices = Stripe::Price.list(
+      lookup_keys: ['starter', 'pro', 'enterprise'],
+      expand: ['data.product']
+    ).data.sort_by {|p| p.unit_amount}
   end
 
   def show

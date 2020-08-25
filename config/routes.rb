@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :employer do
+    get 'payment/new'
+  end
   resources :news
   resources :places
   devise_for :users,
@@ -61,8 +64,10 @@ Rails.application.routes.draw do
         resources :bookmarks
       end
       resources :companies
+      resources :payments
       resources :members
       resources :users
+      resources :portal_sessions, only: [:create]
 
     end
     resources :portfolios

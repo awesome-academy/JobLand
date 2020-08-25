@@ -18,11 +18,11 @@ class User < ApplicationRecord
   scope :user_member, -> (id){User.where("id not in(#{idUser})",id)}
   has_one_attached :image
 
-  after_create do
-    Cv.create(user_id: self.id)
-    Profile.create(user_id: self.id)
-  end
-
+  accepts_nested_attributes_for :company
+    after_create do
+      Cv.create(user_id: self.id)
+      Profile.create(user_id: self.id)
+    end
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
