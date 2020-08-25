@@ -1,21 +1,100 @@
-<p id="notice"><%= notice %></p>
-<h1>News</h1>
-<br>
-
-<table class="table">
-  <thead>
-    <p>The second image uses the style attribute to set the width to 128 pixels, this will not be overridden by the style in the head section:</p>
-    <tr>
-      <th scope="col"><i class="fa fa-home" aria-hidden="true"></i></th>
-      <th scope="col"><i class="fa fa-circle" aria-hidden="true"></i></th>
-    </tr>
-  </thead>
-  <%= link_to 'Post News', new_news_path %>
-  <tbody>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+    <title>Problog Website Template | Home :: W3layouts</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+      <div class="header">
+        <div class="wrap">
+        <div class="logo">
+          <a href="https://vnexpress.net/"><%= image_tag('loginews1.png',class: "rounded-circle", style: "width: 300px; height: 150px")%>  </a>
+        </div>
+        <div class="clear"> </div>
+      </div>
+      </div>
+          <div class="bloder-content">
+          <div class="bloger-grid">
+            <div class="blog-img">
+        <%= image_tag('news1.jpg', title: "img6")%>
+            </div>
+            <div class="bloger-content">
+              <h5><a href="single.html"> <tbody>
        <% @news.each do |news| %>
        <tr>
         <td><%= link_to news.content, news.link%></td>
-        <td><%= link_to '✎', edit_news_path(news) %></td>
    <% end %>
   </tbody>
-</table>
+          </p>
+              <ul>
+                <li><a href="#">Lorem ipsum</a></li>
+                <li><a href="#">: 23-02-1989</a></li>
+                <li><a href="https://vnexpress.net/"><span>Readmore</span></a></li>
+              </ul>
+            </div>
+            <div class="clear"> </div>
+          </div>
+          <div class="clear"> </div>
+          <div class="bloger-grid">
+            <div class="blog-img">
+               <%= image_tag('news2.png', title: "img6")%>
+            </div>
+            <div class="bloger-content">
+              <h5><a href="single.html">  <tbody>
+       <% @news.each do |news| %>
+       <tr>
+        <td><%= link_to news.content, news.link%></td>
+   <% end %>
+  </tbody>
+          </p>
+              <ul>
+                <li><a href="#">Lorem ipsum</a></li>
+                <li><a href="#">: 23-02-1989</a></li>
+                <li><a href="https://vnexpress.net/"><span>Read more</span></a></li>
+              </ul>
+            </div>
+            <div class="clear"> </div>
+          </div>
+          <div class="bloger-grid">
+            <div class="blog-img">
+                <%= image_tag('news3.jpg', title: "img6")%>
+            </div>
+            <div class="bloger-content">
+              <h5><a href="single.html">   <h5><a href="single.html">  <tbody>
+       <% @news.each do |news| %>
+       <tr>
+        <td><%= link_to news.content, news.link%></td>
+   <% end %>
+  </tbody></p>
+              <ul>
+                <li><a href="#">Lorem ipsum</a></li>
+                <li><a href="#">: 23-02-1989</a></li>
+                <li><a href="https://vnexpress.net/"><span>Read more</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div style="border-bottom:none;" class="bloger-grid">
+            <div class="blog-img">
+             <%= image_tag('socnews.jpg', title: "img6")%>
+            </div>
+            <div class="bloger-content">
+              <h5><a href="https://vnexpress.net/">   <h5><a href="single.html">  <tbody>
+       <% @news.each do |news| %>
+       <tr>
+        <td><%= link_to news.content, news.link%></td>
+   <% end %>
+  </tbody></p>
+              <ul>
+                <li><a>Lorem ipsum</a></li>
+                <li><a>: 23-02-1989</a></li>
+                <li><a href="https://vnexpress.net/"><span>Read more</span></a></li>
+              </ul>
+            </div>
+            <div class="clear"> </div>
+          </div>
+          </div>
+  </body>
+</html>

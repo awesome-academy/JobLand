@@ -3,7 +3,7 @@
 <nav class="navbar navbar-default header-front-end">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li> <%= link_to "JobLand", root_url, class: "navbar-brand" %></li>
+      <li><%=link_to image_tag('logohome.png',class: "navbar-brand"),root_url%> </li>
       <li class="nav-item cta mr-md-1">
         <%= link_to "employer", employer_companies_path %>
       </li>
@@ -26,10 +26,11 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mr-4">
-              <a href="#"><i class="fa fa-commenting-o fa-lg" aria-hidden="true"></i></a>
+
+              <%= link_to  news_index_path do%><i class="fa fa-television fa-lg" aria-hidden="true"></i><% end %>
             </li>
             <li class="dropdown nav-item mr-3">
-               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-globe fa-2x" aria-hidden="true"></i></a>
+               <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-language fa-2x" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "English", locale:"en", class: "dropdown-item" %></li>
                 <li><%=  link_to "Vietnamese", locale:"vi", class: "dropdown-item" %></li>
@@ -43,6 +44,7 @@
               <ul class="dropdown-menu">
                 <% if user_signed_in? %>
                   <li><%= link_to "Profile", user_path(current_user), class: "dropdown-item" %></li>
+                   <li> <%= link_to  t("userp.applied"),user_applyjobs_path(current_user),class: "dropdown-item"   %></li>
                   <li> <%= link_to  t("userp.saveJob"),user_bookmarks_path(current_user),class: "dropdown-item"   %></li>
                   <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
                 <% else %>

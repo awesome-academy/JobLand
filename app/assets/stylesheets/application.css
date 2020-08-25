@@ -33,6 +33,7 @@
  *= require slick-theme
  *= require static_pages
  *= require search
+ *= require news
  */
 
 @import "bootstrap-sprockets";

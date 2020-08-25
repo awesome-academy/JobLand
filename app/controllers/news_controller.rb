@@ -4,7 +4,7 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.json
   def index
-    @news = News.all.limit(3)
+    @news = News.all.page(params[:page]).per(5)
   end
 
   # GET /news/1
