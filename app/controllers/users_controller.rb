@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit :address, :dob, :sex, :phone, :image
+    params.require(:user).permit :address, :dob, :sex, :phone, :image,
+    images_attributes: [:id, :room_id, :image_link]
   end
 end

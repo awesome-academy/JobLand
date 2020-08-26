@@ -16,6 +16,7 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record

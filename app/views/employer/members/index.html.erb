@@ -1,0 +1,68 @@
+<%= render 'employers/companies/navbar'%>
+<div class="col-md-10">
+    <div class="col-md-12 jop-top">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <h3>
+                        Members
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% if @users.empty? %>
+    <h3>
+        <%= t("employers.jobs.index.jobEmpty") %>
+    </h3>
+    <% else %>
+    <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>
+                    <%= t("employers.jobs.index.status") %>
+                </th>
+                <th>User Apply</th>
+                <th class="text-center">
+                    <%= t("employers.jobs.index.action") %>
+                </th>
+            </tr>
+        </thead>
+        <% @users.each_with_index do |user,index| %>
+        <tr>
+            <td>
+                <%= index+1 %>
+            </td>
+            <td>
+                <%=  user.phone %>
+            </td>
+            <td>
+                <%= link_to user.fullname, user_path(user) %>
+            </td>
+        </tr>
+        <% end %>
+    </table>
+    <% end %>
+</div>
+
+
+    <script type="text/javascript">
+      $('#idmember').autocomplete({
+        source: function (request, response) {
+          $.ajax({
+            url: "/employers/members",
+            data: { search: request.term },
+            dataType: 'json',
+            success: function (data) {
+              response($.map(data, function (dataItem) {
+                return {data: dataItem.id, value: dataItem.name};
+              }));
+            },
+          });
+        },
+        select: function(event, ui) {
+          window.location.assign('localhost:3000/en/employers/members/' + ui.item.data);
+        },
+      });
+    </script>

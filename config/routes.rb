@@ -62,6 +62,7 @@ Rails.application.routes.draw do
       end
       resources :companies
       resources :members
+      resources :users
 
     end
     resources :portfolios

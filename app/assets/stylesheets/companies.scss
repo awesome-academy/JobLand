@@ -8,6 +8,17 @@
 .edit-company{
   margin-left: 74%;
 }
+.company_name a{
+  margin-top: -114px;
+  margin-left: 85%;
+}
+#user_id{
+  width: 50%;
+  padding: 8px;
+  border-radius: 7px;
+  border: 1px solid white;
+  background-color: #f1f3fa;
+}
 .companies_index{
   padding: 0px 150px !important;
 }
@@ -16,6 +27,9 @@
 }
 .company_contacts{
   margin-top: 30px;
+}
+#company_members{
+  margin-top: 140px;
 }
 #map{
   width: 100%;

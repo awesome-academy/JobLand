@@ -10,6 +10,7 @@ class CreateCompanies < ActiveRecord::Migration[6.0]
       t.integer :total
       t.decimal :latitude
       t.decimal :longitude
+      t.text :map
       t.references :user, foreign_key: true
 
       t.timestamps

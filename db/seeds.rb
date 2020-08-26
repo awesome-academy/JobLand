@@ -38,7 +38,12 @@ Skill.create(name:"Swift")
 Skill.create(name:"TypeScript")
 
 
-User.create( email: "123456@gmail.com", fullname: "123456", password: "123456", password_confirmation: "123456")
+User.create( email: "123456@gmail.com", fullname: "Thái", password: "123456", password_confirmation: "123456")
+User.create( email: "aaa@gmail.com", fullname: "Sơn", password: "123456", password_confirmation: "123456")
+User.create( email: "bbb@gmail.com", fullname: "ĐOàn", password: "123456", password_confirmation: "123456")
+User.create( email: "ccc@gmail.com", fullname: "Tùng", password: "123456", password_confirmation: "123456")
+User.create( email: "ddd@gmail.com", fullname: "1234567890", password: "123456", password_confirmation: "123456")
+User.create( email: "eee@gmail.com", fullname: "1234568901", password: "123456", password_confirmation: "123456")
 
 
 Company.create full_name: "Sun*", user_id: 1, address: "11F Handico Building, Pham Hung Road, Nam Tu Liem Dist., Ha Noi", phone: "0123456789",
