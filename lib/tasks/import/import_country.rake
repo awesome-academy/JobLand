@@ -4,7 +4,7 @@ namespace :import do
      require 'mechanize'
      agent = Mechanize.new
      agent.get("http://vnexpress.net/")
-     countries = agent.page.search('h3 > p > a')
+     countries = agent.page.search('a')
      countries = countries.xpath('//a').map {|element| element["href"]}.compact
 
      countries.each do |country|

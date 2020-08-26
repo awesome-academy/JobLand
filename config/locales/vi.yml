@@ -2,6 +2,13 @@ vi:
   skill:
     add_skill: :"Thêm"
   home:
+    about: "Thông tin về JobLand"
+    about1: "Giới thiệu"
+    about2: "Điều khoản & sử dụng"
+    about3: "Hỗ trợ"
+    about4: "Bảo mật"
+    about5: "Dành cho nhà tuyển dụng"
+    product: "Sản phẩm"
     currency: "vnđ"
     filterSesrch: "--Lọc tìm kiếm--"
     one: "Một"
