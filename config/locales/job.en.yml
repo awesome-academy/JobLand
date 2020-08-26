@@ -31,3 +31,5 @@ en:
     job_salary: "Salary"
     job_year: "Year(s)"
     payment: "Payment"
+    female: "Female"
+    male: "Male"

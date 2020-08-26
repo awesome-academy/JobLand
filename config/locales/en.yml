@@ -39,7 +39,7 @@ en:
       sex:
         Female: "Female"
         Male: "Male"
-        All1: "All"
+        All1: "Male & Female"
   skill:
     add_skill: "Update"
   home:
@@ -118,7 +118,7 @@ en:
       founded: "Founded on"
       viewmore: "view more"
       company: "Company info"
-      member: "members"
+      member: "Members"
       view: "View - Canpaigns"
       create2: "Add - Products"
       delete: "Delete"
@@ -156,6 +156,7 @@ en:
         addJob: "+ Add job"
         Search: "Search"
         time: "Time"
+        gender: "Gender"
     companies:
       index:
         listJobs: "Index Jobs"

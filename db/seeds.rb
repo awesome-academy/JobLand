@@ -46,13 +46,34 @@ Skill.create(name:"TypeScript")
 
 
 
-User.create( email: "123456@gmail.com", fullname: "Thái", password: "123456", password_confirmation: "123456", employer_role: true)
-User.create( email: "aaa@gmail.com", fullname: "Sơn", password: "123456", password_confirmation: "123456")
-User.create( email: "bbb@gmail.com", fullname: "ĐOàn", password: "123456", password_confirmation: "123456")
-User.create( email: "ccc@gmail.com", fullname: "Tùng", password: "123456", password_confirmation: "123456")
-User.create( email: "ddd@gmail.com", fullname: "1234567890", password: "123456", password_confirmation: "123456")
-User.create( email: "eee@gmail.com", fullname: "1234568901", password: "123456", password_confirmation: "123456")
+User.create( email: "123456@gmail.com", fullname: "Thái", password: "123123", password_confirmation: "123123", employer_role: true)
+User.create( email: "aaa@gmail.com", fullname: "Sơn", password: "123123", password_confirmation: "123123")
+User.create( email: "bbb@gmail.com", fullname: "ĐOàn", password: "123123", password_confirmation: "123123")
+User.create( email: "ccc@gmail.com", fullname: "Tùng", password: "123123", password_confirmation: "123123")
+User.create( email: "ddd@gmail.com", fullname: "1231237890", password: "123123", password_confirmation: "123123")
+User.create( email: "eee@gmail.com", fullname: "1231238901", password: "123123", password_confirmation: "123123")
+User.create( email: "0user_test@gmail.com", fullname: "User test 0", password: "123123", password_confirmation: "123123")
+User.create( email: "1user_test@gmail.com", fullname: "User test 1", password: "123123", password_confirmation: "123123")
+User.create( email: "2user_test@gmail.com", fullname: "User test 2", password: "123123", password_confirmation: "123123")
+User.create( email: "3user_test@gmail.com", fullname: "User test 3", password: "123123", password_confirmation: "123123")
+User.create( email: "4user_test@gmail.com", fullname: "User test 4", password: "123123", password_confirmation: "123123")
+User.create( email: "5user_test@gmail.com", fullname: "User test 5", password: "123123", password_confirmation: "123123")
+User.create( email: "6user_test@gmail.com", fullname: "User test 6", password: "123123", password_confirmation: "123123")
+User.create( email: "7user_test@gmail.com", fullname: "User test 7", password: "123123", password_confirmation: "123123")
+User.create( email: "8user_test@gmail.com", fullname: "User test 8", password: "123123", password_confirmation: "123123")
+User.create( email: "9user_test@gmail.com", fullname: "User test 9", password: "123123", password_confirmation: "123123")
 
+
+Cv.create(user_id: 1, introduction: "Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.
+Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.")
+Cv.create(user_id: 2, introduction: "Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.
+Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.")
+Cv.create(user_id: 3, introduction: "Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.
+Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.")
+Cv.create(user_id: 4, introduction: "Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.
+Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.")
+Cv.create(user_id: 5, introduction: "Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.
+Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.")
 
 Company.create full_name: "Sun*", user_id: 1, address: "11F Handico Building, Pham Hung Road, Nam Tu Liem Dist., Ha Noi", phone: "0123456789",
      email: "Sun.arterik@gmail.com", descr: "Sun * Inc. (formerly known as Framgia Inc.), founded in 2012, is a Creative Studio with more than 1500

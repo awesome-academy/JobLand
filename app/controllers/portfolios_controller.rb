@@ -3,7 +3,7 @@ class PortfoliosController < ApplicationController
     @portfolio = Portfolio.new
     @portfolios = current_user.cv.portfolios
   end
-  
+
 	def new
     @portfolio = Portfolio.new
     respond_to do |format|
@@ -12,7 +12,7 @@ class PortfoliosController < ApplicationController
       format.json
     end
 	end
-  
+
   def create
   	@portfolio = current_user.cv.portfolios.build portfolio_params
   	@portfolio.image.attach params[:portfolio][:image]

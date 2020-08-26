@@ -4,7 +4,11 @@
       <h2><strong><%= @job.title %></strong></h2>
       <div class="company_img_name">
           <h4>
-             <%= image_tag('3.webp',class: "rounded-circle", style: "width: 80px; height: 60px")%>
+            <% if @job.user.company.images.attached? %>
+              <%=  image_tag @job.user.company.images.first,class: "rounded-circle", style: "width: 80px; height: 60px" %>
+            <% else %>
+              <%= image_tag('no-image.jpg',class: "rounded-circle", style: "width: 80px; height: 60px")%>
+            <% end %>
             <small class="text-muted"><%= @job.user.company.full_name %></small>
           </h4>
 
@@ -12,7 +16,11 @@
       <div class="container row">
         <div class="job_inner">
           <div class="emloyer_job_img  col-md-6">
-            <%= link_to image_tag('3.webp'), "#" %>
+            <% if @job.images.attached? %>
+              <%=  image_tag @job.images %>
+            <% else %>
+              <%= image_tag('no-image.jpg')%>
+            <% end %>
           </div>
           <div class="employment_info row col-md-6">
             <div class="job_title_exp_salary col-md-12">
@@ -33,21 +41,27 @@
                 <%=t("job.job_salary")%> :<%= @job.salary %>
               </b>
             </div>
+            <div class="job_title_exp_salary col-md-12">
+              <i class="fa fa fa-venus-mars fa-lg col-md-1" aria-hidden="true"></i>
+              <b id="Job_salary col-md-10">
+                <%= t("employers.jobs.index.gender") %> :<%= @job.sex_i18n %>
+              </b>
+            </div>
           </div>
         </div>
       </div>
       <div class="job_infomation col-md-12">
-        <%= @job.what %>
+        <%= @job.what.html_safe %>
       </div>
       <div class="job_infomation col-md-12">
-        <%= @job.why %>
+        <%= @job.why.html_safe %>
       </div>
       <div class="job_infomation col-md-12">
-        <%= @job.how %>
+        <%= @job.how.html_safe %>
       </div>
 
       <div class="applied_users col-md-12">
-         <h3 id="applied_users_list">Danh sách người ứng tuyển</h3>
+         <h3 id="applied_users_list"><%= t("job.applier_list") %></h3>
         <%= render 'employer/applyjobs/index'%>
       </div>
   </div>

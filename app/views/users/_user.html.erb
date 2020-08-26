@@ -1,0 +1,5 @@
+<tr>
+  <td id="follow_user_avatar"><%=link_to image_tag(user.image), profile_path(user.id) if user.image.attached? %></td>
+  <td ><h5><%= link_to user.fullname, profile_path(user.id) %></h5></td>
+  <td ><h5><%= user.email %></h5></td>
+</tr>

@@ -9,6 +9,7 @@
   filter: blur(5px);
   background-color: #9f9f9f;
   opacity: 0.5;
+  object-fit: cover;
 }
 
 .blurred-image-overlay{
@@ -27,6 +28,7 @@
   background-repeat: repeat-x;
   background-position: left bottom;
   height: 320px;
+  object-fit: cover;
 }
 .profile-header-wrapper{
   background-repeat: repeat-x;
@@ -46,14 +48,40 @@
   position: relative;
 }
 
-.main-inner{
-  margin: 0 auto;
-  width: 1150px;
+/*follow user*/
+.follow_user_button{
+  font-size: 20px;
+  margin-left: 50%;
+}
+#follow_user_avatar img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+#follow_user_name a{
+  margin-top: 20px;
+}
+.user-all-follow{
+  margin-top: 10px;
+  padding: 20px 20px 15px 20px;
+  background-color: #e3e3f3;
+  color: #66605b;
+}
+.following_user_tab{
+  margin-top: 13px;
+  width: 100%;
+  background: #e3e3f3 !important;
+}
+.table-responsive-following {
+  background: #e3e3f3 !important;
 }
 
+/**/
+
 .user_name{
-  font-size: 30px;
-  margin-top: -14px
+  font-size: 35px;
+  margin-left: -20px;
 }
 
 .two-column{
@@ -62,12 +90,12 @@
 .column-main{
   top: 15px;
   height: auto;
-  border-right: 1px solid #a0a0a0;
   border-top: 1px solid #a0a0a0;
 }
 .column-side{
   top: 15px;
   height: auto;
+  border-left: 1px solid #a0a0a0;
   border-top: 1px solid #a0a0a0;
 }
 .user-profile{
@@ -242,3 +270,4 @@
   font-size: 60px;
   margin-top: -90px;
 }
+

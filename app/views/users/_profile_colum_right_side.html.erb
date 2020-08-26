@@ -96,3 +96,41 @@
     </div>
   <% end %>
 <% end %>
+
+<div class="clearfix"></div>
+<% if @user == current_user %>
+  <%= link_to following_user_path(@user), :action => 'go' do %>
+    <div class="user-saved-jobs">
+      <section class="user-all-follow">
+        <div class="icon-jobs-bookmark">
+          <i class="fa fa-star fa-4x" aria-hidden="true"></i>
+        </div>
+        <div class="jobs-saved">
+          <%= "following" %>
+        </div>
+        <div id = "a_b_count">
+           <%= @user.following.count %>
+        </div>
+      </section>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="clearfix"></div>
+<% if @user == current_user %>
+  <%= link_to followers_user_path(@user), :action => 'go' do %>
+    <div class="user-saved-jobs">
+      <section class="user-all-follow">
+        <div class="icon-jobs-bookmark">
+          <i class="fa fa-star-o fa-4x" aria-hidden="true"></i>
+        </div>
+        <div class="jobs-saved">
+          <%= "followers" %>
+        </div>
+        <div id = "a_b_count">
+           <%= @user.followers.count %>
+        </div>
+      </section>
+    </div>
+  <% end %>
+<% end %>

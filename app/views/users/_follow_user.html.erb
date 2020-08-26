@@ -1,0 +1,13 @@
+<%= form_for(current_user.active_relationships.build) do |f| %>
+  <div>
+    <%= hidden_field_tag :follow_id, @user.id %>
+  </div>
+  <%= button_tag(type: "submit", class: "new_relationship_submit") do %>
+    <span><i class="fa fa-star-o" aria-hidden="true"></i></span>
+  <% end %>
+<% end %>
+
+
+
+
+

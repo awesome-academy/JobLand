@@ -15,3 +15,5 @@ vi:
     mycompany: Công ty của Tôi
   job:
     chart: Biểu đồ
+    applied_count: "Tổng số hồ sơ"
+    applier_list: "Danh sách người ứng tuyển"

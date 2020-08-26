@@ -105,7 +105,7 @@
                           <%= link_to job_new.title,job_path(job_new.id) %></h5>
                         </div>
                         <div class="about-job col-md-12">
-                          <p><%= job_new.what.first(80) %>...</p>
+                           <p><%= job_new.what.html_safe.first(80) %>...</p>
                         </div>
                         <div class="name-company-job col-md-12">
                           <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
@@ -113,8 +113,8 @@
                         <div class="company-job col-md-12">
                       <div class="col-md-6">
                         <div class="row">
-                          <% if job_new.user.company.image.attached? %>
-                            <%= image_tag job_new.user.company.image, :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" %>
+                          <% if job_new.user.company.images.attached? %>
+                            <%= image_tag job_new.user.company.images.first , :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" %>
                           <% else %>
                             <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
                           <% end %>
@@ -149,7 +149,7 @@
                       <%= link_to job_new.title,job_path(job_new.id) %></h5>
                     </div>
                     <div class="about-job col-md-12">
-                      <p><%= job_new.what.first(80) %>...</p>
+                       <p><%= job_new.what.html_safe.first(80) %>...</p>
                       </div>
                     <div class="name-company-job col-md-12">
                          <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>

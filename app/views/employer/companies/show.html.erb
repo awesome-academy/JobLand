@@ -82,8 +82,7 @@
                     <li class="link_to_web">
                         <% if @company.link %>
                         <i class="fa fa-link fa-lg" aria-hidden="true"></i>
-                        <%= link_to @company.link.first(30) %>
-                        <%="..."%>
+                        <%= link_to @company.link.first(30)+ "..." %>
                     </li>
                     <% end %>
                     <li>
