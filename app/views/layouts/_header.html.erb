@@ -3,10 +3,10 @@
 <nav class="navbar navbar-default header-front-end">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li><%=link_to image_tag('logohome.png',class: "navbar-brand"),root_url%> </li>
+     <li><%=link_to image_tag('logohome.png', id:"logo-nav",class: "navbar-brand"),root_url%> </li>
       <% if current_user && current_user.employer  %>
         <li class="nav-item cta mr-md-1">
-          <%= link_to "employer", employer_companies_path %>
+           <%= link_to t("home.about5"), employer_companies_path %>
         </li>
       <% end %>
       <li>

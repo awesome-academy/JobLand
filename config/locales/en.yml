@@ -33,6 +33,13 @@ en:
   skill:
     add_skill: "Update"
   home:
+    about: "About JobLand"
+    about1: "About"
+    about2: "Terms of Use"
+    about3: "Help"
+    about4: "Privacy"
+    about5: "For employers"
+    product: "Product"
     currency: "$"
     filterSesrch: "--filter search--"
     one: "One"
