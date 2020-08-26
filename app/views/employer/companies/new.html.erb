@@ -9,49 +9,53 @@
             </li>
           </ul>
         </div>
-    </div>
-    </div>
+
     <div class="company_form_info col-md-7">
-        <h3>New company</h3><br>
-        <%= form_for [:employer , @company ] do |f| %>
-        <div class="form-group">
-            <li class="fa fa-user-circle" aria-hidden="true">
-                <%= t("cp.full_name") %> :</li>
-            <%= f.text_field :full_name ,placeholder: "", class: 'form-control' %>
-        </div>
-        <div class="form-group">
-            <li class="fa fa-envelope-o" aria-hidden="true"> Email :</li>
-            <%= f.text_field :email ,placeholder: "", class: 'form-control' %>
-        </div>
-        <div class="form-group">
-            <li class="fa fa-link" aria-hidden="true">
-                <%= t("cp.link") %> :</li>
-            <%= f.text_field :link ,placeholder: "", class: 'form-control' %>
-        </div>
-        <div class="form-group">
-            <li class="fa fa-phone" aria-hidden="true">
-                <%= t("cp.phone") %> :</li>
-            <%= f.number_field :phone ,placeholder: "" , class: 'form-control' %>
-        </div>
-        <div class="form-group">
-            <li class="fa fa-plus-circle" aria-hidden="true">
-                <%= t("cp.total") %> :</li>
-            <%= f.number_field :total ,placeholder: "", class: 'form-control'  %>
-        </div>
-        <div class="form-group">
-            <li class="fa fa-map-marker" aria-hidden="true">
-                <%= t("cp.address") %> :</li>
-            <%= f.text_field :address  ,placeholder: "", class: 'form-control' %>
-        </div>
-        <div class="form-group">
-            <li class="fa fa-circle" aria-hidden="true">
-                <%= t("cp.descr") %> :</li>
-            <%= f.text_area :descr  ,placeholder: "", class: 'form-control' %>
-        </div>
-        <span class="image">
-            <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
-        </span>
-        
+        <div class="company_form_info col-md-7">
+                <h3>New company</h3><br>
+                <%= form_for [:employer , @company ] do |f| %>
+                <div class="form-group">
+                    <li class="fa fa-user-circle" aria-hidden="true">
+                        <%= t("cp.full_name") %> :</li>
+                    <%= f.text_field :full_name ,placeholder: "", class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                    <li class="fa fa-envelope-o" aria-hidden="true"> Email :</li>
+                    <%= f.text_field :email ,placeholder: "", class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                    <li class="fa fa-link" aria-hidden="true">
+                        <%= t("cp.link") %> :</li>
+                    <%= f.text_field :link ,placeholder: "", class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                    <li class="fa fa-phone" aria-hidden="true">
+                        <%= t("cp.phone") %> :</li>
+                    <%= f.number_field :phone ,placeholder: "" , class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                    <li class="fa fa-plus-circle" aria-hidden="true">
+                        <%= t("cp.total") %> :</li>
+                    <%= f.number_field :total ,placeholder: "", class: 'form-control'  %>
+                </div>
+                <div class="form-group">
+                    <li class="fa fa-map-marker" aria-hidden="true">
+                        <%= t("cp.address") %> :</li>
+                    <%= f.text_field :address  ,placeholder: "", class: 'form-control' %>
+                </div>
+                  <div class="form-group">
+                    <li class="fa fa-map-marker" aria-hidden="true">
+                        Map :</li>
+                    <%= f.text_field :map  ,placeholder: "", class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                    <li class="fa fa-circle" aria-hidden="true">
+                        <%= t("cp.descr") %> :</li>
+                    <%= f.text_area :descr  ,placeholder: "", class: 'form-control ckeditor' %>
+                </div>
+                <span class="image">
+                    <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+                </span>
         <div class="submit-education">
             <%= form_tag employer_companies_path do %>
              <article>
@@ -78,3 +82,5 @@
         <% end %>
     </div>
 </div>
+ </div>
+    </div>

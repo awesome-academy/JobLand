@@ -1,82 +1,115 @@
 <div class="container">
-  <%= render 'employer/companies/navbar'%>
-  </div>
-  <div>
-    <div class="col-md-6">
-      <div class="company_image">
-         <%= image_tag @company.image, :style => "height: 300px" if @company.image.attached?%>
-       </div>
-      <h1 class="mt-4"><%= @company.full_name %> <%= link_to t("cp.edit"), edit_employer_company_path(@company), class: "btn btn-primary edit-company" %></h1>
-      <p class="lead">
-        <%= time_ago_in_words(@company.created_at) %>
-        <%= t("cp.ago") %>
-      </p>
-      <hr>
-      <p class="lead">
-        <% if @company.descr %>
-          <%= @company.descr %>
-        <% end %>
-      </p>
-      <hr>
-    </div>
-    <div class="company_contacts col-md-4">
-      <div class="card my-4 margin-xl" id="company_contact">
-        <h3 class="card-header"><i class="fa fa-building fa-lg" aria-hidden="true"></i><%= t("cp.company") %></h3>
-          <div class="margin-xl">
-            <ul class="margin-xl">
-              <li class="link_to_web">
-                <i class="fa fa-link fa-lg" aria-hidden="true"></i>
-                  <%= link_to @company.link %><%="..."%>
-              </li>
-
-              <li>
-                <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
-                <%= @company.address%>
-              </li>
-
-              <li>
-                <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
-                <% if @company.email %>
-                    <%= @company.email %>
+    <%= image_tag @company.display_image if @company.image.attached? %>
+    <div class="col-md-8">
+        <div class="company_name">
+            <h1 class="col-md-4">
+                <%= @company.full_name %>
+            </h1>
+            <%= link_to t("cp.edit"), edit_employer_company_path(@company), class: "btn btn-primary edit-company" %>
+        </div>
+        <hr>
+        <div class="lead">
+            <% if @company.descr %>
+            <%= @company.descr.html_safe %>
+            <% end %>
+        </div>
+        <hr>
+        <div class="form-group">
+            <div class="col-md-12 top-footer1 animated wow fadeInRight" data-wow-delay=".5s">
+                <%= form_for [:employer , @company ] do |f| %>
+                <%= f.label t("cp.add_member") %>
+                <%= text_field_tag :user_id %>
+                <label class="table table-hover">
+                    <tr>
+                    </tr>
+                </label>
+                <%= f.submit "Add",class: "btn btn-primary" %>
+                <table class="table table-striped custab">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>
+                                <%= t("cp.member") %>
+                            </th>
+                            <th>
+                                <%= t("cp.status") %>
+                            </th>
+                        </tr>
+                    </thead>
+                    <% @user_company.each_with_index do |user,index| %>
+                    <tr>
+                        <td>
+                            <%= index+1 %>
+                        </td>
+                        <td>
+                            <%= link_to user.fullname, user_path %>
+                        </td>
+                        <td>
+                            <%= f.check_box :user_ids, {:multiple => true}, user.id, nil %>
+                        </td>
+                    </tr>
+                    <% end %>
+                </table>
+                <%= paginate @user_company ,theme: 'twitter-bootstrap-3' %>
                 <% end %>
-              </li>
-
-              <li>
-                <i class="fa fa-phone-square fa-lg" aria-hidden="true"></i>
-                <%= @company.phone %>
-              </li>
-
-              <li>
-                <i class="fa fa-users fa-lg" aria-hidden="true"> </i>
-                <%= @company.total   %> <%= t("cp.member") %>
-              </li>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card my-4 margin-xl" id="company_members">
+            <h3 class="card-header"><i class="fa fa-building fa-lg" aria-hidden="true"></i>
+                <%= t("cp.company") %>
+            </h3>
+            <div class="margin-xl">
+                <ul class="margin-xl">
+                    <li class="link_to_web">
+                        <i class="fa fa-link fa-lg" aria-hidden="true"></i>
+                        <%= link_to @company.link %>
+                        <%="..."%>
+                    </li>
+                    <li>
+                        <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+                        <%= @company.address%>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
+                        <% if @company.email %>
+                        <%= @company.email %>
+                        <% end %>
+                    </li>
+                    <li>
+                        <i class="fa fa-phone-square fa-lg" aria-hidden="true"></i>
+                        <%= @company.phone %>
+                    </li>
+                    <li>
+                        <i class="fa fa-users fa-lg" aria-hidden="true"> </i>
+                        <%= @company.total   %>
+                        <%= t("cp.member") %>
+                    </li>
                 </ul>
             </div>
-          </div>
-        <div id="map"></div>
-      </div>
+        </div>
+        <div id="map" style="display: block;width: 500px; height: 500px;">
+            <%= @company.map.html_safe %>
+        </div>
     </div>
-  </div>
 </div>
-
-<script>
-$(document).ready(function() {
-    initMap(21.0266484, 105.7704319, 14);
+<script type="text/javascript">
+$('#user_id').autocomplete({
+    source: function(request, response) {
+        $.ajax({
+            url: "/employer/members",
+            data: { 'q': { 'fullname_cont': request.term } },
+            dataType: 'json',
+            success: function(data) {
+                response($.map(data, function(dataItem) {
+                    return { data: dataItem.id, value: dataItem.fullname };
+                }));
+            },
+        });
+    },
+    select: function(event, ui) {
+        $('table').append('<tr><td>' + ui.item.value + '</td><td> <input type="hidden" value="' + ui.item.data + '" name="company[user_ids][]"></td></tr>');
+    },
 });
-
-function initMap(lat, lng) {
-    var myCoords = new google.maps.LatLng(lat, lng);
-    var mapOptions = {
-        center: myCoords,
-        zoom: 18.79,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    var marker = new google.maps.Marker({
-        position: myCoords,
-        map: map,
-        draggable: true,
-        animation: google.maps.Animation.DROP,
-    });
-};
 </script>

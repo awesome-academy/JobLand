@@ -9,7 +9,10 @@ vi:
     longitude: Kinh độ
     full_name: Tên công ty
     descr: Mô tả
-    member: Người
+    member: Thành viên
     edit: Chỉnh sửa
     company: Công ty
     ago: trước
+    add_member: Thêm thành viên
+    status: Trạng thái
+

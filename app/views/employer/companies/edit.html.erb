@@ -3,7 +3,7 @@
         <%= render 'employer/companies/navbar'%>
     </div>
     <div class="company_form_info col-md-7">
-        <h3>Edit company</h3><br>
+        <h3>New company</h3><br>
         <%= form_for [:employer , @company ] do |f| %>
         <div class="form-group">
             <li class="fa fa-user-circle" aria-hidden="true">
@@ -34,10 +34,15 @@
                 <%= t("cp.address") %> :</li>
             <%= f.text_field :address  ,placeholder: "", class: 'form-control' %>
         </div>
+          <div class="form-group">
+            <li class="fa fa-map-marker" aria-hidden="true">
+                Map :</li>
+            <%= f.text_field :map  ,placeholder: "", class: 'form-control' %>
+        </div>
         <div class="form-group">
             <li class="fa fa-circle" aria-hidden="true">
                 <%= t("cp.descr") %> :</li>
-            <%= f.text_area :descr  ,placeholder: "", class: 'form-control' %>
+            <%= f.text_area :descr  ,placeholder: "", class: 'form-control ckeditor' %>
         </div>
         <span class="image">
             <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
@@ -48,5 +53,6 @@
             </div>
         </div>
         <% end %>
+
     </div>
 </div>

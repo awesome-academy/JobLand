@@ -3,7 +3,6 @@ class CreateMembers < ActiveRecord::Migration[6.0]
     create_table :members do |t|
       t.references :user, foreign_key: true
       t.references :company, foreign_key: true
-      t.boolean :status, default: false
 
       t.timestamps
     end

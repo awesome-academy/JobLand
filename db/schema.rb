@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_072220) do
     t.integer "total"
     t.decimal "latitude", precision: 10
     t.decimal "longitude", precision: 10
+    t.text "map"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -172,7 +173,6 @@ ActiveRecord::Schema.define(version: 2020_08_20_072220) do
   create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "company_id"
-    t.boolean "status", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_members_on_company_id"
