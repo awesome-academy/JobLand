@@ -1,13 +1,50 @@
 <div class="auth-form">
   <div class="auth-form__form">
-    <div class="auth-form__header">
-      <h2>Sign up</h2>
+
+    <div id="formEmployer">
+      <div class="auth-form__header">
+        <h2>Sign up</h2>
+      </div>
+      <div class="auth-form__body" >
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="field">
+            <%= f.label :fullname %><br />
+            <%= f.text_field :fullname, class: "auth-form__input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "auth-form__input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", class: "auth-form__input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "auth-form__input" %>
+          </div>
+
+          <div class="auth-form__actions">
+            <%= f.submit "Sign up", class: "btn auth-form__submit" %>
+            <button type="button" class="btn auth-form__submit" id="employer-btn">for employer</button>
+          </div>
+        <% end %>
+      </div>
     </div>
-    
-    <div class="auth-form__body">
+    <div style="display: none;" id="form-company">
+      <div class="auth-form__header">
+        <h2>Sign up</h2>
+      </div>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
-
         <div class="field">
           <%= f.label :fullname %><br />
           <%= f.text_field :fullname, class: "auth-form__input" %>
@@ -31,13 +68,67 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "auth-form__input" %>
         </div>
 
+        <%= f.fields_for :company, Company.new do |ff| %>
+            <div class="auth-form__header">
+              <h2>Company info</h2>
+            </div>
+            <div class="field">
+              <%= ff.label "Name Company" %><br />
+              <%= ff.text_field :full_name, class: "auth-form__input" %>
+            </div>
+            <div class="field">
+              <%= ff.label "Email Company" %><br />
+              <%= ff.text_field :email, class: "auth-form__input" %>
+            </div>
+            <div class="field">
+              <%= ff.label "Website" %><br />
+              <%= ff.text_field :link, class: "auth-form__input" %>
+            </div>
+            <div class="field">
+              <%= ff.label "Phone Company" %><br />
+              <%= ff.number_field :phone, class: "auth-form__input" %>
+            </div>
+            <div class="field">
+              <%= ff.label :total %><br />
+              <%= ff.number_field :total, class: "auth-form__input" %>
+            </div>
+            <div class="field">
+              <%= ff.label :address %><br />
+              <%= ff.text_field :address, class: "auth-form__input" %>
+            </div>
+            
+            <div class="field">
+              <%= ff.label :description %><br />
+              <%= ff.text_area :descr, class: "auth-form__input ckeditor", style: "height: 100px" %>
+            </div>
+            
+            <span class="image">
+                <%= ff.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+            </span>
+        <% end %>
+            <%= f.hidden_field :employer, value: true %>
         <div class="auth-form__actions">
           <%= f.submit "Sign up", class: "btn auth-form__submit" %>
+          <button type="button" class="btn auth-form__submit" id="back-btn">Back</button>
         </div>
-      <% end %>
+        <% end %>
     </div>
   </div>
   <div class="auth-form__footer">
     <%= render "devise/shared/links" %>
   </div>
 </div>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+    $('#employer-btn').click(function() {
+     $("#formEmployer").hide();
+     $("#form-company").show();
+    });
+    $('#back-btn').click(function() {
+     $("#formEmployer").show();
+     $("#form-company").hide();
+    });
+    
+});
+</script>

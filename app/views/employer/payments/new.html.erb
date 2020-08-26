@@ -1,0 +1,6 @@
+<div class="text-center" style="height: 20em; margin-top: 10em">
+	<%= form_for [:employer, @payment] do |f|%>
+		<%= f.hidden_field :plan, value: params[:plan] %>
+		<%= f.submit "Next", class: "btn btn-primary" %>
+	<% end %>
+</div>
