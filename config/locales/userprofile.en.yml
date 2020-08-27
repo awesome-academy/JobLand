@@ -1,5 +1,6 @@
 en:
   userp:
+    pro: "Profile"
     contact: "Personal Information:"
     applied: "Applied Jobs"
     saveJob: "Saved Jobs"

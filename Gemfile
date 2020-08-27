@@ -58,6 +58,7 @@ gem "mechanize"
 gem "nokogiri"
 gem 'stripe', '~> 5.23', '>= 5.23.1'
 gem 'whenever', :require => false
+gem 'enum_help'
 # gem 'will_filter'
 # gem 'kaminari'
 group :development, :test do

@@ -30,6 +30,16 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  enums:
+    job:
+      time_work:
+        Fulltime: "Fulltime"
+        Parttime: "Parttime"
+        All: "All"
+      sex:
+        Female: "Female"
+        Male: "Male"
+        All1: "All"
   skill:
     add_skill: "Update"
   home:
@@ -47,6 +57,7 @@ en:
     partTime: "Part Time"
     Male: "Male"
     Female: "Female"
+    all: "All"
     Filter: "Filter by"
     sort: "sort:"
     Newest: "Newest"
@@ -58,9 +69,13 @@ en:
     salary: "Salary"
     search: "Search"
     companyHome: "Company"
+    language: "Languages"
+    eng: "English"
+    viet: "VietNamese"
+    logout: "Log Out"
+    login: "Log In"
   global:
     language:
-       view: "View - Canpaigns"
        create2: "Add - Products"
        delete: "Delete"
        edit: "Edit"
@@ -146,3 +161,4 @@ en:
         manager: "Manager"
         applicants: "Applicants"
         jobs: "Jobs"
+
