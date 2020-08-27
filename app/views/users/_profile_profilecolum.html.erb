@@ -1,0 +1,62 @@
+<div class="user-profile col-md-12 ">
+  <section class="user-profile-aside-section contact-section row">
+    <%= render "users/edit_user_profile" %>
+    <h5>
+      <font class="contact-to-colection">
+        <%= t("userp.contact") %>
+      </font>
+    </h5>
+    <div class="editable-attribute col-md-12 row">
+      <div class="contact-line col-md-12">
+        <div class="row">
+          <div class="icon-phone contact-icon col-md-2">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </div>
+          <div class="contact-value col-md-8">
+            <%= @user.phone %>
+          </div>
+        </div>
+      </div>
+      <div class="contact-line col-md-12">
+        <div class="row">
+          <div class="icon-email contact-icon col-md-2">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </div>
+          <div class="contact-value col-md-8">
+            <%= @user.email %>
+          </div>
+        </div>
+      </div>
+      <div class="contact-line col-md-12">
+        <div class="row">
+          <div class="icon-sex contact-icon col-md-2">
+            <i class="fa fa-venus-mars" aria-hidden="true"></i>
+          </div>
+          <div class="contact-value col-md-8">
+            <%= @user.sex %>
+          </div>
+        </div>
+      </div>
+      <div class="contact-line col-md-12">
+        <div class="row">
+          <div class="icon-dob contact-icon col-md-2">
+            <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+          </div>
+          <div class="contact-value col-md-8">
+            <%= @user.dob %>
+          </div>
+        </div>
+      </div>
+      <div class="contact-line col-md-12">
+        <div class="row">
+          <div class="icon-email contact-icon col-md-2">
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </div>
+          <div class="contact-value col-md-10">
+            <%= @user.address %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
