@@ -174,6 +174,8 @@ GEM
     elasticsearch-transport (7.9.0)
       faraday (~> 1)
       multi_json
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     enumerations (2.4.0)
       activerecord
       activesupport
@@ -499,6 +501,7 @@ DEPENDENCIES
   devise
   elasticsearch-model
   elasticsearch-rails
+  enum_help
   enumerations
   figaro (~> 1.2)
   font-awesome-rails (~> 4.7, >= 4.7.0.5)

@@ -13,9 +13,9 @@
 # a = Stripe::Product.create(name: "Sarter")
 # b = Stripe::Product.create(name: "Pro")
 # c = Stripe::Product.create(name: "Enterprise")
-# Stripe::Price.create(product: a.id, unit_amount: 500, currency: "usd", recurring: {interval: "month"}, lookup_key: "starter") 
-# Stripe::Price.create(product: b.id, unit_amount: 1000, currency: "usd", recurring: {interval: "month"}, lookup_key: "Pro") 
-# Stripe::Price.create(product: c.id, unit_amount: 1500, currency: "usd", recurring: {interval: "month"}, lookup_key: "Enterprise") 
+# Stripe::Price.create(product: a.id, unit_amount: 500, currency: "usd", recurring: {interval: "month"}, lookup_key: "starter")
+# Stripe::Price.create(product: b.id, unit_amount: 1000, currency: "usd", recurring: {interval: "month"}, lookup_key: "Pro")
+# Stripe::Price.create(product: c.id, unit_amount: 1500, currency: "usd", recurring: {interval: "month"}, lookup_key: "Enterprise")
 
 
 
@@ -43,6 +43,7 @@ Skill.create(name:"Objective-C")
 Skill.create(name:"Scala")
 Skill.create(name:"Swift")
 Skill.create(name:"TypeScript")
+
 
 
 User.create( email: "123456@gmail.com", fullname: "Thái", password: "123456", password_confirmation: "123456", employer_role: true)

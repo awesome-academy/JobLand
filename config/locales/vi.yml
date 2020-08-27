@@ -1,4 +1,14 @@
 vi:
+  enums:
+    job:
+      time_work:
+        Fulltime: "Toàn thời gian"
+        Parttime: "Bán thời gian"
+        All: "Cả hai"
+      sex:
+        Female: "Nữ"
+        Male: "Nam"
+        All1: "Cả hai"
   skill:
     add_skill: :"Thêm"
   home:
@@ -16,7 +26,8 @@ vi:
     partTime: "Bán thời gian"
     Male: "Nam"
     Female: "Nữ"
-    Filter: "Lọc & Tìm kiếm"
+    all: "Cả hai"
+    Filter: "Tìm kiếm"
     sort: "Sắp xếp:"
     Newest: "Mới nhất"
     Recommended: "Đề xuất"
@@ -27,7 +38,12 @@ vi:
     salary: "Mức Lương"
     search: "Tìm Kiếm"
     clear: "Xóa"
+    language: "Ngôn ngữ"
     companyHome: "Công ty"
+    eng: "Tiếng Anh"
+    viet: "Tiếng Việt"
+    logout: "Đăng Xuất"
+    login: "Đăng Nhập"
   global:
     delete: "Delete"
     edit: "Edit"
@@ -89,4 +105,5 @@ vi:
        success: "Success"
        time: "Time"
        companyname: "Tên công ty"
+
 

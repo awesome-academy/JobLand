@@ -1,4 +1,6 @@
 class Job < ApplicationRecord
+  enum time_work: { Fulltime: 0, Parttime: 1, All: 2 }
+  enum sex: { Female: 0, Male: 1, All1: 2 }
 	belongs_to :user
   belongs_to :company
   has_one_attached :images
