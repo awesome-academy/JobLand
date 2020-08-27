@@ -1,29 +1,33 @@
 <div class="slider-123">
   <div class="slider center slider-user">
-    <% if !@job_slide.nil? %>
+    <% if !@job_slides.nil? %>
       <% @job_slides.each do |job_slide|%>
-        <div class="card mb-3">
-         <%= link_to image_tag('2.webp'),"#"%>
+        <div class="card mb-3 card-nen">
+        <% if job_slide.images.attached? %>
+            <%= link_to image_tag(job_slide.images, class: "post-img"),job_path(job_slide) %>
+        <% else %>
+          <%= link_to image_tag('no-image.jpg', class: "post-img"),job_path(job_slide)%>
+        <% end %>
           <div class="card-body col-md-4 text-user">
-            <h5 class="card-title"><%= link_to job_slide.title,"#" %></h5>
-            <p class="card-text"><%= link_to job_slide.company.name,"#" %></p>
+            <h5 class="card-title card-text"><%= link_to job_slide.title,job_path(job_slide) %></h5>
+            <p class="card-text"><%= link_to job_slide.user.company.full_name,company_path(job_slide.user.company) %></p>
             <p class="card-text"><small class="text-muted"><%= time_ago_in_words(job_slide.created_at) %> ago.</small></p>
           </div>
         </div>
         <% end %>
       <% else %>
-        <div class="card mb-3">
+        <div class="card mb-3 card-nen">
         <%= link_to image_tag('3.webp'), "#"%>
         <div class="card-body col-md-4 text-user">
-          <h5 class="card-title"><%= link_to "name Job","#" %></h5>
+          <h5 class="card-title card-text"><%= link_to "name Job","#" %></h5>
           <p class="card-text"><%= link_to "name company","#" %></p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
-      <div class="card mb-3">
+      <div class="card mb-3 card-nen">
         <%= link_to image_tag('2.webp'), "#"%>
         <div class="card-body col-md-4 text-user">
-          <h5 class="card-title"><%= link_to "name Job","#" %></h5>
+          <h5 class="card-title card-text"><%= link_to "name Job","#" %></h5>
           <p class="card-text"><%= link_to "name company","#" %></p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
@@ -91,7 +95,11 @@
                     <div class="count-job col-md-12">
                       <div class="row">
                         <div class="img-job col-md-12">
-                          <%= image_tag('3.webp')%>
+                          <% if job_new.images.attached? %>
+                            <%= link_to image_tag(job_new.images, class: "post-img"),job_path(job_new) %>
+                          <% else %>
+                            <%= link_to image_tag('no-image.jpg', class: "post-img"),job_path(job_new)%>
+                          <% end %>
                         </div>
                         <div class="title-job col-md-12">
                           <%= link_to job_new.title,job_path(job_new.id) %></h5>
@@ -105,7 +113,7 @@
                         <div class="company-job col-md-12">
                       <div class="col-md-6">
                         <div class="row">
-                          <%= link_to job_new.user.company.full_name, job_path(job_new.user.company.id) %>
+                          <%= link_to job_new.user.company.full_name, company_path(job_new.user.company.id) %>
                         </div>
                       </div>
                       <div class="col-md-6 ">
@@ -126,7 +134,11 @@
                 <div class="count-job col-md-12">
                   <div class="row">
                     <div class="img-job col-md-12">
-                      <%= image_tag('3.webp')%>
+                        <% if job_new.images.attached? %>
+                          <%= link_to image_tag(job_new.images, class: "post-img"),job_path(job_new) %>
+                        <% else %>
+                          <%= link_to image_tag('no-image.jpg', class: "post-img"),job_path(job_new)%>
+                        <% end %>
                     </div>
                     <div class="title-job col-md-12">
                       <%= link_to job_new.title,job_path(job_new.id) %></h5>
@@ -140,7 +152,7 @@
                      <div class="company-job col-md-12">
                       <div class="col-md-6">
                         <div class="row">
-                          <%= link_to job_new.user.company.full_name, job_path(job_new.user.company.id) %>
+                          <%= link_to job_new.user.company.full_name, company_path(job_new.user.company.id) %>
                         </div>
                       </div>
                       <div class="col-md-6 ">
@@ -158,7 +170,11 @@
                 <div class="count-job col-md-12">
                   <div class="row">
                     <div class="img-job col-md-12">
-                      <%= image_tag('3.webp')%>
+                        <% if recommended.images.attached? %>
+                          <%= link_to image_tag(recommended.images, class: "post-img"),job_path(recommended) %>
+                        <% else %>
+                          <%= link_to image_tag('no-image.jpg', class: "post-img"),job_path(recommended)%>
+                        <% end %>
                     </div>
                     <div class="title-job col-md-12">
                       <%= link_to recommended.title,job_path(recommended.id) %></h5>
@@ -172,7 +188,7 @@
                     <div class="company-job col-md-12">
                       <div class="col-md-6">
                         <div class="row">
-                          <%= link_to recommended.user.company.full_name, job_path(recommended.user.company.id) %>
+                          <%= link_to recommended.user.company.full_name, company_path(recommended.user.company.id) %>
                         </div>
                       </div>
                       <div class="col-md-6 ">

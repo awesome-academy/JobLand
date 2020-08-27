@@ -3,6 +3,13 @@ searchVisible = 0;
 transparent = true;
 
         $(document).ready(function(){
+            $.validator.addMethod("maxDate", function(value, element) {
+                var curDate = new Date();
+                var inputDate = new Date(value);
+                if (inputDate < curDate)
+                    return true;
+                return false;
+            }, "Invalid Date!");
 
             /*  Activate the tooltips      */
             $('[rel="tooltip"]').tooltip();
@@ -27,18 +34,24 @@ transparent = true;
                     },
                     "job[exp]": {
                       required: true,
-                      digits: true
+                      digits: true,
+                      max: 80
                     },
                     "job[salary]": {
                       required: true,
-                      digits: true
+                      digits: true,
+                      max: 1000000
                     },
                     "job[number]": {
                       required: true,
-                      digits: true
+                      digits: true,
+                      max: 10000
                     },
                     "job[sex]": {
                       required: true
+                    },
+                    "job[to_date]":{
+                        maxDate: true
                     }
                 },
             });

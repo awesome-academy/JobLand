@@ -1,6 +1,7 @@
 class Job < ApplicationRecord
 	belongs_to :user
   belongs_to :company
+  has_one_attached :images
 	has_many :applyjobs, dependent: :destroy
 	has_many :applying, through: :applyjobs, source: :user
   has_many :bookmarks, dependent: :destroy

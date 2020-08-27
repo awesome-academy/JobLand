@@ -35,7 +35,7 @@ class Employer::JobsController < ApplicationController
 		@job = Job.find params[:id]
 		if @job.update job_params
 			flash[:success] = t("job.JobUpdate")
-			redirect_to employers_jobs_path
+			redirect_to employer_jobs_path
 		else
 			flash[:success] = t("job.JobError")
 		end
@@ -53,7 +53,8 @@ class Employer::JobsController < ApplicationController
 	private
   def job_params
     params.require(:job).permit :title, :sex ,
-     :time_work, :grade, :exp, :salary, :number,:from_date,:to_date, :area, :info
+     :time_work, :grade, :exp, :salary, :number,:from_date,:to_date,
+      :area, :why, :what, :how, :images 
   end
 
 end
