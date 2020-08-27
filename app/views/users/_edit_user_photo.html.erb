@@ -4,7 +4,11 @@
       <%= f.hidden_field :fullname %>
       <div class="modal-content">
         <div class="modal-header-user">
-          <%= image_tag @user.image if @user.image.attached? %>
+          <% if @user.image.attached? %>
+            <%= image_tag @user.image %>
+          <% else %>
+            <%= image_tag('no-image.jpg') %>
+          <% end %>
         </div>
         <div class="modal-body">
           <div class="choose_user_image">

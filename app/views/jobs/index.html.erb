@@ -1,6 +1,10 @@
 <div>
   <div class="menuCompanyJobs"> 
-    <%= image_tag @company.image, :style => "width: 50px; height: 50px; border-radius: 50%;" if @company.image.attached? %>
+  	<% if @company.image.attached? %>
+      <%= image_tag @company.image, :style => "width: 50px; height: 50px; border-radius: 50%;" %>
+    <% else %>
+      <%= image_tag('no-image.jpg', :style => "width: 50px; height: 50px; border-radius: 50%;") %>
+    <% end %>
     <div class="nameCompanyjobs"><%= @company.full_name %></div>
     <div class="navCompanyJobs">
       <%= link_to "Home", company_path(@company) %>

@@ -12,7 +12,11 @@
     <a class="ui-show-modal profile-photo-wrapper">
       <div class="profile-photo">
         <font class="profile-photo-size">
-          <%= image_tag @user.image if @user.image.attached? %>
+          <% if @user.image.attached? %>
+            <%= image_tag @user.image %>
+          <% else %>
+            <%= image_tag('no-image.jpg') %>
+          <% end %>
         </font>
       </div>
       <div class="edit-photo">
