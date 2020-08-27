@@ -17,7 +17,7 @@
             <% if Company.find(company.id).image.attached? %>
               <%= image_tag Company.find(company.id).image, :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" %>
             <% else %>
-              <%= image_tag('1.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
+              <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
             <% end %>
           </div>
         </div>
@@ -45,7 +45,7 @@
             <% if User.find(cv.user_id).image.attached? %>
               <%= image_tag User.find(cv.user_id).image, :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;" %>
           <% else %>
-              <%= image_tag('1.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
+              <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
             <% end %>
           </div>
         </div>
