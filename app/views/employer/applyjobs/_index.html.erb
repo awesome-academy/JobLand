@@ -26,21 +26,21 @@
                   <td><%= applyjob.apply_status %></td>
                   <td>
                     <% if applyjob.apply_status == "Waiting" %>
-                      <%= link_to edit_employers_job_applyjob_path(applyjob.job.id, applyjob.id),
+                      <%= link_to edit_employer_job_applyjob_path(applyjob.job.id, applyjob.id),
                         class: "btn btn-success btn-sm rounded-0", type: "button" do %>
                           <i class="fa fa-check"></i>
                         <% end %>
-                        <%= link_to edit_employers_job_applyjob_path(applyjob.job.id, applyjob.id,check1: true),
+                        <%= link_to edit_employer_job_applyjob_path(applyjob.job.id, applyjob.id,check1: true),
                         class: "btn btn-danger btn-sm rounded-0", type: "button" do %>
                           <i class="fa fa-times"></i>
                         <% end %>
                     <% elsif applyjob.apply_status == "Reject" %>
-                      <%= link_to edit_employers_job_applyjob_path(applyjob.job.id, applyjob.id),
+                      <%= link_to edit_employer_job_applyjob_path(applyjob.job.id, applyjob.id),
                         class: "btn btn-success btn-sm rounded-0", type: "button" do %>
                           <i class="fa fa-check"></i>
                         <% end %>
                     <% else applyjob.apply_status == "Interview" %>
-                       <%= link_to edit_employers_job_applyjob_path(applyjob.job.id, applyjob.id),
+                       <%= link_to edit_employer_job_applyjob_path(applyjob.job.id, applyjob.id),
                         class: "btn btn-danger btn-sm rounded-0", type: "button" do %>
                           <i class="fa fa-times"></i>
                         <% end %>

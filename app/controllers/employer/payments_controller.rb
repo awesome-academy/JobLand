@@ -1,4 +1,5 @@
 class Employer::PaymentsController < ApplicationController
+  before_action :user_employer?
   def new
      @payment = Payment.new
   end
@@ -9,6 +10,7 @@ class Employer::PaymentsController < ApplicationController
     if @payment.valid?
       customer = create_stripe_customer(@payment)
       @session = create_checkout_session(customer, @payment)
+      @payment.session_token = @session.id
       @payment.save!
       session[:token] = @payment.session_token
       render :checkout

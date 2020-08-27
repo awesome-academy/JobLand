@@ -1,5 +1,5 @@
 class Employer::MembersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :user_employer?
 
   def index
     @user = current_user

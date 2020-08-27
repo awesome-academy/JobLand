@@ -6,13 +6,13 @@
         <div class="postision1 row" >
           <div class="m_3">
             <div class="col-md-1">
-              %= link_to company_path(@job.user.company) do %>
-             <% if @job.company.images.attached? %>
+              <%= link_to company_path(@job.user.company) do %>
+             <% if @job.user.company.image.attached? %>
               <%=  image_tag @job.user.company.image, :style =>"width: 60px; height: 60px; border-radius: 50px;" %>
             <% else %>
               <%= image_tag('no-image.jpg', :style => "width: 60px; height: 60px; border-radius: 50px;")%>
             <% end %>
-              <% end %>
+            <% end %>
             </div>
             <div class="ml-5 col-md-7">
               <div class="posiname">
@@ -59,7 +59,7 @@
     </div>
     <div class="displayf">
        <%= link_to company_path(@job.user.company) do %>
-       <% if @job.company.images.attached? %>
+       <% if @job.user.company.image.attached? %>
         <%=  image_tag @job.user.company.image, :style => "width: 70px; height: 70px; border-radius: 50px; margin-right: 1em" %>
       <% else %>
         <%= image_tag('no-image.jpg', :style => "width: 70px; height: 70px; border-radius: 50px; margin-right: 1em")%>
