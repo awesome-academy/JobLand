@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :show_user, only: :show
+
   def new
     @cv_language  =  CvLanguage.new
     @cv_skill = CvSkill.new
@@ -45,5 +47,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :address, :dob, :sex, :phone, :image,
     images_attributes: [:id, :room_id, :image_link]
+  end
+
+  def show_user
+    unless current_user.id == params[:id].to_i
+      flash[:danger] = t("search.cannot access")
+      redirect_to request.referrer || root_url
+    end
   end
 end
