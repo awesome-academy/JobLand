@@ -49,10 +49,9 @@ Rails.application.routes.draw do
     resources :educations
     resources :users do
       resources :applyjobs
-    end
-    resources :users do
       resources :bookmarks
     end
+    
     resources :experiences
     resources :cv_skills
     resources :cv_languages
@@ -63,6 +62,7 @@ Rails.application.routes.draw do
       resources :jobs do
         resources :bookmarks
       end
+      resources :profiles
       resources :companies
       resources :payments
       resources :members

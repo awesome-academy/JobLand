@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def new
     @cv_language  =  CvLanguage.new
     @cv_skill = CvSkill.new
@@ -17,7 +16,7 @@ class UsersController < ApplicationController
     @experience  =  Experience.new
     @experiences = @user.cv.experiences
     @portfolio = Portfolio.new
-    @portfolios = current_user.cv.portfolios
+    @portfolios = @user.cv.portfolios
     @cv_skill = CvSkill.new
     @cv_language = CvLanguage.new
     @cv = Cv.find params[:id]

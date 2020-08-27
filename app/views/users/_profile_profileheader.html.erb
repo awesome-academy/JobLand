@@ -1,0 +1,35 @@
+<div class="blurred-image-overlay">
+  <%= image_tag @profile.image if @profile.image.attached? %>
+</div>
+<div class="profile-header-wrapper">
+  <div class="profile-header-cover-inner">
+    <%= image_tag @profile.image if @profile.image.attached? %>
+  </div>
+</div>
+
+<div class="two-column col-md-12">
+  <div class="profile-header">
+    <a class="ui-show-modal profile-photo-wrapper">
+      <div class="profile-photo">
+        <font class="profile-photo-size">
+          <%= image_tag @user.image if @user.image.attached? %>
+        </font>
+      </div>
+      <div class="edit-photo">
+        <font>
+          
+        </font>
+      </div>
+    </a>
+    <header class="user-name-tags">
+      <div class=" name-and-tagline">
+        <div class=" edit_cover_photo">
+          
+        </div>
+        <div class="user_name">
+          <%= link_to @user.fullname, user_path(current_user) %>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>

@@ -19,7 +19,7 @@
               <% @applyjobs.each_with_index do |applyjob, index| %>
                 <tr>
                   <td><%= index+1 %></td>
-                  <td class="user_name_apply"><%= link_to applyjob.user.fullname, user_path(applyjob.user) %></td>
+                  <td class="user_name_apply"><%= link_to applyjob.user.fullname, employer_profile_path(applyjob.user) %></td>
                   <td><%= applyjob.user.sex %></td>
                   <td><%= applyjob.user.dob %></td>
                   <td><%= applyjob.user.phone %></td>

@@ -1,0 +1,9 @@
+<ul id="skills">
+  <% current_user.cv.cv_skills.each do |cv_skill| %>
+    <div class="deleteButton">
+      <li>
+      	<span class='form-control' id="submitted-skill"><%= cv_skill.skill.name %></span>
+      </li>
+    </div>
+  <% end %>
+</ul>

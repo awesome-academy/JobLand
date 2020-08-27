@@ -1,6 +1,4 @@
 class PortfoliosController < ApplicationController
-	before_action :authenticate_user!
-
   def index
     @portfolio = Portfolio.new
     @portfolios = current_user.cv.portfolios

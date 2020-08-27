@@ -1,5 +1,4 @@
 class StaticPagesController < ApplicationController
-  before_action :authenticate_user!
   def home
     @bookmark = Bookmark.new
     if params[:type] =="newest"|| params[:type].nil?

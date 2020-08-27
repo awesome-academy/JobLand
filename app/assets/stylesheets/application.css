@@ -34,6 +34,7 @@
  *= require static_pages
  *= require search
  *= require news
+ *= require profiles
  */
 
 @import "bootstrap-sprockets";

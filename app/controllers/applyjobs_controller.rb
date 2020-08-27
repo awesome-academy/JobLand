@@ -1,9 +1,7 @@
 class ApplyjobsController < ApplicationController
-  before_action :authenticate_user!
-
   def index
     @user = current_user
-     @profile = current_user.profile
+    @profile = current_user.profile
   	@applyjobs = @user.applyjobs.paginate(
       page: params[:page], per_page: Settings.paginate)
   end

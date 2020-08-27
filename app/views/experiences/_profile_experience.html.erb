@@ -1,0 +1,17 @@
+<% if !@experiences.nil? %>
+  <% @experiences.each do |experience| %>
+	  <div class="exp_company_name">
+	    <b><%=t("exp.companyname")%>:</b> <%= experience.name %>
+	  </div>
+	  <div class="time_work_exp">
+	    <%= experience.work_date %>──<%= experience.work_date2 %>
+	  </div>
+	  <div id="exp_work_title">
+	    <b><%=t("exp.position")%>:</b> <%= experience.title %>
+	  </div>
+	  <div id="exp_description">
+	    <b><%=t("exp.exp_descr")%>:</b> <%= experience.description %>
+	  </div>
+  <% end %>
+<% end %>
+

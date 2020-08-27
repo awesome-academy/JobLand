@@ -1,0 +1,16 @@
+<% if !@educations.nil? %>
+  <% @educations.each do |education| %>
+	  <div id="edu_school">
+	    <b><%=t("ed.school")%>:</b><%= education.school %>
+	  </div>
+	  <div id="edu_degree" >
+	    <b><%=t("ed.degree")%>:</b><%= education.degree %>
+	  </div>
+	  <div id="edu_yearschool">
+	    <b><%=t("ed.graduation")%>:</b><%= education.yearschool %>
+	  </div>
+	  <div id="edu_descr">
+	    <b><%=t("ed.descr")%>:</b><%= education.status %>
+	  </div>
+  <% end %>
+<% end %>

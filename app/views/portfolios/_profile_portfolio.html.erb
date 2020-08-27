@@ -1,0 +1,19 @@
+<% if !@portfolios.nil? %>
+  <% @portfolios.each do |portfolio| %>
+	  <div class="portfolio_2_colum col-md-12">
+	    <div class="row">
+		    <div class="portfolio_image col-md-6">
+		      <%= image_tag('1.jpg', style: "width: 100%; height:200px")%>
+		      <%= image_tag portfolio.image if portfolio.image.attached? %>
+		    </div>
+		    <div class="portfolio_main col-md-6">
+		      <span><%= portfolio.title %></span><br>
+		      <span><%= link_to portfolio.link%></span><br>
+		      <span><%= portfolio.month %>-<%= portfolio.year %></span><br>
+		      <span><%= portfolio.description.first(80) %>...</span><br>
+		    </div>
+	    </div>
+	  </div>
+  <% end %>
+<% end %>
+
