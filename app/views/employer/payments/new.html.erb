@@ -1,6 +1,22 @@
+
+<div class="card-deck text-center container">
+	<div class="card mb-4 box-shadow  " >
+	  <div class="card-header">
+	    <h4 class="my-0 font-weight-normal"><%= params[:plan] %></h4>
+	  </div>
+	  <div class="card-body">
+	    <ul class="list-unstyled mt-3 mb-4">
+	      <li>create job limit day</li>
+	      <li>Email support</li>
+	      <li>Help center access</li>
+	    </ul>
+	  </div>
+	</div>
+</div>
 <div class="text-center" style="height: 20em; margin-top: 10em">
 	<%= form_for [:employer, @payment] do |f|%>
 		<%= f.hidden_field :plan, value: params[:plan] %>
+		<%= link_to "Back",employer_companies_path, class: "btn btn-primary" %>
 		<%= f.submit "Next", class: "btn btn-primary" %>
 	<% end %>
 </div>

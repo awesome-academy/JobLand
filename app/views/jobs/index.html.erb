@@ -19,7 +19,11 @@
 		<div class="count-job col-md-12">
 		  <div class="row">
 			    <div class="img-job col-md-12">
-			      <%= image_tag('3.webp')%>
+			      <% if job_new.images.attached? %>
+            	<%= link_to image_tag(job_new.images, class: "post-img"),job_path(job_new) %>
+		        <% else %>
+		          <%= link_to image_tag('no-image.jpg', class: "post-img"),job_path(job_new)%>
+		        <% end %>
 			    </div>
 			    <div class="hagtag-job col-md-12">
 			      <ul>

@@ -35,6 +35,6 @@
  *= require static_pages
  *= require search
  *= require profiles
-
+*/
 @import "bootstrap-sprockets";
 @import "bootstrap";

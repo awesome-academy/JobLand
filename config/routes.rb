@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   namespace :employer do
+    get 'bookmarks/index'
+  end
+  namespace :employer do
+    get 'application/index'
+  end
+  namespace :employer do
     get 'payment/new'
   end
   resources :news
@@ -63,8 +69,10 @@ Rails.application.routes.draw do
         resources :bookmarks
       end
       resources :profiles
+      resources :bookmarks, only: [:index]
       resources :companies
       resources :payments
+      resources :applications, only: [:index]
       resources :members
       resources :users
       resources :portal_sessions, only: [:create]

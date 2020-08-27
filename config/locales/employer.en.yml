@@ -3,10 +3,11 @@ en:
     newjob: New Job
     view: View Details
     applicants: Applicants
-    members: Members
+    members: Bookmarks
     payment: Payment
     chart: Chart Jobs
     table: Table Jobs
+    chartapp: chart applications
     more: More
     dashboard: Dashboard
     listjob: Posts Job

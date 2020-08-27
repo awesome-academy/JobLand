@@ -1,5 +1,8 @@
 class Employer::CompaniesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :user_employer?
+  before_action :return_home, only: [:index]
+  before_action :return_payment, only: [:new, :show, :create, :edit, :update ]
+  before_action :return_company, only: [:new]
 
   def new
     @company = Company.new
@@ -60,5 +63,21 @@ class Employer::CompaniesController < ApplicationController
   def company_params
      params.require(:company).permit(:full_name, :address, :phone, :link,:map,
       :total, :email, :descr, :image, :user_ids => [])
+  end
+  def return_payment
+    unless !current_user.company.payment.nil? && !current_user.company.payment.stripe_customer_id.nil?
+      flash[:danger] = "Please payment."
+    redirect_to employer_companies_url
+    end
+  end
+  def return_company
+    if !current_user.company.nil?
+      redirect_to employer_companies_url
+    end
+  end
+  def return_home
+    unless !current_user.employer_role.nil?
+      redirect_to root_path
+    end
   end
 end

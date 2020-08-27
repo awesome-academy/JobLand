@@ -1,6 +1,6 @@
 class Employer::JobsController < ApplicationController
-	  before_action :authenticate_user!
-
+	  before_action :user_employer?
+	  before_action :return_payment
 	def index
 		@jobs = current_user.jobs.page params[:page]
 		@company = current_user.company
@@ -57,4 +57,10 @@ class Employer::JobsController < ApplicationController
       :area, :why, :what, :how, :images 
   end
 
+  def return_payment
+  	unless !current_user.company.payment.nil? && !current_user.company.payment.stripe_customer_id.nil?
+  		flash[:danger] = "Please payment."
+		redirect_to employer_companies_url
+  	end
+  end
 end

@@ -2,8 +2,13 @@
   <div>
     <div class="dis">
       <%= link_to company_path(params[:id]) do %>
-        <%= image_tag @company.image, :style => "width: 100px; height: 100px; border-radius: 50px;" if @company.image.attached? %>
+        <% if @company.image.attached? %>
+          <%=  image_tag(@company.image, :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img") %>
+        <% else %>
+          <%=  image_tag('no-image.jpg', :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img")%>
+        <% end %>
       <% end %>
+      
       <div class="name_company"><%= @company.full_name %><div><%= @company.email %></div></div>
       <div class="nav_company">
         <div><a href="#">Home</a></div>
@@ -32,7 +37,13 @@
   <div class="ml_2">
     <h1>Company info</h1>
     <div class="info_company">
-      <%= image_tag @company.image, :style => "width: 50px; height: 50px; border-radius: 50%;" if @company.image.attached? %>
+      <%= link_to company_path(params[:id]) do %>
+        <% if @company.image.attached? %>
+          <%=  image_tag(@company.image, :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img") %>
+        <% else %>
+          <%=  image_tag('no-image.jpg', :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img")%>
+        <% end %>
+      <% end %>
       <span> <%= @company.full_name%></span>
       <div><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i> <span> <%= @company.address%></span></div>
       <div><i class="fa fa-link fa-2x" aria-hidden="true"></i> <span> <%= @company.link%></span></div>

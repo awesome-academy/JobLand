@@ -3,9 +3,10 @@ vi:
     newjob: Tạo Công Việc
     view: Xem chi tiết
     applicants: Người nộp đơn
-    members: Nhân viên
+    members: Lưu
     payment: Thanh toán
     chart: Biểu đồ công việc
+    chartapp: biểu đồ nộp cv
     table: bảng công việc
     more: Thêm
     dashboard: Bảng điều khiển

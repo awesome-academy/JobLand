@@ -15,6 +15,12 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def user_employer?
+    unless current_user.employer_role == true
+      redirect_to root_path
+    end
+  end
   
   protected
   def configure_permitted_parameters
