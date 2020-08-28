@@ -45,7 +45,7 @@
             <%= f.text_area :descr  ,placeholder: "", class: 'form-control ckeditor' %>
         </div>
         <span class="image">
-            <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+            <%= f.file_field :images, multiple: true, accept: "image/jpeg,image/gif,image/png" %>
         </span>
         <div class="submit-education">
             <div class="submit">

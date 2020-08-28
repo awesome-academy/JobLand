@@ -35,7 +35,6 @@ class Employer::CompaniesController < ApplicationController
   def create
     @company = Company.new company_params
     @company.user_id = current_user.id
-    @company.image.attach(params[:company][:image])
     Stripe::Charge.create(
      :amount => 500,
      :currency => "usd",
@@ -53,8 +52,17 @@ class Employer::CompaniesController < ApplicationController
 
   def update
     @company = Company.find params[:id]
+    Cloudinary::Api.delete_all_resources
     if @company.update company_params
       redirect_to employer_company_path
+    end
+  end
+
+  def destroy
+    @company = Company.find params[:id]
+    Cloudinary::Api.delete_all_resources
+    if @company.destroy
+      redirect_to  employer_company_path
     end
   end
 
@@ -62,7 +70,7 @@ class Employer::CompaniesController < ApplicationController
 
   def company_params
      params.require(:company).permit(:full_name, :address, :phone, :link,:map,
-      :total, :email, :descr, :image, :user_ids => [])
+      :total, :email, :descr, :user_ids => [], images: [])
   end
   def return_payment
     unless !current_user.company.payment.nil? && !current_user.company.payment.stripe_customer_id.nil?

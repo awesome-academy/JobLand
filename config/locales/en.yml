@@ -139,6 +139,9 @@ en:
       work: "I currently work here"
       remove: "Remove"
       success: "Success"
+      home: "Home"
+      jobs: "Jobs"
+      about: "About"
   employers:
     jobs:
       index:

@@ -16,13 +16,13 @@ class Employer::ApplyjobsController < ApplicationController
       @applyjob.update_attributes apply_status: 1
 
     end
-      redirect_to employers_job_path(@job.id)
+      redirect_to employer_job_path(@job.id)
   end
 
   def destroy
     @applyjob = Applyjob.find params[:id]
     @applyjob.destroy
     flash[:success] = t("aj.profile updated")
-    redirect_to employers_job_applyjobs_path
+    redirect_to employer_job_applyjobs_path
   end
 end

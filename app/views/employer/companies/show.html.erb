@@ -1,12 +1,25 @@
 <div class="container">
-    <% if @company.image.attached? %>
-        <%= image_tag @company.image, :style => "width: 100%; height: 400px" %>
-      <% else %>
-        <%= image_tag('no-image.jpg', :style => "width: 100%; height: 400px") %>
-      <% end %>
+    <div class="slider-123">
+        <div class="slider center slider-user">
+            <% if !@company.images.nil? %>
+            <% @company.images.take(3).each do |img|%>
+            <div class="card mb-3">
+                <%= image_tag img %>
+            </div>
+            <% end %>
+            <% else %>
+            <div class="card mb-3">
+                <%= link_to image_tag('3.webp'), "#"%>
+            </div>
+            <div class="card mb-3">
+                <%= link_to image_tag('2.webp'), "#"%>
+            </div>
+            <% end %>
+        </div>
+    </div>
     <div class="col-md-8">
         <div class="company_name">
-            <h1 class="col-md-4">
+            <h1 class="col-md-4 ">
                 <%= @company.full_name %>
             </h1>
             <%= link_to t("cp.edit"), edit_employer_company_path(@company), class: "btn btn-primary edit-company" %>
@@ -27,7 +40,7 @@
                     <tr>
                     </tr>
                 </label>
-                <%= f.submit "Add",class: "btn btn-primary" %>
+                <%= f.submit t("cp.add"),class: "btn btn-primary" %>
                 <table class="table table-striped custab">
                     <thead>
                         <tr>
@@ -46,7 +59,7 @@
                             <%= index+1 %>
                         </td>
                         <td>
-                            <%= link_to user.fullname, user_path %>
+                            <%= link_to user.fullname, user_path(user) %>
                         </td>
                         <td>
                             <%= f.check_box :user_ids, {:multiple => true}, user.id, nil %>
@@ -64,13 +77,15 @@
             <h3 class="card-header"><i class="fa fa-building fa-lg" aria-hidden="true"></i>
                 <%= t("cp.company") %>
             </h3>
-            <div class="margin-xl">
+            <div class="margin-xl" id="padding_info">
                 <ul class="margin-xl">
                     <li class="link_to_web">
+                        <% if @company.link %>
                         <i class="fa fa-link fa-lg" aria-hidden="true"></i>
-                        <%= link_to @company.link %>
+                        <%= link_to @company.link.first(30) %>
                         <%="..."%>
                     </li>
+                    <% end %>
                     <li>
                         <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
                         <%= @company.address%>
@@ -94,7 +109,9 @@
             </div>
         </div>
         <div id="map" style="display: block;width: 500px; height: 500px;">
-            <%= @company.map.html_safe? %>
+            <% if @company.map %>
+            <%= @company.map.html_safe %>
+            <% end %>
         </div>
     </div>
 </div>
@@ -115,5 +132,35 @@ $('#user_id').autocomplete({
     select: function(event, ui) {
         $('table').append('<tr><td>' + ui.item.value + '</td><td> <input type="hidden" value="' + ui.item.data + '" name="company[user_ids][]"></td></tr>');
     },
+});
+</script>
+<script type="text/javascript">
+$('.slider').slick({
+    centerMode: true,
+    centerPadding: '110px',
+    adaptiveHeight: true,
+    slidesToShow: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [{
+            breakpoint: 768,
+            settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1
+            }
+        }
+    ]
 });
 </script>
