@@ -1,7 +1,7 @@
 <div>
-  <div class="menuCompanyJobs"> 
-  	<% if @company.image.attached? %>
-      <%= image_tag @company.image, :style => "width: 50px; height: 50px; border-radius: 50%;" %>
+  <div class="menuCompanyJobs">
+  	<% if @company.images.attached? %>
+      <%= image_tag @company.images.first, :style => "width: 50px; height: 50px; border-radius: 50%;" %>
     <% else %>
       <%= image_tag('no-image.jpg', :style => "width: 50px; height: 50px; border-radius: 50%;") %>
     <% end %>
@@ -24,12 +24,6 @@
 		        <% else %>
 		          <%= link_to image_tag('no-image.jpg', class: "post-img"),job_path(job_new)%>
 		        <% end %>
-			    </div>
-			    <div class="hagtag-job col-md-12">
-			      <ul>
-			        <li><a href="#"><%= t("home.new") %></a></li>
-			        <li><a href="#"><%= t("home.hot") %></a></li>
-			      </ul>
 			    </div>
 			    <div class="title-job col-md-12">
 		  			<%= link_to job_new.title, job_path(job_new) %>

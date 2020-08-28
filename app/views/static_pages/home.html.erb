@@ -157,8 +157,8 @@
                      <div class="company-job col-md-12">
                       <div class="col-md-6">
                         <div class="row">
-                          <% if job_new.user.company.image.attached? %>
-                            <%= image_tag job_new.user.company.image, :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" %>
+                          <% if job_new.user.company.images.attached? %>
+                            <%= image_tag job_new.user.company.images.first, :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" %>
                           <% else %>
                             <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
                           <% end %>

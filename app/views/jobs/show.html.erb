@@ -7,8 +7,8 @@
           <div class="m_3">
             <div class="col-md-1">
               <%= link_to company_path(@job.user.company) do %>
-             <% if @job.user.company.image.attached? %>
-              <%=  image_tag @job.user.company.image, :style =>"width: 60px; height: 60px; border-radius: 50px;" %>
+             <% if @job.user.company.images.attached? %>
+              <%=  image_tag @job.user.company.images.first, :style =>"width: 60px; height: 60px; border-radius: 50px;" %>
             <% else %>
               <%= image_tag('no-image.jpg', :style => "width: 60px; height: 60px; border-radius: 50px;")%>
             <% end %>
@@ -59,8 +59,8 @@
     </div>
     <div class="displayf">
        <%= link_to company_path(@job.user.company) do %>
-       <% if @job.user.company.image.attached? %>
-        <%=  image_tag @job.user.company.image, :style => "width: 70px; height: 70px; border-radius: 50px; margin-right: 1em" %>
+       <% if @job.user.company.images.attached? %>
+        <%=  image_tag @job.user.company.images.first, :style => "width: 70px; height: 70px; border-radius: 50px; margin-right: 1em" %>
       <% else %>
         <%= image_tag('no-image.jpg', :style => "width: 70px; height: 70px; border-radius: 50px; margin-right: 1em")%>
       <% end %>
@@ -140,7 +140,7 @@
                 </div>
               </div>
               <div class="d-inline ">
-                  <%= link_to image_tag(@user.company.image, class: "post-img"),job_path(@user.company) if @user.company.image.attached? %>
+                  <%= link_to image_tag(@user.company.images.first, class: "post-img"),job_path(@user.company) if @user.company.images.attached? %>
                   <h4><% @user.fullname %></h4>
                   <span class="text-secondary"><% @job.user.company %></span>
               </div>

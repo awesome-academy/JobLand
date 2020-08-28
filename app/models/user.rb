@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   enum sex: { Unknow: 0, Male: 1, Female: 2 }
 
+  has_one_attached :image
+
   has_one :cv
   has_one :profile
   has_one :company
@@ -16,7 +18,6 @@ class User < ApplicationRecord
 
   idUser = "select user_id from members where company_id = ?"
   scope :user_member, -> (id){User.where("id not in(#{idUser})",id)}
-  has_one_attached :image
 
   accepts_nested_attributes_for :company
     after_create do
