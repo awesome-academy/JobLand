@@ -15,10 +15,10 @@
         </div>
         <div class="form-edit-user-profile-center">
           <%= f.label :sex %><br />
-          <%= f.label :sex, "Male", :value => "1"  %>
-          <%= f.radio_button :sex, "Male" %>
-          <%= f.label :sex, "Female", :value => "2" %>
-          <%= f.radio_button :sex, "Female" %>
+          <label><%= t("job.male")%></label>
+          <%= f.radio_button :sex, "Male", value: "1" %>
+          <label><%= t("job.female")%></label>
+          <%= f.radio_button :sex, "Female", value: "2" %>
         </div>
         <div class="form-edit-user-profile-center">
           <%= f.label "Birthday" %><br>

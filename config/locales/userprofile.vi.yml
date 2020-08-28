@@ -1,8 +1,10 @@
 vi:
   userp:
     pro: "Trang cá nhân"
+    followUserName: "Họ & Tên"
+    followUseremail: "Hòm thư điện tử"
     contact: "Thông tin cá nhân:"
-    applied: "Đã ứng tuyển công việc"
+    applied: "Việc đã ứng tuyển"
     saveJob: "Việc đã lưu"
     introduction: "Thông tin"
     experience:  "Kinh nghiệm"
@@ -17,3 +19,8 @@ vi:
     change_user_photo: "Đổi ảnh đại diện"
     profile_cover_photo: "Chọn ảnh trang cá nhân của bạn:"
     change_cover_photo: "Đổi ảnh trang cá nhân"
+    saveUser: "Hồ sơ đã được lưu!"
+    unSaveUser: "Hủy lưu hồ sơ!"
+    allSaveJob: "Tất cả những công việc đã lưu."
+    following: "Danh sách những người bạn đang theo dõi."
+    followers: "Danh sách những người đang theo dõi bạn."

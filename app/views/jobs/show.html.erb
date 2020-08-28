@@ -124,10 +124,10 @@
                         <div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Members</h4>
+                            <h4 class="modal-title"><%= t("global.job.member") %></h4>
                           </div>
                           <div class="modal-body">
-                            <p>Some text in the modal.</p>
+                            <p><!-- Some text in the modal. --></p>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -150,7 +150,7 @@
               <div>
                 <h3><%= t("global.job.what") %></h3>
                 <p style="font-size: 16px">
-                  <%= @job.what %>
+                  <%= @job.what.html_safe %>
                 </p>
               </div>
 
@@ -158,14 +158,14 @@
                 <h3><%= t("global.job.why") %></h3>
 
                 <p class="font_size">
-                  <%= @job.why %>
+                  <%= @job.why.html_safe %>
                 </p>
               </div>
               <div>
                 <h3><%= t("global.job.how") %></h3>
 
                 <p class="font_size">
-                  <%= @job.how %>
+                  <%= @job.how.html_safe %>
                 </p>
               </div>
             </div>
@@ -177,7 +177,7 @@
                 </div><br>
                 <div class="mt-2 d-inline">
                   <i class="fa fa-link" aria-hidden="true"></i>
-                  <%= @job.user.company.link %>
+                  <%= link_to @job.user.company.link.first(30)+"..." %>
                 </div><br>
                 <div class="mt-2 d-inline">
                   <i class="fa fa-users" aria-hidden="true"></i>

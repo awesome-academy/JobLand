@@ -15,3 +15,5 @@ en:
     mycompany: My Company
   job:
     chart: Chart
+    applied_count: "Applied total"
+    applier_list: "List of candidates"

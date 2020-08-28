@@ -1,0 +1,31 @@
+<div class="container">
+  <%= render "profile_header" %>
+  <div class="column-main col-md-8" >
+    <% provide(:title, @title) %>
+      <h3><%= @title %></h3>
+      <% if @users.any? %>
+        <div class="card border-0 following_user_tab">
+          <div class="card-body p-5">
+            <div class="table-responsive-following">
+              <table class="table m-0">
+                <thead>
+                  <tr>
+                    <th ></th>
+                    <th ><%= t("userp.followUserName") %></th>
+                    <th ><%= t("userp.followUseremail") %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <%= render @users %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="column-side col-md-4">
+      <%= render "users/profile_colum_right_side" %>
+    </div>
+  </div>
+</div>

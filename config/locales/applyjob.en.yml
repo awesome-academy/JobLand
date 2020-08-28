@@ -1,7 +1,7 @@
 en:
   aj:
     profile updated: "Profile Updated!"
-    STT: "Ordinal"
+    STT: "#"
     information: "Information"
     cancel: "Cancel"
     you sure?: "You sure?"
@@ -16,3 +16,4 @@ en:
     total: "Total"
     applied_total: "User applied"
     interview_total: "Interview"
+    allApplied: "All job applied"

@@ -26,12 +26,14 @@
       </div>
     </a>
     <header class="user-name-tags">
-      <div class=" name-and-tagline">
+      <div class="name-and-tagline">
         <div class=" edit_cover_photo">
           <%= render "profiles/profile_img_edit" %>
         </div>
-        <div class="user_name">
-          <%= link_to @user.fullname, user_path(current_user) %>
+        <div class="user_name col-md-12">
+          <div class="col-md-5">
+            <%= link_to @user.fullname, user_path(@user) %>
+          </div>
         </div>
       </div>
     </header>

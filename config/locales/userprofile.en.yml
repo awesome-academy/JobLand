@@ -1,6 +1,8 @@
 en:
   userp:
     pro: "Profile"
+    followUserName: "Name"
+    followUseremail: "Email"
     contact: "Personal Information:"
     applied: "Applied Jobs"
     saveJob: "Saved Jobs"
@@ -17,3 +19,8 @@ en:
     change_user_photo: "Change avatar"
     profile_cover_photo: "Choose your cover photo:"
     change_cover_photo: "Change cover photo"
+    saveUser: "Profile is saved!"
+    unSaveUser: "Profile is unsaved!"
+    allSaveJob: "All jobs saved."
+    following: "Following list."
+    followers: "Followers list."

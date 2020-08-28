@@ -1,0 +1,6 @@
+<%= form_for(current_user.active_relationships.find_by(followed_id: @user.id),
+                                            html: { method: :delete }) do |f| %>
+  <%= button_tag(type: "submit", class: "new_relationship_submit") do %>
+    <span><i class="fa fa-star" aria-hidden="true"></i></i></span>
+  <% end %>
+<% end %>

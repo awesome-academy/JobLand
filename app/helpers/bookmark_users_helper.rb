@@ -1,0 +1,2 @@
+module BookmarkUsersHelper
+end

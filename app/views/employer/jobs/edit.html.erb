@@ -110,24 +110,24 @@
                         <div class="col-sm-8 col-sm-offset-2">
                           <div class="sex">
                             <p>Gender:</p>
-                              <%= f.radio_button :sex ,  "0" %> <%= f.label :Male %>
-                              <%= f.radio_button :sex ,  "1" %> <%= f.label :Female %>
-                              <%= f.radio_button :sex ,  "2" %> <label><%= t("job.jobNewSex")%></label>
+                               <%= f.radio_button :sex,  "Female", :value => "0" %> <label><%= t("job.female")%></label>
+                              <%= f.radio_button :sex,  "Male", :value => "1" %> <label><%= t("job.male")%></label>
+                              <%= f.radio_button :sex,  "All1", :value => "2" %> <label><%= t("job.jobNewSex")%></label>
                             </div>
                             <p class="time-job"><%= t("job.jobNewTime")%></p>
                             <div class="col-sm-3  col-sm-offset-1">
                               <div class="row">
-                                <%= f.radio_button :time_work ,  "0" %> <label><%= t("job.jobNewPartTime")%></label>
+                                <%= f.radio_button :time_work, "Fulltime", :value => "0"   %> <label><%= t("job.jobNewPartTime")%></label>
                               </div>
                             </div>
                             <div class="col-sm-3 ">
                               <div class="row">
-                                <%= f.radio_button :time_work ,  "1" %> <label><%= t("job.jobNewuFullTime")%></label>
+                                <%= f.radio_button :time_work, "Parttime", :value => "1" %> <label><%= t("job.jobNewuFullTime")%></label>
                               </div>
                             </div>
                             <div class="col-sm-3 ">
                               <div class="row">
-                                <%= f.radio_button :time_work ,  "1" %> <label><%= t("job.jobNewAll")%></label>
+                                <%= f.radio_button :time_work, "All", :value => "2" %> <label><%= t("job.jobNewAll")%></label>
                               </div>
                             </div>
                             <div  class="exp_time_work col-md-12">

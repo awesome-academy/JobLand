@@ -39,6 +39,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def following
+    @title = t("userp.following")
+    @user = User.find(params[:id])
+    @profile = current_user.profile
+    @users = @user.following
+    render 'show_follow_user'
+  end
+
+  def followers
+    @title = t("userp.followers")
+    @user = User.find(params[:id])
+    @profile = current_user.profile
+    @users = @user.followers
+    render 'show_follow_user'
+  end
+
   private
   def language_params
     params.require(:cv_language).permit :language_id

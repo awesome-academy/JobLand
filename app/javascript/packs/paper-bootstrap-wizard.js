@@ -51,7 +51,7 @@ transparent = true;
                       required: true
                     },
                     "job[to_date]":{
-                        maxDate: true
+
                     }
                 },
             });
