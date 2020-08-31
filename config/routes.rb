@@ -20,8 +20,10 @@ Rails.application.routes.draw do
       delete "signout", to: "devise/sessions#destroy"
     end
 
+
     scope "(:locale)", locale: /en|vi/ do
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+    # mount Sidekiq::Web => "/sidekiq"
 
     get 'companies/show'
     mount Ckeditor::Engine => '/ckeditor'

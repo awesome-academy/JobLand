@@ -17,6 +17,9 @@ ul li{
 main{
   margin-top: 20px;
 }
+.main-left {
+  position: static;
+}
 .h3-filter h3{
   font-size: 20px;
   color: #9DA0A4;
@@ -197,7 +200,9 @@ a.blue-a{
 #li-logo a{
   padding:0px;
 }
-
+.css-po{
+  
+}
 /*element.style {
   position: -webkit-sticky;
   position: sticky;
@@ -212,4 +217,5 @@ a.blue-a{
   border: 2px solid #4CAF50;
   z-index: 5;
 }
+
 */

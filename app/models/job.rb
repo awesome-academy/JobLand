@@ -11,6 +11,7 @@ class Job < ApplicationRecord
 	scope :job_new, -> {order created_at: :desc}
 	scope :job_slide, -> {where(slide:true).limit(5)}
   scope :job_Recommended, -> {order salary: :desc}
+	scope :job_check, -> {where("DATE(created_at) = ?", Date.today)}
   scope :all_approved_false, -> { where approved: false }
   scope :all_approved_true, -> { where approved: true }
   ransack :title, type: :string do

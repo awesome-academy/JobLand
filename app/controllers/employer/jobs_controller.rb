@@ -1,6 +1,7 @@
 class Employer::JobsController < ApplicationController
 	  before_action :user_employer?
 	  before_action :return_payment
+
 	def index
 		@jobs = current_user.jobs.page params[:page]
 		@company = current_user.company
@@ -18,8 +19,9 @@ class Employer::JobsController < ApplicationController
 
 	def create
 		@job = current_user.jobs.build job_params
-		if @job.save
+		if @job.save 
 			flash[:success] = t("job.jobCreate")
+      SendEmailJob.set(wait: 1.minutes).perform_later current_user
       redirect_to root_url
 		else
 			flash[:success] = t("job.JobError")

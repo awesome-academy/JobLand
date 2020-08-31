@@ -40,8 +40,8 @@ Rails.application.configure do
     :address        => 'smtp.gmail.com',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => 'framgiatest',
-    :password       => 'framgia123456',
+    :user_name      => ENV['your_email'],
+    :password       => ENV['your_password'],
     :domain         => 'gmail.com',
     :enable_starttls_auto => true
   }
