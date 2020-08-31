@@ -1,80 +1,96 @@
 <div class="container">
-  <div>
-    <div class="dis">
-      <%= link_to company_path(params[:id]) do %>
-        <% if @company.images.attached? %>
-          <%=  image_tag(@company.images.first, :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img") %>
-        <% else %>
-          <%=  image_tag('no-image.jpg', :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img")%>
-        <% end %>
-      <% end %>
-
-      <div class="name_company"><%= @company.full_name %><div><%= @company.email %></div></div>
-      <div class="nav_company">
-        <div><a href="#"><%= t("global.job.home") %></a></div>
-        <div><a href=""><%= t("global.job.member") %></a></div>
-        <div><%= link_to t("global.job.jobs"), company_jobs_path(@company) %></div>
-      </div>
-    </div>
     <div>
-      <% if @company.images.attached? %>
-        <%= image_tag @company.images.first, :style => "width: 100%; height: 400px" %>
-      <% else %>
-        <%= image_tag('no-image.jpg', :style => "width: 100%; height: 400px") %>
-      <% end %>
-    </div>
-    <div class="container">
-      <div class="col-md-2"></div>
-      <div class="col-md-7">
-        <h1><%= t("global.job.about") %></h1>
-        <div class="descr_company"><%= @company.descr.html_safe %></div>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="ml_2">
-    <h1><%= t("global.job.company") %></h1>
-    <div class="info_company">
-      <%= link_to company_path(params[:id]) do %>
-        <% if @company.images.attached? %>
-          <%=  image_tag(@company.images.first, :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img") %>
-        <% else %>
-          <%=  image_tag('no-image.jpg', :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img")%>
-        <% end %>
-      <% end %>
-      <span> <%= @company.full_name%></span>
-      <div><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i> <span> <%= @company.address%></span></div>
-      <% if @company.link %>
-      <div><i class="fa fa-link fa-2x" aria-hidden="true"></i> <span> <%= link_to @company.link.first(80) + "..."%></span></div>
-      <% end %>
-      <div><i class="fa fa-users fa-2x" aria-hidden="true"></i> <span> <%= @company.total%></span></div>
-      <div><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i> <span> <%= @company.email %></span></div>
-    </div>
-  </div>
-
-  <div class="ml_2">
-    <h1><%= t("global.job.jobs") %></h1>
-    <div class="jobs_company">
-
-      <% @jobs.each do |job| %>
-          <div class="col-md-3">
-            <%= link_to job_path(job) do %>
-              <% if job.images.attached? %>
-                <%=  image_tag(job.images, style: "width: 100%; height: 150px;", class: "post-img") %>
-              <% else %>
-                <%=  image_tag('no-image.jpg', style: "width: 100%; height: 150px;", class: "post-img")%>
-              <% end %>
-              <h4><%= job.title %></h4>
+        <div class="dis">
+            <%= link_to company_path(params[:id]) do %>
+            <% if @company.images.attached? %>
+            <%=  image_tag(@company.images.first, :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img") %>
+            <% else %>
+            <%=  image_tag('no-image.jpg', :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img")%>
             <% end %>
-          </div>
-      <% end %>
-      <div class="col-md-12 text-center">
-      <hr>
-        <%= link_to "More",company_jobs_path(@company) %>
-      </div>
-
+            <% end %>
+            <div class="name_company">
+                <%= @company.full_name %>
+                <div>
+                    <%= @company.email %>
+                </div>
+            </div>
+            <div class="nav_company">
+                <div><a href="#">
+                        <%= t("global.job.home") %></a></div>
+                <div><a href="">
+                        <%= t("global.job.member") %></a></div>
+                <div>
+                    <%= link_to t("global.job.jobs"), company_jobs_path(@company) %>
+                </div>
+            </div>
+        </div>
+        <div>
+            <% if @company.images.attached? %>
+            <%= image_tag @company.images.first, :style => "width: 100%; height: 400px" %>
+            <% else %>
+            <%= image_tag('no-image.jpg', :style => "width: 100%; height: 400px") %>
+            <% end %>
+        </div>
+        <div class="container">
+            <div class="col-md-2"></div>
+            <div class="col-md-7">
+                <h1>
+                    <%= t("global.job.about") %>
+                </h1>
+                <div class="descr_company">
+                    <%= @company.descr.html_safe %>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  </div>
+    <hr>
+    <div class="ml_2">
+        <h1>
+            <%= t("global.job.company") %>
+        </h1>
+        <div class="info_company">
+            <%= link_to company_path(params[:id]) do %>
+            <% if @company.images.attached? %>
+            <%=  image_tag(@company.images.first, :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img") %>
+            <% else %>
+            <%=  image_tag('no-image.jpg', :style => "width: 50px; height: 50px; border-radius: 50%;", class: "post-img")%>
+            <% end %>
+            <% end %>
+            <span>
+                <%= @company.full_name%></span>
+            <div><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i> <span>
+                    <%= @company.address%></span></div>
+            <div><i class="fa fa-link fa-2x" aria-hidden="true"></i> <span>
+                    <%= link_to @company.link.first(80) + "..."%></span></div>
+            <div><i class="fa fa-users fa-2x" aria-hidden="true"></i> <span>
+                    <%= @company.total%></span></div>
+            <div><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i> <span>
+                    <%= @company.email %></span></div>
+        </div>
+    </div>
+    <div class="ml_2">
+        <h1>
+            <%= t("global.job.jobs") %>
+        </h1>
+        <div class="jobs_company">
+            <% @jobs.each do |job| %>
+            <div class="col-md-3">
+                <%= link_to job_path(job) do %>
+                <% if job.images.attached? %>
+                <%=  image_tag(job.images, style: "width: 100%; height: 150px;", class: "post-img") %>
+                <% else %>
+                <%=  image_tag('no-image.jpg', style: "width: 100%; height: 150px;", class: "post-img")%>
+                <% end %>
+                <h4>
+                    <%= job.title %>
+                </h4>
+                <% end %>
+            </div>
+            <% end %>
+            <div class="col-md-12 text-center">
+                <hr>
+                <%= link_to "More",company_jobs_path(@company) %>
+            </div>
+        </div>
+    </div>
+</div>
