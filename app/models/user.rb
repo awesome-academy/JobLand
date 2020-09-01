@@ -1,12 +1,9 @@
 class User < ApplicationRecord
   enum sex: { Unknow: 0, Male: 1, Female: 2 }
-
   has_one_attached :image
-
   has_one :cv
   has_one :profile
   has_one :company
-  has_one_attached :image
   has_many :cv_skill
   has_many :jobs
   has_many :experiences

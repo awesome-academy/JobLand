@@ -413,6 +413,10 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    searchkick (4.4.1)
+      activemodel (>= 5)
+      elasticsearch (>= 6)
+      hashie
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -533,6 +537,7 @@ DEPENDENCIES
   rails_admin
   ransack
   sass-rails (>= 6)
+  searchkick
   selenium-webdriver
   sidekiq (= 5.2.7)
   simple_form
@@ -549,7 +554,7 @@ DEPENDENCIES
   will_paginate (= 3.1.8)
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 2.6.3p62
 
 BUNDLED WITH
    2.1.4

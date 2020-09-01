@@ -1,20 +1,31 @@
+<% if @companies.suggestions.present? %>
+  <div class="count-job search__suggest col-md-12">
+    <%= t("search.Did you mean") %> 
+    "<%= link_to @companies.suggestions.first, search_path(query: @companies.suggestions) %>" ?
+  </div>
+<% end %>
 <% if !@cvs.nil? && !@companies.nil? %>
   <div class="count-job col-md-12">
     <h4 class="count__total">
-      <%= @companies.count + @cvs.count %> <%= t("search.results for") %> <%= params["all"] %>
+      <%= @companies.total_count + @cvs.total_count %> <%= t("search.results for") %> 
+        <% if @companies.suggestions.present? %>
+          "<%= @companies.suggestions.first %>"
+        <% else %>
+          <%= params['query'] %>
+        <% end %>
   	</h4>
   </div>
 <% end %>
 <% if !@companies.nil? %>
   <div class="count-job search__count col-md-12">
-    <%= @companies.count %> <%= t("search.Companies") %> <%= t("search.show") %>
+    <%= @companies.total_count %> <%= t("search.Companies") %>
   </div>
   <% @companies.each do |company| %>
-    <%= link_to company_path(company.id), :action => 'go' do %>
+    <%= link_to company_path(company), :action => 'go' do %>
       <div class="count-job search__company col-md-12">
         <div class="left-part col-md-1">
           <div class="row">
-            <% if Company.find(company.id).image.attached? %>
+            <% if Company.find(company.id).images.attached? %>
               <%= image_tag Company.find(company.id).image, :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" %>
             <% else %>
               <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
@@ -32,13 +43,14 @@
       </div>
     <% end %>
   <% end %>
+  <%= paginate @companies, theme: 'twitter-bootstrap-3' %>
 <% end %>
 <% if !@cvs.nil? %>
   <div class="count-job search__count col-md-12">
-    <%= @cvs.count %> <%= t("search.Profiles") %> <%= t("search.show") %>
+    <%= @cvs.total_count %> <%= t("search.Profiles") %>
   </div>
   <% @cvs.each do |cv| %>
-    <%= link_to profile_path(cv.user_id), :action => 'go' do %>
+    <%= link_to profile_path(cv.user), :action => 'go' do %>
       <div class="count-job search__company col-md-12">
         <div class="left-part col-md-1">
           <div class="row">
@@ -59,4 +71,5 @@
       </div>
     <% end %>
   <% end %>
+  <%= paginate @cvs, theme: 'twitter-bootstrap-3' %>
 <% end %>

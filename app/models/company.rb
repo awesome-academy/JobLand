@@ -1,7 +1,5 @@
-require 'elasticsearch/model'
 class Company < ApplicationRecord
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+  searchkick word_start: [:full_name], suggest: [:full_name]
   has_many :jobs
   belongs_to :user, optional: true
   has_many :members, dependent: :destroy
@@ -11,12 +9,12 @@ class Company < ApplicationRecord
   validates :images,content_type: { in: %w[image/jpeg image/gif image/png],
              message: "must be a valid image format" },
              size:{ less_than: 5.megabytes, message: "should be less than 5MB" }
-  def as_indexed_json(options = {})
-    self.as_json(
-      only: [:full_name, :address, :link]
-    )
+  def search_data
+     as_json only: [:full_name, :address, :link]
+    {
+      full_name: full_name,
+      address: address,
+      link: link
+    }
   end
 end
-Company.__elasticsearch__.create_index! force: true
-Company.__elasticsearch__.refresh_index!
-Company.import
