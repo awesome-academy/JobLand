@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include Sluggable
   enum sex: { Unknow: 0, Male: 1, Female: 2 }
   has_one_attached :image
   has_one :cv
@@ -38,7 +39,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  # follows a user.
   def follow(other_user)
     following << other_user
   end

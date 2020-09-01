@@ -192,6 +192,8 @@ GEM
       thor (>= 0.14.0, < 2)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
+    friendly_id (5.4.0)
+      activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     groupdate (5.1.0)
@@ -439,6 +441,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stringex (2.8.5)
     stripe (5.23.1)
     temple (0.8.2)
     thor (1.0.1)
@@ -517,6 +520,7 @@ DEPENDENCIES
   enumerations
   figaro (~> 1.2)
   font-awesome-rails (~> 4.7, >= 4.7.0.5)
+  friendly_id
   groupdate
   image_processing
   jbuilder (~> 2.7)
@@ -543,6 +547,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  stringex
   stripe (~> 5.23, >= 5.23.1)
   turbolinks (~> 5)
   tzinfo-data

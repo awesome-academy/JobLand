@@ -177,7 +177,9 @@
                 </div><br>
                 <div class="mt-2 d-inline">
                   <i class="fa fa-link" aria-hidden="true"></i>
+                  <% if @job.user.company.link %>
                   <%= link_to @job.user.company.link.first(30)+"..." %>
+                  <% end %>
                 </div><br>
                 <div class="mt-2 d-inline">
                   <i class="fa fa-users" aria-hidden="true"></i>

@@ -14,6 +14,14 @@ class Job < ApplicationRecord
 	scope :job_check, -> {where("DATE(created_at) = ?", Date.today)}
   scope :all_approved_false, -> { where approved: false }
   scope :all_approved_true, -> { where approved: true }
+  included do
+     acts_as_url :fullname, url_attribute: :fullname, sync: true
+  end
+
+  def to_param
+   "#{id}/#{title}"
+   end
+
   ransack :title, type: :string do
     arel_table[:title].lower
   end
