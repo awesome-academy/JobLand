@@ -104,13 +104,13 @@
                           <% end %>
                         </div>
                         <div class="title-job col-md-12">
-                          <%= link_to job_new.title,job_path(job_new.id) %></h5>
+                          <%= link_to job_new.title,job_path(job_new) %></h5>
                         </div>
                         <div class="about-job col-md-12">
                            <p><%= job_new.what.html_safe.first(80) %>...</p>
                         </div>
                         <div class="name-company-job col-md-12">
-                          <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
+                          <td> <%= link_to job_new.area, job_path(job_new) %> </td>
                         </div>
                         <div class="company-job col-md-12">
                       <div class="col-md-6">
@@ -120,12 +120,12 @@
                           <% else %>
                             <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
                           <% end %>
-                          <%= link_to job_new.user.company.full_name, company_path(job_new.user.company.id) %>
+                          <%= link_to job_new.user.company.full_name, company_path(job_new.user.company) %>
                         </div>
                       </div>
                       <div class="col-md-6 ">
                         <div class="row text-right">
-                          <%= link_to job_new.salary, job_path(job_new.id) %> $
+                          <%= link_to job_new.salary, job_path(job_new) %> $
                         </div>
                       </div>
                     </div>
@@ -148,13 +148,13 @@
                         <% end %>
                     </div>
                     <div class="title-job col-md-12">
-                      <%= link_to job_new.title,job_path(job_new.id) %></h5>
+                      <%= link_to job_new.title,job_path(job_new) %></h5>
                     </div>
                     <div class="about-job col-md-12">
                        <p><%= job_new.what.html_safe.first(80) %>...</p>
                       </div>
                     <div class="name-company-job col-md-12">
-                         <td> <%= link_to job_new.area, job_path(job_new.id) %> </td>
+                         <td> <%= link_to job_new.area, job_path(job_new) %> </td>
                     </div>
                      <div class="company-job col-md-12">
                       <div class="col-md-6">
@@ -164,12 +164,12 @@
                           <% else %>
                             <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
                           <% end %>
-                          <%= link_to job_new.user.company.full_name, company_path(job_new.user.company.id) %>
+                          <%= link_to job_new.user.company.full_name, company_path(job_new.user.company) %>
                         </div>
                       </div>
                       <div class="col-md-6 ">
                         <div class="row text-right">
-                          <%= link_to job_new.salary, job_path(job_new.id) %> $
+                          <%= link_to job_new.salary, job_path(job_new) %> $
                         </div>
                       </div>
                     </div>
@@ -189,13 +189,13 @@
                         <% end %>
                     </div>
                     <div class="title-job col-md-12">
-                      <%= link_to recommended.title,job_path(recommended.id) %></h5>
+                      <%= link_to recommended.title,job_path(recommended) %></h5>
                     </div>
                     <div class="about-job col-md-12">
                       <p><%= recommended.what.first(80) %>...</p>
                       </div>
                     <div class="name-company-job col-md-12">
-                         <td> <%= link_to recommended.area, job_path(recommended.id) %> </td>
+                         <td> <%= link_to recommended.area, job_path(recommended) %> </td>
                     </div>
                     <div class="company-job col-md-12">
                       <div class="col-md-6">
@@ -205,12 +205,12 @@
                           <% else %>
                             <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
                           <% end %>
-                          <%= link_to recommended.user.company.full_name, company_path(recommended.user.company.id) %>
+                          <%= link_to recommended.user.company.full_name, company_path(recommended.user.company) %>
                         </div>
                       </div>
                       <div class="col-md-6 ">
                         <div class="row text-right">
-                          <%= link_to recommended.salary, job_path(recommended.id) %> $
+                          <%= link_to recommended.salary, job_path(recommended) %> $
                         </div>
                       </div>
                     </div>

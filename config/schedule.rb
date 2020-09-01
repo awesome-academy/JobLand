@@ -18,8 +18,9 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.day, :at => '11:30 pm' do # chạy hàng ngày vào lúc 11h30 tối
+every 8.hours do
   command "rails import:import_country"
+  runner "rails import:import_country"
 end
 
 set :environment, "development"

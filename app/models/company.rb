@@ -16,5 +16,18 @@ class Company < ApplicationRecord
       address: address,
       link: link
     }
+
+  included do
+    acts_as_url :full_name, url_attribute: :full_name, sync: true
+  end
+
+  def to_param
+    "#{id}/#{full_name}"
+  end
+
+  def as_indexed_json(options = {})
+    self.as_json(
+      only: [:full_name, :address, :link]
+    )
   end
 end

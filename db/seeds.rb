@@ -44,7 +44,6 @@ Skill.create(name:"Scala")
 Skill.create(name:"Swift")
 Skill.create(name:"TypeScript")
 
-
 User.create( email: "123456@gmail.com", fullname: "Thái", password: "123123", password_confirmation: "123123", employer_role: true)
 User.create( email: "aaa@gmail.com", fullname: "Sơn", password: "123123", password_confirmation: "123123", employer_role: true)
 User.create( email: "bbb@gmail.com", fullname: "ĐOàn", password: "123123", password_confirmation: "123123")
@@ -62,6 +61,24 @@ User.create( email: "7user_test@gmail.com", fullname: "User test 7", password: "
 User.create( email: "8user_test@gmail.com", fullname: "User test 8", password: "123123", password_confirmation: "123123")
 User.create( email: "9user_test@gmail.com", fullname: "User test 9", password: "123123", password_confirmation: "123123")
 
+
+User.create( email: "123456@gmail.com", fullname: "Thái", password: "123123", password_confirmation: "123123",slug: "profile-Thaiculi", employer_role: true)
+User.create( email: "aaa@gmail.com", fullname: "Sơn", password: "123123", password_confirmation: "123123",slug: "profile-DinhSon",admin_role: true)
+User.create( email: "bbb@gmail.com", fullname: "ĐOàn", password: "123123", password_confirmation: "123123",slug: "profile-Doan")
+User.create( email: "ccc@gmail.com", fullname: "Tùng", password: "123123", password_confirmation: "123123",slug: "profile-wejkfhwkfhek")
+User.create( email: "ddd@gmail.com", fullname: "1231237890", password: "123123", password_confirmation: "123123",slug: "profile-sdkjhfhds")
+User.create( email: "eee@gmail.com", fullname: "1231238901", password: "123123", password_confirmation: "123123",slug: "profile-sdkjhfhds")
+User.create( email: "0user_test@gmail.com", fullname: "User test 0", password: "123123", password_confirmation: "123123",slug: "profile-User test 0")
+User.create( email: "1user_test@gmail.com", fullname: "User test 1", password: "123123", password_confirmation: "123123",slug: "profile-User test 1")
+User.create( email: "2user_test@gmail.com", fullname: "User test 2", password: "123123", password_confirmation: "123123",slug: "profile-User test 2")
+User.create( email: "3user_test@gmail.com", fullname: "User test 3", password: "123123", password_confirmation: "123123",slug: "profile-User test 3")
+User.create( email: "4user_test@gmail.com", fullname: "User test 4", password: "123123", password_confirmation: "123123",slug: "profile-User test 4")
+User.create( email: "5user_test@gmail.com", fullname: "User test 5", password: "123123", password_confirmation: "123123",slug: "profile-User test 4")
+User.create( email: "6user_test@gmail.com", fullname: "User test 6", password: "123123", password_confirmation: "123123",slug: "profile-User test 4")
+User.create( email: "7user_test@gmail.com", fullname: "User test 7", password: "123123", password_confirmation: "123123",slug: "profile-User test 4")
+User.create( email: "8user_test@gmail.com", fullname: "User test 8", password: "123123", password_confirmation: "123123",slug: "profile-User test 4")
+User.create( email: "9user_test@gmail.com", fullname: "User test 9", password: "123123", password_confirmation: "123123",slug: "profile-User test 4")
+
 # Cv.create(user_id: 1, introduction: "Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.
 # Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.")
 # Cv.create(user_id: 2, introduction: "Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.
@@ -76,7 +93,7 @@ User.create( email: "9user_test@gmail.com", fullname: "User test 9", password: "
 Company.create full_name: "Sun*", user_id: 1, address: "11F Handico Building, Pham Hung Road, Nam Tu Liem Dist., Ha Noi", phone: "0123456789",
      email: "Sun.arterik@gmail.com", descr: "Sun * Inc. (formerly known as Framgia Inc.), founded in 2012, is a Creative Studio with more than 1500
      members in 6 cities in 4 Asian countries. With the mission of connecting international businesses with Top Talents in Asia, Sun* has always ma
-    de every effort to bring the world “Awesome” values."
+    de every effort to bring the world “Awesome” values.",slug: "test 4"
 
 Company.create full_name: "Sun Asterisk", user_id: 2, address: "11F Handico Building, Pham Hung Road, Nam Tu Liem Dist., Ha Noi", phone: "0123456789",
      email: "Sun.arterik@gmail.com", descr: "Sun * Inc. (formerly known as Framgia Inc.), founded in 2012, is a Creative Studio with more than 1500
@@ -93,7 +110,7 @@ trên những giá trị bất biến sẽ không bao giờ hết mốt và sẽ
 how: "tin rằng trừ khi bản thân chúng tôi làm việc vui vẻ mỗi ngày,chúng tôi không thể cung cấp các dịch vụ và doanh nghiệp mang lại niềm vui và sự
 hứng khởi cho trẻ em và gia đình. Do đó, hệ thống hỗ trợ bữa trưa theo nhóm kích hoạt giao tiếp giữa các nhân viên, hệ thống tổ chức
 sinh nhật cho cha mẹ và con cái thể hiện văn hóa coi trọng gia đình,dành cho những người tìm kiếm kỹ năng và sự phát triển cấp cao hơn Có các hệ thống
-nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' , slide:true, approved: true)
+nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' )
 
 
 Job.create(title: "Fullstack Dev (ReactJS, Ruby, Elixir)", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
@@ -105,7 +122,7 @@ trên những giá trị bất biến sẽ không bao giờ hết mốt và sẽ
 how: "tin rằng trừ khi bản thân chúng tôi làm việc vui vẻ mỗi ngày,chúng tôi không thể cung cấp các dịch vụ và doanh nghiệp mang lại niềm vui và sự
 hứng khởi cho trẻ em và gia đình. Do đó, hệ thống hỗ trợ bữa trưa theo nhóm kích hoạt giao tiếp giữa các nhân viên, hệ thống tổ chức
 sinh nhật cho cha mẹ và con cái thể hiện văn hóa coi trọng gia đình,dành cho những người tìm kiếm kỹ năng và sự phát triển cấp cao hơn Có các hệ thống
-nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' , slide:true,approved: true)
+nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' )
 
 Job.create(title: "[All levels] Java Developers -Up to $2k", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
 40000000, number: 6, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", what: "Use Ruby on Rails Html, CSS, master Mysql,

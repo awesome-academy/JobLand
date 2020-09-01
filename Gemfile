@@ -62,6 +62,10 @@ gem "nokogiri"
 gem 'stripe', '~> 5.23', '>= 5.23.1'
 gem 'whenever', :require => false
 gem 'enum_help'
+gem 'stringex'
+# gem "friendly_id"
+# gem "capybara"
+# gem "capybara-webkit"
 # gem 'will_filter'
 # gem 'kaminari'
 group :development, :test do
