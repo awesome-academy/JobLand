@@ -4,12 +4,34 @@
     <div class="row">
           <div class="card mb-3">
             <div class="card_header">
-              <i class="fas fa-chart-area"></i>
-              <%= t("companies.chartapp") %>
+              <%= t("companies.applicants") %>
             </div>
+
+          <div class="card mb-3">
             <div class="card-body">
-              <%= line_chart @applycations.group_by_day(&:created_at).count %>
+              <div class="table-responsive">
+                <table class="table table-striped custab">
+                    <thead>
+                      <tr>
+                        <th>STT</th>
+                        <th><%= t("exp.user") %></th>
+                        <th><%= t("exp.job") %></th>
+                      </tr>
+                    </thead>
+                    <% @applycations.each_with_index do |application,index| %>
+                    <tr>
+                      <td><%= index+1 %></td>
+                      <td>
+                        <%= link_to User.find(application.user_id).fullname, user_path(application.user_id) %>
+                      </td>
+                      <td><%= link_to Job.find(application.job_id).title, employer_job_path(application.job_id)%></td>
+                    </tr>
+                    <% end %>
+                  </table>
+              </div>
             </div>
+          </div>
+
           </div>      
     </div>
   </div>

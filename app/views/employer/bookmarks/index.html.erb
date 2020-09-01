@@ -4,12 +4,34 @@
     <div class="row">
           <div class="card mb-3">
             <div class="card_header">
-              <i class="fas fa-chart-area"></i>
-              <%= t("companies.chartapp") %>
+              <%= t("companies.members") %>
             </div>
+            
+
+            <div class="card mb-3">
             <div class="card-body">
-              <%= line_chart @bookmarks.group_by_day(&:created_at).count %>
+              <div class="table-responsive">
+                <table class="table table-striped custab">
+                    <thead>
+                      <tr>
+                        <th>STT</th>
+                        <th><%= t("exp.user") %></th>
+                        <th><%= t("exp.job") %></th>
+                      </tr>
+                    </thead>
+                    <% @bookmarks.each_with_index do |bookmark,index| %>
+                    <tr>
+                      <td><%= index+1 %></td>
+                      <td>
+                        <%= link_to User.find(bookmark.user_id).fullname, user_path(bookmark.user_id) %>
+                      </td>
+                      <td><%= link_to Job.find(bookmark.job_id).title, employer_job_path(bookmark.job_id)%></td>
+                    </tr>
+                    <% end %>
+                  </table>
+              </div>
             </div>
+          </div>
           </div>
     </div>
   </div>

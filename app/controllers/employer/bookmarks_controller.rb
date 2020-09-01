@@ -7,5 +7,6 @@ class Employer::BookmarksController < ApplicationController
   		@bookmarks << book
   		end
   	end
+  	
   end
 end
