@@ -93,6 +93,11 @@ Rails.application.routes.draw do
 
     end
     resources :portfolios
+    resources :search do
+      collection do
+        get :autocomplete
+      end
+    end
   end
 end
 

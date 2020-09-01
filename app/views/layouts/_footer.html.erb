@@ -5,6 +5,10 @@
       console.log('User signed out.');
     });
   }
+  $("#company_search").autocomplete({
+    source: "/search/autocomplete.json",
+    minLength: 2
+  });
 </script>
 
 <footer>

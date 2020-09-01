@@ -6,13 +6,13 @@
           <h4 class="search__heading"><%= t("search.Search") %></h4>
           <ul class="search-list">
             <li class="search-item search-item--active">
-              <%= link_to t("search.All"), search_path(all: params['all']), class: "search-item__link" %>
+              <%= link_to t("search.All"), search_path(query: params['query']), class: "search-item__link" %>
             </li>
             <li class="search-item">
-              <%= link_to t("search.Companies"), search_path(type: "company", all: params['all']), class: "search-item__link" %>
+              <%= link_to t("search.Companies"), search_path(type: "company", query: params['query']), class: "search-item__link" %>
             </li>
             <li class="search-item">
-              <%= link_to t("search.Profiles"), search_path(type: "profile", all: params['all']), class: "search-item__link" %>
+              <%= link_to t("search.Profiles"), search_path(type: "profile", query: params['query']), class: "search-item__link" %>
             </li>
           </ul>
         </nav>
@@ -23,5 +23,3 @@
     </div>
   </div>
 </div>
-
-

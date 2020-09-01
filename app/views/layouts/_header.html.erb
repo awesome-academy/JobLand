@@ -15,7 +15,7 @@
     <ul class="nav navbar-nav navbar-right">
       <%= form_for(:search, url: search_path, method: :get, html: {class: "navbar-form navbar-left"}) do |f| %>
         <div class="input-group">
-          <input type="text" name="all" class="form-control" placeholder="Search companies, people...">
+          <input type="text" name="query" class="form-control" id="company_search" placeholder="Search companies, people..." autocomplete="off" >
           <div class="input-group-btn">
             <button class="btn btn-default" type="submit">
               <i class="fa fa-search"></i>
