@@ -52,7 +52,6 @@ class Employer::CompaniesController < ApplicationController
 
   def update
     @company = Company.find params[:id]
-    Cloudinary::Api.delete_all_resources
     if @company.update company_params
       redirect_to employer_company_path
     end
@@ -60,7 +59,6 @@ class Employer::CompaniesController < ApplicationController
 
   def destroy
     @company = Company.find params[:id]
-    Cloudinary::Api.delete_all_resources
     if @company.destroy
       redirect_to  employer_company_path
     end

@@ -1,22 +1,122 @@
 <% if !@portfolios.nil? %>
   <% @portfolios.each do |portfolio| %>
-	  <div class="portfolio_2_colum col-md-12">
-	    <div class="row">
-		    <div class="portfolio_image col-md-6">
-		      <% if portfolio.image.attached? %>
-		        <%= image_tag portfolio.image, style: "width: 100%; height:200px" %>
-		      <% else %>
-		        <%= image_tag('no-image.jpg', style: "width: 100%; height:200px")%>
-		      <% end %>
-		    </div>
-		    <div class="portfolio_main col-md-6">
-		      <span><%= portfolio.title %></span><br>
-		      <span><%= link_to portfolio.link%></span><br>
-		      <span><%= portfolio.month %>-<%= portfolio.year %></span><br>
-		      <span><%= portfolio.description.first(80) %>...</span><br>
-		    </div>
-	    </div>
-	  </div>
+    <ul id="portfolio-<%= portfolio.id %>">
+      <div class="portfolio_2_colum col-md-12">
+        <div class="row">
+          <div class="portfolio_image col-md-6">
+            <% if portfolio.images.attached? %>
+              <div class="slider-123-user">
+                <div class="slider-<%= portfolio.id %> center slider-user">
+                  <% if !portfolio.images.nil? %>
+                    <% portfolio.images.take(3).each do |img|%>
+                      <div >
+                        <%= image_tag img, style: "width: 100%; height:200px" %>
+                      </div>
+                    <% end %>
+                  <% else %>
+                    <div >
+                      <%= link_to image_tag('3.webp'), "#", style: "width: 100%; height:200px"%>
+                    </div>
+                    <div >
+                      <%= link_to image_tag('2.webp'), "#", style: "width: 100%; height:200px"%>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% else %>
+              <%= image_tag('no-image.jpg', style: "width: 100%; height:200px")%>
+            <% end %>
+          </div>
+          <div class="portfolio_main col-md-6">
+            <span><%= portfolio.title %></span><br>
+            <span><%= link_to portfolio.link%></span><br>
+            <span><%= portfolio.month %>-<%= portfolio.year %></span><br>
+            <a href="#" class="" data-toggle="modal" data-target="#myPortfolio-<%= portfolio.id %>">
+              <span id="portfolio_desc"><%= portfolio.description.first(80) %>...</span><br>
+              <%= "view more" %>
+            </a>
+          </div>
+        </div>
+      </div>
+    </ul>
+    <div class="modal portfolio_view" id="myPortfolio-<%= portfolio.id %>">
+      <div class="modal-dialog-portfolio">
+        <ul id="portfolio-<%= portfolio.id %>">
+          <div class="modal-content portfolio_2_colum col-md-12">
+            <div class="modal-header-portfolio">
+              <div class="portfolio_2_colum col-md-12">
+                <div class="row">
+                  <div class="portfolio_image">
+                    <% if portfolio.images.attached? %>
+                      <div class="slider-123-portfolio">
+                        <div class="slider-<%= portfolio.id %> center slider-portfolio">
+                            <% if !portfolio.images.nil? %>
+                            <% portfolio.images.take(3).each do |img|%>
+                            <div class="card mb-3">
+                                <%= image_tag img %>
+                            </div>
+                            <% end %>
+                            <% else %>
+                            <div class="card mb-3">
+                                <%= link_to image_tag('3.webp'), "#"%>
+                            </div>
+                            <div class="card mb-3">
+                                <%= link_to image_tag('2.webp'), "#"%>
+                            </div>
+                            <% end %>
+                        </div>
+                      </div>
+                    <% else %>
+                      <%= image_tag('no-image.jpg', style: "width: 100%; height:600px")%>
+                    <% end %>
+                  </div>
+                  <div class="portfolio_main col-md-12">
+                    <span><%= portfolio.title %></span><br>
+                    <span><%= link_to @portfolio.link%></span><br>
+                    <span><%= portfolio.month %>-<%= portfolio.year %></span><br>
+                    <span><%= portfolio.description%></span><br>
+                    <div class="edit_delete_button">
+                      <button type="button" class="btn btn" data-dismiss="modal"><%= "Exit" %></button><br><br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    $('.slider-<%= portfolio.id %>').slick({
+        centerMode: true,
+        centerPadding: '10px',
+        adaptiveHeight: true,
+        slidesToShow: 1,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [{
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+    </script>
+
   <% end %>
 <% end %>
-
