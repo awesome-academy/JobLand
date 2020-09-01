@@ -1,5 +1,6 @@
 class Employer::PaymentsController < ApplicationController
   before_action :user_employer?
+  skip_before_action :authenticate_user!
   def new
      @payment = Payment.new
   end

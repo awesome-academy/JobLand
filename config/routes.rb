@@ -83,6 +83,7 @@ Rails.application.routes.draw do
         resources :bookmarks
       end
       resources :profiles
+      resources :webhooks
       resources :bookmarks, only: [:index]
       resources :companies
       resources :payments

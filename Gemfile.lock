@@ -737,7 +737,6 @@ DEPENDENCIES
   figaro (~> 1.2)
   fog
   font-awesome-rails (~> 4.7, >= 4.7.0.5)
-  friendly_id
   groupdate
   image_processing
   jbuilder (~> 2.7)
