@@ -26,7 +26,7 @@
     </div>
     <span class="image">
       <%= f.label t('pf.userimg') %>
-      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png", direct_upload: true %>
+      <%= f.file_field :images,  multiple: true, accept: "image/jpeg,image/gif,image/png", direct_upload: true %>
     </span>
     <div class='submit-portfolio'>
 	    <input class="btn btn-danger cancel" type="button" value='<%=t("pf.cancel")%>'>
@@ -41,18 +41,21 @@
     $('.form_portfolio').remove();
     $('[id^="portfolio"]').show();
   });
-  $(document).ready(function() {
-    $(".form_portfolio form").on('submit',function(event) {
-      event.preventDefault();
-      var formHTML = event.target;
-      $.ajax({
-        url: formHTML.action,
-        method: 'POST',
-        data: $(this).serialize(),
-        success: function(data){
-          $('#portfolio_section').html(data);
-        }
-      });
-    });
-  });
+
+  // -- ajax for create and edit portfolio --
+
+  // $(document).ready(function() {
+  //   $(".form_portfolio form").on('submit',function(event) {
+  //     event.preventDefault();
+  //     var formHTML = event.target;
+  //     $.ajax({
+  //       url: formHTML.action,
+  //       method: 'POST',
+  //       data: $(this).serialize(),
+  //       success: function(data){
+  //         $('#portfolio_section').html(data);
+  //       }
+  //     });
+  //   });
+  // });
 </script>

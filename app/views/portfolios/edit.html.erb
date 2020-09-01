@@ -1,6 +1,6 @@
 <%= form_for @portfolio do |f| %>
       <span class="image">
-        <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png", direct_upload: true %>
+        <%= f.file_field :images, multiple: true, accept: "image/jpeg,image/gif,image/png", direct_upload: true %>
       </span>
       <div class='form-group'>
   	    <%= f.label 'Title' %>

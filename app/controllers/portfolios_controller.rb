@@ -15,15 +15,16 @@ class PortfoliosController < ApplicationController
 
   def create
   	@portfolio = current_user.cv.portfolios.build portfolio_params
-  	@portfolio.image.attach params[:portfolio][:image]
+  	@portfolio.images.attach params[:portfolio][:images]
   	@portfolio.save
     @portfolios = current_user.cv.portfolios
     @portfolio = Portfolio.new
-    respond_to do |format|
-      format.html {render(partial: "portfolio_section")}
-      format.js
-      format.json
-    end
+    redirect_to user_path current_user
+    # respond_to do |format|
+    #   format.html {render(partial: "portfolio_section")}
+    #   format.js
+    #   format.json
+    # end
   end
 
   def edit
@@ -37,15 +38,16 @@ class PortfoliosController < ApplicationController
 
   def update
     @portfolio = Portfolio.find params[:id]
-    @portfolio.image.attach params[:portfolio][:image]
+    @portfolio.images.attach params[:portfolio][:images]
     @portfolio.update(portfolio_params)
     @portfolio = Portfolio.new
     @portfolios = current_user.cv.portfolios
-    respond_to do |format|
-      format.html {render(partial: "portfolio_section")}
-      format.js
-      format.json
-    end
+    redirect_to user_path current_user
+    # respond_to do |format|
+    #   format.html {render(partial: "portfolio_section")}
+    #   format.js
+    #   format.json
+    # end
   end
 
   def destroy
@@ -59,7 +61,7 @@ class PortfoliosController < ApplicationController
 
   private
   def portfolio_params
-  	params.require(:portfolio).permit :title, :link, :image,
+  	params.require(:portfolio).permit :title, :link, :images,
   	                                  :description, :year, :month
   end
 end
