@@ -172,6 +172,10 @@
                       </div>
                     </div>
                 </div>
+                <% if current_user.company.payment.plan == "pro" %>
+                  <%= f.hidden_field :slide, value: true %>
+                  <%= f.hidden_field :approved, value: true %>
+                <% end %>
                 <div class="wizard-footer">
                   <div class="pull-right">
                     <input type='button' class='btn btn-next btn-fill btn-primary btn-wd' name='next' value='Next' />
