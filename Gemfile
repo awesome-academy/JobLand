@@ -62,7 +62,6 @@ gem 'simple_form'
 gem "mechanize"
 gem "nokogiri"
 gem 'stripe', '~> 5.23', '>= 5.23.1'
-gem 'whenever', :require => false
 gem 'enum_help'
 gem 'stringex'
 # gem "friendly_id"
