@@ -6,11 +6,11 @@ class Employer::WebhooksController < ApplicationController
 						sig_header = request.env['HTTP_STRIPE_SIGNATURE']
 						credential = "whsec_krHjvVO7tk2MFRkHQxpEhYaQBqj5MxXb"
 						event = nil
-						
-						
+
+
             begin
 							event = Stripe::Webhook.construct_event(
-									payload, sig_header, credential 
+									payload, sig_header, credential
 							)
 							rescue JSON::ParserError => e
 							status 400
@@ -39,5 +39,5 @@ class Employer::WebhooksController < ApplicationController
 
             render json: { message: 'success' }
         end
-  
+
 end

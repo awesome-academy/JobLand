@@ -9,6 +9,12 @@ class Company < ApplicationRecord
   validates :images,content_type: { in: %w[image/jpeg image/gif image/png],
              message: "must be a valid image format" },
              size:{ less_than: 5.megabytes, message: "should be less than 5MB" }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 255 },
+                                    format: { with: VALID_EMAIL_REGEX },
+                                    uniqueness: true
+  validates :full_name, :address, :phone, :link, :total, presence: true
+  validates :descr, presence: true, length: { minimum: 30 }
   def search_data
      as_json only: [:full_name, :address, :link]
     {
