@@ -11,10 +11,16 @@ class SearchController < ApplicationController
   end
 
   def autocomplete
-    render json: Company.search(params["term"], {
+    render json:
+    Company.search(params["term"], {
       fields: ["full_name"],
       match: :word_start,
       limit: 5
-      }).map(&:full_name)
+      }).map(&:full_name)+
+    User.search(params["term"], {
+      fields: ["fullname"],
+      match: :word_start,
+      limit: 5
+      }).map(&:fullname)
   end
 end

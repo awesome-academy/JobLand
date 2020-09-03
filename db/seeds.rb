@@ -45,13 +45,13 @@ Skill.create(name:"Swift")
 Skill.create(name:"TypeScript")
 
 
-
-User.create( email: "123456@gmail.com", fullname: "Thái", password: "123123", password_confirmation: "123123",slug: "profile-Thaiculi", employer_role: true,admin_role: true)
-User.create( email: "aaa@gmail.com", fullname: "Sơn", password: "123123", password_confirmation: "123123",slug: "profile-DinhSon",admin_role: true)
-User.create( email: "bbb@gmail.com", fullname: "ĐOàn", password: "123123", password_confirmation: "123123",slug: "profile-Doan")
-User.create( email: "ccc@gmail.com", fullname: "Tùng", password: "123123", password_confirmation: "123123",slug: "profile-wejkfhwkfhek")
-User.create( email: "ddd@gmail.com", fullname: "1231237890", password: "123123", password_confirmation: "123123",slug: "profile-sdkjhfhds")
-User.create( email: "eee@gmail.com", fullname: "1231238901", password: "123123", password_confirmation: "123123",slug: "profile-sdkjhfhds")
+User.create( email: "jl.admin@gmail.com", fullname: "Job Land", password: "123123", password_confirmation: "123123",slug: "profile-Admin JL",admin_role: true)
+User.create( email: "hoangthaidang.2207@gmail.com", fullname: "Đặng Hoàng Thái", password: "123123", password_confirmation: "123123",slug: "profile-Thái Đặng")
+User.create( email: "son261197@gmail.com", fullname: "Nguyễn Đình Sơn", password: "123123", password_confirmation: "123123",slug: "profile-DinhSonHandSome ")
+User.create( email: "doanvannguyenplus@gmail.com", fullname: "Nguyễn Văn ĐOàn", password: "123123", password_confirmation: "123123",slug: "profile-Đoàn Nguyễn")
+User.create( email: "hoangvantung.it@gmail.com", fullname: "Hoàng Văn Tùng", password: "123123", password_confirmation: "123123",slug: "profile-Tùng Hoàng")
+User.create( email: "duyn02992@gmail.com", fullname: "Nguyễn Duy", password: "123123", password_confirmation: "123123",slug: "profile-Di")
+User.create( email: "tuan.hm.bn90@gmail.com", fullname: "Hoàng Mạnh Tuấn", password: "123123", password_confirmation: "123123",slug: "profile-Tuấn HOàng")
 User.create( email: "0user_test@gmail.com", fullname: "User test 0", password: "123123", password_confirmation: "123123",slug: "profile-User test 0")
 User.create( email: "1user_test@gmail.com", fullname: "User test 1", password: "123123", password_confirmation: "123123",slug: "profile-User test 1")
 User.create( email: "2user_test@gmail.com", fullname: "User test 2", password: "123123", password_confirmation: "123123",slug: "profile-User test 2")
@@ -84,9 +84,8 @@ Company.create(full_name: "Sun Asterisk", user_id: 2, address: "11F Handico Buil
      members in 6 cities in 4 Asian countries. With the mission of connecting international businesses with Top Talents in Asia, Sun* has always ma
     de every effort to bring the world “Awesome” values.", link: "SunAsterisk.com.vn", total: 220)
 
-
-Job.create(title: "Wear OS System Integration Engineer(C++)", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
-10000000, number: 6, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", what: "Use Ruby on Rails Html, CSS, master Mysql,
+Job.create(title: "Wear OS System Integration Engineer(C++)", user_id: 1, sex: 1, time_work: 2, grade: "Leader", exp: 3, salary:
+2000, number: 2, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", what: "Use Ruby on Rails Html, CSS, master Mysql,
 Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp tốt. Khả năng quản lý thời gian. Kỹ năng giải quyết vấn đề. Có tinh thần đồng đội.
 Tự tin. Khả năng chấp nhận và học hỏi từ những lời phê bình", why: "Chúng tôi có tầm nhìn không tìm kiếm các xu hướng mới, mà quan sát những mong
 muốn và giá trị cơ bản của con người không thay đổi từ 1000 năm nay và đưa chúng đến người dùng thông qua các công nghệ mới nhất. Các dịch vụ dựa
@@ -94,11 +93,11 @@ trên những giá trị bất biến sẽ không bao giờ hết mốt và sẽ
 how: "tin rằng trừ khi bản thân chúng tôi làm việc vui vẻ mỗi ngày,chúng tôi không thể cung cấp các dịch vụ và doanh nghiệp mang lại niềm vui và sự
 hứng khởi cho trẻ em và gia đình. Do đó, hệ thống hỗ trợ bữa trưa theo nhóm kích hoạt giao tiếp giữa các nhân viên, hệ thống tổ chức
 sinh nhật cho cha mẹ và con cái thể hiện văn hóa coi trọng gia đình,dành cho những người tìm kiếm kỹ năng và sự phát triển cấp cao hơn Có các hệ thống
-nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' )
+nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '01/09/2020', to_date: '01/10/2020' )
 
 
-Job.create(title: "Fullstack Dev (ReactJS, Ruby, Elixir)", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
-20000000, number: 6, area: "384 Hoàng Diệu, District 4, Ho Chi Minh ", what: "Use Ruby on Rails Html, CSS, master Mysql,
+Job.create(title: "Fullstack Dev (ReactJS, Ruby, Elixir -Up to $2k)", user_id: 1, sex: 2, time_work: 0, grade: "Developers", exp: 0, salary:
+1500, number: 2, area: "384 Hoàng Diệu, District 4, Ho Chi Minh ", what: "Use Ruby on Rails Html, CSS, master Mysql,
 Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp tốt. Khả năng quản lý thời gian. Kỹ năng giải quyết vấn đề. Có tinh thần đồng đội.
 Tự tin. Khả năng chấp nhận và học hỏi từ những lời phê bình", why: "Chúng tôi có tầm nhìn không tìm kiếm các xu hướng mới, mà quan sát những mong
 muốn và giá trị cơ bản của con người không thay đổi từ 1000 năm nay và đưa chúng đến người dùng thông qua các công nghệ mới nhất. Các dịch vụ dựa
@@ -106,10 +105,10 @@ trên những giá trị bất biến sẽ không bao giờ hết mốt và sẽ
 how: "tin rằng trừ khi bản thân chúng tôi làm việc vui vẻ mỗi ngày,chúng tôi không thể cung cấp các dịch vụ và doanh nghiệp mang lại niềm vui và sự
 hứng khởi cho trẻ em và gia đình. Do đó, hệ thống hỗ trợ bữa trưa theo nhóm kích hoạt giao tiếp giữa các nhân viên, hệ thống tổ chức
 sinh nhật cho cha mẹ và con cái thể hiện văn hóa coi trọng gia đình,dành cho những người tìm kiếm kỹ năng và sự phát triển cấp cao hơn Có các hệ thống
-nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' )
+nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '15/08/2020', to_date: '15/09/2020' )
 
-Job.create(title: "[All levels] Java Developers -Up to $2k", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
-40000000, number: 6, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", what: "Use Ruby on Rails Html, CSS, master Mysql,
+Job.create(title: "[All levels] Java Developers ", user_id: 1, sex: 0, time_work: 0, grade: "Intership", exp: 1, salary:
+400, number: 10, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", what: "Use Ruby on Rails Html, CSS, master Mysql,
 Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp tốt. Khả năng quản lý thời gian. Kỹ năng giải quyết vấn đề. Có tinh thần đồng đội.
 Tự tin. Khả năng chấp nhận và học hỏi từ những lời phê bình", why: "Chúng tôi có tầm nhìn không tìm kiếm các xu hướng mới, mà quan sát những mong
 muốn và giá trị cơ bản của con người không thay đổi từ 1000 năm nay và đưa chúng đến người dùng thông qua các công nghệ mới nhất. Các dịch vụ dựa
@@ -117,11 +116,11 @@ trên những giá trị bất biến sẽ không bao giờ hết mốt và sẽ
 how: "tin rằng trừ khi bản thân chúng tôi làm việc vui vẻ mỗi ngày,chúng tôi không thể cung cấp các dịch vụ và doanh nghiệp mang lại niềm vui và sự
 hứng khởi cho trẻ em và gia đình. Do đó, hệ thống hỗ trợ bữa trưa theo nhóm kích hoạt giao tiếp giữa các nhân viên, hệ thống tổ chức
 sinh nhật cho cha mẹ và con cái thể hiện văn hóa coi trọng gia đình,dành cho những người tìm kiếm kỹ năng và sự phát triển cấp cao hơn Có các hệ thống
-nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' , slide:true, approved: true)
+nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '01/09/2020', to_date: '15/10/2020' , slide:true, approved: true)
 
 
-Job.create(title: "Backend Developer (Python)- Up to 1500$", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
-10000000, number: 6, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", what: "Use Ruby on Rails Html, CSS, master Mysql,
+Job.create(title: "Leader Backend Developer (Python)- Up to 2500$", user_id: 1, sex: 0, time_work: 0, grade: "Leader", exp: 5, salary:
+2500, number: 3, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", what: "Use Ruby on Rails Html, CSS, master Mysql,
 Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp tốt. Khả năng quản lý thời gian. Kỹ năng giải quyết vấn đề. Có tinh thần đồng đội.
 Tự tin. Khả năng chấp nhận và học hỏi từ những lời phê bình", why: "Chúng tôi có tầm nhìn không tìm kiếm các xu hướng mới, mà quan sát những mong
 muốn và giá trị cơ bản của con người không thay đổi từ 1000 năm nay và đưa chúng đến người dùng thông qua các công nghệ mới nhất. Các dịch vụ dựa
@@ -129,11 +128,11 @@ trên những giá trị bất biến sẽ không bao giờ hết mốt và sẽ
 how: "tin rằng trừ khi bản thân chúng tôi làm việc vui vẻ mỗi ngày,chúng tôi không thể cung cấp các dịch vụ và doanh nghiệp mang lại niềm vui và sự
 hứng khởi cho trẻ em và gia đình. Do đó, hệ thống hỗ trợ bữa trưa theo nhóm kích hoạt giao tiếp giữa các nhân viên, hệ thống tổ chức
 sinh nhật cho cha mẹ và con cái thể hiện văn hóa coi trọng gia đình,dành cho những người tìm kiếm kỹ năng và sự phát triển cấp cao hơn Có các hệ thống
-nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' , slide:true, approved: true)
+nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '10/08/2020', to_date: '10/09/2020' , slide:true, approved: true)
 
 
-Job.create(title: "Frontend Engineer", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
-12000000, number: 6, area: "5th Floor, H3 Building, 384 Hoang Dieu, District 4, Ho Chi Minh ", what: "Use Ruby on Rails Html, CSS, master Mysql,
+Job.create(title: "Leader Frontend Engineer", user_id: 1, sex: 0, time_work: 0, grade: "Leader", exp: 5, salary:
+3000, number: 3, area: "5th Floor, H3 Building, 384 Hoang Dieu, District 4, Ho Chi Minh ", what: "Use Ruby on Rails Html, CSS, master Mysql,
 Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp tốt. Khả năng quản lý thời gian. Kỹ năng giải quyết vấn đề. Có tinh thần đồng đội.
 Tự tin. Khả năng chấp nhận và học hỏi từ những lời phê bình", why: "Chúng tôi có tầm nhìn không tìm kiếm các xu hướng mới, mà quan sát những mong
 muốn và giá trị cơ bản của con người không thay đổi từ 1000 năm nay và đưa chúng đến người dùng thông qua các công nghệ mới nhất. Các dịch vụ dựa
@@ -141,10 +140,10 @@ trên những giá trị bất biến sẽ không bao giờ hết mốt và sẽ
 how: "tin rằng trừ khi bản thân chúng tôi làm việc vui vẻ mỗi ngày,chúng tôi không thể cung cấp các dịch vụ và doanh nghiệp mang lại niềm vui và sự
 hứng khởi cho trẻ em và gia đình. Do đó, hệ thống hỗ trợ bữa trưa theo nhóm kích hoạt giao tiếp giữa các nhân viên, hệ thống tổ chức
 sinh nhật cho cha mẹ và con cái thể hiện văn hóa coi trọng gia đình,dành cho những người tìm kiếm kỹ năng và sự phát triển cấp cao hơn Có các hệ thống
-nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' , slide:true, approved: true)
+nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '01/09/2020', to_date: '01/10/2020' , slide:true, approved: true)
 
-Job.create(title: "Tester Leader (Automation)", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
-33300000, number: 6, area: "8 Nhà khách ATS, số 8 Phạm Hùng, Nam Tu Liem, Ha Noi ", what: "Use Ruby on Rails Html, CSS, master Mysql,
+Job.create(title: "Tester Leader (Automation)", user_id: 1, sex: 0, time_work: 0, grade: "Tester", exp: 3, salary:
+1500, number: 4, area: "8 Nhà khách ATS, số 8 Phạm Hùng, Nam Tu Liem, Ha Noi ", what: "Use Ruby on Rails Html, CSS, master Mysql,
 Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp tốt. Khả năng quản lý thời gian. Kỹ năng giải quyết vấn đề. Có tinh thần đồng đội.
 Tự tin. Khả năng chấp nhận và học hỏi từ những lời phê bình", why: "Chúng tôi có tầm nhìn không tìm kiếm các xu hướng mới, mà quan sát những mong
 muốn và giá trị cơ bản của con người không thay đổi từ 1000 năm nay và đưa chúng đến người dùng thông qua các công nghệ mới nhất. Các dịch vụ dựa
@@ -152,11 +151,11 @@ trên những giá trị bất biến sẽ không bao giờ hết mốt và sẽ
 how: "tin rằng trừ khi bản thân chúng tôi làm việc vui vẻ mỗi ngày,chúng tôi không thể cung cấp các dịch vụ và doanh nghiệp mang lại niềm vui và sự
 hứng khởi cho trẻ em và gia đình. Do đó, hệ thống hỗ trợ bữa trưa theo nhóm kích hoạt giao tiếp giữa các nhân viên, hệ thống tổ chức
 sinh nhật cho cha mẹ và con cái thể hiện văn hóa coi trọng gia đình,dành cho những người tìm kiếm kỹ năng và sự phát triển cấp cao hơn Có các hệ thống
-nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' , slide:true, approved: true)
+nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '20/09/2020', to_date: '30/10/2020' , slide:true, approved: true)
 
 
-Job.create(title: "Android Developer (Java/Kotlin) ~ 1800$", user_id: 1, sex: 0, time_work: 0, grade: "2 years of experience", exp: 3, salary:
-18000000, number: 6, area: "Zone 3 và Zone 4, Tầng 16, tòa nhà Văn phòng 789, số 147 đường Hoàng Quốc Việt, Phường Nghĩa Đô, Cau Giay, Ha Noi ", what: "Use Ruby on Rails Html, CSS, master Mysql,
+Job.create(title: "Android Developer (Java/Kotlin) ~ 1800$", user_id: 1, sex: 0, time_work: 0, grade: "Developer", exp: 2, salary:
+1000, number: 10, area: "Zone 3 và Zone 4, Tầng 16, tòa nhà Văn phòng 789, số 147 đường Hoàng Quốc Việt, Phường Nghĩa Đô, Cau Giay, Ha Noi ", what: "Use Ruby on Rails Html, CSS, master Mysql,
 Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp tốt. Khả năng quản lý thời gian. Kỹ năng giải quyết vấn đề. Có tinh thần đồng đội.
 Tự tin. Khả năng chấp nhận và học hỏi từ những lời phê bình", why: "Chúng tôi có tầm nhìn không tìm kiếm các xu hướng mới, mà quan sát những mong
 muốn và giá trị cơ bản của con người không thay đổi từ 1000 năm nay và đưa chúng đến người dùng thông qua các công nghệ mới nhất. Các dịch vụ dựa
@@ -164,11 +163,11 @@ trên những giá trị bất biến sẽ không bao giờ hết mốt và sẽ
 how: "tin rằng trừ khi bản thân chúng tôi làm việc vui vẻ mỗi ngày,chúng tôi không thể cung cấp các dịch vụ và doanh nghiệp mang lại niềm vui và sự
 hứng khởi cho trẻ em và gia đình. Do đó, hệ thống hỗ trợ bữa trưa theo nhóm kích hoạt giao tiếp giữa các nhân viên, hệ thống tổ chức
 sinh nhật cho cha mẹ và con cái thể hiện văn hóa coi trọng gia đình,dành cho những người tìm kiếm kỹ năng và sự phát triển cấp cao hơn Có các hệ thống
-nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' , slide:true, approved: true)
+nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '15/09/2020', to_date: '20/10/2020' , slide:true, approved: true)
 
 
-Job.create(title: "Fullstack Developer (Laravel / VUE.js)", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
-10000000, number: 6, area: "FCentral Building, floor 2, 16A Le Hong Phong, District 10, Ho Chi Minh", what: "Use Ruby on Rails Html, CSS, master Mysql,
+Job.create(title: "Fullstack Developer (Laravel / VUE.js)", user_id: 1, sex: 0, time_work: 0, grade: "Developer", exp: 3, salary:
+1500, number: 5, area: "FCentral Building, floor 2, 16A Le Hong Phong, District 10, Ho Chi Minh", what: "Use Ruby on Rails Html, CSS, master Mysql,
 Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp tốt. Khả năng quản lý thời gian. Kỹ năng giải quyết vấn đề. Có tinh thần đồng đội.
 Tự tin. Khả năng chấp nhận và học hỏi từ những lời phê bình", why: "Chúng tôi có tầm nhìn không tìm kiếm các xu hướng mới, mà quan sát những mong
 muốn và giá trị cơ bản của con người không thay đổi từ 1000 năm nay và đưa chúng đến người dùng thông qua các công nghệ mới nhất. Các dịch vụ dựa
@@ -176,5 +175,5 @@ trên những giá trị bất biến sẽ không bao giờ hết mốt và sẽ
 how: "tin rằng trừ khi bản thân chúng tôi làm việc vui vẻ mỗi ngày,chúng tôi không thể cung cấp các dịch vụ và doanh nghiệp mang lại niềm vui và sự
 hứng khởi cho trẻ em và gia đình. Do đó, hệ thống hỗ trợ bữa trưa theo nhóm kích hoạt giao tiếp giữa các nhân viên, hệ thống tổ chức
 sinh nhật cho cha mẹ và con cái thể hiện văn hóa coi trọng gia đình,dành cho những người tìm kiếm kỹ năng và sự phát triển cấp cao hơn Có các hệ thống
-nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '05/07/2020', to_date: '08/07/2020' , slide:true,approved: true)
+nội bộ dành riêng cho Bộ hẹn giờ, chẳng hạn như ", from_date: '10/09/2020', to_date: '10/09/2020' , slide:true, approved: true)
 

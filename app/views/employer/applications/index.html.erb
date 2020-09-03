@@ -22,7 +22,7 @@
                     <tr>
                       <td><%= index+1 %></td>
                       <td>
-                        <%= link_to User.find(application.user_id).fullname, user_path(application.user_id) %>
+                        <%= link_to User.find(application.user_id).fullname, profile_path(application.user) %>
                       </td>
                       <td><%= link_to Job.find(application.job_id).title, employer_job_path(application.job_id)%></td>
                     </tr>
@@ -32,7 +32,7 @@
             </div>
           </div>
 
-          </div>      
+          </div>
     </div>
   </div>
 </div>

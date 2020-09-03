@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   # rescue_from CanCan::AccessDenied do |exception|
   #   redirect_to root_path, alert: exception.message
   # end
-  
+
   private
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
-  
+
   protected
   def configure_permitted_parameters
     added_attrs = [:fullname, :email, :password, :password_confirmation, :remember_me, :employer_role, company_attributes: [:full_name, :email, :address, :phone, :descr, :link, :total]]

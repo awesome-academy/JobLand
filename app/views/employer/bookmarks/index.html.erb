@@ -6,7 +6,7 @@
             <div class="card_header">
               <%= t("companies.members") %>
             </div>
-            
+
 
             <div class="card mb-3">
             <div class="card-body">
@@ -23,7 +23,7 @@
                     <tr>
                       <td><%= index+1 %></td>
                       <td>
-                        <%= link_to User.find(bookmark.user_id).fullname, user_path(bookmark.user_id) %>
+                        <%= link_to User.find(bookmark.user_id).fullname, profile_path(bookmark.user) %>
                       </td>
                       <td><%= link_to Job.find(bookmark.job_id).title, employer_job_path(bookmark.job_id)%></td>
                     </tr>

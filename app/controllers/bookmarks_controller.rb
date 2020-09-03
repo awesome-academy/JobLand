@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
     @user = current_user
     @profile = current_user.profile
     @bookmarks = @user.bookmarks.paginate(
-      page: params[:page], per_page: Settings.paginate)
+      page: params[:page], per_page: 5)
   end
 
   def create

@@ -11,7 +11,7 @@ class Employer::JobsController < ApplicationController
 	def show
 		@job = Job.find params[:id]
 		@users = @job.applyjobs
-    @applyjobs = @job.applyjobs.page params[:page]
+    @applyjobs = @job.applyjobs.paginate(page: params[:page], per_page: 10)
 	end
 
 	def new

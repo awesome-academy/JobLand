@@ -13,6 +13,9 @@
   margin-top: -114px;
   margin-left: 85%;
 }
+.company_name img{
+  border: 1px solid;
+}
 #user_id{
   width: 50%;
   padding: 8px;
@@ -111,4 +114,13 @@
 }
 .table-hover tr td{
   padding: 5px 0px;
+}
+
+.my-company-main{
+  border-left: 1px solid;
+  border-color: #e3e3e3;
+}
+
+.em_com_name_font{
+  font-size: 35px;
 }

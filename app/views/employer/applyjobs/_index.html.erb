@@ -19,7 +19,16 @@
               <% @applyjobs.each_with_index do |applyjob, index| %>
                 <tr>
                   <td><%= index+1 %></td>
-                  <td class="user_name_apply"><%= link_to applyjob.user.fullname, employer_profile_path(applyjob.user) %></td>
+                  <td class="user_name_apply">
+                    <%= link_to applyjob.user.fullname, :action => 'go' do %>
+                      <% if applyjob.user.image.attached? %>
+                        <%= image_tag(applyjob.user.image) %>
+                      <% else %>
+                         <%= image_tag('no-image.jpg') %>
+                      <% end %>
+                    <% end %>
+                    <%= link_to applyjob.user.fullname, employer_profile_path(applyjob.user) %>
+                    </td>
                   <td><%= applyjob.user.sex %></td>
                   <td><%= applyjob.user.dob %></td>
                   <td><%= applyjob.user.phone %></td>
@@ -62,8 +71,9 @@
           </div>
         </div>
       </div>
-    </div>
-    <%= paginate @applyjobs %>
+      <div class="paginate__u col-md-12">
+        <%= will_paginate @applyjobs, theme: 'twitter-bootstrap-3' %>
+      </div>
   </div>
 </div>
 

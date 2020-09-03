@@ -2,7 +2,7 @@ class Employer::ApplyjobsController < ApplicationController
   before_action :user_employer?
   def index
     @job = Job.find params[:job_id]
-    @applyjobs = @job.applyjobs.page params[:page]
+    @applyjobs = @job.applyjobs
   end
 
   def edit

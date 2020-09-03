@@ -68,9 +68,7 @@
               <div class="row">
                 <div class="col-md-3">
                   <p class="projects-count">
-                    <span class="current">3</span>
-                    <span class="per"> / </span>
-                    <span class="total">5</span>
+
                   </p>
                 </div>
                 <div class="col-md-9">
@@ -116,16 +114,16 @@
                       <div class="col-md-6">
                         <div class="row">
                           <% if job_new.user.company.images.attached? %>
-                            <%= image_tag job_new.user.company.images.first , :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" %>
+                            <%= image_tag job_new.user.company.images.first , :style => " width: 50px; height: 50px; border-radius: 50px;" %>
                           <% else %>
-                            <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
+                            <%= image_tag('no-image.jpg', :style => " width: 50px; height: 50px; border-radius: 50px;") %>
                           <% end %>
                           <%= link_to job_new.user.company.full_name, company_path(job_new.user.company) %>
                         </div>
                       </div>
                       <div class="col-md-6 ">
                         <div class="row text-right">
-                          <%= link_to job_new.salary, job_path(job_new) %> $
+                          <%= job_new.salary %> $
                         </div>
                       </div>
                     </div>
@@ -160,16 +158,16 @@
                       <div class="col-md-6">
                         <div class="row">
                           <% if job_new.user.company.images.attached? %>
-                            <%= image_tag job_new.user.company.images.first, :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" %>
+                            <%= image_tag job_new.user.company.images.first, :style => " width: 50px; height: 50px; border-radius: 50px;" %>
                           <% else %>
-                            <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
+                            <%= image_tag('no-image.jpg', :style => " width: 50px; height: 50px; border-radius: 50px;") %>
                           <% end %>
                           <%= link_to job_new.user.company.full_name, company_path(job_new.user.company) %>
                         </div>
                       </div>
                       <div class="col-md-6 ">
                         <div class="row text-right">
-                          <%= link_to job_new.salary, job_path(job_new) %> $
+                          <%= job_new.salary  %> $
                         </div>
                       </div>
                     </div>
@@ -200,17 +198,17 @@
                     <div class="company-job col-md-12">
                       <div class="col-md-6">
                         <div class="row">
-                          <% if job_new.user.company.image.attached? %>
-                            <%= image_tag job_new.user.company.image, :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" %>
+                          <% if recommended.user.company.images.attached? %>
+                            <%= image_tag recommended.user.company.images.first, :style => "margin-top: 10px width: 50px; height: 50px; border-radius: 50px;" %>
                           <% else %>
-                            <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
+                            <%= image_tag('no-image.jpg', :style => " width: 50px; height: 50px; border-radius: 50px;") %>
                           <% end %>
                           <%= link_to recommended.user.company.full_name, company_path(recommended.user.company) %>
                         </div>
                       </div>
                       <div class="col-md-6 ">
                         <div class="row text-right">
-                          <%= link_to recommended.salary, job_path(recommended) %> $
+                          <%= recommended.salary %> $
                         </div>
                       </div>
                     </div>
@@ -277,7 +275,7 @@
         dataType: 'json',
         success: function (data) {
           response($.map(data, function (dataItem) {
-            return {data: dataItem.id, value: dataItem.title };
+            return {data: dataItem.id, value: dataItem.title + dataItem.area };
           }));
         },
       });

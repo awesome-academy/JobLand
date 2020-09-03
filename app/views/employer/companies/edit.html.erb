@@ -1,8 +1,8 @@
-<div class="companies_index">
+<div class="container">
     <div class="company_Info ">
         <%= render 'employer/companies/navbar'%>
     </div>
-    <div class="company_form_info col-md-7">
+    <div class="company_form_info col-md-10">
         <h3>New company</h3><br>
         <%= form_for [:employer , @company ] do |f| %>
         <div class="form-group">
