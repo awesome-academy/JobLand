@@ -74,20 +74,17 @@ User.create( email: "9user_test@gmail.com", fullname: "User test 9", password: "
 # Cv.create(user_id: 5, introduction: "Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.
 # Versatile facilitator and coordinator with a diverse global background excelling in the English, French and Thai languages. Experienced in the field of education, project management, business development and professional development. Specialized in developing people as well as creating excellent customer experience and relationships.")
 
-Company.create full_name: "Sun*", user_id: 1, address: "11F Handico Building, Pham Hung Road, Nam Tu Liem Dist., Ha Noi", phone: "0123456789",
+Company.create(full_name: "Sun*", user_id: 1, address: "11F Handico Building, Pham Hung Road, Nam Tu Liem Dist., Ha Noi", phone: "0123456789",
      email: "Sun.arterik@gmail.com", descr: "Sun * Inc. (formerly known as Framgia Inc.), founded in 2012, is a Creative Studio with more than 1500
      members in 6 cities in 4 Asian countries. With the mission of connecting international businesses with Top Talents in Asia, Sun* has always ma
-    de every effort to bring the world “Awesome” values.",slug: "test 4"
+    de every effort to bring the world “Awesome” values.", link: "Sun*.com.asian", total: 150, slug: "test 4")
 
-Company.create full_name: "Sun Asterisk", user_id: 2, address: "11F Handico Building, Pham Hung Road, Nam Tu Liem Dist., Ha Noi", phone: "0123456789",
+Company.create(full_name: "Sun Asterisk", user_id: 2, address: "11F Handico Building, Pham Hung Road, Nam Tu Liem Dist., Ha Noi", phone: "0123456789",
      email: "Sun.arterik@gmail.com", descr: "Sun * Inc. (formerly known as Framgia Inc.), founded in 2012, is a Creative Studio with more than 1500
      members in 6 cities in 4 Asian countries. With the mission of connecting international businesses with Top Talents in Asia, Sun* has always ma
-    de every effort to bring the world “Awesome” values."
+    de every effort to bring the world “Awesome” values.", link: "SunAsterisk.com.vn", total: 220)
 
-Member.create user_id: 1, company_id:1
-Member.create user_id: 2, company_id:1
-Member.create user_id: 3, company_id:1
-Member.create user_id: 4, company_id:1
+
 Job.create(title: "Wear OS System Integration Engineer(C++)", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
 10000000, number: 6, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", what: "Use Ruby on Rails Html, CSS, master Mysql,
 Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp tốt. Khả năng quản lý thời gian. Kỹ năng giải quyết vấn đề. Có tinh thần đồng đội.

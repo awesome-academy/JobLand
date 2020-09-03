@@ -55,9 +55,9 @@ class Employer::JobsController < ApplicationController
 
 	private
   def job_params
-    params.require(:job).permit :title, :sex ,
+    params.require(:job).permit :title, :sex,
      :time_work, :grade, :exp, :salary, :number,:from_date,:to_date,
-      :area, :why, :what, :how, :images
+      :area, :why, :what, :how, :images, :slide, :approved
   end
 
   def return_payment
