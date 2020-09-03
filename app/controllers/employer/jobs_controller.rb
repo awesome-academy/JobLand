@@ -1,6 +1,7 @@
 class Employer::JobsController < ApplicationController
 	  before_action :user_employer?
-	  before_action :return_payment
+    before_action :return_payment
+	  before_action :job_active, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
 		@jobs = current_user.jobs.page params[:page]
@@ -19,7 +20,7 @@ class Employer::JobsController < ApplicationController
 
 	def create
 		@job = current_user.jobs.build job_params
-		if @job.save 
+		if @job.save
 			flash[:success] = t("job.jobCreate")
       SendEmailJob.set(wait: 1.minutes).perform_later current_user
       redirect_to root_url
@@ -56,7 +57,7 @@ class Employer::JobsController < ApplicationController
   def job_params
     params.require(:job).permit :title, :sex ,
      :time_work, :grade, :exp, :salary, :number,:from_date,:to_date,
-      :area, :why, :what, :how, :images 
+      :area, :why, :what, :how, :images
   end
 
   def return_payment
@@ -64,5 +65,12 @@ class Employer::JobsController < ApplicationController
   		flash[:danger] = "Please payment."
 		redirect_to employer_companies_url
   	end
+  end
+
+  def job_active
+    unless current_user.company.payment.subscription_status == "active"
+      flash[:danger] = "Please payment not active."
+      redirect_to employer_companies_url
+    end
   end
 end
