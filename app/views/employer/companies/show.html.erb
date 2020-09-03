@@ -19,9 +19,16 @@
     </div>
     <div class="col-md-8">
         <div class="company_name">
+                <div class="displayf">
             <h1 class="col-md-4 ">
+                 <% if @company.images.attached? %>
+                  <%=  image_tag @company.images.first, :style =>"width: 60px; height: 60px; border-radius: 50px;" %>
+                <% else %>
+                  <%= image_tag('no-image.jpg', :style => "width: 60px; height: 60px; border-radius: 50px;")%>
+                <% end %>
                 <%= @company.full_name %>
             </h1>
+                </div>
             <%= link_to t("cp.edit"), edit_employer_company_path(@company), class: "btn btn-primary edit-company" %>
         </div>
         <hr>

@@ -85,6 +85,9 @@ Company.create full_name: "Sun Asterisk", user_id: 2, address: "11F Handico Buil
     de every effort to bring the world “Awesome” values."
 
 Member.create user_id: 1, company_id:1
+Member.create user_id: 2, company_id:1
+Member.create user_id: 3, company_id:1
+Member.create user_id: 4, company_id:1
 Job.create(title: "Wear OS System Integration Engineer(C++)", user_id: 1, sex: 0, time_work: 0, grade: "1 years of experience", exp: 3, salary:
 10000000, number: 6, area: "11F Handico Building, Pham Hung Road, Nam Tu Liem", what: "Use Ruby on Rails Html, CSS, master Mysql,
 Tinh thần làm việc cao, Thái độ tích cực. Kỹ năng giao tiếp tốt. Khả năng quản lý thời gian. Kỹ năng giải quyết vấn đề. Có tinh thần đồng đội.

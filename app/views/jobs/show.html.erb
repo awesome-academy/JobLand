@@ -80,24 +80,24 @@
       <div class="justify-content-start mt-3 addressCareer">
         <div class="addressCareer">
           <div class="mr_3">
-            <i class="fa fa-briefcase fa-lg" aria-hidden="true"><%= @job.time_work_i18n %>
+            <i class="fa fa-briefcase fa-lg" aria-hidden="true"> <%= @job.time_work_i18n %>
             </i>
           </div>
           <div class="mr_3">
-            <i class="fa fa-graduation-cap fa-lg" aria-hidden="true"><%= @job.exp %>Year
+            <i class="fa fa-graduation-cap fa-lg" aria-hidden="true"><%= @job.exp %> <%= t("global.job.year") %>
             </i>
           </div>
           <div class="mr_3">
-            <i class="fa fa-money fa-lg" aria-hidden="true"><%= @job.salary %></i>
+            <i class="fa fa-money fa-lg" aria-hidden="true"> <%= @job.salary %></i>
           </div>
           <div class="mr_3">
             <% case @job.sex_i18n %>
               <% when 0 %>
-              <i class="fa fa-male" aria-hidden="true"><%= t("home.Female")%></i>
+              <i class="fa fa-male" aria-hidden="true"> <%= t("home.Female")%></i>
               <% when 1 %>
-                <i class="fa fa-female" aria-hidden="true"><%= t("home.Male")%></i>
+                <i class="fa fa-female" aria-hidden="true"> <%= t("home.Male")%></i>
               <% else %>
-                <i class="fa fa-venus-mars fa-lg" aria-hidden="true"><%= t("home.all")%></i>
+                <i class="fa fa-venus-mars fa-lg" aria-hidden="true"> <%= t("home.all")%></i>
             <% end %>
           </div>
         </div>
@@ -177,7 +177,7 @@
                 </div><br>
                 <div class="mt-2 d-inline">
                   <i class="fa fa-link" aria-hidden="true"></i>
-                  <% if @job.user.company.link %>
+                  <%  if @job.user.company.link %>
                   <%= link_to @job.user.company.link.first(30)+"..." %>
                   <% end %>
                 </div><br>

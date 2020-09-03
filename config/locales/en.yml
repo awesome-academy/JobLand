@@ -142,6 +142,8 @@ en:
       home: "Home"
       jobs: "Jobs"
       about: "About"
+      year: "Year"
+      applied: "Applied"
   employers:
     jobs:
       index:

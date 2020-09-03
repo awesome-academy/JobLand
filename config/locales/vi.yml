@@ -63,8 +63,6 @@ vi:
     remove: "Remove"
     success: "Success"
     job:
-      bookmark: "Đánh Dấu"
-      bookmarked: "Đã Đánh Dấu"
       bookmarkJobs: "Việc Làm Đã Đánh Dấu"
       un: "Bỏ Lưu"
       what: "chúng ta làm gì?"
@@ -76,7 +74,7 @@ vi:
       view: "Xem"
       requested: "yêu cầu đến thăm"
       bookmark: "Lưu"
-      bookmarked: "Không lưu"
+      bookmarked: "Đã lưu"
       bookmarkJobs: "Job đã lưu "
       un: "Bỏ lưu"
       recommendations: "khuyến nghị"
@@ -91,6 +89,8 @@ vi:
       home: "Trang chủ"
       jobs: "Việc làm"
       about: "Giới thiệu"
+      year: "Năm"
+      applied: "Đã ứng tuyển"
   employers:
     jobs:
       index:
