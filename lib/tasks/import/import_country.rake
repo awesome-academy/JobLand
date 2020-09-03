@@ -4,7 +4,7 @@ namespace :import do
      require 'mechanize'
      require 'nokogiri'
      agent = Mechanize.new
-     agent.get("https://thanhnien.vn/")
+     agent.get("https://vnexpress.net/")
      countries = agent.page.search('a')
      countries = countries.xpath('//a').map {|element| element["href"]}.compact
 

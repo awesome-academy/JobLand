@@ -17,6 +17,7 @@ class Company < ApplicationRecord
       link: link
     }
   end
+
   included do
     acts_as_url :full_name, url_attribute: :full_name, sync: true
   end
@@ -24,5 +25,4 @@ class Company < ApplicationRecord
   def to_param
     "#{id}/#{full_name}"
   end
-
 end

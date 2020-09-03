@@ -19,7 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 every 8.hours do
-  command "rails import:import_country"
+  # command "rails import:import_country"
   runner "rails import:import_country"
 end
 
