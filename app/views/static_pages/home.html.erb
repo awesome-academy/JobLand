@@ -40,14 +40,15 @@
     <div class="container-75">
       <div class="main-left col-md-4">
         <div class="row">
-          <div class="h3-filter">
-            <h3><%= t("home.Filter") %> <%= link_to request.path, type: "button" do %>
-           <i class="fa fa fa-refresh" id="back_home" aria-hidden="true"></i>
-             <% end %></h3>
-          </div>
-           <%= search_form_for  @q ,url: root_path  do |f| %>
-        <div class="form-group"><%= f.label t("home.title&area") %>
-        <%= f.text_field :title_or_area_cont, class: 'form-control' , id: 'myJobs' %>
+          <div class=" css-po">
+            <div class="h3-filter">
+              <h3><%= t("home.Filter") %> <%= link_to request.path, type: "button" do %>
+             <i class="fa fa fa-refresh" id="back_home" aria-hidden="true"></i>
+               <% end %></h3>
+            </div>
+             <%= search_form_for  @q ,url: root_path  do |f| %>
+          <div class="form-group"><%= f.label t("home.title&area") %>
+          <%= f.text_field :title_or_area_cont, class: 'form-control' , id: 'myJobs' %>
         </div>
 
         <div class="form-group"><%= f.label t("home.salary") %>
@@ -59,6 +60,7 @@
         <br>
         </div>
     </div>
+  </div>
       <div class="main-right col-md-8">
         <div class="row">
           <div class="job-right">
@@ -284,4 +286,22 @@
       window.location.assign('http://localhost:3000/jobs/' + ui.item.data);
     },
   });
+
+  jQuery(document).ready(function(){
+    window.onscroll = function() {
+      var a = $(document).height() - 855;
+      if (window.pageYOffset >= 544 && window.pageYOffset < a){
+        jQuery('.css-po').css({position: 'fixed', top: '0px',width: '285px' });
+      }
+      else if(window.pageYOffset >= a) {
+        jQuery('.css-po').css({position: 'absolute', top: 'auto'});
+      }
+      else
+      {
+        jQuery('.css-po').css({position: '', right: '', top: ''});
+
+      }
+    }
+  });
 </script>
+
