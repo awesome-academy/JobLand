@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :bookmarked, through: :bookmarks, source: :job
 
   idUser = "select user_id from members where company_id = ?"
-  scope :user_member, -> (id){User.where("id not in(#{idUser})",id)}
+  scope :user_member, -> (id){User.select(:id, :fullname).where("id not in(#{idUser})",id)}
 
   has_many :active_relationships, class_name: "Relationship",
                                   foreign_key: "follower_id",
@@ -66,5 +66,16 @@ class User < ApplicationRecord
       end
     end
   end
+
+  def self.ransackable_scopes(auth_object = nil)
+    %i(user_member)
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w(id fullname)
+  end
+
+  public_class_method :ransackable_scopes
+  public_class_method :ransackable_attributes
 end
 

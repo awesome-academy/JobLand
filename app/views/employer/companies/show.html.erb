@@ -74,7 +74,6 @@
                     </tr>
                     <% end %>
                 </table>
-                <%= paginate @user_company ,theme: 'twitter-bootstrap-3' %>
                 <% end %>
             </div>
         </div>
@@ -136,7 +135,7 @@ $('#user_id').autocomplete({
         });
     },
     select: function(event, ui) {
-        $('table').append('<tr><td>' + ui.item.value + '</td><td> <input type="hidden" value="' + ui.item.data + '" name="company[user_ids][]"></td></tr>');
+        $('.table-hover').append('<tr><td>' + ui.item.value + '</td><td> <input type="hidden" value="' + ui.item.data + '" name="company[user_ids][]"></td></tr>');
     },
 });
 </script>
