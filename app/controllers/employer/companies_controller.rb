@@ -21,7 +21,7 @@ class Employer::CompaniesController < ApplicationController
 
   def show
     @company = Company.find params[:id]
-    @user_company = @company.users.page(params[:page]).per(5)
+    @user_company = @company.users
     @member = Member.new
     @user = User.new
     @q = User.ransack params[:q]
@@ -70,17 +70,20 @@ class Employer::CompaniesController < ApplicationController
      params.require(:company).permit(:full_name, :address, :phone, :link,:map,
       :total, :email, :descr, :user_ids => [], images: [])
   end
+
   def return_payment
     unless !current_user.company.payment.nil? && !current_user.company.payment.stripe_customer_id.nil?
       flash[:danger] = "Please payment."
     redirect_to employer_companies_url
     end
   end
+
   def return_company
     if !current_user.company.nil?
       redirect_to employer_companies_url
     end
   end
+
   def return_home
     unless !current_user.employer_role.nil?
       redirect_to root_path

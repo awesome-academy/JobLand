@@ -4,7 +4,7 @@ class Employer::MembersController < ApplicationController
   def index
     @user = current_user
     addMem = current_user.company.id
-    @q = User.user_member(addMem).search params[:q]
+    @q = User.ransack({user_member: @user.id, fullname_cont: params[:q][:fullname_cont]})
     @users = @q.result
     respond_to do |format|
       format.html

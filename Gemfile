@@ -30,7 +30,6 @@ gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
@@ -57,7 +56,8 @@ gem 'jquery-ui-rails'
 gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'rails_admin'
-gem "ransack"
+#gem "ransack"
+gem 'ransack'
 gem 'simple_form'
 gem "mechanize"
 gem "nokogiri"
