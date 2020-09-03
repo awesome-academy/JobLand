@@ -66,9 +66,5 @@ class User < ApplicationRecord
       end
     end
   end
-
-  # def self.ransackable_scopes(auth_object = nil)
-  #   %i(user_member)
-  # end
 end
 

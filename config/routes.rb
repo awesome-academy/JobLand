@@ -51,6 +51,7 @@ Rails.application.routes.draw do
     resources :companies, only: [:show]
     resources :profiles
     resources :experiences
+    resources :rooms
     resources :companies do
       resources :jobs, only: [:index]
     end
