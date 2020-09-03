@@ -1,7 +1,6 @@
 <div class="modal" id="coverModal">
-  <%= form_for @profile, method: :patch do |f| %>
+  <%= form_for @profile do |f| %>
     <div class="modal-dialog">
-
       <div class="modal-content">
         <div class="modal-header_cover">
           <%= image_tag @profile.image if @profile.image.attached? %>
@@ -9,12 +8,13 @@
         <div class="modal-body">
           <div class="choose_cover_image">
             <%= f.label t('userp.profile_cover_photo') %><br>
-            <%= f.file_field :image %>
+            <%= f.file_field :image, id:"cover_img_profile" %>
+            <%= f.hidden_field :img_name %>
           </div>
         </div>
         <div class="modal-footer">
-          <%= f.submit t("cv.submit"), class: "hello btn btn-up"%>
           <button type="button" class="btn btn-danger" data-dismiss="modal"><%= "Cancel" %></button>
+          <%= f.submit t("cv.submit"), class: "cover_img_profile btn btn-up"%>
         </div>
       </div>
     </div>
@@ -24,4 +24,14 @@
   <a href="#" class="" data-toggle="modal" data-target="#coverModal"><i class="fa fa-camera" aria-hidden="true"></i><%= t("userp.change_cover_photo") %></a>
 </div>
 
+
+
+<script type="text/javascript">
+  $('.cover_img_profile').on('click',function(event){
+    if ($('#cover_img_profile').get(0).files.length === 0) {
+      event.preventDefault();
+      alert('Please Choose File');
+    }
+  });
+</script>
 

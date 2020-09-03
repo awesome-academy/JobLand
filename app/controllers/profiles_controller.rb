@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.find params[:id]
-    @profile.images.attach(params[:images])
+    @profile.images.attach(params[:image])
   end
 
   def show
@@ -37,7 +37,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(:images)
+    params.require(:profile).permit(:image)
   end
 end
 
