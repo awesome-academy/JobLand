@@ -26,11 +26,11 @@
     </div>
     <span class="image">
       <%= f.label t('pf.userimg') %>
-      <%= f.file_field :images,  multiple: true, accept: "image/jpeg,image/gif,image/png", direct_upload: true %>
+      <%= f.file_field :images,  multiple: true, id:"user_portfolio_img", accept: "image/jpeg,image/gif,image/png", direct_upload: true %>
     </span>
     <div class='submit-portfolio'>
 	    <input class="btn btn-danger cancel" type="button" value='<%=t("pf.cancel")%>'>
-      <%= f.submit t('pf.update'), class: "btn btn-outline-secondary" %>
+      <%= f.submit t('pf.update'), class: "btn btn-outline-secondary user_portfolio_img" %>
     </div>
   <% end %>
 </div>
@@ -40,6 +40,14 @@
   $('.form_portfolio form .cancel').on('click',function(event){
     $('.form_portfolio').remove();
     $('[id^="portfolio"]').show();
+  });
+
+
+  $('.user_portfolio_img').on('click',function(event){
+    if ($('#user_portfolio_img').get(0).files.length === 0) {
+      event.preventDefault();
+      alert('Please Choose Image File');
+    }
   });
 
   // -- ajax for create and edit portfolio --

@@ -30,7 +30,7 @@ class Employer::WebhooksController < ApplicationController
 								@user.update(subscription_status: 'active')
 							when 'customer.subscription.updated', 'customer.subscription.deleted'
 								subscription = event.data.object
-								@user = Payment	.find_by(stripe_customer_id: subscription.customer)
+								@user = Payment.find_by(stripe_customer_id: subscription.customer)
 								@user.update(
 										subscription_status: subscription.status,
 										plan: subscription.items.data[0].price.lookup_key,

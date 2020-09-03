@@ -13,12 +13,12 @@
         <div class="modal-body">
           <div class="choose_user_image">
             <%= f.label t('userp.user_image') %><br>
-            <%= f.file_field :image %>
+            <%= f.file_field :image, id:"user_img_avatar" %>
           </div>
         </div>
         <div class="modal-footer">
-          <%= f.submit t("cv.submit"), class: "hello btn btn-up"%>
           <button type="button" class="btn btn-danger" data-dismiss="modal"><%= "Cancel" %></button>
+          <%= f.submit t("cv.submit"), class: "hello btn btn-up"%>
         </div>
       </div>
     </div>
@@ -31,3 +31,11 @@
 </div>
 
 
+<script type="text/javascript">
+  $('.user_img_avatar').on('click',function(event){
+    if ($('#user_img_avatar').get(0).files.length === 0) {
+      event.preventDefault();
+      alert('Please Choose File');
+    }
+  });
+</script>
