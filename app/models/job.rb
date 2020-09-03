@@ -15,6 +15,11 @@ class Job < ApplicationRecord
   scope :all_approved_false, -> { where approved: false }
   scope :all_approved_true, -> { where approved: true }
 
+  sex = "select sex from jobs where id = ?"
+  time_work="select time_work from jobs where id = ?"
+  scope :job_similar, ->  (id){where("id <> ? and (sex IN (#{sex}) or sex = 2 or 
+    time_work IN (#{time_work}) or time_work= 2)
+    and now() > DATE(from_date) and now()< DATE(to_date)",id,id,id).limit(4)}
   included do
      acts_as_url :fullname, url_attribute: :fullname, sync: true
   end
