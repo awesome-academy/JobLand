@@ -44,7 +44,9 @@ Skill.create(name:"Scala")
 Skill.create(name:"Swift")
 Skill.create(name:"TypeScript")
 
-User.create( email: "123456@gmail.com", fullname: "PR2003F", password: "123123", password_confirmation: "123123",slug: "profile-PR2003F", employer_role: true)
+
+
+User.create( email: "123456@gmail.com", fullname: "Thái", password: "123123", password_confirmation: "123123",slug: "profile-Thaiculi", employer_role: true,admin_role: true)
 User.create( email: "aaa@gmail.com", fullname: "Sơn", password: "123123", password_confirmation: "123123",slug: "profile-DinhSon",admin_role: true)
 User.create( email: "bbb@gmail.com", fullname: "ĐOàn", password: "123123", password_confirmation: "123123",slug: "profile-Doan")
 User.create( email: "ccc@gmail.com", fullname: "Tùng", password: "123123", password_confirmation: "123123",slug: "profile-wejkfhwkfhek")

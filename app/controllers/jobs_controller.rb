@@ -11,6 +11,8 @@ class JobsController < ApplicationController
     @bookmarked = Bookmark.bookmarked(@job.id, current_user.id).first
   	@applyjob = Applyjob.new
   	@appliedjob = Applyjob.appliedjob(@job.id, current_user.id).first
+    @id = @job.id
+    @job_similar = Job.job_similar(@id)
     unless @job.approved
       redirect_to root_path
     end
