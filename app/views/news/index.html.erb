@@ -16,31 +16,12 @@
         <div class="clear"> </div>
       </div>
       </div>
-          <div class="bloder-content">
-          <div class="bloger-grid">
-            <div class="blog-img">
-        <%= image_tag('news1.jpg', title: "img6")%>
-            </div>
-            <div class="bloger-content">
-              <h5><a href="single.html"> <tbody>
-       <% @news.each do |news| %>
-       <tr>
-        <td><%= link_to news.content, news.link%></td>
-   <% end %>
-  </tbody>
-          </p>
-              <ul>
-                <li><a href="#">Lorem ipsum</a></li>
-                <li><a href="#">: 23-02-1989</a></li>
-                <li><a href="https://vnexpress.net/"><span>Readmore</span></a></li>
-              </ul>
-            </div>
             <div class="clear"> </div>
           </div>
           <div class="clear"> </div>
           <div class="bloger-grid">
             <div class="blog-img">
-               <%= image_tag('news2.png', title: "img6")%>
+               <%= image_tag('baynews.jpg', title: "img6")%>
             </div>
             <div class="bloger-content">
               <h5><a href="single.html">  <tbody>
@@ -56,45 +37,9 @@
                 <li><a href="https://vnexpress.net/"><span>Read more</span></a></li>
               </ul>
             </div>
+
             <div class="clear"> </div>
-          </div>
-          <div class="bloger-grid">
-            <div class="blog-img">
-                <%= image_tag('news3.jpg', title: "img6")%>
-            </div>
-            <div class="bloger-content">
-              <h5><a href="single.html">   <h5><a href="single.html">  <tbody>
-       <% @news.each do |news| %>
-       <tr>
-        <td><%= link_to news.content, news.link%></td>
-   <% end %>
-  </tbody></p>
-              <ul>
-                <li><a href="#">Lorem ipsum</a></li>
-                <li><a href="#">: 23-02-1989</a></li>
-                <li><a href="https://vnexpress.net/"><span>Read more</span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div style="border-bottom:none;" class="bloger-grid">
-            <div class="blog-img">
-             <%= image_tag('socnews.jpg', title: "img6")%>
-            </div>
-            <div class="bloger-content">
-              <h5><a href="https://vnexpress.net/">   <h5><a href="single.html">  <tbody>
-       <% @news.each do |news| %>
-       <tr>
-        <td><%= link_to news.content, news.link%></td>
-   <% end %>
-  </tbody></p>
-              <ul>
-                <li><a>Lorem ipsum</a></li>
-                <li><a>: 23-02-1989</a></li>
-                <li><a href="https://vnexpress.net/"><span>Read more</span></a></li>
-              </ul>
-            </div>
-            <div class="clear"> </div>
-           <%= paginate @news %>
+
           </div>
           </div>
   </body>
