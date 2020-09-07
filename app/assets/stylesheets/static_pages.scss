@@ -141,17 +141,17 @@ main{
   margin-left: auto;
   margin-right: auto;
 }
-
-#ui-id-1{
+.ui-menu,.ui-widget,.ui-widget-content,.ui-autocomplete,.ui-front
+.ui-menu,.ui-widget,.ui-widget-content,.ui-autocomplete,.ui-front{
   background: #ffffff;
   border: 1px solid #333;
   width: 18%;
   padding-inline-start : 15px;
 }
-#ui-id-1 .ui-menu-item{
+.ui-menu,.ui-widget,.ui-widget-content,.ui-autocomplete,.ui-front .ui-menu-item{
   list-style: none;
 }
-#ui-id-1 .ui-menu-item:hover{
+.ui-menu,.ui-widget,.ui-widget-content,.ui-autocomplete,.ui-front .ui-menu-item:hover{
   background: #f3f2ee;
 }
 
@@ -201,7 +201,13 @@ a.blue-a{
   padding:0px;
 }
 .css-po{
-  
+
+}
+.text-right{
+  margin-top: 15px;
+}
+.company-job img{
+  border :1px solid;
 }
 /*element.style {
   position: -webkit-sticky;

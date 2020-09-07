@@ -1,7 +1,7 @@
 <% if current_user.company.payment && (current_user.company.payment.subscription_status  && current_user.company.payment.stripe_customer_id) %>
 <div class="container">
 <%= render 'employer/companies/navbar'%>
-  <div class="col-md-10">
+  <div class="employer_job_show col-md-10">
     <div class="row">
             <div class="col_xl_3 col-sm-6 mb-3">
               <div class="card text-center">

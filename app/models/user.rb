@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  searchkick word_start: [:fullname]
   include Sluggable
   enum sex: { Unknow: 0, Male: 1, Female: 2 }
   has_one_attached :image
@@ -35,9 +36,14 @@ class User < ApplicationRecord
       Cv.create(user_id: self.id)
       Profile.create(user_id: self.id)
     end
+
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+
+  def search_data
+     as_json only: [:fullname]
+  end
 
   def follow(other_user)
     following << other_user

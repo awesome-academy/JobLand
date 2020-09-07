@@ -30,7 +30,7 @@ set :environment, "development"
 # #để kiểm soát lỗi gửi mail hệ thống
 # set :output, ".../log.log" #đường dẫn tuyệt đối
 
-every 1.day, :at => "10:41am" do
+every 1.day, :at => "18:28pm" do
    rake 'job:mailmonth'
 end
 

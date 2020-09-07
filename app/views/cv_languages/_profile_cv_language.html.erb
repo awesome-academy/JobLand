@@ -1,5 +1,5 @@
 <ul id="edit_language">
-  <% current_user.cv.cv_languages.each do |cv_language| %>
+  <% @user.cv.cv_languages.each do |cv_language| %>
     <div class="deleteButton">
       <li>
       	<span class='form-control' id="submitted-skill"><%= cv_language.language.name %></span>

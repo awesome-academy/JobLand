@@ -1,13 +1,13 @@
 <% if @companies.suggestions.present? %>
   <div class="count-job search__suggest col-md-12">
-    <%= t("search.Did you mean") %> 
+    <%= t("search.Did you mean") %>
     "<%= link_to @companies.suggestions.first, search_path(query: @companies.suggestions) %>" ?
   </div>
 <% end %>
 <% if !@cvs.nil? && !@companies.nil? %>
   <div class="count-job col-md-12">
     <h4 class="count__total">
-      <%= @companies.total_count + @cvs.total_count %> <%= t("search.results for") %> 
+      <%= @companies.total_count + @cvs.total_count %> <%= t("search.results for") %>
         <% if @companies.suggestions.present? %>
           "<%= @companies.suggestions.first %>"
         <% else %>
@@ -26,7 +26,7 @@
         <div class="left-part col-md-1">
           <div class="row">
             <% if Company.find(company.id).images.attached? %>
-              <%= image_tag Company.find(company.id).image, :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" %>
+              <%= image_tag Company.find(company.id).images.first, :style => "margin-top: 10px; width: 50px; height: 50px; border-radius: 50px;" %>
             <% else %>
               <%= image_tag('no-image.jpg', :style => "margin-top: 20px; width: 50px; height: 50px; border-radius: 50px;") %>
             <% end %>

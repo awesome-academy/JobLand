@@ -1,122 +1,125 @@
 <div class="container">
-    <div class="slider-123">
-        <div class="slider center slider-user">
-            <% if !@company.images.nil? %>
-            <% @company.images.take(3).each do |img|%>
-            <div class="card mb-3">
-                <%= image_tag img %>
-            </div>
-            <% end %>
-            <% else %>
-            <div class="card mb-3">
-                <%= link_to image_tag('3.webp'), "#"%>
-            </div>
-            <div class="card mb-3">
-                <%= link_to image_tag('2.webp'), "#"%>
-            </div>
-            <% end %>
-        </div>
-    </div>
-    <div class="col-md-8">
-        <div class="company_name">
-                <div class="displayf">
-            <h1 class="col-md-4 ">
-                 <% if @company.images.attached? %>
-                  <%=  image_tag @company.images.first, :style =>"width: 60px; height: 60px; border-radius: 50px;" %>
-                <% else %>
-                  <%= image_tag('no-image.jpg', :style => "width: 60px; height: 60px; border-radius: 50px;")%>
-                <% end %>
-                <%= @company.full_name %>
-            </h1>
+    <%= render 'employer/companies/navbar'%>
+    <div class="my-company-main col-md-10">
+        <div class="slider-123">
+            <div class="slider center slider-user">
+                <% if !@company.images.nil? %>
+                <% @company.images.take(3).each do |img|%>
+                <div class="card mb-3">
+                    <%= image_tag img %>
                 </div>
-            <%= link_to t("cp.edit"), edit_employer_company_path(@company), class: "btn btn-primary edit-company" %>
-        </div>
-        <hr>
-        <div class="lead">
-            <% if @company.descr %>
-            <%= @company.descr.html_safe %>
-            <% end %>
-        </div>
-        <hr>
-        <div class="form-group">
-            <div class="col-md-12 top-footer1 animated wow fadeInRight" data-wow-delay=".5s">
-                <%= form_for [:employer , @company ] do |f| %>
-                <%= f.label t("cp.add_member") %>
-                <%= text_field_tag :user_id %>
-                <label class="table table-hover">
-                    <tr>
-                    </tr>
-                </label>
-                <%= f.submit t("cp.add"),class: "btn btn-primary" %>
-                <table class="table table-striped custab">
-                    <thead>
-                        <tr>
-                            <th>STT</th>
-                            <th>
-                                <%= t("cp.member") %>
-                            </th>
-                            <th>
-                                <%= t("cp.status") %>
-                            </th>
-                        </tr>
-                    </thead>
-                    <% @user_company.each_with_index do |user,index| %>
-                    <tr>
-                        <td>
-                            <%= index+1 %>
-                        </td>
-                        <td>
-                            <%= link_to user.fullname, user_path(user) %>
-                        </td>
-                        <td>
-                            <%= f.check_box :user_ids, {:multiple => true}, user.id, nil %>
-                        </td>
-                    </tr>
-                    <% end %>
-                </table>
+                <% end %>
+                <% else %>
+                <div class="card mb-3">
+                    <%= link_to image_tag('3.webp'), "#"%>
+                </div>
+                <div class="card mb-3">
+                    <%= link_to image_tag('2.webp'), "#"%>
+                </div>
                 <% end %>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card my-4 margin-xl" id="company_members">
-            <h3 class="card-header"><i class="fa fa-building fa-lg" aria-hidden="true"></i>
-                <%= t("cp.company") %>
-            </h3>
-            <div class="margin-xl" id="padding_info">
-                <ul class="margin-xl">
-                    <li class="link_to_web">
-                        <% if @company.link %>
-                        <i class="fa fa-link fa-lg" aria-hidden="true"></i>
-                        <%= link_to @company.link.first(30)+ "..." %>
-                    </li>
+        <div class="col-md-8">
+            <div class="company_name">
+                    <div class="displayf">
+                <span class="em_com_name_font ">
+                     <% if @company.images.attached? %>
+                      <%=  image_tag @company.images.first, :style =>"width: 60px; height: 60px; border-radius: 50px;" %>
+                    <% else %>
+                      <%= image_tag('no-image.jpg', :style => "width: 60px; height: 60px; border-radius: 50px;")%>
                     <% end %>
-                    <li>
-                        <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
-                        <%= @company.address%>
-                    </li>
-                    <li>
-                        <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
-                        <% if @company.email %>
-                        <%= @company.email %>
+                    <%= @company.full_name %>
+                </span>
+                    </div>
+                <%= link_to t("cp.edit"), edit_employer_company_path(@company), class: "btn btn-primary edit-company" %>
+            </div>
+            <hr>
+            <div class="lead">
+                <% if @company.descr %>
+                <%= @company.descr.html_safe %>
+                <% end %>
+            </div>
+            <hr>
+            <div class="form-group">
+                <div class="col-md-12 top-footer1 animated wow fadeInRight" data-wow-delay=".5s">
+                    <%= form_for [:employer , @company ] do |f| %>
+                        <%= f.label t("cp.add_member") %>
+                        <%= text_field_tag :user_id %>
+                        <label class="table table-hover">
+                            <tr>
+                            </tr>
+                        </label>
+                        <%= f.submit t("cp.add"),class: "btn btn-primary" %>
+                        <table class="table table-striped custab">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>
+                                        <%= t("cp.member") %>
+                                    </th>
+                                    <th>
+                                        <%= t("cp.status") %>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <% @user_company.each_with_index do |user,index| %>
+                            <tr>
+                                <td>
+                                    <%= index+1 %>
+                                </td>
+                                <td>
+                                    <%= link_to user.fullname, profile_path(user) %>
+                                </td>
+                                <td>
+                                    <%= f.check_box :user_ids, {:multiple => true}, user.id, nil %>
+                                </td>
+                            </tr>
                         <% end %>
-                    </li>
-                    <li>
-                        <i class="fa fa-phone-square fa-lg" aria-hidden="true"></i>
-                        <%= @company.phone %>
-                    </li>
-                    <li>
-                        <i class="fa fa-users fa-lg" aria-hidden="true"> </i>
-                        <%= @company.total   %>
-                        <%= t("cp.member") %>
-                    </li>
-                </ul>
+                    </table>
+                    <% end %>
+                </div>
             </div>
         </div>
-        <div id="map" style="display: block;width: 500px; height: 500px;">
-            <% if @company.map %>
-            <%= @company.map.html_safe %>
-            <% end %>
+        <div class="col-md-4">
+            <div class="card my-4 margin-xl" id="company_members">
+                <h3 class="card-header"><i class="fa fa-building fa-lg" aria-hidden="true"></i>
+                    <%= t("cp.company") %>
+                </h3>
+                <div class="margin-xl" id="padding_info">
+                    <ul class="margin-xl">
+                        <li class="link_to_web">
+                            <% if @company.link %>
+                            <i class="fa fa-link fa-lg" aria-hidden="true"></i>
+                            <%= link_to @company.link.first(30)+ "..." %>
+                        </li>
+                        <% end %>
+                        <li>
+                            <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+                            <%= @company.address%>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
+                            <% if @company.email %>
+                            <%= @company.email %>
+                            <% end %>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone-square fa-lg" aria-hidden="true"></i>
+                            <%= @company.phone %>
+                        </li>
+                        <li>
+                            <i class="fa fa-users fa-lg" aria-hidden="true"> </i>
+                            <%= @company.total   %>
+                            <%= t("cp.member") %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="map" style="display: block;width: 500px; height: 500px;">
+                <% if @company.map %>
+                <%= @company.map.html_safe %>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>

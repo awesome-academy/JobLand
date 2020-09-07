@@ -1,45 +1,47 @@
 <div class="container">
   <%= render "users/profile_header" %>
-    <div class="column-main col-md-8" >
-      <h4><%= t("userp.allSaveJob") %></h4>
-      <div class="card border-0 bookmark_jobs">
-        <div class="card-body p-5">
-          <div class="table-responsive-bookmark">
-            <table class="table m-0">
-              <thead>
-                <tr>
-                  <th class="col-md-2" ><%= t("aj.STT") %></th>
-                  <th class="col-md-5"><%= t("global.job.bookmarkJobs")%></th>
-                  <th class="col-md-3"></th>
-                  <th class="col-md-2"></th>
-                </tr>
-              </thead>
-              <tbody>
-              <% @bookmarks.each_with_index do |bookmark, index| %>
-                <div id =bookmark-<%= bookmark.id %>>
-                <tr>
-                  <td><%= index+1 %></td>
-                  <td><%= link_to bookmark.job.title, job_path(bookmark.job.id) %></td>
-                  <td></td>
-                  <td><%= link_to user_bookmark_path(bookmark.user.id, bookmark.id), method: :delete,
-                    data: { confirm: t("aj.you sure?") },
-                    class: "btn btn-danger btn-sm rounded-0",
-                    type: "button" do %>
-                     <i class="fa fa-times" aria-hidden="true"></i>
-                    <% end %>
-                  </td>
-                </tr>
-                </div>
-              <% end %>
-              </tbody>
-            </table>
-          </div>
-        </div>
+  <div class="column-main col-md-8" >
+    <h4><%= t("userp.allSaveJob") %></h4>
+    <div class="card border-0 bookmark_jobs">
+      <div class="card-body p-5">
+        <div class="table-responsive-bookmark">
+          <table class="table m-0">
+            <thead>
+              <tr>
+                <th class="col-md-2" ><%= t("aj.STT") %></th>
+                <th class="col-md-5"><%= t("global.job.bookmarkJobs")%></th>
+                <th class="col-md-3"></th>
+                <th class="col-md-2"></th>
+              </tr>
+            </thead>
+            <tbody>
+            <% @bookmarks.each_with_index do |bookmark, index| %>
+              <div id =bookmark-<%= bookmark.id %>>
+              <tr>
+                <td><%= index+1 %></td>
+                <td><%= link_to bookmark.job.title, job_path(bookmark.job.id) %></td>
+                <td></td>
+                <td><%= link_to user_bookmark_path(bookmark.user.id, bookmark.id), method: :delete,
+                  data: { confirm: t("aj.you sure?") },
+                  class: "btn btn-danger btn-sm rounded-0",
+                  type: "button" do %>
+                   <i class="fa fa-times" aria-hidden="true"></i>
+                  <% end %>
+                </td>
+              </tr>
+              </div>
+            <% end %>
+            </tbody>
+          </table>
         </div>
       </div>
-      <%= will_paginate %>
-    <div class="column-side col-md-4">
-     <%= render "users/profile_colum_right_side" %>
+      <div class="paginate__u col-md-12">
+        <%= will_paginate @bookmarks, theme: 'twitter-bootstrap-3' %>
+      </div>
     </div>
+  </div>
+  <div class="column-side col-md-4">
+    <%= render "users/profile_colum_right_side" %>
+  </div>
 </div>
 

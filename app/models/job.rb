@@ -17,7 +17,7 @@ class Job < ApplicationRecord
 
   sex = "select sex from jobs where id = ?"
   time_work="select time_work from jobs where id = ?"
-  scope :job_similar, ->  (id){where("id <> ? and (sex IN (#{sex}) or sex = 2 or 
+  scope :job_similar, ->  (id){where("id <> ? and (sex IN (#{sex}) or sex = 2 or
     time_work IN (#{time_work}) or time_work= 2)
     and now() > DATE(from_date) and now()< DATE(to_date)",id,id,id).limit(4)}
   included do
@@ -25,8 +25,8 @@ class Job < ApplicationRecord
   end
 
   def to_param
-   "#{id}/#{title}"
-   end
+    [id, title.parameterize].join("-")
+  end
 
   ransack :title, type: :string do
     arel_table[:title].lower
