@@ -151,7 +151,7 @@ main{
 .ui-menu,.ui-widget,.ui-widget-content,.ui-autocomplete,.ui-front .ui-menu-item{
   list-style: none;
 }
-.ui-menu,.ui-widget,.ui-widget-content,.ui-autocomplete,.ui-front .ui-menu-item:hover{
+.ui-autocomplete .ui-menu-item .ui-menu-item-wrapper:hover{
   background: #f3f2ee;
 }
 

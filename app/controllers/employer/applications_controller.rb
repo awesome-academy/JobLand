@@ -5,9 +5,8 @@ class Employer::ApplicationsController < ApplicationController
   	current_user.jobs.each do |job|
   		job.applyjobs.each do |applyjob|
   			@applycations << applyjob
-  		end 
+  		end
   	end
-
   	@jobs = current_user.jobs
   end
 end
