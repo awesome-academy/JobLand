@@ -5,12 +5,11 @@ namespace :import do
      require 'nokogiri'
      agent = Mechanize.new
      agent.get("https://vnexpress.net/")
-     countries = agent.page.search('a')
-     countries = countries.xpath('//a').map {|element| element["href"]}.compact
-
+     countries = agent.page.search('h3 a')
+     # countries = countries.xpath('//a').map {|element| element["href"]}.compact
      countries.each do |country|
-       News.create!(link: country.strip) if country.include?("http")
-
+       # News.create!(content: country.strip) if country.include?("http")
+      News.create!(content: country.text.strip)
      end
   end
 end

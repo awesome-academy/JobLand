@@ -10,11 +10,13 @@ class Job < ApplicationRecord
   has_many :bookmarking, through: :bookmarks, source: :user
 	scope :job_new, -> {order created_at: :desc}
 	scope :job_slide, -> {where(slide:true).limit(5)}
-  scope :job_Recommended, -> {order salary: :desc}
+  scope :job_salary, -> {order salary: :desc}
 	scope :job_check, -> {where("DATE(created_at) = ?", Date.today)}
   scope :all_approved_false, -> { where approved: false }
   scope :all_approved_true, -> { where approved: true }
-
+  a = "select company_id from payments where subscription_status = 'active' and plan = 'pro'"
+  b = "select user_id from companies where id IN (#{a})"
+  scope :job_Recommended, -> {where("user_id IN (#{b})")}
   sex = "select sex from jobs where id = ?"
   time_work="select time_work from jobs where id = ?"
   scope :job_similar, ->  (id){where("id <> ? and (sex IN (#{sex}) or sex = 2 or

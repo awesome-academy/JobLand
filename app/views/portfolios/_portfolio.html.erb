@@ -27,7 +27,7 @@
       </div>
       <div class="portfolio_main col-md-6">
         <span><%= portfolio.title %></span><br>
-        <span><%= link_to portfolio.link%></span><br>
+        <span><%= link_to portfolio.link, "#{portfolio.link}"%></span><br>
         <span><%= portfolio.month %>-<%= portfolio.year %></span><br>
         <a href="#" class="" data-toggle="modal" data-target="#myPortfolio-<%= portfolio.id %>">
           <span id="portfolio_desc"><%= portfolio.description.first(80) %>...</span><br>
